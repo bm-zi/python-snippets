@@ -1,4 +1,5 @@
 #!/bin/usr/python3
+# Author: bm-zi
 
 import os
 import codeExamples
