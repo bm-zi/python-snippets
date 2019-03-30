@@ -1,4 +1,6 @@
 #!/usr/bin/env	python
+# Author: bm-zi
+
 # -*- coding: utf-8 -*-
 
 import os
