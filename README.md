@@ -11,7 +11,7 @@ A collection of python code snippets just for learning through examples
     # ./runme
  
  Alternatively run:
- # python3 runme.py
+    # python3 runme.py
  
  
  (3) Enoy learning python basics interactively just
