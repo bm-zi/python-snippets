@@ -9,7 +9,7 @@ Copy these two following files to any directory of yours:
   
 
 2.
-Change permissions (chmod u+x *.py)
+Change permissions (chmod u+x runme.py)
     Open a terminal and from shell prompt run:
     
     # ./runme
