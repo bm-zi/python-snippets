@@ -1,7 +1,8 @@
 #!/usr/bin/env	python
+# -*- coding: utf-8 -*-
+
 # Author: bm-zi
 
-# -*- coding: utf-8 -*-
 
 import os
 
@@ -451,23 +452,102 @@ def f32():
 	else:
 		print('Nope. The number I was thinking of was ' + str(secretNumber))
 
+
+def f33():
+	# Lists - examples
+	print([1, 2, 3])
+	print(['cat', 'bat', 'rat', 'elephant'])
+	print(['hello', 3.1415, True, None, 42])
+
+	# Getting Individual Values in a List with Indexes
+	spam = ['cat', 'bat', 'rat', 'elephant']
+	print(spam)
+	print(spam[0])
+	print(spam[1])
+	print(spam[2])
+	print(spam[3])
+	print(['cat', 'bat', 'rat', 'elephant'][3])
+	print('Hello ' + spam[0])
+	print('The ' + spam[1] + ' ate the ' + spam[0] + '.')
+	print(spam[int(1.0)])
+
+def f34():
+	# Lists : list of lists
+	spam = [['cat', 'bat'], [10, 20, 30, 40, 50]]	# List of lists
+	print(spam)
+	print(spam[0][1])
+	print(spam[1][4])
 	
 
+def f35():
+	# Lists : negative indexes
+	spam = ['cat', 'bat', 'rat', 'elephant']
+	print(spam[-1])     # elephant
+	print(spam[-3])     # bat
+	print(spam[0:-1])	# ['cat', 'bat', 'rat']
+	print('The ' + spam[-1] + ' is afraid of the ' + spam[-3] + '.')
 
 
+def f36():
+	# Lists : getting sublists with slices
+	spam = ['cat', 'bat', 'rat', 'elephant']
+	print(spam[0:4])    # ['cat', 'bat', 'rat', 'elephant']
+	print(spam[1:3])	# ['bat', 'rat']
+	print(spam[0:-1])	# ['cat', 'bat', 'rat']
+	print(spam[:2])		# ['cat', 'bat']
+	print(spam[1:])		# ['bat', 'rat', 'elephant']
+	print(spam[:])		# ['cat', 'bat', 'rat', 'elephant']
+
+def f37():
+	# Lists : getting a list’s length with len()
+	spam = ['cat', 'dog', 'moose']
+	print(len(spam))  # 3
+
+	
+def f38():
+	# Lists : changing values in a list with indexes
+	spam = ['cat', 'bat', 'rat', 'elephant']
+	spam[1] = 'aardvark'
+	print(spam)
+	spam[2] = spam[1]
+	print(spam)
+	spam[-1] = 12345
+	print(spam)
+
+def f39():
+	# Lists: list concatenation and list replication
+	x = [1, 2, 3] + ['A', 'B', 'C']
+	print(x)
+	x = ['X', 'Y', 'Z'] * 3
+	print(x)
+	spam = [1, 2, 3]
+	spam = spam + ['A', 'B', 'C']
+	print(spam)
 
 
+def f40():
+	# Help : How to use this program
+	os.system('clear')
+	text= '''
+
+	Help
+	....  
+
+	- At the prompt in main menu, type any number related to 
+	  menu item to view that item.
+	  Valid numbers are from 1 to the last index number in the 
+	  main menu items.
 
 
+	- each item in main menu list, contains two parts:
+	  body of a sample code and the respective output.
+	  
+	- Some code samples at the output are suppose to interact 
+	  with user and prompt for user input.
 
+	- To restart and resetting the script type 'r'
 
+	- To exit the program type exit
 
-
-
-
-
-
-
-
-
-
+	'''
+	print(text)
