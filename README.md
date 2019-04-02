@@ -1,4 +1,4 @@
-# python-simple-codes
+# python-snippets
 A collection of python code snippets, helps in learning python through basic examples.
 
 
