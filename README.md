@@ -20,7 +20,8 @@ Alternatively run:
  
  
 3. 
-Enoy learning python basics interactively just by running this script.
+Enjoy learning python basics interactively just by navigating through python snippets,
+only by running this script.
      
   
 4.
