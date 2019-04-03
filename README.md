@@ -4,9 +4,9 @@ A collection of python code snippets, helps in learning python through basic exa
 
 1.
 Copy these three following files to any directory of yours:
-    runme.py
-    codeExamples.py
-    list
+- runme.py
+- codeExamples.py
+- list
   
 
 2.
