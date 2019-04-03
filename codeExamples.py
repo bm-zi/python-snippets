@@ -256,12 +256,12 @@ def f20():
     for i in range(5, -1, -1):
         print(i)
 
-
-
 def f21():
     # import modules
-    # functions like print(), input() , and len() are builtin fuctions. No need to import them.
-    # function like randint() are from standard library modules that has to be imported
+    # functions like print(), input() , and len() are builtin fuctions; 
+    # No need to import them.
+    # function like randint() are from standard library modules that 
+    # has to be imported
 
     # if use "from random from random import *" , 
     # then no need to to call a function with the random. prefix.
@@ -282,7 +282,6 @@ def f22():
         if response == 'exit':
             sys.exit()
         print('You typed ' + response + '.')
-
 
 
 def f23():
@@ -750,21 +749,154 @@ def f51():
     for i in name:
         print('* * * ' + i + ' * * *')
 
-
 def f52():
+    # mutable and immutable data types
+
+    # Lists can have values added, removed, or changed. (mutable)
+    # Strings are not. (immutable)
+
+    name = 'Zophie a cat'
+    # name[7] = 'the'   # this generates error
+    newName = name[0:7] + 'the' + name[8:12]
+    print(name)
+    print(newName)
+
+    eggs = [1, 2, 3]
+    eggs = [4, 5, 6] # The list value in eggs isn’t being changed here; is overwriiten.
+    print(eggs)
+    
+    print('The actula modification is as following: ')
+    eggs = [1, 2, 3]
+    del eggs[2]
+    del eggs[1]
+    del eggs[0]
+    eggs.append(4)
+    eggs.append(5)
+    eggs.append(6)
+    print(eggs)
+
+def f53():
+    # tuple data type
+
+    # tuples are like lists but use () instead aof []
+    # tuples are like strings, cannot have their values modified, appended, or removed.
+
+    eggs = ('hello', 42, 0.5)
+    # eggs[1] = 99   # this generates error
+
+    # If you have only one value in your tuple, you can indicate this 
+    # by placing a trailing comma
+    print(type(('hello',)))
+    print(type(('hello')))
+
+    '''tuples advantages:
+    . When you don't want the values to be changed.(unlike the list) 
+    . They are faster than lists
+    ''' 
+    print('Converting Types with the list() and tuple() Functions')
+    print(tuple(['cat', 'dog', 5]))
+    print(list(('cat', 'dog', 5)))
+    print(list('hello'))
+
+def f54():
+    # references
+
+    # assignment for strings and integers value
+    spam = 42
+    cheese = spam
+    spam = 100
+    print('spam has different value than cheese: ')
+    print(spam)
+    print(cheese) # cheese didn't chage
+
+    # assignment foe lists is different, actually we are assiging a 
+    # list reference to the variable
+
+    spam = [0, 1, 2, 3, 4, 5]
+    cheese = spam
+    cheese[1] = 'Hello!'
+    print('spam and cheese have the same value: ')
+    print(spam)
+    print(cheese)
+
+    '''
+    When you create the list, you assign a reference to it in the spam 
+    variable. But the next line copies only the list reference in spam 
+    to cheese , not the list value itself.
+    list variables don’t actually contain lists—they contain references
+    to lists.
+    '''
+
+
+def f55():
+    # Passing References
+
+    '''
+    When a function is called, the values of the arguments are copied 
+    to the parameter variables. For lists and dictionaries, this means 
+    a copy of the reference is used for the parameter.
+    '''
+
+    def eggs(someParameter):
+        someParameter.append('Hello')
+    
+    spam = [1, 2, 3]
+    eggs(spam)
+    print(spam)
+
+    '''
+    Notice that when eggs() is called, a return value is not used to 
+    assign a new value to spam. Instead, it modifies the list in place, directly.
+
+    Even though spam and someParameter contain separate references, they
+    both refer to the same list. This is why the append('Hello') method call
+    inside the function affects the list even after the function call has returned.
+    '''
+
+def f56():
+    # The copy Module’s copy() and deepcopy() Functions
+
+    '''
+    copy.copy() , makes a duplicate copy of a mutable value like a list or dictionary, 
+    not just a copy of a reference.
+    '''
+
+    import copy
+    spam = ['A', 'B', 'C', 'D']
+    cheese = copy.copy(spam)  # creates a second list that can be modified 
+                              # ­independently of the first.
+    cheese[1] = 42
+    print('copy.copy')
+    print(spam)
+    print(cheese)
+
+    milk = copy.deepcopy(cheese)
+    milk[1] = 52
+    print('copy.deepcopy')
+    print(spam)
+    print(cheese)
+    print(milk)
+
+
+def f57():
     # Help : How to use this program
     os.system('clear')
     text= '''
     
     Help
-    ....  
+    ....
 
+    [p]
+    When you are in main rolling list you can go to main 
+    prompt('>>>'), by pressing p and when you are in prompt,
+    press Enter and you get back to rolling list of items. 
+
+
+    --------- Keys for main prompt or '>>> ' ---------------
     [1..9][0..9]
-    At the prompt in main menu, type any number related to 
-    menu item to view that item.
+    Type any number related to menu item to view that item.
     Valid numbers are from 1 to the last index number in the 
     main menu items.
-
 
     - each item in main menu list, contains two parts:
       body of a sample code and the respective output.

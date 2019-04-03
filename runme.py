@@ -6,11 +6,6 @@ import codeExamples
 import time
 import sys
 
-'''
-use the following command to get a list of indexed functions:
-
-cat searchExamples.py | grep -E 'f[1-9]|f[1-9][0-9]' -A 1 | grep -v def | grep -v ^-- | while read line ; do echo "$i - $line"; let "i=i+1"; done | sed -n 's/\#//p'
-'''
 
 def restart():
     print('Restarting ... ')

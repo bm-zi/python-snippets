@@ -1,0 +1,59 @@
+1 -  Math Operators
+2 -  String concatenation and replication
+3 -  First Python Program
+4 -  Function len()
+5 -  Function str()
+6 -  Function str(), int(), float
+7 -  input() function
+8 -  Boolean data types
+9 -  Boolean Operators
+10 -  Mixing Boolean and Comparison Operators
+11 -  if,elif,else conditional
+12 -  while loop
+13 -  An Annoying while Loop
+14 -  break Statements
+15 -  continue statement
+16 -  empty value is considered False
+17 -  for Loops and the range() Function
+18 -  equivalent while loop
+19 -  Another for loop example
+20 -  range() function examples
+21 -  import modules
+22 -  sys.exit()
+      ......... FUNCTIONS .........
+23 -  function example
+24 -  function with argument
+25 -  return statement
+26 -  None data type
+27 -  Optional keywords for functions
+28 -  local and global variables with same name
+29 -  global variables
+30 -  Exception Handling
+31 -  Out Of Function Exception Handling
+32 -  Guessing Game
+      ............. LISTS .............
+33 -  list example      
+34 -  list of lists
+35 -  negative indexes
+36 -  getting sublists with slices
+37 -  getting a list’s length with len()
+38 -  changing values in a list with indexes
+39 -  list concatenation and list replication
+40 -  removing values from lists with del
+41 -  working with lists
+42 -  using for loops
+43 -  in and not in operators
+44 -  multiple assignment trick
+45 -  augmented assignment operators
+46 -  finding a Value in a list with index()
+47 -  adding values to lists with append() and insert()
+48 -  removing values from lists with remove()
+49 -  sorting the values in a list with sort()
+50 -  magic 8 ball with a list
+51 -  list-like types: strings and tuples
+52 -  mutable and immutable data types
+53 -  tuple data type
+54 -  references
+55 -  passing references
+56 -  copy module’s copy() and deepcopy() functions
+57 -  help : How to use this program
