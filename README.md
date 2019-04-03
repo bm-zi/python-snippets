@@ -3,9 +3,10 @@ A collection of python code snippets, helps in learning python through basic exa
 
 
 1.
-Copy these two following files to any directory of yours:
+Copy these three following files to any directory of yours:
     runme.py
     codeExamples.py
+    list
   
 
 2.
@@ -29,6 +30,6 @@ If you want to add a sample code while learning python,
 then you can append a function named as fn. 
 (n- is an integer, and must be uniq in script).
   
-Then in file runnme.py add a short description with an index number matching the integer n as in file codeExamples.py
-This will appear as the main menu when running script runme.py
+Then in file 'list' add a short description with an index number matching the integer n as 
+in file codeExamples.py. This will appear as the main menu when running script runme.py
   
