@@ -877,38 +877,6 @@ def f56():
     print(cheese)
     print(milk)
 
-
+ 
 def f57():
-    # Help : How to use this program
-    os.system('clear')
-    text= '''
-    
-    Help
-    ....
-
-    [p]
-    When you are in main rolling list you can go to main 
-    prompt('>>>'), by pressing p and when you are in prompt,
-    press Enter and you get back to rolling list of items. 
-
-
-    --------- Keys for main prompt or '>>> ' ---------------
-    [1..9][0..9]
-    Type any number related to menu item to view that item.
-    Valid numbers are from 1 to the last index number in the 
-    main menu items.
-
-    - each item in main menu list, contains two parts:
-      body of a sample code and the respective output.
-      
-    - Some code samples at the output are suppose to interact 
-      with user and prompt for user input.
-
-    [r]  
-    To restart and resetting the script type 'r'
-
-    [exit]
-    To exit the program type exit
-
-    '''
-    print(text)
+    print(' ')

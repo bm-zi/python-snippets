@@ -6,6 +6,42 @@ import codeExamples
 import time
 import sys
 
+help = '''
+    Help:
+    
+    ------------- Keys for Main menu prompt ---------------
+    The prompts for main menu looks like following:
+    Go to main prompt [p]: 
+
+    [q]
+    When you are in main rolling list you can go to main 
+    prompt('>>>'), by typing 'q' and once you are in main prompt, 
+    press Enter to get back to rolling list of items. 
+
+    Any other keys or 'Enter' will roll the menu items in ascending 
+    order.
+    ------------- Keys for main prompt ( >>> ) --------------
+    [1..9][0..9]
+    Type any number related to menu item to view that item.
+    Valid numbers are from 1 to the last index number in the 
+    main menu items.
+
+    - each item in main menu list, contains two parts:
+      body of a sample code and the respective output.
+      
+    - Some code samples at the output are suppose to interact 
+      with user and prompt for user input.
+
+    [r]  
+    To restart and resetting the script type 'r'
+
+    [?] or [help]
+    Type in '?' or 'help' to view help !
+
+    [exit]
+    To exit the program type exit
+'''
+
 
 def restart():
     print('Restarting ... ')
@@ -40,7 +76,7 @@ def rolling_list():
 
         lines = len(test_array)
 
-        print('_' * 60)
+        print('_' * 68)
 
         try:
             lines = len(test_array)
@@ -50,7 +86,7 @@ def rolling_list():
                 iterate = iterate - 1
         except IndexError:
             return
-     
+
     def runner():
         os.system("clear")
 
@@ -64,12 +100,13 @@ def rolling_list():
         j = len(lines)
         
         while i <= j:
-            print('Main menu')    
-            print('items No: ', j)
+            print('Welcome to main menu,')    
+            print('Menu lines No: ', j)
             listdisplay(i, 20)
-            print('_' * 60)
-            response = input('Go to prompt [p]: ')
-            if response == 'p':
+            print('_' * 68)
+            print('For help, go to main prompt first by typing \'q\' and then type in \'?\'')
+            response = input(': ')
+            if response == 'q':
                 return
             else:    
                 i = i + 1
@@ -91,6 +128,12 @@ while True:
 
         if str(i) == 'r':
             restart()
+
+        if str(i) == '?' or str(i) == 'help':
+            os.system('clear')
+            print(help)
+            input('Press any key to continue -  ')
+            continue
 
         if not i:                  # if no value entered, restart the while loop
             continue
