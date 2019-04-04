@@ -5,21 +5,29 @@ import os
 import codeExamples
 import time
 import sys
+import re
 
 help = '''
-    Help:
+    ....
+    Help
+    ....
     
+
     ------------- Keys for Main menu prompt ---------------
     The prompts for main menu looks like following:
-    Go to main prompt [p]: 
+    
+    For help, go to main prompt first by typing '\' and then type in '?'
+    : 
 
-    [q]
-    When you are in main rolling list you can go to main 
-    prompt('>>>'), by typing 'q' and once you are in main prompt, 
-    press Enter to get back to rolling list of items. 
+    [\]
+    When you are in main rolling list you can go to main prompt('>>>'), 
+    by typing '0' and once you are in main prompt, press Enter to get 
+    back to rolling list of items.
 
-    Any other keys or 'Enter' will roll the menu items in ascending 
+    Any other keys or 'Enter' will roll the menu items in ascending
     order.
+
+
     ------------- Keys for main prompt ( >>> ) --------------
     [1..9][0..9]
     Type any number related to menu item to view that item.
@@ -100,15 +108,29 @@ def rolling_list():
         j = len(lines)
         
         while i <= j:
-            print('Welcome to main menu,')    
+            print('Welcome to main menu,')
             print('Menu lines No: ', j)
             listdisplay(i, 20)
             print('_' * 68)
-            print('For help, go to main prompt first by typing \'q\' and then type in \'?\'')
+            print('For help, go to main prompt first by typing \'\\\' and then type in \'?\'')
             response = input(': ')
-            if response == 'q':
+            if response == '\\':
                 return
-            else:    
+            elif not response:
+                i = i + 1
+                os.system("clear")
+            else:
+                #pattern = re.compile(response)
+                            
+                with open('list') as f:
+                    print('Search result: ')
+                    for l in f:
+                        if re.search(response, l, re.I):
+                            print(l.strip())
+                        else:
+                            continue 
+                print('')            
+                input('Press any key to continue! ')            
                 i = i + 1
                 os.system("clear")
         return            
