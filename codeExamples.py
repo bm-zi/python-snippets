@@ -179,7 +179,7 @@ def f13():
 
 
 def f14():
-    # break Statements
+    # break Statements, breaks the loop
     while True:
         print('Please type your name.')
         name = input()
@@ -189,7 +189,7 @@ def f14():
 
 
 def f15():
-    # continue statement
+    # continue statement, keeps running the loop start from begining
     while True:
         print('Who are you?')
         name = input()
@@ -876,7 +876,56 @@ def f56():
     print(spam)
     print(cheese)
     print(milk)
-
  
 def f57():
+    grid = [['.','.','.','.','.','.'],
+            ['.','0','0','.','.','.'],
+            ['0','0','0','0','.','.'],
+            ['0','0','0','0','0','.'],
+            ['.','0','0','0','0','0'],
+            ['0','0','0','0','0','.'],
+            ['0','0','0','0','.','.'],
+            ['.','0','0','.','.','.'],
+            ['.','.','.','.','.','.']]
+
+    print(grid)
+            
+def f58():
     print(' ')
+
+def f59():
+    print(' ')
+
+def f60():
+    print(' ')
+
+def f61():
+    print(' ')
+
+def f62():
+    print(' ')
+
+def f63():
+    print(' ')
+
+def f64():
+    print(' ')
+
+def f65():
+    print(' ')
+
+def f66():
+    print(' ')
+
+def f67():
+    print(' ')
+
+def f68():
+    print(' ')
+
+def f69():
+    print(' ')
+
+def f70():
+    print(' ')
+

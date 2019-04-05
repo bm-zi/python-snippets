@@ -15,14 +15,15 @@ help = '''
 
     ------------- Keys for Main menu prompt ---------------
     The prompts for main menu looks like following:
+    Search:
     
-    For help, go to main prompt first by typing '\' and then type in '?'
-    : 
-
     [\]
-    When you are in main rolling list you can go to main prompt('>>>'), 
-    by typing '0' and once you are in main prompt, press Enter to get 
-    back to rolling list of items.
+    When you are in search prompt, you can go to main prompt('>>>'), 
+    by typing '\' and once you are in main prompt, press Enter to get 
+    back to Search prompt, to navigate through the rolling list of items.
+
+    [space]
+    Hit space bar to view the whole item menu at once.
 
     Any other keys or 'Enter' will roll the menu items in ascending
     order.
@@ -46,8 +47,8 @@ help = '''
     [?] or [help]
     Type in '?' or 'help' to view help !
 
-    [exit]
-    To exit the program type exit
+    [x]
+    To exit the program type 'x'.
 '''
 
 
@@ -110,27 +111,29 @@ def rolling_list():
         while i <= j:
             print('Welcome to main menu,')
             print('Menu lines No: ', j)
-            listdisplay(i, 20)
+            listdisplay(i, 15)
             print('_' * 68)
-            print('For help, go to main prompt first by typing \'\\\' and then type in \'?\'')
-            response = input(': ')
+            print('For help, first type \'\\\' in below search prompt and then type in \'?\'')
+            response = input('Search: ')
             if response == '\\':
                 return
             elif not response:
                 i = i + 1
                 os.system("clear")
             else:
-                #pattern = re.compile(response)
-                            
                 with open('list') as f:
+                    print('')
                     print('Search result: ')
                     for l in f:
                         if re.search(response, l, re.I):
                             print(l.strip())
                         else:
                             continue 
-                print('')            
-                input('Press any key to continue! ')            
+
+                print('')
+                return            
+                #input('Press any key to continue! ')
+
                 i = i + 1
                 os.system("clear")
         return            
@@ -145,7 +148,7 @@ while True:
     i = input(">>> ")
 
     try:
-        if str(i) == 'exit':      # type exit to exit program
+        if str(i) == 'x':      # type x to exit program
             sys.exit()
 
         if str(i) == 'r':
