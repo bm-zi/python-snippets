@@ -7,30 +7,30 @@ import time
 import sys
 import re
 
-help = '''
-    ....
-    Help
-    ....
+help = '''Help
     
-
-    ------------- Keys for Main menu prompt ---------------
+    |||||||| Keys for Main menu prompt ||||||||||||
     The prompts for main menu looks like following:
     Search:
     
     [\]
     When you are in search prompt, you can go to main prompt('>>>'), 
-    by typing '\' and once you are in main prompt, press Enter to get 
-    back to Search prompt, to navigate through the rolling list of items.
+    by typing '\' or any character and once you are in main prompt, 
+    press Enter to get back to Search prompt, to navigate through the 
+    rolling list of items.
 
     [space]
     Hit space bar to view the whole item menu at once.
 
+    [numbers]
+    if you type only numbers in search, it opens the list from that item number.
+
     Any other keys or 'Enter' will roll the menu items in ascending
     order.
+    
+    ||||||||||| Keys for main prompt ( >>> ) ||||||||||||||
 
-
-    ------------- Keys for main prompt ( >>> ) --------------
-    [1..9][0..9]
+    [number]
     Type any number related to menu item to view that item.
     Valid numbers are from 1 to the last index number in the 
     main menu items.
@@ -69,6 +69,29 @@ def displayCode(i):
             print(line, end='')
         if line.startswith('def f' + str(i) + '()'):
             parsing = True
+
+def listRange(start_line):
+    iterate = 15
+    start_line = int(start_line) - 1
+
+    test_array = []
+    with open('list') as my_file:
+        for line in my_file:
+            line = line.strip()
+            test_array.append(line)
+
+    lines = len(test_array)
+
+    print('_' * 68)
+
+    try:
+        lines = len(test_array)
+        while iterate > 0 and start_line <= (start_line + 5) and start_line <= lines:
+            print(test_array[start_line])
+            start_line = start_line + 1
+            iterate = iterate - 1
+    except IndexError:
+        return         
 
 
 def rolling_list():
@@ -115,10 +138,20 @@ def rolling_list():
             print('_' * 68)
             print('For help, first type \'\\\' in below search prompt and then type in \'?\'')
             response = input('Search: ')
+
             if response == '\\':
                 return
+            elif response == '':
+                i = i + 1
+                os.system("clear")
             elif not response:
                 i = i + 1
+                os.system("clear")
+            elif response.isnumeric():
+                os.system("clear")
+                listRange(response)
+                print('_' * 68)
+                input('Press any key to continue! ')
                 os.system("clear")
             else:
                 with open('list') as f:
@@ -128,24 +161,20 @@ def rolling_list():
                         if re.search(response, l, re.I):
                             print(l.strip())
                         else:
-                            continue 
-
+                            continue
                 print('')
-                return            
-                #input('Press any key to continue! ')
-
-                i = i + 1
-                os.system("clear")
+                return
         return            
     runner()
 
 
+#### PROGRAM STARTS FROM HERE! ####
 
 while True:
     os.system('clear')
     rolling_list()
     print('')
-    i = input(">>> ")
+    i = input("# ")
 
     try:
         if str(i) == 'x':      # type x to exit program
@@ -162,6 +191,7 @@ while True:
 
         if not i:                  # if no value entered, restart the while loop
             continue
+    
 
         num=int(i)
         varstring1 = 'f' + str(num)

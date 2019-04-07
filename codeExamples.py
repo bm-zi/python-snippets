@@ -891,10 +891,43 @@ def f57():
     print(grid)
             
 def f58():
-    print(' ')
+    # Dictionary Data Type
+    myCat = {'size': 'fat', 'color': 'grey', 'disposition': "loud" }
+    print(myCat['size'])
+    print('My cat has ' + myCat['color'] + ' fur.')
+    
+    # Dictionaries can use integer values as keys, like lists.
+    # There is no item order in dictionaries.
+    spam = {12345: 'Luggage Combination', 42: 'The Answer'}
+    print(spam)
+
+    print('Dictionaries vs. Lists')
+    spam = ['cats', 'dogs', 'moose']
+    bacon = ['dogs', 'moose', 'cats']
+    print(spam == bacon)
+
+    eggs = {'name': 'Zophie', 'species': 'cat', 'age': '8'}
+    ham = {'species': 'cat', 'age': '8', 'name': 'Zophie'}
+    print(eggs == ham)
+
 
 def f59():
-    print(' ')
+    # program to store data
+    birthdays = {'Alice': 'Apr 1', 'Bob': 'Dec 12', 'Carol': 'Mar 4'}
+    while True:
+        print('Enter a name: (blank to quit)')
+        name = input()
+        if name == '':
+            break
+        if name in birthdays:
+            print(birthdays[name] + ' is the birthday of ' + name)
+        else:
+            print('I do not have birthday information for ' + name)
+            print('What is their birthday?')
+            bday = input()
+            birthdays[name] = bday
+            print('Birthday database updated.')
+            print(birthdays)
 
 def f60():
     print(' ')

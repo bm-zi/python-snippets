@@ -20,7 +20,6 @@
 20 -  range() function examples
 21 -  import modules
 22 -  sys.exit()
-      ......... FUNCTIONS .........
 23 -  function example
 24 -  function with argument
 25 -  return statement
@@ -31,7 +30,6 @@
 30 -  Exception Handling
 31 -  Out Of Function Exception Handling
 32 -  Guessing Game
-      ............. LISTS .............
 33 -  list example      
 34 -  list of lists
 35 -  negative indexes
@@ -57,9 +55,8 @@
 55 -  passing references
 56 -  copy module’s copy() and deepcopy() functions
 57 -  character picture grid
-      ..... Dictionaries and Structuring Data .....
-58 -  
-59 -  
+58 -  Dictionary Data Type
+59 -  program to store data
 60 -  
 61 -  
 62 -  
