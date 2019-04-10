@@ -18,7 +18,9 @@ Change permissions (chmod u+x runme.py)
 Alternatively run:
  
     # python3 runme.py
- 
+
+![python](https://user-images.githubusercontent.com/33130624/55902188-f8de8500-5b98-11e9-8943-57877519e1c5.gif) 
+
 3) 
 Enjoy learning python basics interactively just by navigating through python snippets,
 only by running this script.
@@ -32,4 +34,4 @@ then you can append a function named as fn.
 Then in file 'list' add a short description with an index number matching the integer n as 
 in file codeExamples.py. This will appear as the main menu when running script runme.py
   
-![python](https://user-images.githubusercontent.com/33130624/55902188-f8de8500-5b98-11e9-8943-57877519e1c5.gif)
+
