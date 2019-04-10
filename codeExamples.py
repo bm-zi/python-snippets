@@ -930,28 +930,135 @@ def f59():
             print(birthdays)
 
 def f60():
-    print(' ')
+    # Dictionary's methods: keys, values, items
+    spam = {'color': 'red', 'age': 42}
+    print('Values:')
+    for v in spam.values():
+        print(v)
+
+    print('Keys::')    
+    for k in spam.keys():
+        print(k)
+
+    print('Items:')
+    for i in spam.items():
+        print(i)
+
 
 def f61():
-    print(' ')
+    # Build a list from dictionary's keys
+    spam = {'color': 'red', 'age': 42}
+
+    print('spam.keys() returns \'dict_key\' data type')
+    print(spam.keys())
+    print(list(spam.keys()))
+
+    #
+    # The list(spam.keys()) line takes the dict_keys value 
+    # returned from keys() and passes it to list() , which 
+    # then returns a list value of ['color', 'age']
+
 
 def f62():
-    print(' ')
+    # Show dictionary's keys & values by for loop
+    spam = {'color': 'red', 'age': 42}
+    for k, v in spam.items():
+        print('Key: ' + k + ' Value: ' + str(v))
+
+    # spam.items() returns a dict_items data type
+    print(spam.items())
+
 
 def f63():
-    print(' ')
+    # Check if key or value exists in a dictionary,
+    # by using in and not operators
+
+    spam = {'name': 'Zophie', 'age': 7}
+    print('name' in spam.keys())
+    print('Zophie' in spam.values())
+    print('color' in spam.keys())
+    print('color' not in spam.keys())
+    print('color' in spam)
+    print('age' in spam)                # True
+    print('Zophie' in spam)             # False
+    print('Zophie' in spam.values())
+
 
 def f64():
-    print(' ')
+    # Dictionary get() method
+
+    picnicItems = {'apples': 5, 'cups': 2}
+    print('I am bringing ' + str(picnicItems.get('cups', 0)) + ' cups.')
+    print('I am bringing ' + str(picnicItems.get('eggs', 0)) + ' eggs.')
+    print('I am bringing ' + str(picnicItems.get('eggs', 'no value')) + ' eggs.')
+
+    '''
+    Because there is no 'eggs' key in the picnicItems dictionary, 
+    the default value 0 is returned by the get() method. Without 
+    using get() , the code would have caused an KeyError error.
+    '''
 
 def f65():
-    print(' ')
+    # Dictionary setdefault() Method
+    # sets a default value for key if key does not already have a value
+
+    spam = {'name': 'Pooka', 'age': 5}
+    if 'color' not in spam:
+        spam['color'] = 'black'
+
+    # The nice shortcut is using setdefault() method:
+    spam = {'name': 'Pooka', 'age': 5}
+    spam.setdefault('color', 'black')     # returns black
+    print(spam.setdefault('color', 'black'))
+    print(spam)
+
+    spam.setdefault('color', 'white')     # returns black
+    print(spam.setdefault('color', 'white'))
+    print(spam)
+
 
 def f66():
-    print(' ')
+    # Using setdefault() to count number of occurance of a 
+    # character in string.
+
+    message = 'It was a bright cold day in April, and the clocks were striking thirteen.'
+    count = {}
+
+    for character in message:
+        count.setdefault(character, 0)
+        count[character] = count[character] + 1
+    
+    print(count)
+
+    '''
+    The setdefault() method call ensures that the key is in the 
+    count dictionary (with a default value of 0 )
+
+    So the program doesn’t throw a KeyError error,
+    when count[character] = count[character] + 1 is executed.
+
+    '''   
 
 def f67():
-    print(' ')
+    # Pretty Printing - using pprint module
+
+    # Following code counts number of the occurance of 
+    # character in the string and then using pprint to
+    # display cleaner the items in a dictionary
+
+    import pprint
+    message = 'It was a bright cold day in April, and the clocks were striking thirteen.'
+    count = {}
+
+    for character in message:
+        count.setdefault(character, 0)
+        count[character] = count[character] + 1
+
+    pprint.pprint(count)
+    # print even prettier for nested loops:
+    # pprint.pprint(someDictionaryValue)
+    # print(pprint.pformat(someDictionaryValue))
+
 
 def f68():
     print(' ')

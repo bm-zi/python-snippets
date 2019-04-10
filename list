@@ -15,13 +15,13 @@
 15 -  continue statement
 16 -  empty value is considered False
 17 -  for Loops and the range() Function
-18 -  equivalent while loop
+18 -  Equivalent while loop
 19 -  Another for loop example
 20 -  range() function examples
 21 -  import modules
 22 -  sys.exit()
-23 -  function example
-24 -  function with argument
+23 -  Function example
+24 -  Function with argument
 25 -  return statement
 26 -  None data type
 27 -  Optional keywords for functions
@@ -32,39 +32,39 @@
 32 -  Guessing Game
 33 -  list example      
 34 -  list of lists
-35 -  negative indexes
-36 -  getting sublists with slices
-37 -  getting a list’s length with len()
-38 -  changing values in a list with indexes
-39 -  list concatenation and list replication
-40 -  removing values from lists with del
-41 -  working with lists
-42 -  using for loops
+35 -  Negative indexes
+36 -  Getting sublists with slices
+37 -  Getting a list’s length with len()
+38 -  Changing values in a list with indexes
+39 -  List concatenation and list replication
+40 -  Removing values from lists with del
+41 -  Working with lists
+42 -  Using for loops
 43 -  in and not in operators
-44 -  multiple assignment trick
-45 -  augmented assignment operators
-46 -  finding a Value in a list with index()
-47 -  adding values to lists with append() and insert()
-48 -  removing values from lists with remove()
-49 -  sorting the values in a list with sort()
-50 -  magic 8 ball with a list
-51 -  list-like types: strings and tuples
-52 -  mutable and immutable data types
+44 -  Multiple assignment trick
+45 -  Augmented assignment operators
+46 -  Finding a Value in a list with index()
+47 -  Adding values to lists with append() and insert()
+48 -  Removing values from lists with remove()
+49 -  Sorting the values in a list with sort()
+50 -  Magic 8 ball with a list
+51 -  List-like types: strings and tuples
+52 -  Mutable and immutable data types
 53 -  tuple data type
-54 -  references
-55 -  passing references
-56 -  copy module’s copy() and deepcopy() functions
-57 -  character picture grid
+54 -  References
+55 -  Passing references
+56 -  Copy module’s copy() and deepcopy() functions
+57 -  Character picture grid
 58 -  Dictionary Data Type
 59 -  program to store data
-60 -  
-61 -  
-62 -  
-63 -  
-64 -  
-65 -  
-66 -  
-67 -  
+60 -  Dictionary's methods: keys, values, items
+61 -  Build a list from dictionary's keys
+62 -  Show dictionary's keys & values by for loop
+63 -  Check if key or value exists in a dictionary
+64 -  Dictionary get() method
+65 -  Dictionary setdefault() Method
+66 -  Using setdefault to count no of chars in string
+67 -  Pretty Printing - using pprint module
 68 -  
 69 -  
 70 -  
