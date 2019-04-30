@@ -2927,21 +2927,645 @@ def f163():
     # butes that provide location information for the cell.
 
 def f164():
-    # 
-    print()
+    # excel sheet cell() method
 
+    import openpyxl
+    wb = openpyxl.load_workbook('example.xlsx')
+    sheet = wb.get_sheet_by_name('Sheet1')
+
+    sheet.cell(row=1, column=2)         # <Cell Sheet1.B1>
+    sheet.cell(row=1, column=2).value   # 'Apples'
+    for i in range(1, 8, 2):
+        print(i, sheet.cell(row=i, column=2).value)
+    
 def f165():
-    # 
-    print()
+    # Determine the size of the sheet
+    
+    import openpyxl
+    wb = openpyxl.load_workbook('example.xlsx')
+    sheet = wb.get_sheet_by_name('Sheet1')
+    
+    # Following deprecated:
+    # print(sheet.get_highest_row())                 # 7
+    # print(sheet.get_highest_column())              # 3
+
+    print(sheet.max_row)                 # 7
+    print(sheet.max_column)              # 3
 
 def f166():
-    # 
-    print()
+    # Converting Between Column Letters and Numbers
+    import openpyxl 
+    from openpyxl.utils import get_column_letter, column_index_from_string
+    
+    get_column_letter(1)         # 'A'
+    get_column_letter(2)         # 'B'
+    get_column_letter(27)        # 'AA'
+    get_column_letter(900)       # 'AHP'
+
+    wb = openpyxl.load_workbook('example.xlsx')
+    sheet = wb.get_sheet_by_name('Sheet1')
+
+    # Following deprecated:
+    # get_column_letter(sheet.get_highest_column())   #'C'
+    print(get_column_letter(sheet.max_column))        #'C'
+    print(column_index_from_string('A'))              # 1
+    print(column_index_from_string('AA'))             # 27
 
 def f167():
-    # 
-    print()
+    # Getting Rows and Columns from the Sheets 
+    
+    import openpyxl
+    
+    wb = openpyxl.load_workbook('example.xlsx')
+    sheet = wb.get_sheet_by_name('Sheet1')
+    print(tuple(sheet['A1':'C3']))
+
+    for rowOfCellObjects in sheet['A1':'C3']:
+        for cellObj in rowOfCellObjects:
+            print(cellObj.coordinate, cellObj.value)
+        print('--- END OF ROW ---')
+
+    # To print the values of each cell in the area, we use two for 
+    # loops. The outer for loop goes over each row in the slice. 
+    # Then, for each row, the nested for loop goes through each 
+    # cell in that row.
 
 def f168():
-    # 
+    # Access the values of cells in a particular row or column
+
+    import openpyxl
+
+    wb = openpyxl.load_workbook('example.xlsx')
+    sheet = wb.get_active_sheet()
+    print(list(sheet.columns)[1])
+
+    for cellObj in list(sheet.columns)[1]:
+        print(cellObj.value)
+
+    #    Quick Review
+    # 1. Import the openpyxl module.
+    # 2. Call the openpyxl.load_workbook() function.
+    # 3. Get a Workbook object.
+    # 4. Call the get_active_sheet() or get_sheet_by_name() 
+    #    workbook method.
+    # 5. Get a Worksheet object.
+    # 6. Use indexing or the cell() sheet method with row and 
+    #    column keyword arguments.
+    # 7. Get a Cell object.
+    # 8. Read the Cell object’s value attribute.    
+
+def f169():
+    # Reading Data from a Spreadsheet 
+    # Tabulates population and number of census tracts for 
+    # each county.    
+
+    import openpyxl, pprint
+    print('Opening workbook...')
+    wb = openpyxl.load_workbook('censuspopdata.xlsx')
+    sheet = wb.get_sheet_by_name('Population by Census Tract')
+    countyData = {}
+
+    # Fill in countyData with each county's population and tracts.
+    print('Reading rows...')
+    # iterating over the rowa
+
+    # method sheet.get_highest_row(), has been deprecated and ins-
+    # tead we use sheet.max_row
+
+    for row in range(2, sheet.max_row + 1):
+        # Each row in the spreadsheet has data for one census tract.
+        state  = sheet['B' + str(row)].value
+        county = sheet['C' + str(row)].value
+        pop    = sheet['D' + str(row)].value
+
+        # Make sure the key for this state exists.
+        countyData.setdefault(state, {})
+        # Make sure the key for this county in this state exists.
+        countyData[state].setdefault(county, {'tracts': 0, 'pop': 0})
+
+        # Each row represents one census tract, so increment by one.
+        countyData[state][county]['tracts'] += 1
+        # Increase the county pop by the pop in this census tract.
+        countyData[state][county]['pop'] += int(pop)
+
+    # Open a new text file and write the contents of countyData to it.
+    print('Writing results...')
+    resultFile = open('census2010.py', 'w')
+    resultFile.write('allData = ' + pprint.pformat(countyData))
+    resultFile.close()
+    print('Done.')    
+
+def f170():
+    # Writing Excel Documents
+    import openpyxl
+
+    wb = openpyxl.Workbook() #creates a new, blank Workbook object
+    # No document wil be saved unil usinfg save method.
+
+    wb.get_sheet_names()
+    sheet = wb.get_active_sheet()
+    print(sheet.title)
+    sheet.title = 'Spam Bacon Eggs Sheet'
+    wb.get_sheet_names()
+
+def f171():
+    # Create and save a spreed sheet 
+    import openpyxl
+
+    wb = openpyxl.load_workbook('example.xlsx')
+    sheet = wb.get_active_sheet()
+    sheet.title = 'Spam Spam Spam'
+    wb.save('example_copy.xlsx')
+
+def f172():
+    # Creating and Removing Sheets
+
+    import openpyxl
+
+    wb = openpyxl.Workbook()
+    print(wb.get_sheet_names())
+    
+    wb.create_sheet(index=0, title='First Sheet')
+    print(wb.get_sheet_names())
+
+    wb.create_sheet(index=2, title='Middle Sheet')
+    print(wb.get_sheet_names())
+
+    
+    wb.remove_sheet(wb.get_sheet_by_name('Middle Sheet'))
+    print(wb.get_sheet_names())
+    wb.remove_sheet(wb.get_sheet_by_name('First Sheet'))
+    print(wb.get_sheet_names())
+
+    # If you want the new created excel be saved, uncomment this:
+    # wb.save('test.xlsx')
+    
+def f173():
+    # Writing Values to Cells
+    
+    import openpyxl
+
+    # Writing values to cells is much like writing values to keys 
+    # in a dictionary.
+    wb = openpyxl.Workbook()
+    sheet = wb.get_sheet_by_name('Sheet')
+    sheet['A1'] = 'Hello world!'
+    print(sheet['A1'].value)
+
+    # If you want the new created excel be saved, uncomment this:
+    # wb.save('test.xlsx')
+
+def f174():
+    # Project: Updating a Spreadsheet
+    # This program updates prices for specific produces in file 
+    # 'produceSales.xlsx'
+
+    import openpyxl
+    wb = openpyxl.load_workbook('produceSales.xlsx')
+    sheet = wb.get_sheet_by_name('Sheet')
+    # The produce types and their updated prices
+    PRICE_UPDATES = {'Garlic': 3.07,
+                    'Celery': 1.19,
+                    'Lemon': 1.27}
+
+    # Loop through the rows and update the prices.
+    # skip the first row:
+    for rowNum in range(2, sheet.max_row):
+        # The cell in column 1 (that is, column A) will be stored 
+        # in the ­variable produceName
+        produceName = sheet.cell(row=rowNum, column=1).value
+        # If produceName exists as a key in the PRICE_UPDATES 
+        # dictionary, then update the cell
+        if produceName in PRICE_UPDATES:
+            sheet.cell(row=rowNum, column=2).value = PRICE_UPDATES[produceName]
+
+    wb.save('updatedProduceSales.xlsx')
+
+def f175():
+    # Setting the Font Style of Cells
+
+    import openpyxl
+    from openpyxl.styles import NamedStyle, Font, Border, Side
+
+    wb = openpyxl.Workbook()
+    sheet = wb.get_sheet_by_name('Sheet')
+    highlight = NamedStyle(name="highlight")
+    highlight.font = Font(size=24, italic=True)
+    # Once a named style has been created, it can be registered 
+    # with the workbook:
+    wb.add_named_style(highlight)
+    # But named styles will also be registered automatically the 
+    # first time they are assigned to a cell:
+    sheet['A1'].style = highlight
+    sheet['A1'] = 'Hello world!'
+    wb.save('styled.xlsx')
+
+def f176():
+    # Font object
+
+    import openpyxl
+    from openpyxl.styles import Font, NamedStyle
+
+    wb = openpyxl.Workbook()
+    sheet = wb.get_sheet_by_name('Sheet')
+
+    fontObj1 = NamedStyle(name="fontObj1")
+    fontObj1.font = Font(name='Times New Roman', bold=True)
+    sheet['A1'].style = fontObj1
+    sheet['A1'] = 'Bold Times New Roman'
+
+    fontObj2 = NamedStyle(name="fontObj2")
+    fontObj2.font = Font(size=24, italic=True)
+    sheet['B3'].style = fontObj2
+    sheet['B3'] = 'Bold Times New Roman'
+
+    wb.save('styles.xlsx')
+
+def f177():
+    # Formulas
+    import openpyxl
+
+    wb = openpyxl.Workbook()
+    sheet = wb.get_active_sheet()
+    sheet['A1'] = 200
+    sheet['A2'] = 300
+    sheet['A3'] = '=SUM(A1:A2)'
+    wb.save('writeFormula.xlsx')
+
+def f178():
+    # loading a workbook with and without the data_only keyword 
+    # argument
+
+    import openpyxl
+
+    wbFormulas = openpyxl.load_workbook('writeFormula.xlsx')
+    sheet = wbFormulas.get_active_sheet()
+    print(sheet['A3'].value)
+
+    wbDataOnly = openpyxl.load_workbook('writeFormula.xlsx', 
+                                         data_only=True)
+    ws = wbDataOnly.get_active_sheet()
+    print(ws['A3'].value) 
+    # in my case it shows None
+
+def f179():
+    # Setting Row Height and Column Width
+
+    import openpyxl
+    
+    wb = openpyxl.Workbook()
+    sheet = wb.get_active_sheet()
+    sheet['A1'] = 'Tall row'
+    sheet['B2'] = 'Wide column'
+    sheet.row_dimensions[1].height = 70
+    sheet.column_dimensions['B'].width = 20
+    wb.save('dimensions.xlsx')
+
+def f180():
+    # Merging and Unmerging Cells
+    # A rectangular area of cells can be merged into a single cell
+    # with the merge_cells() sheet method
+
+    import openpyxl
+    
+    wb = openpyxl.Workbook()
+    sheet = wb.get_active_sheet()
+    sheet.merge_cells('A1:D3')
+    sheet['A1'] = 'Twelve cells merged together.'
+    sheet.merge_cells('C5:D5')
+    sheet['C5'] = 'Two merged cells.'
+    wb.save('merged.xlsx')
+
+def f181():
+    # Unmerge cells
+    # To unmerge cells, call the unmerge_cells() sheet method
+
+    import openpyxl
+
+    wb = openpyxl.load_workbook('merged.xlsx')
+    sheet = wb.get_active_sheet()
+    sheet.unmerge_cells('A1:D3')
+    sheet.unmerge_cells('C5:D5')
+    wb.save('merged.xlsx')
+
+def f182():
+    # Freeze Panes - Pan is visible top rows or leftmost columns 
+    # to a specific cell that is helpfull to be used for larg spr-
+    # eadsheets to display all at once.
+
+    # sheet.freeze_panes = 'A2'    Row 1 is frozen
+    # sheet.freeze_panes = 'B1'    Column A is frozen
+    # sheet.freeze_panes = 'C1'    Columns A and B are frozen
+    # sheet.freeze_panes = 'C2'    Row 1 and columns A and B
+    # sheet.freeze_panes = 'A1'    No frozen panes
+    # sheet.freeze_panes = None    No frozen panes
+
+    import openpyxl
+    wb = openpyxl.load_workbook('produceSales.xlsx')
+    sheet = wb.get_active_sheet()
+    sheet.freeze_panes = 'A2' # The row header si visible, even when
+                              # scroll down
+    wb.save('freezeExample.xlsx')
+    # To unfreez all pan set the the atribute to None
+
+def f183():
+    # Charts
+    from openpyxl import Workbook
+    wb = Workbook()
+    ws = wb.active
+    for i in range(10):
+         ws.append([i])
+
+    from openpyxl.chart import BarChart, Reference, Series
+    values = Reference(ws, min_col=1, min_row=1, max_col=1, max_row=10)
+    chart = BarChart()
+    chart.add_data(values)
+    ws.add_chart(chart, "E15")
+    wb.save("sampleChart.xlsx")   
+
+    # For complete documentation refere to:
+    # https://openpyxl.readthedocs.io/en/stable/charts/introduction.html
+
+def f184():
+    # Extracting Text from PDFs 
+    # sudo pip3 install PyPDF2
+
+    import PyPDF2
+    
+    pdfFileObj = open('meetingminutes.pdf', 'rb')
+    pdfReader = PyPDF2.PdfFileReader(pdfFileObj)
+    print(pdfReader.numPages)
+    pageObj = pdfReader.getPage(0)
+    print(pageObj.extractText())
+
+def f185():
+    # Decrypting PDFs
+    
+    import PyPDF2
+
+    pdfReader = PyPDF2.PdfFileReader(open('encrypted.pdf', 'rb'))
+    print(pdfReader.isEncrypted)
+    # When you try uncomment following, you get error(encrypted)
+    # pdfReader.getPage(0)
+    pdfReader.decrypt('rosebud')   # password='rosebud'
+    pageObj = pdfReader.getPage(0) # No more error you get
+    print(pageObj.extractText())
+
+def f186():
+    # copy pages from one PDF document to another
+    # files 'meetingminutes.pdf' and 'meetingminutes2.pdf' must
+    # exist in current directory!
+
+    import PyPDF2
+
+    pdf1File = open('meetingminutes.pdf', 'rb')
+    pdf2File = open('meetingminutes2.pdf', 'rb')
+    pdf1Reader = PyPDF2.PdfFileReader(pdf1File)
+    pdf2Reader = PyPDF2.PdfFileReader(pdf2File)
+    pdfWriter = PyPDF2.PdfFileWriter()
+
+    for pageNum in range(pdf1Reader.numPages):
+        pageObj = pdf1Reader.getPage(pageNum)
+        pdfWriter.addPage(pageObj)
+
+    for pageNum in range(pdf2Reader.numPages):
+        pageObj = pdf2Reader.getPage(pageNum)
+        pdfWriter.addPage(pageObj)
+
+    pdfOutputFile = open('combinedminutes.pdf', 'wb')
+    pdfWriter.write(pdfOutputFile)
+    pdfOutputFile.close()
+    pdf1File.close()
+    pdf2File.close()
+        
+
+def f187():
+    # Rotating Pages
+    # file 'meetingminutes.pdf' must be in current directory!
+
+    import PyPDF2
+
+    minutesFile = open('meetingminutes.pdf', 'rb')
+    pdfReader = PyPDF2.PdfFileReader(minutesFile)
+    page = pdfReader.getPage(0)
+    page.rotateClockwise(90)
+    
+    pdfWriter = PyPDF2.PdfFileWriter()
+    pdfWriter.addPage(page)
+    resultPdfFile = open('rotatedPage.pdf', 'wb')
+    pdfWriter.write(resultPdfFile)
+    resultPdfFile.close()
+    minutesFile.close()
+
+def f188():
+    # Overlaying Pages
+    # files 'meetingminutes.pdf' and 'watermark.pdf' must exist in
+    # current directory!
+
+    import PyPDF2
+    
+    minutesFile = open('meetingminutes.pdf', 'rb')
+    pdfReader = PyPDF2.PdfFileReader(minutesFile)
+    minutesFirstPage = pdfReader.getPage(0)
+    pdfWatermarkReader = PyPDF2.PdfFileReader(open('watermark.pdf', 'rb'))
+    minutesFirstPage.mergePage(pdfWatermarkReader.getPage(0))
+    pdfWriter = PyPDF2.PdfFileWriter()
+    pdfWriter.addPage(minutesFirstPage)
+
+    for pageNum in range(1, pdfReader.numPages):
+        pageObj = pdfReader.getPage(pageNum)
+        pdfWriter.addPage(pageObj)
+
+    resultPdfFile = open('watermarkedCover.pdf', 'wb')
+    pdfWriter.write(resultPdfFile)
+    minutesFile.close()
+    resultPdfFile.close()
+        
+def f189():
+    # Encrypting PDFs 
+    import PyPDF2
+    pdfFile = open('meetingminutes.pdf', 'rb')
+    pdfReader = PyPDF2.PdfFileReader(pdfFile)
+    pdfWriter = PyPDF2.PdfFileWriter()
+    for pageNum in range(pdfReader.numPages):
+        pdfWriter.addPage(pdfReader.getPage(pageNum))
+
+    pdfWriter.encrypt('swordfish')
+    resultPdf = open('encryptedminutes.pdf', 'wb')
+    pdfWriter.write(resultPdf)
+    resultPdf.close()
+
+def f190():
+    # Combining Select Pages from Many PDFs
+
+    import PyPDF2, os
+
+    # Get all the PDF filenames.
+    pdfFiles = []
+    for filename in os.listdir('.'):
+        if filename.endswith('.pdf'):
+            pdfFiles.append(filename)
+
+    pdfFiles.sort(key=str.lower)
+    pdfWriter = PyPDF2.PdfFileWriter()
+
+    # Loop through all the PDF files.
+    for filename in pdfFiles:
+        pdfFileObj = open(filename, 'rb')
+        pdfReader = PyPDF2.PdfFileReader(pdfFileObj)
+        # TODO: Loop through all the pages (except the first) and 
+        # add them.
+        for pageNum in range(1, pdfReader.numPages):
+            pageObj = pdfReader.getPage(pageNum)
+            pdfWriter.addPage(pageObj)
+    
+    # Save the resulting PDF to a file.
+    pdfOutput = open('allminutes.pdf', 'wb')
+    pdfWriter.write(pdfOutput)
+    pdfOutput.close()
+
+def f191():
+    # Word Documents
+    # sudo pip3 install python-docx (install module 'python-docx')
+    # file 'demo.docx' must be in working directory.
+
+    import docx
+    
+    doc = docx.Document('demo.docx') # return a Document object
+    print(len(doc.paragraphs)) # a list of paragraph objects 
+
+    # string of the text in paragraph[0]:
+    print(doc.paragraphs[0].text)
+    # string of the text in paragraph[1]
+    print(doc.paragraphs[1].text)
+
+    # Each paragraph object has a list of Run objects
+    print(len(doc.paragraphs[1].runs))
+    print(doc.paragraphs[1].runs[0].text)
+    print(doc.paragraphs[1].runs[1].text)
+    print(doc.paragraphs[1].runs[2].text)
+    print(doc.paragraphs[1].runs[3].text)
+
+def f192():
+    # Getting the Full Text from a .docx File 
+
+    import docx
+    
+    def getText(filename):
+        doc = docx.Document(filename)
+        fullText = []
+        for para in doc.paragraphs:
+            # fullText.append(para.text)
+            fullText.append(' ' + para.text)
+
+        return '\n'.join(fullText)
+
+    print(getText('demo.docx'))
+
+def f193():
+    # Styling Paragraph and Run Attributes
+    print('''
+    The string values for the default Word styles are:
+    Normal BodyText BodyText2 BodyText3 Caption Heading1 Heading2
+    Heading3 Heading4 Heading5 Heading6 Heading7 Heading8 Heading9
+    IntenseQuote List List2 List3 ListBullet ListBullet2 ListBullet3
+    ListContinue ListContinue2 ListContinue3 ListNumber ListNumber2
+    ListNumber3 ListParagraph MacroText NoSpacing Quote Subtitle
+    TOCHeading Title
+    ''')
+    
+    print('''
+    Run attributes are:    
+    bold italic underline strike double_strike all_caps small_caps
+    shadow outline rtl imprint emboss
+    ''')
+
+
+def f194():
+    # Creating Word Documents with Nondefault Styles
+    import docx
+
+    doc = docx.Document('demo.docx')
+    doc.paragraphs[0].text
+    'Document Title'
+    print(doc.paragraphs[0].style)    #'Title'
+    doc.paragraphs[0].style = 'Normal'
+    print(doc.paragraphs[1].text)
+    # returns:
+    # 'A plain paragraph with some bold and some italic'
+    (doc.paragraphs[1].runs[0].text, doc.paragraphs[1].runs[1].text, doc.
+    paragraphs[1].runs[2].text, doc.paragraphs[1].runs[3].text)
+    # output:
+    # ('A plain paragraph with some ', 'bold', ' and some ', 'italic')
+    
+    doc.paragraphs[1].runs[0].style = 'QuoteChar'
+    doc.paragraphs[1].runs[1].underline = True
+    doc.paragraphs[1].runs[3].underline = True
+    doc.save('restyled.docx')
+
+def f195():
+    # Writing Word Documents
+    import docx
+
+    doc = docx.Document()
+    print(doc.add_paragraph('Hello world!'))
+    doc.save('helloworld.docx')
+
+def f196():
+    # Add paragraphs
+
+    import docx
+    
+    doc = docx.Document()
+    doc.add_paragraph('Hello world!')
+
+    paraObj1 = doc.add_paragraph('This is a second paragraph.')
+    paraObj2 = doc.add_paragraph('This is a yet another paragraph.')
+    paraObj1.add_run(' This text is being added to the second paragraph.')
+    
+    doc.save('multipleParagraphs.docx')
+    
+def f197():
+    # Adding Headings
+    
+    import docx
+
+    doc = docx.Document()
+    doc.add_heading('Header 0', 0)
+    doc.add_heading('Header 1', 1)
+    doc.add_heading('Header 2', 2)
+    doc.add_heading('Header 3', 3)
+    doc.add_heading('Header 4', 4)
+    doc.save('headings.docx')
+
+def f198():
+    # Adding Line and Page Breaks and Adding Pictures
+    
+    import docx
+
+    doc = docx.Document()
+    doc.add_paragraph('This is on the first page!')
+    # Following didn't work, for page break
+    # doc.paragraphs[0].runs[0].add_break(docx.text.WD_BREAK.PAGE)
+    doc.add_page_break()
+    doc.add_paragraph('This is on the second page!')
+    # doc.save('twoPage.docx')
+    doc.add_picture('zophie.png', width=docx.shared.Inches(1),
+                    height=docx.shared.Cm(4))
+    doc.save('twoPage.docx')
+
+def f199():
+    # reserved
     print()
+
+def f200():
+    # reserved
+    print()
+
+def f201():
+    # Working with CSV Files and JSON Data
+    print()
+
+def f202():
+    #
+    print()    

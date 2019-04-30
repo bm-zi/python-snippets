@@ -57,6 +57,24 @@ def help():
     os.unlink('temp')
     resetScreen()
 
+def exitProg():
+    import os, shutil
+
+    folder = '.'
+    for the_file in os.listdir(folder):
+        file_path = os.path.join(folder, the_file)
+        try:
+            if os.path.isfile(file_path) and \
+                not file_path == './runme.py' and  \
+                not file_path == './list' and  \
+                not file_path == './functions.py':
+                os.unlink(file_path)
+            elif os.path.isdir(file_path): shutil.rmtree(file_path)
+        except Exception as e:
+            print(e)
+
+    os.system('clear')        
+    sys.exit()        
 
 def resetScreen():
     # Resize and clear the screen
@@ -280,7 +298,7 @@ def mainBlock():
                 str(i) == 'Q' or \
                 str(i) == 'quit' or \
                 str(i) == 'exit':      
-                sys.exit()
+                exitProg()
 
             if str(i) == '':
                 restart()
@@ -326,14 +344,14 @@ def mainBlock():
             print('Press any key to continue!', end='')
             input()
         
-        # Caught error when input is a string:    
+        # Caught error when input is a string:
         except ValueError:
             print('Not an integer!')
             restart()
             time.sleep(1)
 
         # Caught error when input integer is bigger than list 
-        # items numbers:    
+        # items numbers:
         except AttributeError:
             print('Either entered number is out of range,\nor function ' 
                 + varstring1 + ' might have some errors!\n')

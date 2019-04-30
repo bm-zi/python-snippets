@@ -161,5 +161,50 @@
 161 -  Sending Special Keys
 162 -  Opening Excel Documents with OpenPyXL - Starting Chapter 12
 163 -  Getting Cells from the Sheets
-164 -   
-
+164 -  excel sheet cell() method
+165 -  Determine the size of the sheet
+166 -  Converting Between Column Letters and Numbers
+167 -  Getting Rows and Columns from the Sheets
+168 -  Access the values of cells in a particular row or column
+169 -  Reading Data from a Spreadsheet
+170 -  Writing Excel Documents
+171 -  Create and save a new excel file
+172 -  Creating and Removing Sheets
+173 -  Writing Values to Cells
+174 -  Project: Updating a Spreadsheet
+175 -  Setting the Font Style of Cells
+176 -  Font object
+177 -  Formula
+178 -  loading workbook with data_only argument
+179 -  Setting Row Height and Column Width
+180 -  Merging and Unmerging Cells
+181 -  Unmerge cells
+182 -  Freeze Panes
+183 -  Charts
+184 -  Extracting Text from PDFs - Starting Chapter 13
+185 -  Decrypting PDFs
+186 -  copy pages from one PDF document to another
+187 -  Creating PDFs
+188 -  Overlaying Pages
+189 -  Encrypting PDFs
+190 -  Combining Select Pages from Many PDFs
+191 -  Word Documents
+192 -  Getting the Full Text from a .docx File
+193 -  Styling Paragraph and Run Objects
+194 -  Creating Word Documents with Nondefault Styles
+195 -  Writing Word Documents
+196 -  Add paragraphs
+197 -  Adding Headings
+198 -  Adding Line and Page Breaks and Adding Pictures
+199 -  reserved
+200 -  reserved
+201 -  Work with CSV and JSON Data - Starting Chapter 14
+202 -  
+203 -
+204 -
+205 -
+206 -
+207 -
+208 -
+209 -
+210 -
