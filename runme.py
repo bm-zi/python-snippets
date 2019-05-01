@@ -30,7 +30,11 @@ def help():
     if you type only numbers in search, it opens the list from th-
     at item number. Any other keys or 'Enter' will roll the brows-
     ing list in ascending order.
-    
+
+    f[numbers]
+    If try this format(for example f45, f67 or 204), then the con-
+    tent of the respective functions will be displayed, fetching -
+    the content of the function from the file functions.py
     ..............................................................
     |||||||||||||||| Keys for main prompt (# ) |||||||||||||||||||
     ..............................................................
@@ -74,7 +78,7 @@ def exitProg():
             print(e)
 
     os.system('clear')        
-    sys.exit()        
+    sys.exit()
 
 def resetScreen():
     # Resize and clear the screen
@@ -95,9 +99,32 @@ def logo():
     print(logo)
     #print(time.strftime("%B %d, ") + time.strftime("%H:%M"))
 
+def displayFunction(fnum):
+    with open('functions.py') as infile, open('temp', 'w') as outfile:
+        copy = False
+        for line in infile:
+            if line.strip().startswith('def f' + str(fnum) + '():'):
+                copy = True
+            elif line.strip().startswith('def f' + str(int(fnum)+1) + '():' ):
+                copy = False
+            elif copy:
+                outfile.write(line)
+    infile.close()
+    outfile.close()
+
+    # prepend a line to file temp
+    firstline = '    Content for function f' + str(fnum) + '\n' + \
+                '    ..........................' + '\n\n'
+
+    open('tempfile', 'w').write( firstline + open('temp', 'r').read())
+    os.rename('tempfile', 'temp')
+    resetScreen()
+               
+    os.system('less temp')    
+    os.unlink('temp')
 
 def searchFiles(response):
-    resetScreen()          
+    resetScreen()        
     print('SEARCH ALL FUNCTIONS FOR PATTERN : \'' + response  + '\' ')
     print('==================================')
     with open('functions.py') as f2:
@@ -245,6 +272,11 @@ def rolling_list():
                 response == '.' or \
                 response == ' ': 
                 return
+            elif re.match(r'^f[1-7]', response):
+                reObj = re.compile(r'(f)(\d+)')
+                mo = reObj.search(response)
+                item = mo.group(2)
+                displayFunction(item)
             elif response == '\\\\':
                 sys.exit()
             elif response == '?':

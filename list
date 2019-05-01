@@ -196,15 +196,15 @@
 196 -  Add paragraphs
 197 -  Adding Headings
 198 -  Adding Line and Page Breaks and Adding Pictures
-199 -  reserved
-200 -  reserved
-201 -  Work with CSV and JSON Data - Starting Chapter 14
-202 -  
-203 -
-204 -
-205 -
-206 -
-207 -
-208 -
-209 -
-210 -
+199 -  Reserved
+200 -  Reserved
+201 -  Read data from a CSV file - Starting Chapter 14
+202 -  Reading Data from Reader Objects in a for Loop
+203 -  Writer object
+204 -  The delimeter and lineterminator keyword arguments
+205 -  Project: Removing the Header from CSV Files
+206 -  JSON and APIs
+207 -  Reading JSON with the loads() Function
+208 -  Writing JSON with the dumps() Function
+209 -  Project: Fetching Current Weather Data
+210 -  

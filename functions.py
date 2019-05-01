@@ -3563,9 +3563,214 @@ def f200():
     print()
 
 def f201():
-    # Working with CSV Files and JSON Data
-    print()
+    # Read data from a CSV file with csv module,
+    # you need to create a Reader object
+
+    # csv is built in module
+    import csv
+    from pprint import pprint
+
+    # open a file just any other text file, with open()
+    exampleFile = open('example.csv')
+
+    # instead of read/readlines for files use reader method:
+    exampleReader = csv.reader(exampleFile) # returns a Reader obj
+    
+    # To access values, convert the reader object to a list:
+    exampleData = list(exampleReader)
+    pprint(exampleData)
 
 def f202():
-    #
-    print()    
+    # Reading Data from Reader Objects in a for Loop
+    
+    import csv
+
+    exampleFile = open('example.csv')
+    exampleReader = csv.reader(exampleFile)
+
+    for row in exampleReader:
+        # to get the row number in Reader object use 
+        # variable line_num
+        print('Row #' + str(exampleReader.line_num) + \
+            ' ' + str(row))
+
+        # The Reader object can be looped over only once
+
+def f203():
+    # Writer object
+    # A Writer object lets you write data to csv file.
+
+    import csv
+    
+    # Open a file in write mode:
+    outputFile = open('output.csv', 'w', newline='')
+    # If you forget the newline='' keyword argument in open(), the 
+    # CSV file will be double-spaced.
+
+    # Create a Writer object:
+    outputWriter = csv.writer(outputFile)
+
+    outputWriter.writerow(['spam', 'eggs', 'bacon', 'ham'])
+    outputWriter.writerow(['Hello, world!', 'eggs', 'bacon', 'ham'])
+    outputWriter.writerow([1, 2, 3.141592, 4])
+
+    outputFile.close()
+    '''
+    $ cat output.csv 
+    spam,eggs,bacon,ham
+    "Hello, world!",eggs,bacon,ham
+    1,2,3.141592,4
+    '''
+
+def f204():
+    # The 'delimiter' and 'lineterminator' keyword arguments
+    # We change the above arguments to change the default values.
+    # Arguments default values are comma and '\n'.
+
+    import csv
+
+    csvFile = open('example.tsv', 'w', newline='')
+    csvWriter = csv.writer(csvFile, delimiter='\t', 
+                            lineterminator='\n\n')
+
+    csvWriter.writerow(['apples', 'oranges', 'grapes'])
+    csvWriter.writerow(['eggs', 'bacon', 'ham'])
+    csvWriter.writerow(['spam', 'spam', 'spam', 'spam', 'spam', 
+                        'spam'])
+
+    csvFile.close()
+
+def f205():
+    # Project: Removes the header from all CSV files in the current
+    # working directory.
+    
+    import csv, os
+
+    os.makedirs('headerRemoved', exist_ok=True)
+
+    # Step 1: Loop Through Each CSV File
+    # ...................................
+    for csvFilename in os.listdir('.'):
+        if not csvFilename.endswith('.csv'):
+            continue
+            # makes the for loop move on to the next
+            # filename when it comes across a non-CSV file
+
+        print('Removing header from ' + csvFilename + '...')
+
+        # Step 2: Read in the CSV File (skipping first row)
+        # .................................................
+        csvRows = []
+        csvFileObj = open(csvFilename)
+        readerObj = csv.reader(csvFileObj)
+        for row in readerObj:
+            if readerObj.line_num == 1:
+                continue  # skip first row
+            csvRows.append(row)
+        csvFileObj.close()
+
+        # Step 3: Write Out the CSV File Without the First Row
+        # .....................................................
+        csvFileObj = open(os.path.join('headerRemoved', 
+                          csvFilename), 'w', newline='')
+
+        csvWriter = csv.writer(csvFileObj)
+        for row in csvRows:
+            csvWriter.writerow(row)
+        csvFileObj.close()    
+
+def f206():
+    # What is JSON
+    print('''
+    JavaScript Object Notation is a popular way to format data as 
+    a single human-readable string. JSON is the native way that J-
+    avaScript programs write their data structures and usually re-
+    sembles what Python’s pprint function would produce. Example: 
+    {"name": "Zophie", "isCat": true,
+    "miceCaught": 0, "napsTaken": 37.5,
+    "felineIQ": null}
+    
+    Many websites offer JSON content as a way for programs to int-
+    eract with the website. This is known as providing an API. Ac-
+    cessing an API is the same as accessing any other web page via 
+    a URL. The difference is that the data returned by an API is -
+    formatted with JSON. Facebook, Twitter, Yahoo, Google, Tumblr, 
+    Wikipedia, Flickr, Data.gov, Reddit, IMDb, Rotten Tomatoes, L-
+    inkedIn, and many other offer APIs for programs to use. Some -
+    of these sites require registration, which is almost always f-
+    ree. You’ll have to find documentation for what URLs your pro-
+    gram needs to request in order to get the data you want, as w-
+    ell as the general format of the JSON data structures that are 
+    returned. This documentation should be provided by whatever s-
+    ite is offering the API; if they have a “Developers” page, lo-
+    ok for the documentation there. What you can do with JSOn:
+    - Scrape raw data from websites.
+      Accessing APIs and parsing HTML with Beautiful Soup.
+    - Automatically download new posts from one of your social ne-
+      twork accounts and post them to another account.
+    - Pulling data from IMDb, Rotten Tomatoes, and Wikipedia and -
+      putting it into a single text file.
+    ''')
+
+def f207():
+    # Reading JSON with the loads() Function
+    # To translate a string containing JSON data into a Python 
+    # value, pass it to the json.loads() function. 
+    
+    # JSON strings always use double quotes
+    stringOfJsonData = '{"name": "Zophie", "isCat": true, \
+                        "miceCaught": 0, "felineIQ": null}'
+
+    import json   # built-in module
+    jsonDataAsPythonValue = json.loads(stringOfJsonData)
+
+    print(jsonDataAsPythonValue)
+
+def f208():
+    # Writing JSON with the dumps() Function
+    # The json.dumps() function ("dump string") translate a Python
+    # value into a string of JSON-formatted data.
+
+    pythonValue = {'isCat': True, 'miceCaught': 0, 
+                    'name': 'Zophie', 'felineIQ': None}
+
+    import json
+    stringOfJsonData = json.dumps(pythonValue)
+
+    print(stringOfJsonData)
+
+def f209():
+    # Project: Fetching Current Weather Data
+
+    import json, requests, sys
+
+    # Step 1: Get Location from the Command Line Argument
+    # # Compute location from command line arguments.
+    # if len(sys.argv) < 2:
+    #     print('Usage: quickWeather.py location')
+    #     sys.exit()
+
+    # location = ' '.join(sys.argv[1:])
+    location = 'San Francisco CA'
+
+    # Step 2: Download the JSON Data
+    url ='http://api.openweathermap.org/data/2.5/forecast/daily?q=%s&cnt=3' % (location)
+    response = requests.get(url)
+    response.raise_for_status()
+
+    # Load JSON data into a Python variable.
+    weatherData = json.loads(response.text)
+
+    # Print weather descriptions.
+    w = weatherData['list']
+    print('Current weather in %s:' % (location))
+    print(w[0]['weather'][0]['main'], '-', w[0]['weather'][0]['description'])
+    print()
+    print('Tomorrow:')
+    print(w[1]['weather'][0]['main'], '-', w[1]['weather'][0]['description'])
+    print()
+    print('Day after tomorrow:')
+    print(w[2]['weather'][0]['main'], '-', w[2]['weather'][0]['description'])
+
+def f210():
+    print()
