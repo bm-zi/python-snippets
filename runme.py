@@ -61,10 +61,18 @@ def help():
     os.unlink('temp')
     resetScreen()
 
+# ...................
+# Function exitProg()
+# ...................
 def exitProg():
+    # This function Removes all files and folders in current work-
+    # ing direcctory, except of files runme.py, functions.py and -
+    # file list
+
     import os, shutil
 
-    folder = '.'
+    folder = '.'  # Current working directory
+
     for the_file in os.listdir(folder):
         file_path = os.path.join(folder, the_file)
         try:
@@ -77,44 +85,63 @@ def exitProg():
         except Exception as e:
             print(e)
 
-    os.system('clear')        
+    os.system('clear')
     sys.exit()
 
+# ......................
+# Function resetScreen()
+# ......................
 def resetScreen():
-    # Resize and clear the screen
+    # This function resizes the terminal and clears the screen
     print('\x1b[8;30;90t')
     os.system('clear')
 
-
+# ....................
+# Function highlight()
+# ....................
 def highlight(text):
+    # This function highlights the string argument 'text' and will
+    # print out the string in bold
     os.system("tput smso")
     print(text)
     os.system("tput rmso")
-    
 
+# ...............    
+# Function logo()
+# ...............
 def logo():
+    # This function prints the program title and introduction
+
     logo = '''┌───────────────────────────────────────────┐
 │ Welcome to Interactive Python Programming │
 └───────────────────────────────────────────┘''' 
     print(logo)
     #print(time.strftime("%B %d, ") + time.strftime("%H:%M"))
 
+# ..........................
+# Function displayFunction()
+# ..........................
 def displayFunction(fnum):
+    # This function gets the content of the function f[fnum] from 
+    # within file functions.py and prints that content
+
+    # In following loop, extract the content between definition of
+    # function f(n) and the next following function f(n+1)x
     with open('functions.py') as infile, open('temp', 'w') as outfile:
         copy = False
         for line in infile:
-            if line.strip().startswith('def f' + str(fnum) + '():'):
+            if line.strip().startswith('def f'+ str(fnum) +'():'):
                 copy = True
-            elif line.strip().startswith('def f' + str(int(fnum)+1) + '():' ):
+            elif line.strip().startswith('def f'+ str(int(fnum)+1) +'():'):
                 copy = False
             elif copy:
                 outfile.write(line)
     infile.close()
     outfile.close()
 
-    # prepend a line to file temp
+    # prepend a line to temporary output file temp
     firstline = '    Content for function f' + str(fnum) + '\n' + \
-                '    ..........................' + '\n\n'
+                '    ==========================' + '\n\n'
 
     open('tempfile', 'w').write( firstline + open('temp', 'r').read())
     os.rename('tempfile', 'temp')
@@ -123,9 +150,19 @@ def displayFunction(fnum):
     os.system('less temp')    
     os.unlink('temp')
 
+# ......................
+# Function searchFiles()
+# ......................
 def searchFiles(response):
-    resetScreen()        
-    print('SEARCH ALL FUNCTIONS FOR PATTERN : \'' + response  + '\' ')
+    # This function does two searches in files functions.py and -
+    # file list looking for the pattern as argument passwd to this
+    # functioin, 'response'
+
+    #
+    # Search in file functions.py
+    #
+    resetScreen() 
+    print('SEARCH ALL FUNCTIONS FOR PATTERN : \'' +response+'\' ')
     print('==================================')
     with open('functions.py') as f2:
         defLines = []
@@ -147,8 +184,8 @@ def searchFiles(response):
 
     newlist = []
     for i in resultList:
-      if i not in newlist:
-        newlist.append(i)
+        if i not in newlist:
+            newlist.append(i)
         
     items = []
     fp = open("functions.py")
@@ -177,18 +214,26 @@ def searchFiles(response):
     # print('................................')    
     # for i in range(len(matchline)):
     #     print(matchline[i], end='')
-            
-
+    
+    #        
+    # Search in file list
+    # 
     with open('list') as f1:
-        print('\nMAIN MENU SERACH RESULT FOR PATTERN: \'' + response  + '\' ')
+        print('\nMAIN MENU SERACH RESULT FOR PATTERN: \'' + \
+            response  + '\' ')
         print('====================================')
         for l in f1:
             if re.search(response, l, re.I):
                 print(l.strip())
     f1.close()
 
-
+# ....................
+# Function lineCount()
+# ....................
 def lineCount(fileName):
+    # This function returns the number of the lines for the file,
+    # passed as the argument to this function
+
     with open(fileName) as f:
                 line_count = 0
                 for line in f:
@@ -196,12 +241,19 @@ def lineCount(fileName):
 
     return line_count
 
+# ..................
+# Function restart()
+# ..................
 def restart():
+    # This function restarts the program, to initial state
+
     print('Restarting Program ... ')
     time.sleep(1)
     os.execl(sys.executable, sys.executable, * sys.argv)
 
-
+# ......................
+# Function displayCode()
+# ......................
 def displayCode(i):
     flist = open("functions.py").readlines()
 
@@ -217,10 +269,19 @@ def displayCode(i):
             parsing = True
 
     return lines
-            
 
+# .....................    
+# Function rolling_list
+# .....................
 def rolling_list():
+    # This function has two nested functions: listDisplay() and -
+    # runner(), that handles all operation based on user input in
+    # search prompt, having the form of 'Search in menu for: '
+
     def listdisplay(start_line, iterate):
+        # This function returns a list of items reading from file 
+        # list. The passed arguments, specify how many items will 
+        # be displayed, from starting item number(start_line)
         
         start_line = int(start_line) - 1
 
@@ -242,6 +303,8 @@ def rolling_list():
             return
 
     def runner(stln):
+        # This function actions based on the user input and will -
+        # iterate the list of items ...
         resetScreen()
 
         lines = []
@@ -293,18 +356,6 @@ def rolling_list():
                 runner(response)
                 break
             else:
-                '''
-                with open('list') as f:
-                    resetScreen()
-                    print('Result for searching \'' + response  + '\' : ')
-                    for l in f:
-                        if re.search(response, l, re.I):
-                            print(l.strip())
-                        else:
-                            continue
-                print('')
-                return
-                '''
                 searchFiles(response)
                 print('')
                 return
@@ -312,10 +363,13 @@ def rolling_list():
         return
     runner(1)
 
-############################
-#### MAIN PROGRAM BLOCK ####
-############################
+# ....................
+# Function mainBlock()
+# ....................
 def mainBlock():
+    # This function is building up the main loop of the program and
+    # handles all operations, based on user input received in main
+    # prompt with the form of '# '
     while True:
         resetScreen()
         rolling_list()
@@ -341,9 +395,12 @@ def mainBlock():
 
             resetScreen()
 
-            print('|' * 20 + ' CODE EXAMPLE No: ' + str(num) + ' ' + '|' * 20 )
+            print('|' * 20 + ' CODE EXAMPLE No: ' + str(num) + \
+                 ' ' + '|' * 20 )
             
-            head1 = '|' * 20 + ' CODE EXAMPLE No: ' + str(num) + ' ' + '|' * 20 + '\n'
+            head1 = '|' * 20 + ' CODE EXAMPLE No: ' + str(num) + \
+                    ' ' + '|' * 20 + '\n'
+
             tempFile = open('temp', 'a')
             tempFile.write(head1)
             lines = displayCode(num)
@@ -376,13 +433,13 @@ def mainBlock():
             print('Press any key to continue!', end='')
             input()
         
-        # Caught error when input is a string:
+        # Catching error when input is a string:
         except ValueError:
             print('Not an integer!')
             restart()
             time.sleep(1)
 
-        # Caught error when input integer is bigger than list 
+        # Catching error when input integer is bigger than list 
         # items numbers:
         except AttributeError:
             print('Either entered number is out of range,\nor function ' 

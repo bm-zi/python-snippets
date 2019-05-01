@@ -10,7 +10,6 @@ import pyperclip
 
 def f1():
     # Math Operators
-    # --- CHAPTER 1 --- 
     print(2+2)  # 4
     print(2)    # 2     
     print(2 + 3 * 6)    # 20
@@ -34,7 +33,8 @@ def f3():
     
     print('Hello world!')
     print('What is your name?') # ask for their name,
-                                # name has to be entered as a string like 'Jim' in python2
+                                # name has to be entered as a str-
+                                # ing like 'Jim' in python2
     myName = input()
     print('It is good to meet you, ' + myName)
     print('The length of your name is:')
@@ -43,7 +43,6 @@ def f3():
     myAge = input()
     print('You will be ' + str(int(myAge) + 1) + ' in a year.')
 
-
 def f4():
     # Function len()
     print(len('hello'))
@@ -51,7 +50,9 @@ def f4():
 
 def f5():
     # Function str()
-    print('I am ' + str(29) + ' years old.')  # you get an error if you just use 29 without functionstr()
+    print('I am ' + str(29) + ' years old.')  
+
+    # you get an error if you just use 29 without function str()
 
 def f6():
     # Function str(), int(), float
