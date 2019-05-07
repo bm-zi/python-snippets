@@ -1,12 +1,7 @@
-#!/usr/bin/env  python
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
 # Author: bm-zi
-
-import os
-import re
-import pyperclip
-
 
 def f1():
     # Math Operators
@@ -29,8 +24,8 @@ def f2():
     print('Alice' * 5)  # AliceAliceAliceAliceAlice
 
 def f3():
-    # First Python Program
-    
+    # First Python Program - print user input
+
     print('Hello world!')
     print('What is your name?') # ask for their name,
                                 # name has to be entered as a str-
@@ -44,7 +39,7 @@ def f3():
     print('You will be ' + str(int(myAge) + 1) + ' in a year.')
 
 def f4():
-    # Function len()
+    # Function len() - string length
     print(len('hello'))
     print(len('My very energetic monster just scarfed nachos.'))
 
@@ -59,7 +54,7 @@ def f6():
     # The str() , int() , and float() functions will evaluate to the string,
     # integer, and floating-point forms of the value you pass, respectively.
     print(str(0))     # 0
-    print(str(-3.14)) # -3.14   
+    print(str(-3.14)) # -3.14
     print(int('42'))  # 42
     print(int('-99')) # -99
     print(int(1.25))  # 1
@@ -74,8 +69,8 @@ def f7():
     spam = input()  
     spam = int(spam)
     print(spam)   # If you type a string that cannot be converted to integer,
-                  # you will get an error shows that the variable is not defined
-                  # These are error:  int('99.99') int('twelve')
+                    # you will get an error shows that the variable is not defined
+                    # These are error:  int('99.99') int('twelve')
 
     print(int(7.7))      # 7
     print(int(7.7) + 1)  # 8
@@ -90,14 +85,14 @@ def f8():
     # Boolean data types
     # --- CHAPTER 2 ---
     # Boolean data types are having values: False and True
-    
+
     print(42 == 42)   # True
     print(42 == 99)   # False
     print(2 != 3)     # True
     print(2 != 2)     # False 
-    
+
     # The == and != operators can actually work with values of any data type.
-    
+
     print('hello' == 'hello')   # True
     print('hello' == 'Hello')   # False
     print('dog' != 'cat')       # True
@@ -105,14 +100,14 @@ def f8():
     print(True != False)        # True
     print(42 == 42.0)           # True
     print(42 == '42')           # False
-    
+
     print(42 < 100)         # True
     print(42 > 100)         # False
     print(42 < 42)          # False
-    
+
     eggCount = 42
     print(eggCount <= 42)   # True
-    
+
     myAge = 29
     print(myAge >= 10)      # True
 
@@ -123,14 +118,14 @@ def f9():
     print(True and False)   # False
     print(False and True)   # False
     print(False and False)  # False
-    
-    
+
+
     # or operator
     print(True or True)     # True
     print(True or False)    # True
     print(False or True)    # True
     print(False or False)   # False
-    
+
     # not operator
     print(not True)     # False
     print(not False)    # True
@@ -146,7 +141,7 @@ def f11():
     # if,elif,else conditional
     name='alice'
     age=20
-    
+
     if name == 'Alice':
         print('Hi, Alice.')
     elif age < 12:
@@ -190,18 +185,23 @@ def f15():
         print('Who are you?')
         name = input()
         if name != 'Joe':
-            continue   # restart the loop      
+            continue   # restarts the loop      
         print('Hello, Joe. What is the password? (It is a fish.)')
         password = input()
         if password == 'swordfish':
             break      # stops the loop
     print('Access granted.')
 
+    # Note:
+    # A combination of 'if not statement' with 'continue' helps if
+    # the condition is not true then loops resets, otherwise it k-
+    # eeps going to the next statement in loop. 
+
 def f16():
     # empty value is considered False
     name = ''
     while not name:     
-        print('Enter your name:')
+        print('Entenning the loop start from beginingr your name:')
         name = input()
     print('How many guests will you have?')
     numOfGuests = int(input())
@@ -216,7 +216,7 @@ def f17():
         print('Jimmy Five Times (' + str(i) + ')')
 
 def f18():
-    # equivalent while loop
+    # while loop equivalent to for loop
     print('My name is')
     i = 0
     while i < 5:
@@ -224,7 +224,7 @@ def f18():
         i = i + 1
 
 def f19():
-    # Another for loop example - sum of numbers from 1 to 100
+    # for loop example - sum of numbers from 1 to 100
     total = 0
     for num in range(101):
         total = total + num
@@ -235,14 +235,14 @@ def f20():
     for i in range(12, 16):
         print(i)
 
-    
+
     print('.' * 10)
 
     for i in range(0, 10, 2):
         print(i)
 
     print('.' * 10) 
-    
+
     for i in range(5, -1, -1):
         print(i)
 
@@ -318,11 +318,14 @@ def f25():
     r = random.randint(1, 9)
     fortune = getAnswer(r)
     print(fortune)
+    # return exits the fuction block
 
 def f26():
-    # None
-    # 'None' is a value-without-value (like null or undefined in other languages.)
-    spam = print('Hello!') # prints returns no value that is known as 'None'
+    # None type
+    # 'None' is a value-without-value 
+    # (like null or undefined in other languages.)
+    spam = print('Hello!') # print function returns no value that 
+                            # is known as 'None'
     print(None == spam)
 
     # return without value returns value 'None'
@@ -331,14 +334,14 @@ def f26():
 def f27():
     # Optional keywords for functions
     # functions have optional keyword like end and sep in print() function
-    
-    print('Hello', end='')                 # The 'end' keyword cause to ignore the new line.
-    print('World')                         # By defualt print prints a newline after printing 
-                                           # its argument
+
+    print('Hello', end='')    # The 'end' keyword cause to ignore the new line.
+    print('World')            # By defualt print prints a newline after printing 
+                                # its argument
     print('cats', 'dogs', 'mice')
     print('cats', 'dogs', 'mice', sep=',') # the function print will automatically 
-                                           # separates multiple string values
-                                           # with a single space.
+                                            # separates multiple string values
+                                            # with a single space.
 
 def f28():
     # Local and Global Variables with the Same Name
@@ -374,7 +377,7 @@ def f29():
 
 def f30():
     # Exception Handling
-     
+
     def spam(divideBy):
         try:                        # Potential error code is in try clause
             return 42 / divideBy
@@ -415,7 +418,7 @@ def f32():
     for guessesTaken in range(1, 7):
         print('Take a guess.')
         guess = int(input())
-        
+
         if guess < secretNumber:
             print('Your guess is too low.')
         elif guess > secretNumber:
@@ -453,7 +456,7 @@ def f34():
     print(spam)
     print(spam[0][1])
     print(spam[1][4])
-    
+
 def f35():
     # Lists : negative indexes
     spam = ['cat', 'bat', 'rat', 'elephant']
@@ -506,7 +509,7 @@ def f40():
     print(spam)
     del spam[2]
     print(spam)
-    
+
 def f41():
     # Lists : working with lists
 
@@ -621,7 +624,7 @@ def f46():
 
 def f47():
     # Methods - adding values to lists with append() and insert() methods
-    
+
     spam = ['cat', 'dog', 'bat']
     spam.append('moose')
     print(spam)
@@ -681,7 +684,7 @@ def f50():
     # much more elegant version of previous 8 ball
     import random
     messages = ['It is certain',
-    'It is decidedly so',
+                'It is decidedly so',
     'Yes definitely',
     'Reply hazy try again',
     'Ask again later',
@@ -726,7 +729,7 @@ def f52():
     eggs = [1, 2, 3]
     eggs = [4, 5, 6] # The list value in eggs isn’t being changed here; is overwriiten.
     print(eggs)
-    
+
     print('The actula modification is as following: ')
     eggs = [1, 2, 3]
     del eggs[2]
@@ -800,7 +803,7 @@ def f55():
 
     def eggs(someParameter):
         someParameter.append('Hello')
-    
+
     spam = [1, 2, 3]
     eggs(spam)
     print(spam)
@@ -824,8 +827,8 @@ def f56():
 
     import copy
     spam = ['A', 'B', 'C', 'D']
-    cheese = copy.copy(spam)  # creates a second list that can be modified 
-                              # ­independently of the first.
+    cheese = copy.copy(spam)  # creates a second list that can be
+                              # modified ­independently of the first.
     cheese[1] = 42
     print('copy.copy')
     print(spam)
@@ -837,7 +840,7 @@ def f56():
     print(spam)
     print(cheese)
     print(milk)
- 
+
 def f57():
     grid = [['.','.','.','.','.','.'],
             ['.','0','0','.','.','.'],
@@ -850,13 +853,13 @@ def f57():
             ['.','.','.','.','.','.']]
 
     print(grid)
-            
+
 def f58():
     # Dictionary Data Type
     myCat = {'size': 'fat', 'color': 'grey', 'disposition': "loud" }
     print(myCat['size'])
     print('My cat has ' + myCat['color'] + ' fur.')
-    
+
     # Dictionaries can use integer values as keys, like lists.
     # There is no item order in dictionaries.
     spam = {12345: 'Luggage Combination', 42: 'The Answer'}
@@ -982,7 +985,7 @@ def f66():
     for character in message:
         count.setdefault(character, 0)
         count[character] = count[character] + 1
-    
+
     print(count)
 
     '''
@@ -1017,7 +1020,7 @@ def f67():
 def f68():
     # TIC-TOC-TOE - using dictionary to model the board
     theBoard = {'top-L': ' ', 'top-M': ' ', 'top-R': ' ', 'mid-L': ' ', 'mid-M': ' ', 
-            'mid-R': ' ', 'low-L': ' ', 'low-M': ' ', 'low-R': ' '}
+                'mid-R': ' ', 'low-L': ' ', 'low-M': ' ', 'low-R': ' '}
 
     def printBoard(board):
         print(board['top-L'] + '|'+ board['top-M'] + '|' + board['top-R'])
@@ -1037,7 +1040,7 @@ def f68():
             turn = 'O'
         else:
             turn = 'X'
-            
+
     printBoard(theBoard)
 
 def f69():
@@ -1045,7 +1048,7 @@ def f69():
     # more complex data structure
 
     allGuests = {'Alice': {'apples': 5, 'pretzels': 12},
-                'Bob': {'ham sandwiches': 3, 'apples': 2},
+                 'Bob': {'ham sandwiches': 3, 'apples': 2},
                 'Carol': {'cups': 3, 'apple pies': 1}}
 
     def totalBrought(guests, item):
@@ -1088,7 +1091,7 @@ def f72():
     # inside string has to be escaped.
     spam = 'That is Alice\'s cat.'
     print(spam)
-    
+
 def f73():
     # Raw Strings and escape characters
 
@@ -1101,11 +1104,11 @@ def f73():
     print(r'That is Carol\'s cat.')
 
     es = r'''Escape ccharacters
-    \' Single quote
-    \" Double quote
-    \t Tab
-    \n Newline (line break)
-    \\ Backslash'''
+        \' Single quote
+        \" Double quote
+        \t Tab
+        \n Newline (line break)
+        \\ Backslash'''
 
     print(es)
 
@@ -1140,7 +1143,7 @@ def f75():
         """This is a multiline comment to help
         explain what the spam() function does."""
         print('Hello!')
-    
+
     spam()
 
 def f76():
@@ -1166,11 +1169,11 @@ def f77():
 
 def f78():
     # String Methods: upper(), lower(), isupper(), and islower()
-    
+
     spam = 'Hello world!'
     spam = spam.upper()
     print(spam) 
-    
+
     spam = spam.lower()
     print(spam)
 
@@ -1186,10 +1189,10 @@ def f78():
     GREat
     I feel great too.
     '''
-  
+
 def f79():
     # String Methods: isupper(), and islower()
-   
+
     spam = 'Hello world!'
     print(spam.islower())
     print(spam.isupper())
@@ -1197,19 +1200,19 @@ def f79():
     print('abc12345'.islower())
     print('12345'.islower())
     print('12345'.isupper())
-    
+
     # upper and lower returns strings
     print('Hello'.upper())
     print('Hello'.upper().lower())
     print('Hello'.upper().lower().upper())
     print('HELLO'.lower())
     print('HELLO'.lower().islower())
-    
+
 def f80():
     # The isX String Methods
 
     print( 
-    # returns True if the string consists only of letters 
+        # returns True if the string consists only of letters 
     # and is not blank.
     'hello'.isalpha(),
     'hello123'.isalpha(),
@@ -1218,7 +1221,7 @@ def f80():
     # letters and numbers
     'hello123'.isalnum(),
     'hello'.isalnum(),
-    
+
     # isdecimal() returns True if the string consists only of numeric 
     # characters and is not blank.
     '123'.isdecimal(),
@@ -1268,7 +1271,7 @@ secr3t
 def f82():
     # startswith() and endswith() String Methods    
     print(
-    'Hello world!'.startswith('Hello'),
+        'Hello world!'.startswith('Hello'),
     # True
     'Hello world!'.endswith('world!'),
     # True
@@ -1288,7 +1291,7 @@ def f83():
     print(', '.join(['cats', 'rats', 'bats']))        
     print(' '.join(['My', 'name', 'is', 'Simon']))    
     print('ABC'.join(['My', 'name', 'is', 'Simon']))  
-    
+
     print('My name is Simon'.split())                 
     print('MyABCnameABCisABCSimon'.split('ABC'))
     print('My name is Simon'.split('m'))
@@ -1303,7 +1306,7 @@ def f84():
     Please do not drink it.
     Sincerely,
     Bob'''
-    
+
     print(spam.split('\n'))
 
 def f85():
@@ -1345,7 +1348,7 @@ def f87():
 
 def f88():
     # Copy and Paste Strings with the pyperclip Module
-    
+
     import pyperclip
     pyperclip.copy('Hello world!')
     print(pyperclip.paste())
@@ -1353,9 +1356,11 @@ def f88():
 def f89():
     # An insecure password locker program.
 
+    import pyperclip
+
     # Step 1: Program Design and Data Structures
     PASSWORDS = {'email': 'F7minlBDDuvMJuxESSKHFhTxFtjVB6',
-                'blog': 'VmALvQyKAxiVH5G8v01if1MLZF3sdt',
+                 'blog': 'VmALvQyKAxiVH5G8v01if1MLZF3sdt',
                 'luggage': '12345'}
 
 
@@ -1380,6 +1385,7 @@ def f90():
 
     # Step 1: Copy and Paste from the Clipboard
     import pyperclip
+
     text = pyperclip.paste()
 
     # Step 2 - # TODO: Separate lines and add stars.
@@ -1402,7 +1408,7 @@ def f91():
             return False
         for i in range(0, 3):   # i = [0, 1, 2]
             if not text[i].isdecimal():   # Convert string to list and 
-                                          # parsing the list for decimals
+                                            # parsing the list for decimals
                 return False
         if text[3] != '-':
             return False
@@ -1420,7 +1426,7 @@ def f91():
     print(isPhoneNumber('415-555-4242'))
     print('Moshi moshi is a phone number:')
     print(isPhoneNumber('Moshi moshi'))
-    
+
 def f92():
     # Finding pattern without RE from a string
 
@@ -1449,13 +1455,15 @@ def f92():
             print('Phone number found: ' + chunk)
 
     print('Done')
-    
+
 def f93():
     # Matching regex objects
 
     # In a raw string a backslash is taken as meaning just as backslash not as 
     # a escape sequence. if we donot use r'', then we have to escape all the
     # backslashes between the single quotes
+
+    import re
 
     phoneNumRegex = re.compile(r'\d\d\d-\d\d\d-\d\d\d\d')
     mo = phoneNumRegex.search('My number is 415-555-4242.')
@@ -1475,7 +1483,9 @@ Steps in using regex:
 
 def f94():
     # Pattern matching with grouping
-    
+
+    import re
+
     phoneNumRegex = re.compile(r'(\d\d\d)-(\d\d\d-\d\d\d\d)')
     mo = phoneNumRegex.search('My number is 415-555-4242.')
     print(mo.group(1))
@@ -1491,6 +1501,8 @@ def f94():
 def f95():
     # Pattern matching with grouping and escaping parantheses
 
+    import re
+
     phoneNumRegex = re.compile(r'(\(\d\d\d\)) (\d\d\d-\d\d\d\d)')
     mo = phoneNumRegex.search('My phone number is (415) 555-4242.')
     print(mo.group(1))
@@ -1498,6 +1510,8 @@ def f95():
 
 def f96():
     # Matching multiple groups with the pipe
+
+    import re
 
     heroRegex = re.compile (r'Batman|Tina Fey')
     mo1 = heroRegex.search('Batman and Tina Fey.')
@@ -1509,14 +1523,18 @@ def f96():
 def f97():
     # Matching groups with the pipe as part of re
 
+    import re
+
     batRegex = re.compile(r'Bat(man|mobile|copter|bat)')
     mo = batRegex.search('Batmobile lost a wheel')
     print(mo.group())      # returns all full-matched text 'Batmobile'
     print(mo.group(1))     # returns the first match it founds,
-                           # in first group
+                            # in first group
 
 def f98():
     # Optional matching with the question mark
+
+    import re
 
     batRegex = re.compile(r'Bat(wo)?man')
     mo1 = batRegex.search('The Adventures of Batman')
@@ -1541,7 +1559,9 @@ def f98():
 
 def f99():
     # Matching zero or more with star
-    
+
+    import re
+
     batRegex = re.compile(r'Bat(wo)*man')
     mo1 = batRegex.search('The Adventures of Batman')
     print(mo1.group())
@@ -1558,6 +1578,8 @@ def f99():
 def f100():
     # Matching one or more with the plus
     # the group preceding a plus must appear at least once.
+    
+    import re
 
     batRegex = re.compile(r'Bat(wo)+man')
     mo1 = batRegex.search('The Adventures of Batwoman')
@@ -1573,6 +1595,7 @@ def f100():
 def f101():
     # Matching specific repetitions with {}
     # (pattern){a_number}
+    import re
 
     haRegex = re.compile(r'(Ha){3}')
     mo1 = haRegex.search('HaHaHa')
@@ -1586,6 +1609,8 @@ def f102():
     # RE by default is greedy, matches the longest match.
     # To have non-greedy match use {}?
 
+    import re
+
     greedyHaRegex = re.compile(r'(Ha){3,5}')  # greedy
     mo1 = greedyHaRegex.search('HaHaHaHaHa')
     print(mo1.group())
@@ -1593,7 +1618,7 @@ def f102():
     nongreedyHaRegex = re.compile(r'(Ha){3,5}?')  # non-greedy
     mo2 = nongreedyHaRegex.search('HaHaHaHaHa')
     print(mo2.group())
-    
+
     # question mark can have two different meanings in RE:
     # declaring a nongreedy match or flagging an optional group.
 
@@ -1602,14 +1627,16 @@ def f103():
     # While search() will return a Match object of the first matched text
     # in the searched string, the findall() method will return the strings 
     # of every match in the searched string.
-    
+
+    import re
+
     phoneNumRegex = re.compile(r'\d\d\d-\d\d\d-\d\d\d\d')
     mo = phoneNumRegex.search('Cell: 415-555-9999 Work: 212-555-0000')
     print(mo.group())
 
     phoneNumRegex = re.compile(r'\d\d\d-\d\d\d-\d\d\d\d') # has no groups
     print(phoneNumRegex.findall('Cell: 415-555-9999 Work: 212-555-0000'))
-    
+
     # findall() will not return a Match object but a list of strings 
     # as long as there are no groups in the regular expression.
 
@@ -1627,6 +1654,8 @@ def f104():
     # \s Any space, tab, or newline character.(space character)
     # \S Any character that is not a space, tab, or newline.
 
+    import re
+
     xmasRegex = re.compile(r'\d+\s\w+')
     f = xmasRegex.findall('12 drummers, 11 pipers, 10 lords, 9 ladies, 8 maids, swans, 6 geese, 5 rings, 4 birds, 3 hens, 2 doves, 1 partridge')
     print(f)
@@ -1634,6 +1663,8 @@ def f104():
 def f105():
     # Making your own character classes
     # match any vowel, both lowercase and uppercase
+
+    import re
 
     vowelRegex = re.compile(r'[aeiouAEIOU]')
     print(vowelRegex.findall('RoboCop eats baby food. BABY FOOD.'))
@@ -1647,6 +1678,9 @@ def f105():
 
 def f106():
     # Caret and dollar sign characters
+    
+    import re
+
     beginsWithHello = re.compile(r'^Hello')
     print(beginsWithHello.search('Hello world!'))
     print(beginsWithHello.search('He said hello.') == None)
@@ -1667,12 +1701,16 @@ def f107():
     # The . (or dot) character in a RE is called a wildcard 
     # and will match just one character except for a newline.
 
+    import re
+
     atRegex = re.compile(r'.at')
     print(atRegex.findall('The cat in the hat sat on the flat mat.'))
 
 def f108():
     # Matching everything with dot-star
-    
+
+    import re
+
     nameRegex = re.compile(r'First Name: (.*) Last Name: (.*)')
     mo = nameRegex.search('First Name: Al Last Name: Sweigart')
     print(mo.group(1))
@@ -1691,41 +1729,47 @@ def f108():
 
 def f109():
     # Matching newlines with the dot character
-    
+
+    import re
+
     # To match everything only up to the first newline character,
     # newline character is not encluded
     noNewlineRegex = re.compile('.*')
     print(noNewlineRegex.search(
-    'Serve the public trust.\nProtect the innocent.\nUphold the law.'
+        'Serve the public trust.\nProtect the innocent.\nUphold the law.'
     ).group())
 
     # re.DOTALL matches everything,
     # To include newline character:
     newlineRegex = re.compile('.*', re.DOTALL) 
     print(newlineRegex.search(
-    'Serve the public trust.\nProtect the innocent.\nUphold the law.'
+        'Serve the public trust.\nProtect the innocent.\nUphold the law.'
     ).group())
 
 def f110():
     # Case-insensitive matching
     # Use re.I or re.IGNORECASE
-    
+
+    import re
+
     robocop = re.compile(r'robocop', re.I)
     print(robocop.search(
-    'RoboCop is part man, part machine, all cop.').group())
+        'RoboCop is part man, part machine, all cop.').group())
     print(robocop.search(
-    'ROBOCOP protects the innocent.').group())
-    
+        'ROBOCOP protects the innocent.').group())
+
     print(robocop.search(
-    'Al, why does your programming book talk about robocop so much?'
+        'Al, why does your programming book talk about robocop so much?'
     ).group())
 
 def f111():
     # Substituting strings with sub() method
 
+    import re
+
     namesRegex = re.compile(r'Agent \w+')
     print(namesRegex.sub(
-    'CENSORED', 'Agent Alice gave the secret documents to Agent Bob.'))
+        'CENSORED', 'Agent Alice gave the secret documents to Agent Bob.'))
 
     # using with groups: text of group 1 , 2 , 3
     agentNamesRegex = re.compile(r'Agent (\w)\w*')
@@ -1737,18 +1781,20 @@ def f112():
     # You can simplify the hard-to-read REs by using verbose mode
     # re.VERBOSE ignores whitespace and comments inside the RE string.
 
+    import re
+
     # Hard to read :
     phoneRegex = re.compile(r'((\d{3}|\(\d{3}\))?(\s|-|\.)?\d{3}(\s|-|\.)\d{4}(\s*(ext|x|ext.)\s*\d{2,5})?)')
 
     # Expand to multiline using comments:
     phoneRegex = re.compile(r'''(
-        (\d{3}|\(\d{3}\))?              # area code
-        (\s|-|\.)?                      # separator
-        \d{3}                           # first 3 digits
-        (\s|-|\.)                       # separator
-        \d{4}                           # last 4 digits
-        (\s*(ext|x|ext.)\s*\d{2,5})?    # extension
-        )''', re.VERBOSE)
+                            (\d{3}|\(\d{3}\))?              # area code
+                            (\s|-|\.)?                      # separator
+                            \d{3}                           # first 3 digits
+                            (\s|-|\.)                       # separator
+                            \d{4}                           # last 4 digits
+                            (\s*(ext|x|ext.)\s*\d{2,5})?    # extension
+                            )''', re.VERBOSE)
 
 
     someRegexValue = re.compile('foo', re.IGNORECASE | re.DOTALL)
@@ -1757,29 +1803,33 @@ def f112():
 def f113():
     # Combining re.IGNORECASE, re.DOTALL, and re.VERBOSE
 
+    import re
+
     someRegexValue = re.compile('foo', re.IGNORECASE | re.DOTALL)
     someRegexValue = re.compile('foo', re.IGNORECASE | re.DOTALL | re.VERBOSE)
-    
+
 def f114():
     # Finds phone numbers and email addresses on the clipboard
 
+    import re, pyperclip
+
     # Step 1: Create a Regex for Phone Numbers
     phoneRegex = re.compile(r'''(
-        (\d{3}|\(\d{3}\))?              # area code
-        (\s|-|\.)?                      # separator
-        (\d{3})                         # first 3 digits
-        (\s|-|\.)                       # separator
-        (\d{4})                         # last 4 digits
-        (\s*(ext|x|ext.)\s*(\d{2,5}))?  # extension
-        )''', re.VERBOSE)
+                            (\d{3}|\(\d{3}\))?              # area code
+                            (\s|-|\.)?                      # separator
+                            (\d{3})                         # first 3 digits
+                            (\s|-|\.)                       # separator
+                            (\d{4})                         # last 4 digits
+                            (\s*(ext|x|ext.)\s*(\d{2,5}))?  # extension
+                            )''', re.VERBOSE)
 
     # Step 2: Create a Regex for Email Addresses
     emailRegex = re.compile(r'''(
-        [a-zA-Z0-9._%+-]+               # username
-        @                               # @ symbol
-        [a-zA-Z0-9.-]+                  # domain name
-        (\.[a-zA-Z]{2,4})               # dot-something
-        )''', re.VERBOSE)
+                            [a-zA-Z0-9._%+-]+               # username
+                            @                               # @ symbol
+                            [a-zA-Z0-9.-]+                  # domain name
+                            (\.[a-zA-Z]{2,4})               # dot-something
+                            )''', re.VERBOSE)
 
     # Step 3: Find matches in clipboard text.
     text = str(pyperclip.paste())
@@ -1818,6 +1868,7 @@ def f116():
     # The Current Working Directory
 
     import os
+    
     print(os.getcwd())
     os.chdir('/var/log')         # returns None
     print(os.getcwd())
@@ -1856,7 +1907,7 @@ def f118():
     print((os.path.dirname(calcFilePath), os.path.basename(calcFilePath)))
 
     print('/usr/bin'.split(os.path.sep))
-    
+
 def f119():
     # Finding File Sizes and Folder Contents
 
@@ -1915,18 +1966,18 @@ def f122():
     baconFile = open('bacon.txt', 'a')
     baconFile.write('Bacon is not a vegetable.')
     baconFile.close()
-    
+
     baconFile = open('bacon.txt')
     content = baconFile.read()
     baconFile.close()
-    
+
     print(content)    
 
 def f123():
     # Saving Variables with the shelve Module
 
     import shelve
-    
+
     # shelf value is stored in shelfFile:
     shelfFile = shelve.open('mydata')
     cats = ['Zophie', 'Pooka', 'Simon']
@@ -1958,7 +2009,7 @@ def f124():
     you a string that you can write to .py file. This file will be your very 
     own module that you can import when-ever you want to use the variable stored in it.
     '''
-    
+
     import pprint
 
     cats = [{'name': 'Zophie', 'desc': 'chubby'}, {'name': 'Pooka', 'desc': 'fluffy'}]
@@ -1982,7 +2033,7 @@ def f124():
     print(myCats.cats)
     print(myCats.cats[0])
     print(myCats.cats[0]['name'])
-   
+
 def f125():
     # Generating Random Quiz Files
 
@@ -1990,7 +2041,7 @@ def f125():
 
     # Step 1: Store the Quiz Data in a Dictionary
     capitals = {
-    'Alabama': 'Montgomery', 'Alaska': 'Juneau', 'Arizona': 'Phoenix',
+        'Alabama': 'Montgomery', 'Alaska': 'Juneau', 'Arizona': 'Phoenix',
     'Arkansas': 'Little Rock', 'California': 'Sacramento', 'Colorado': 'Denver',
     'Connecticut': 'Hartford', 'Delaware': 'Dover', 'Florida': 'Tallahassee',
     'Georgia': 'Atlanta', 'Hawaii': 'Honolulu', 'Idaho': 'Boise', 'Illinois': 'Springfield', 
@@ -2079,7 +2130,7 @@ def f128():
     >>> shutil.move('C:\\bacon.txt', 'C:\\eggs')
     'C:\\eggs'
     >>> shutil.move('spam.txt', 'c:\\does_not_exist\\eggs\\ham')
-    
+
     If move() cannot find the destination folder or file, 
     then will get FileNotFoundError error.
     '''
@@ -2109,22 +2160,22 @@ def f130():
     # sudo pip3 install send2trash
 
     import send2trash                          
-    
+
     baconFile = open('bacon.txt', 'a')        # creates the file
     print(baconFile.write('Bacon is not a vegetable.'))
     baconFile.close()
     send2trash.send2trash('bacon.txt')
-    
+
 def f131():
     # Walk through the directory tree
-    
+
     import os
-    
+
     for folderName, subfolders, filenames in os.walk('/tmp'):
         print('The current folder is ' + folderName)
     for subfolder in subfolders:
         print('SUBFOLDER OF ' + folderName + ': ' + subfolder)
-    
+
     for filename in filenames:
         print('FILE INSIDE ' + folderName + ': '+ filename)
     print('')
@@ -2134,14 +2185,14 @@ def f131():
 
 def f132():
     # Compressing Files with the zipfile Module
-    
+
     import zipfile, os
 
     # First create a zip file, from alll files in current directory:
     os.system('zip -r example.zip ./')
     # 1st create a ZipFile object, similar to when creating a file object
     exampleZip = zipfile.ZipFile('example.zip')
-    
+
     print('\nList of files and folders in example.zip :')
     print(exampleZip.namelist())
 
@@ -2156,9 +2207,9 @@ def f132():
 
 def f133():
     # Extracting from ZIP Files
-    
+
     import zipfile, shutil, os
-    
+
     os.makedirs('/tmp/test')
     os.system('zip -r /tmp/test/example.zip ./')   # Create a zip file in /tmp
     # os.chdir('/tmp/test') # move to the folder with example.zip
@@ -2167,7 +2218,7 @@ def f133():
     exampleZip.close()
     print(os.listdir('/tmp/test'))
     shutil.rmtree('/tmp/test') 
-    
+
 def f134():
     # Creating and Adding to ZIP Files
 
@@ -2175,28 +2226,28 @@ def f134():
 
     # Create an ZipFile object in write mode, similar to file object in write mode
     newZip = zipfile.ZipFile('new.zip', 'w')
-    
+
     newZip.write('runme.py', compress_type=zipfile.ZIP_DEFLATED)
     newZip.close()
-    
+
     os.system('ls')
     os.unlink('new.zip')
-    
+
 def f135():
     # Renaming Files with American-Style Dates to
     # European-Style Dates
     # shutil.move() function can be used to rename files
-    
+
     # Step 1: Create a Regex for American-Style Dates
     import shutil, os, re
 
     # Create a regex that matches files with the American date format.
     datePattern = re.compile(r"""^(.*?) # all text before the date
-        ((0|1)?\d)-                     # one or two digits for the month
-        ((0|1|2|3)?\d)-                 # one or two digits for the day
-        ((19|20)\d\d)                   # four digits for the year
-        (.*?)$                          # all text after the date
-        """, re.VERBOSE)
+                             ((0|1)?\d)-                     # one or two digits for the month
+                             ((0|1|2|3)?\d)-                 # one or two digits for the day
+                             ((19|20)\d\d)                   # four digits for the year
+                             (.*?)$                          # all text after the date
+                             """, re.VERBOSE)
     # Step 2: Identify the Date Parts from the Filenames
     # Loop over the files in the working directory.
     for amerFilename in os.listdir('.'):
@@ -2233,7 +2284,7 @@ def f136():
     def backupToZip(folder):
         # Backup the entire contents of "folder" into a ZIP file.
         folder = os.path.abspath(folder)    # make sure folder is absolute
-        
+
         # Figure out the filename this code should use based on
         # what files already exist.
         number = 1
@@ -2277,7 +2328,7 @@ def f137():
             raise Exception('Width must be greater than 2.')
         if height <= 2:
             raise Exception('Height must be greater than 2.')
-            
+
         print(symbol * width)
         for i in range(height - 2):
             print(symbol + (' ' * (width - 2)) + symbol)
@@ -2298,8 +2349,8 @@ def f137():
 
 def f138():
     # Getting the Traceback as a String
-    
-    import traceback
+
+    import traceback, os
 
     try:
         raise Exception('This is the error message.')
@@ -2407,7 +2458,7 @@ def f142():
     # Instead of displaying the log messages to the screen, you can write them to
     # a text file.
 
-    import logging
+    import logging, os
     logging.basicConfig(filename='myProgramLog.txt', level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 
     def factorial(n):
@@ -2429,7 +2480,7 @@ def f143():
 
 def f144():
     # Find the program bug!
-    
+
     '''
     import random
 
@@ -2447,19 +2498,19 @@ def f144():
             print('You got it!')
         else:
             print('Nope. You are really bad at this game.')
-    
+
     '''
     print()
 
 def f145():
     # Launch a new browser by webbrowser module
-    
+
     import webbrowser
     webbrowser.open('https://www.google.com')
 
 def f146():
     # Open google map address from terminal or clipboard
-    
+
     import webbrowser, sys, pyperclip
 
     # We chop off the first element of the array(i.e. script name)
@@ -2488,7 +2539,7 @@ def f147():
 
     res = requests.get('http://www.gutenberg.org/cache/epub/1112/pg1112.txt')
     print(type(res))   # returns a Response object, which contains the
-                       # response that the web server gave for your request.
+                        # response that the web server gave for your request.
     if res.status_code == requests.codes.ok:
         print('Request for url succeeded!')
 
@@ -2497,17 +2548,17 @@ def f147():
 
     print(len(res.text)) # shows nr of characters for downloaded text
     print(res.text[:250])  # displays only the first 250 characters
-    
+
 def f148():
     # Checking Downloading A Web Page
 
     import requests
-    
+
     res = requests.get('http://inventwithpython.com/page_that_does_not_exist')
-    
+
     # Raise the error when the request fails and by 
     # using try/except, avoid crashing the program:
-    
+
     try:
         res.raise_for_status()
     except Exception as exc:
@@ -2518,9 +2569,9 @@ def f148():
 
 def f149():
     # Saving Downloaded Files to the Hard Drive 
-    
 
-    import requests
+
+    import requests, os
 
     # 1.     
     # Create a Response object from URL address
@@ -2531,7 +2582,7 @@ def f149():
     # open the file in write binary mode (wb), even if the page is in 
     # plain-text, to maintain the Unicode encod-ing of the text.
     playFile = open('RomeoAndJuliet.txt', 'wb')
-    
+
     # 3.
     # Loop over the Response object’s iter_content() method.
     # This avoids reading the content at once into memory for large responses.
@@ -2565,7 +2616,7 @@ def f150():
 
 def f151():
     # Creating a BeautifulSoup Object from a local HTM
-    import requests, bs4
+    import requests, bs4, os
 
     htmltext = '''<!-- This is the example.html example file. -->
     <html><head><title>The Website Title</title></head>
@@ -2589,7 +2640,7 @@ def f151():
 def f152():
     # Finding an Element with the select() Method
 
-    import bs4
+    import bs4, os
 
     htmltext = '''<!-- This is the example.html example file. -->
     <html><head><title>The Website Title</title></head>
@@ -2606,11 +2657,11 @@ def f152():
 
     exampleFile = open('example.html')
     exampleSoup = bs4.BeautifulSoup(exampleFile.read(), features="html.parser")
-    
+
     # The following matches any element that has an id attribute of author, 
     # as long as it is also inside a <p> element.
     elems = exampleSoup.select('#author')    # select stors a list of Tag 
-                                             # objects in the elems variable                           
+                                                # objects in the elems variable                           
     print(type(elems))         
     print(len(elems))          # tells us there is one Tag object in the list
     print(type(elems[0]))
@@ -2620,7 +2671,7 @@ def f152():
 
     print('-----------')
     pElems = exampleSoup.select('p')  # pull all the <p> elements from the 
-                                      # BeautifulSoup object, it gives 3 matches
+                                        # BeautifulSoup object, it gives 3 matches
     print(str(pElems[0]))
     print(pElems[0].getText())
 
@@ -2634,12 +2685,12 @@ def f152():
 
 def f153():
     # Getting Data from an Element’s Attributes
-    
+
     # The get() method for Tag objects makes it simple to access attribute values
     # from an element. The method is passed a string of an attribute name and
     # returns that attribute’s value.
 
-    import bs4
+    import bs4, os
 
     htmltext = '''<!-- This is the example.html example file. -->
     <html><head><title>The Website Title</title></head>
@@ -2658,7 +2709,7 @@ def f153():
     spanElem = soup.select('span')[0]
     print(str(spanElem))
     print(spanElem.get('id'))     # Passing the attribute name 'id' to get()
-                                  # returns the attribute’s value, 'author'
+                                    # returns the attribute’s value, 'author'
     print(spanElem.get('some_nonexistent_addr') == None)
     print(spanElem.attrs)
 
@@ -2666,7 +2717,7 @@ def f153():
 
 def f154():
     # I’m Feeling Lucky - Google Search
-    
+
     import requests, sys, webbrowser, bs4
 
     ### Step 1: Get the Command Line Arguments and Request the Search Page
@@ -2674,7 +2725,7 @@ def f154():
     # if you want to have the search terms as arguments of a separate running 
     # script, then use the following line of code:
     # res = requests.get('http://google.com/search?q=' + ' '.join(sys.argv[1:]))
-    
+
     pattern = input('Enter your search pattern: ')
     pattern = "' {} '".format(pattern)   # enclose variable with quotes
     res = requests.get('http://google.com/search?q=' +  pattern )
@@ -2741,21 +2792,21 @@ def f155():
 
 def f156():
     # Starting a Selenium-Controlled Browser
-    
+
     from selenium import webdriver
     browser = webdriver.Firefox()     # opens firefox browser, with no url loaded
     print(type(browser))              # prints the class type of browser:
     # <class 'selenium.webdriver.firefox.webdriver.WebDriver'>
     browser.get('http://inventwithpython.com')  # opens the url in the already opened 
                                                 # firefox browser
-    
+
 def f157():
     # Finding Elements on the Page
-    
+
     from selenium import webdriver
     browser = webdriver.Firefox()  # opens firefox browser, with no url loaded
     browser.get('http://inventwithpython.com') # loads the url argument in browser
-    
+
     try:
         elem = browser.find_element_by_class_name('card-img-top')
         # The find_element_* methods is looking just for a single element,
@@ -2768,7 +2819,7 @@ def f157():
     # Found <img> element with that class name!   
 
     # To see the list of methods refer to item 159 in main menu !
-    
+
 def f158():
     # WebElement Attributes and Methods
 
@@ -2796,12 +2847,12 @@ def f158():
     - Elements with a matching name attribute value
     browser.find_element_by_name(name)  
     browser.find_elements_by_name(name)
-    
+
     - Elements with a matching tag name
       (case insensitive; an <a> element is matched by 'a' and 'A')
     browser.find_element_by_tag_name(name)  
     browser.find_elements_by_tag_name(name)
-    
+
     tag_name - The tag name, such as 'a' for an <a> element
     get_attribute(name) - The value for the element’s name attribute
     text - The text within the element, such as 'hello' in <span>hello</span>
@@ -2817,7 +2868,7 @@ def f158():
 
 def f159():
     # Clicking the Page
-    
+
     from selenium import webdriver  
     browser = webdriver.Firefox()   # opens firefox browser, with no url loaded
     browser.get('http://inventwithpython.com')   # loads the url argument in browser
@@ -2830,7 +2881,7 @@ def f159():
 
 def f160():
     # Filling Out and Submitting Forms
-    
+
     from selenium import webdriver
     browser = webdriver.Firefox()   # opens firefox browser, with no url loaded
     browser.get('http://gmail.com') # loads the url argument in browser
@@ -2839,7 +2890,7 @@ def f160():
     passwordElem = browser.find_element_by_id('Passwd')
     passwordElem.send_keys('12345')
     passwordElem.submit()
-    
+
     '''The previous code will fill in those text fields with the provided text. 
     (You can always use the browser’s inspector to verify the id .) Calling the 
     submit() method on any element will have the same result as clicking the Submit 
@@ -2847,18 +2898,18 @@ def f160():
 
 def f161():
     # Sending Special Keys
-    
+
     from selenium import webdriver
     from selenium.webdriver.common.keys import Keys
 
     browser = webdriver.Firefox() # opens just the firefox browser, 
-                                  # no url loaded is loaded
+                                    # no url loaded is loaded
     browser.get('http://nostarch.com') # loads url in browser
     htmlElem = browser.find_element_by_tag_name('html')
     htmlElem.send_keys(Keys.END)   # scrolls to bottom
     # To scroll up again uncomment the following
     # htmlElem.send_keys(Keys.HOME)  # scrolls to top
-    
+
     '''Commonly Used Variables in the selenium.webdriver.common.keys Module
     Keys.DOWN , Keys.UP , Keys.LEFT , Keys.RIGHT     The keyboard arrow keys
     Keys.ENTER , Keys.RETURN                         The Enter or RETURNS keys
@@ -2866,15 +2917,15 @@ def f161():
     Keys.ESCAPE , Keys.BACK_SPACE , Keys.DELETE       esc , backspace , DELETE 
     Keys.F1 , Keys.F2 , . . . , Keys.F12              F1 to F12
     Keys.TAB                                          The tab key
-    
+
     - Selenium can simulate clicks on various browser buttons by 
       following methods:
-    
+
     browser.back()  Clicks the Back button.
     browser.forward()  Clicks the Forward button.
     browser.refresh()  Clicks the Refresh/Reload button.
     browser.quit()  Clicks the Close Window button.
-    
+
     Selenium reference: http://selenium-python.readthedocs.org/
     '''
 
@@ -2900,7 +2951,7 @@ def f162():
 
     # The active sheet is the sheet that’s on top when the
     # workbook is opened in Excel.
-    
+
     # To get the workbook’s active sheet:
     anotherSheet = wb.get_active_sheet()
     print(anotherSheet)
@@ -2938,14 +2989,14 @@ def f164():
     sheet.cell(row=1, column=2).value   # 'Apples'
     for i in range(1, 8, 2):
         print(i, sheet.cell(row=i, column=2).value)
-    
+
 def f165():
     # Determine the size of the sheet
-    
+
     import openpyxl
     wb = openpyxl.load_workbook('example.xlsx')
     sheet = wb.get_sheet_by_name('Sheet1')
-    
+
     # Following deprecated:
     # print(sheet.get_highest_row())                 # 7
     # print(sheet.get_highest_column())              # 3
@@ -2957,7 +3008,7 @@ def f166():
     # Converting Between Column Letters and Numbers
     import openpyxl 
     from openpyxl.utils import get_column_letter, column_index_from_string
-    
+
     get_column_letter(1)         # 'A'
     get_column_letter(2)         # 'B'
     get_column_letter(27)        # 'AA'
@@ -2974,9 +3025,9 @@ def f166():
 
 def f167():
     # Getting Rows and Columns from the Sheets 
-    
+
     import openpyxl
-    
+
     wb = openpyxl.load_workbook('example.xlsx')
     sheet = wb.get_sheet_by_name('Sheet1')
     print(tuple(sheet['A1':'C3']))
@@ -3085,14 +3136,14 @@ def f172():
 
     wb = openpyxl.Workbook()
     print(wb.get_sheet_names())
-    
+
     wb.create_sheet(index=0, title='First Sheet')
     print(wb.get_sheet_names())
 
     wb.create_sheet(index=2, title='Middle Sheet')
     print(wb.get_sheet_names())
 
-    
+
     wb.remove_sheet(wb.get_sheet_by_name('Middle Sheet'))
     print(wb.get_sheet_names())
     wb.remove_sheet(wb.get_sheet_by_name('First Sheet'))
@@ -3100,10 +3151,10 @@ def f172():
 
     # If you want the new created excel be saved, uncomment this:
     # wb.save('test.xlsx')
-    
+
 def f173():
     # Writing Values to Cells
-    
+
     import openpyxl
 
     # Writing values to cells is much like writing values to keys 
@@ -3126,7 +3177,7 @@ def f174():
     sheet = wb.get_sheet_by_name('Sheet')
     # The produce types and their updated prices
     PRICE_UPDATES = {'Garlic': 3.07,
-                    'Celery': 1.19,
+                     'Celery': 1.19,
                     'Lemon': 1.27}
 
     # Loop through the rows and update the prices.
@@ -3204,7 +3255,7 @@ def f178():
     print(sheet['A3'].value)
 
     wbDataOnly = openpyxl.load_workbook('writeFormula.xlsx', 
-                                         data_only=True)
+                                        data_only=True)
     ws = wbDataOnly.get_active_sheet()
     print(ws['A3'].value) 
     # in my case it shows None
@@ -3213,7 +3264,7 @@ def f179():
     # Setting Row Height and Column Width
 
     import openpyxl
-    
+
     wb = openpyxl.Workbook()
     sheet = wb.get_active_sheet()
     sheet['A1'] = 'Tall row'
@@ -3228,7 +3279,7 @@ def f180():
     # with the merge_cells() sheet method
 
     import openpyxl
-    
+
     wb = openpyxl.Workbook()
     sheet = wb.get_active_sheet()
     sheet.merge_cells('A1:D3')
@@ -3265,7 +3316,7 @@ def f182():
     wb = openpyxl.load_workbook('produceSales.xlsx')
     sheet = wb.get_active_sheet()
     sheet.freeze_panes = 'A2' # The row header si visible, even when
-                              # scroll down
+                                # scroll down
     wb.save('freezeExample.xlsx')
     # To unfreez all pan set the the atribute to None
 
@@ -3275,7 +3326,7 @@ def f183():
     wb = Workbook()
     ws = wb.active
     for i in range(10):
-         ws.append([i])
+        ws.append([i])
 
     from openpyxl.chart import BarChart, Reference, Series
     values = Reference(ws, min_col=1, min_row=1, max_col=1, max_row=10)
@@ -3292,7 +3343,7 @@ def f184():
     # sudo pip3 install PyPDF2
 
     import PyPDF2
-    
+
     pdfFileObj = open('meetingminutes.pdf', 'rb')
     pdfReader = PyPDF2.PdfFileReader(pdfFileObj)
     print(pdfReader.numPages)
@@ -3301,7 +3352,7 @@ def f184():
 
 def f185():
     # Decrypting PDFs
-    
+
     import PyPDF2
 
     pdfReader = PyPDF2.PdfFileReader(open('encrypted.pdf', 'rb'))
@@ -3317,8 +3368,12 @@ def f186():
     # files 'meetingminutes.pdf' and 'meetingminutes2.pdf' must
     # exist in current directory!
 
-    import PyPDF2
-
+    import PyPDF2, os
+          
+    if not os.path.isfile('meetingminutes.pdf'):
+        print('meetingminutes.pdf is required in current working directory!')
+        return
+    
     pdf1File = open('meetingminutes.pdf', 'rb')
     pdf2File = open('meetingminutes2.pdf', 'rb')
     pdf1Reader = PyPDF2.PdfFileReader(pdf1File)
@@ -3338,19 +3393,23 @@ def f186():
     pdfOutputFile.close()
     pdf1File.close()
     pdf2File.close()
-        
+
 
 def f187():
     # Rotating Pages
     # file 'meetingminutes.pdf' must be in current directory!
 
-    import PyPDF2
-
+    import PyPDF2, os
+    
+    if not os.path.isfile('meetingminutes.pdf'):
+        print('meetingminutes.pdf is required in current working directory!')
+        return
+    
     minutesFile = open('meetingminutes.pdf', 'rb')
     pdfReader = PyPDF2.PdfFileReader(minutesFile)
     page = pdfReader.getPage(0)
     page.rotateClockwise(90)
-    
+
     pdfWriter = PyPDF2.PdfFileWriter()
     pdfWriter.addPage(page)
     resultPdfFile = open('rotatedPage.pdf', 'wb')
@@ -3362,9 +3421,14 @@ def f188():
     # Overlaying Pages
     # files 'meetingminutes.pdf' and 'watermark.pdf' must exist in
     # current directory!
+    import os
+
+    if not os.path.isfile('meetingminutes.pdf') and os.path.isfile('watermark.pdf'):
+        print('meetingminutes.pdf and watermark.pdf are required!')
+        return
 
     import PyPDF2
-    
+
     minutesFile = open('meetingminutes.pdf', 'rb')
     pdfReader = PyPDF2.PdfFileReader(minutesFile)
     minutesFirstPage = pdfReader.getPage(0)
@@ -3381,9 +3445,9 @@ def f188():
     pdfWriter.write(resultPdfFile)
     minutesFile.close()
     resultPdfFile.close()
-        
+
 def f189():
-    # Encrypting PDFs 
+    # Encrypting PDFs
     import PyPDF2
     pdfFile = open('meetingminutes.pdf', 'rb')
     pdfReader = PyPDF2.PdfFileReader(pdfFile)
@@ -3419,7 +3483,7 @@ def f190():
         for pageNum in range(1, pdfReader.numPages):
             pageObj = pdfReader.getPage(pageNum)
             pdfWriter.addPage(pageObj)
-    
+
     # Save the resulting PDF to a file.
     pdfOutput = open('allminutes.pdf', 'wb')
     pdfWriter.write(pdfOutput)
@@ -3431,7 +3495,7 @@ def f191():
     # file 'demo.docx' must be in working directory.
 
     import docx
-    
+
     doc = docx.Document('demo.docx') # return a Document object
     print(len(doc.paragraphs)) # a list of paragraph objects 
 
@@ -3451,7 +3515,7 @@ def f192():
     # Getting the Full Text from a .docx File 
 
     import docx
-    
+
     def getText(filename):
         doc = docx.Document(filename)
         fullText = []
@@ -3474,7 +3538,7 @@ def f193():
     ListNumber3 ListParagraph MacroText NoSpacing Quote Subtitle
     TOCHeading Title
     ''')
-    
+
     print('''
     Run attributes are:    
     bold italic underline strike double_strike all_caps small_caps
@@ -3495,10 +3559,10 @@ def f194():
     # returns:
     # 'A plain paragraph with some bold and some italic'
     (doc.paragraphs[1].runs[0].text, doc.paragraphs[1].runs[1].text, doc.
-    paragraphs[1].runs[2].text, doc.paragraphs[1].runs[3].text)
+     paragraphs[1].runs[2].text, doc.paragraphs[1].runs[3].text)
     # output:
     # ('A plain paragraph with some ', 'bold', ' and some ', 'italic')
-    
+
     doc.paragraphs[1].runs[0].style = 'QuoteChar'
     doc.paragraphs[1].runs[1].underline = True
     doc.paragraphs[1].runs[3].underline = True
@@ -3516,19 +3580,19 @@ def f196():
     # Add paragraphs
 
     import docx
-    
+
     doc = docx.Document()
     doc.add_paragraph('Hello world!')
 
     paraObj1 = doc.add_paragraph('This is a second paragraph.')
     paraObj2 = doc.add_paragraph('This is a yet another paragraph.')
     paraObj1.add_run(' This text is being added to the second paragraph.')
-    
+
     doc.save('multipleParagraphs.docx')
-    
+
 def f197():
     # Adding Headings
-    
+
     import docx
 
     doc = docx.Document()
@@ -3541,9 +3605,12 @@ def f197():
 
 def f198():
     # Adding Line and Page Breaks and Adding Pictures
-    
-    import docx
 
+    import docx, os
+
+    if not os.path.isfile('zophie.png'):
+        print('zophie.png is required in current working directory!')        
+        return   
     doc = docx.Document()
     doc.add_paragraph('This is on the first page!')
     # Following didn't work, for page break
@@ -3568,23 +3635,30 @@ def f201():
     # you need to create a Reader object
 
     # csv is built in module
-    import csv
+    import csv, os
     from pprint import pprint
 
+    if not os.path.isfile('example.csv'):
+        print('example.csv is required in current working directory!')        
+        return
     # open a file just any other text file, with open()
     exampleFile = open('example.csv')
 
     # instead of read/readlines for files use reader method:
     exampleReader = csv.reader(exampleFile) # returns a Reader obj
-    
+
     # To access values, convert the reader object to a list:
     exampleData = list(exampleReader)
     pprint(exampleData)
 
 def f202():
     # Reading Data from Reader Objects in a for Loop
-    
-    import csv
+
+    import csv, os
+
+    if not os.path.isfile('example.csv'): 
+        print('example.csv is required in current working directory!')
+        return
 
     exampleFile = open('example.csv')
     exampleReader = csv.reader(exampleFile)
@@ -3593,7 +3667,7 @@ def f202():
         # to get the row number in Reader object use 
         # variable line_num
         print('Row #' + str(exampleReader.line_num) + \
-            ' ' + str(row))
+              ' ' + str(row))
 
         # The Reader object can be looped over only once
 
@@ -3602,9 +3676,9 @@ def f203():
     # A Writer object lets you write data to csv file.
 
     import csv
-    
+
     # Open a file in write mode:
-    outputFile = open('output.csv', 'w', newline='')
+    outputFile = open('output.csv', 'w', newline='')    
     # If you forget the newline='' keyword argument in open(), the 
     # CSV file will be double-spaced.
 
@@ -3614,14 +3688,9 @@ def f203():
     outputWriter.writerow(['spam', 'eggs', 'bacon', 'ham'])
     outputWriter.writerow(['Hello, world!', 'eggs', 'bacon', 'ham'])
     outputWriter.writerow([1, 2, 3.141592, 4])
-
     outputFile.close()
-    '''
-    $ cat output.csv 
-    spam,eggs,bacon,ham
-    "Hello, world!",eggs,bacon,ham
-    1,2,3.141592,4
-    '''
+
+    with open('output.csv') as myFile: print(myFile.read())
 
 def f204():
     # The 'delimiter' and 'lineterminator' keyword arguments
@@ -3632,7 +3701,7 @@ def f204():
 
     csvFile = open('example.tsv', 'w', newline='')
     csvWriter = csv.writer(csvFile, delimiter='\t', 
-                            lineterminator='\n\n')
+                           lineterminator='\n\n')
 
     csvWriter.writerow(['apples', 'oranges', 'grapes'])
     csvWriter.writerow(['eggs', 'bacon', 'ham'])
@@ -3644,7 +3713,7 @@ def f204():
 def f205():
     # Project: Removes the header from all CSV files in the current
     # working directory.
-    
+
     import csv, os
 
     os.makedirs('headerRemoved', exist_ok=True)
@@ -3673,7 +3742,7 @@ def f205():
         # Step 3: Write Out the CSV File Without the First Row
         # .....................................................
         csvFileObj = open(os.path.join('headerRemoved', 
-                          csvFilename), 'w', newline='')
+                                       csvFilename), 'w', newline='')
 
         csvWriter = csv.writer(csvFileObj)
         for row in csvRows:
@@ -3690,7 +3759,7 @@ def f206():
     {"name": "Zophie", "isCat": true,
     "miceCaught": 0, "napsTaken": 37.5,
     "felineIQ": null}
-    
+
     Many websites offer JSON content as a way for programs to int-
     eract with the website. This is known as providing an API. Ac-
     cessing an API is the same as accessing any other web page via 
@@ -3717,7 +3786,7 @@ def f207():
     # Reading JSON with the loads() Function
     # To translate a string containing JSON data into a Python 
     # value, pass it to the json.loads() function. 
-    
+
     # JSON strings always use double quotes
     stringOfJsonData = '{"name": "Zophie", "isCat": true, \
                         "miceCaught": 0, "felineIQ": null}'
@@ -3733,7 +3802,7 @@ def f208():
     # value into a string of JSON-formatted data.
 
     pythonValue = {'isCat': True, 'miceCaught': 0, 
-                    'name': 'Zophie', 'felineIQ': None}
+                   'name': 'Zophie', 'felineIQ': None}
 
     import json
     stringOfJsonData = json.dumps(pythonValue)
@@ -3774,4 +3843,137 @@ def f209():
     print(w[2]['weather'][0]['main'], '-', w[2]['weather'][0]['description'])
 
 def f210():
+    # The time.time() Function
+
+    from time import time
+    print(time())
+    # number of seconds since 12 am on January 1, 1970 (UTC)
+    # The return number is called epoch timestamp
+
+def f211():
+    # calculate running time for a program
+
+    import time
+    
+    def calcProd():
+        # Calculate the product of the first 100,000 numbers.
+        product = 1
+        for i in range(1, 100000):
+            product = product * i
+        return product
+
+
+    startTime = time.time()
+    prod = calcProd()
+    endTime = time.time()
+    print('The result is %s digits long.' % (len(str(prod))))
+    print('Took %s seconds to calculate.' % (endTime - startTime))
+
+    # cProfile.run can() be used as an alternative for time.time()
+    # For help go to: https://docs.python.org/3/library/profile.html.  
+   
+
+def f212():
+    # sleep function to pause the program
+
+    import time
+    for i in range(3):
+        print('Tick')
+        time.sleep(1)
+        print('Tock')
+        time.sleep(1)
+
+     # Making 10 calls to time.sleep(1) is equivalent to 
+     # time.slweep(10)
+    for i in range(10):
+        time.sleep(1)
+
+def f213():
+    # Rounding the current time number
+
+    import time
+    now = time.time()
+    print(now)
+    print(round(now, 2))
+    print(round(now, 4))
+    print(round(now)) # No 2nd argument, rounds to nearest integer 
+
+def f214():
+    # Project: Super Stopwatch - track spent time on a task
+
+    # Step 1: Set Up the Program to Track Times
+    
+    import time
+
+    # Display the program's instructions.
+    print('''
+    Press ENTER to begin. Afterwards,
+    press ENTER to "click" the stopwatch.Press Ctrl-C to quit.''')
+    input()
+    # press Enter to begin
+    print('Started.')
+    startTime = time.time()
+    # get the first lap's start time
+    lastTime = startTime
+    lapNum = 1
+
+    # Step 2: Track and Print Lap Times
+
+    try:
+        # To prevent crashing by Ctl-c, we wrap this part of the -
+        # program in a try statement.
+        while True:     # infinit loop, to interrupt Ctl-c needed.
+            input()
+            lapTime = round(time.time() - lastTime, 2)
+            totalTime = round(time.time() - startTime, 2)
+            print('Lap #%s: Total time: %s - Lap time: %s' % (lapNum, totalTime, lapTime), end='')
+            lapNum += 1
+            lastTime = time.time() # reset the last lap time
+    
+    except KeyboardInterrupt:
+        # Handle the Ctrl-C exception to keep its error message from displaying.
+        print('\nDone.')
+
+def f215():
+    # The datetime Module
+    import datetime, time
+
+    # The following returns a datetime object for the current date
+    # and time:
+    print(type(datetime.datetime.now()))  
+    print(datetime.datetime.now()) # Displays current date and time
+    
+    # If you in IDLE:
+    # >>> datetime.datetime.now()
+    # datetime.datetime(2019, 5, 6, 17, 2, 33, 739924)
+
+    # To make  datetime object, we use function datetime()
+    dt = datetime.datetime(2015, 10, 21, 16, 29, 0)
+    print(dt.year, dt.month, dt.day)
+    print(dt.hour, dt.minute, dt.second)
+
+    # To convert a Unix epoch timestamp to a datetime object, we -
+    # use function fromtimestamp().
+
+    dt = datetime.datetime.fromtimestamp(1000000)
+    print('\nPrinting 1,000,000 seconds after the Unix epoch in the'
+          + '\nform of a datetime object: ', dt)
+
+    dt = datetime.datetime.fromtimestamp(time.time())
+    print('\nPrinting the current time in the form of a'
+          + '\ndatetime object: ', dt)
+
+def f216():
+    print()
+
+def f217():
+    print()
+
+def f218():
+    print()
+
+def f219():
+    print()
+
+def f220():
     print()

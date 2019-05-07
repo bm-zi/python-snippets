@@ -1,9 +1,9 @@
 1   -  Math Operations - Starting Chapter 1
 2   -  String concatenation and replication
-3   -  First Python Program
-4   -  Function len()
+3   -  First Python Program - print user input
+4   -  Function len() - string length
 5   -  Function str()
-6   -  Function str(), int(), float
+6   -  Function str(), int(), float()
 7   -  input() function
 8   -  Boolean data types - Starting Chapter 2
 9   -  Boolean Operators
@@ -11,15 +11,15 @@
 11  -  if,elif,else conditional
 12  -  while loop
 13  -  An Annoying while Loop
-14  -  break Statements
-15  -  continue statement
+14  -  loop break statement
+15  -  loop continue statement
 16  -  empty value is considered False
 17  -  for Loops and the range() Function
-18  -  Equivalent while loop
-19  -  loop example: sum of numbers from 1 to 100
+18  -  while loop equivalent to for loop
+19  -  for loop - sum of numbers from 1 to 100
 20  -  range() function examples
 21  -  import modules
-22  -  sys.exit()
+22  -  sys.exit() - Ending a Program Early
 23  -  Function example - Starting Chapter 3 
 24  -  Function with argument
 25  -  return statement
@@ -30,30 +30,30 @@
 30  -  Exception Handling
 31  -  Out Of Function Exception Handling
 32  -  Guessing Game
-33  -  list example - Starting Chapter 4     
-34  -  list of lists
-35  -  Negative indexes
+33  -  List example - Starting Chapter 4     
+34  -  List of lists
+35  -  Lists negative indexes
 36  -  Getting sublists with slices
 37  -  Getting a list’s length with len()
 38  -  Changing values in a list with indexes
 39  -  List concatenation and list replication
 40  -  Removing values from lists with del
-41  -  Working with lists
+41  -  Lists as alternative of using many variables
 42  -  Using for loop with lists
 43  -  in and not in operators
-44  -  Multiple assignment trick
+44  -  List - using multiple assignment trick 
 45  -  Augmented assignment operators
-46  -  Finding a Value in a list with index()
+46  -  Finding a Value in a list with index() method
 47  -  Adding values to lists with append() and insert()
-48  -  Removing values from lists with remove()
+48  -  Removing values from lists with remove() method
 49  -  Sorting the values in a list with sort()
-50  -  Magic 8 ball with a list
-51  -  List-like types: strings and tuples
-52  -  Mutable and immutable data types
+50  -  Magic 8 ball game with a list
+51  -  List-like types - strings and tuples
+52  -  List and strings - Mutable and immutable data types
 53  -  tuple data type
-54  -  References
-55  -  Passing references
-56  -  Copy module’s copy() and deepcopy() functions
+54  -  References to list
+55  -  Passing list references
+56  -  Copy module’s copy() and deepcopy() functions for lists
 57  -  Character picture grid
 58  -  Dictionary Data Type - Starting Chapter 5
 59  -  program to store data
@@ -207,4 +207,9 @@
 207 -  Reading JSON with the loads() Function
 208 -  Writing JSON with the dumps() Function
 209 -  Project: Fetching Current Weather Data
-210 -  
+210 -  The time.time() Function - Starting Chapter 15
+211 -  calculate running time for a program
+212 -  sleep function to pause the program
+213 -  Rounding the current time number
+214 -  Project: Super Stopwatch - track spent time on a task
+215 -  The datetime Module
