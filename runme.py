@@ -412,7 +412,8 @@ def rolling_list():
 def mainBlock():
     # This function is building up the main loop of the program and
     # handles all operations, based on user input received in main
-    # prompt with the form of '# '
+    # prompt with the form of 'Number > '
+
     while True:
         resetScreen()
         rolling_list()
@@ -420,7 +421,6 @@ def mainBlock():
         i = input("Number > ")
 
         try:
-            # exit program
             if str(i) == 'q!':      
                 exitProg()
 
@@ -477,7 +477,6 @@ def mainBlock():
         
         # Catching error when input is a string:
         except ValueError:
-            input('Not an integer!\nPress any key to  continue')
             restart()
 
         # Catching error when input integer is bigger than list 
