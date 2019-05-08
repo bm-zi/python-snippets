@@ -19,7 +19,7 @@ Alternatively run:
  
     # python3 runme.py
 
-![python](https://user-images.githubusercontent.com/33130624/55902188-f8de8500-5b98-11e9-8943-57877519e1c5.gif) 
+
 
 3) 
 Enjoy learning python basics interactively just by navigating through python snippets,
