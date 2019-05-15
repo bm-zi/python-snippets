@@ -2056,139 +2056,10 @@ def f122():
     print(total)
 
 def f123():
-    # Get a document from a remote webserver by http GET() method
-    import socket
-
-    mysock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    mysock.connect(('data.pr4e.org', 80))
-    cmd = 'GET http://data.pr4e.org/romeo.txt HTTP/1.0\r\n\r\n'.encode()
-    mysock.send(cmd)
-
-    while True:
-        data = mysock.recv(512)
-        if len(data) < 1:
-            break
-        print(data.decode(),end='')
-
-    mysock.close()
-
-def f124():
-    # Download an image from webserver while showing the file
-    # header response information and dowloaded chuncks of data,
-    # during the download
-
-    import socket, time
-
-    HOST = 'data.pr4e.org'
-    PORT = 80
-    mysock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    mysock.connect((HOST, PORT))
-    mysock.sendall(b'GET http://data.pr4e.org/cover3.jpg HTTP/1.0\r\n\r\n')
-    count = 0
-    picture = b""
-
-    while True:
-        data = mysock.recv(5120)
-        if len(data) < 1: break
-        time.sleep(0.25)
-        count = count + len(data)
-        print(len(data), count)
-        picture = picture + data
-
-    mysock.close()
-
-    # Look for the end of the header (2 CRLF)
-    pos = picture.find(b"\r\n\r\n")
-    print('Header length', pos)
-    print(picture[:pos].decode())
-
-    # Skip past the header and save the picture data
-    picture = picture[pos+4:]
-    fhand = open("stuff.jpg", "wb")
-    fhand.write(picture)
-    fhand.close()
-
-def f125():
-    # Retrieve a web page over a socket and display the headers
-    # from the web server.
-
-    import socket
-
-    HOST = input('Enter webserver URL: ')
-    DOC = input('Enter document to be retrived [Press Enter to default index.html]: ')
-    if DOC == '': DOC = 'index.html'
-    PORT = input('Enter port number [Press Enter to default 80]: ')
-    if PORT == '': PORT = 80
-
-    # Open a connection
-    mysock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    mysock.connect((HOST, PORT))
-
-
-    cmd = 'GET http://' +  HOST +  '/' + DOC + ' HTTP/1.0\r\n\r\n'
-    cmd = cmd.encode()
-    print(cmd)
-
-    mysock.send(cmd)
-
-
-    receivedData = b""
-
-    while True:
-        data = mysock.recv(512)
-        if len(data) < 1: break
-        receivedData = receivedData + data
-
-    mysock.close()
-
-    pos = receivedData.find(b"\r\n\r\n")
-    print('Header length', pos)
-    print(receivedData[:pos].decode())
-
-def f126():
-    # Load a web document, browser simulation
-    import socket
-
-    mysock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    mysock.connect(('data.pr4e.org', 80))
-    cmd = 'GET http://data.pr4e.org/intro-short.txt HTTP/1.0\r\n\r\n'.encode()
-    mysock.send(cmd)
-
-    while True:
-        data = mysock.recv(512)
-        if len(data) < 1:
-            break
-        print(data.decode(),end='')
-
-    mysock.close()
-
-def f127():
-    # Open a web page with urlib module
-    import urllib.request
-
-    fhand = urllib.request.urlopen('http://data.pr4e.org/romeo.txt')
-    for line in fhand:
-        print(line.decode().strip())
-
-def f128():
-    # Count the number of words in a web page
-    import urllib.request, urllib.parse, urllib.error, pprint
-
-    fhand = urllib.request.urlopen('http://data.pr4e.org/romeo.txt')
-
-    counts = dict()
-    for line in fhand:
-        words = line.decode().split()
-        for word in words:
-            counts[word] = counts.get(word, 0) + 1
-    pprint.pprint(counts)
-
-def f129():
     # Chapter 8 - Reading and Writing Files
     print('Chapter - Reading and Writing Files')
 
-def f130():
-    # CHAPTER 8 - READING AND WRITING FILES
+def f124():
     # Create strings for file names
 
     import os
@@ -2201,7 +2072,7 @@ def f130():
     for filename in myFiles:
         print(os.path.join('/home/username/asweigart', filename))
 
-def f131():
+def f125():
     # The Current Working Directory
 
     import os
@@ -2213,7 +2084,7 @@ def f131():
     # After  running this function you get error in main program
     # because the path to current running script has been changed.
 
-def f132():
+def f126():
     # Creating New Folders with os.makedirs()
 
     import os
@@ -2223,7 +2094,7 @@ def f132():
     # You get error if you run this function forthe second time
     # because the directory already exists.
 
-def f133():
+def f127():
     # Handling Absolute and Relative Paths
 
     import os
@@ -2245,7 +2116,7 @@ def f133():
 
     print('/usr/bin'.split(os.path.sep))
 
-def f134():
+def f128():
     # Finding File Sizes and Folder Contents
 
     import os
@@ -2259,7 +2130,7 @@ def f134():
 
     print(totalSize)
 
-def f135():
+def f129():
     # Checking Path Validity
 
     import os
@@ -2273,7 +2144,7 @@ def f135():
     # Check if dvd drive exists
     print(os.path.exists('D:\\'))
 
-def f136():
+def f130():
     # The File Reading/Writing Process
 
     # open() function returns a File object, and opens file in plain text mode.
@@ -2293,7 +2164,7 @@ def f136():
     relFile = open('/etc/os-release')
     print(relFile.readlines())
 
-def f137():
+def f131():
     # Writing to Files
 
     baconFile = open('bacon.txt', 'w')    # open in writr mode
@@ -2310,7 +2181,7 @@ def f137():
 
     print(content)
 
-def f138():
+def f132():
     # Saving Variables with the shelve Module
 
     import shelve
@@ -2337,7 +2208,7 @@ def f138():
     # but if you want to save data from your Python programs,
     # use the shelve module
 
-def f139():
+def f133():
     # Saving Variables with the pprint.pformat() Function
 
     '''
@@ -2371,7 +2242,7 @@ def f139():
     print(myCats.cats[0])
     print(myCats.cats[0]['name'])
 
-def f140():
+def f134():
     # Generating Random Quiz Files
 
     import random
@@ -2435,16 +2306,16 @@ def f140():
     quizFile.close()
     answerKeyFile.close()
 
-def f141():
+def f135():
     # Multiclipboard
     print('')
     # Step 1: Comments and Shelf Setup
 
-def f142():
+def f136():
     # Chapter 9 - Organizing Files
     print('Chapter 9 - Organizing Files')
 
-def f143():
+def f137():
     # Copying Files and Folders - using shutil module
 
     # shutil.copy(source, destination)
@@ -2462,7 +2333,7 @@ def f143():
     # Above copies all files and subfolders in current directory into /tmp/test,
     # the test directroy will be created if it is not already exist.
 
-def f144():
+def f138():
     # Moving and Renaming Files and Folders
 
     ''' Examples:
@@ -2477,7 +2348,7 @@ def f144():
     '''
     print()
 
-def f145():
+def f139():
     # Permanently Deleting Files and Folders
 
     '''
@@ -2494,7 +2365,7 @@ def f145():
             #os.unlink(filename)
             print(filename)
 
-def f146():
+def f140():
     # Safe Deletes with the send2trash Module
 
     # install the 3rd party module send2trash, first:
@@ -2507,7 +2378,7 @@ def f146():
     baconFile.close()
     send2trash.send2trash('bacon.txt')
 
-def f147():
+def f141():
     # Walk through the directory tree
 
     import os
@@ -2524,7 +2395,7 @@ def f147():
     # os.walk, doesn't return list of files/subfolders recursively, it returns
     # current folder name, subfolders and file names in current directory.
 
-def f148():
+def f142():
     # Compressing Files with the zipfile Module
 
     import zipfile, os
@@ -2546,7 +2417,7 @@ def f148():
     exampleZip.close()
     os.unlink('example.zip')
 
-def f149():
+def f143():
     # Extracting from ZIP Files
 
     import zipfile, shutil, os
@@ -2560,7 +2431,7 @@ def f149():
     print(os.listdir('/tmp/test'))
     shutil.rmtree('/tmp/test')
 
-def f150():
+def f144():
     # Creating and Adding to ZIP Files
 
     import zipfile, os
@@ -2574,7 +2445,7 @@ def f150():
     os.system('ls')
     os.unlink('new.zip')
 
-def f151():
+def f145():
     # Renaming Files with American-Style Dates to
     # European-Style Dates
     # shutil.move() function can be used to rename files
@@ -2616,7 +2487,7 @@ def f151():
         print('Renaming "%s" to "%s"...' % (amerFilename, euroFilename))
         #shutil.move(amerFilename, euroFilename) # uncomment after testing
 
-def f152():
+def f146():
     # Backing Up a Folder into a ZIP File
 
     import zipfile, os
@@ -2659,11 +2530,11 @@ def f152():
 
     backupToZip('/home/bmzi/bin')
 
-def f153():
+def f147():
     # Chapter 10 - Debugging
     print('Chapter 10 - Debugging')
 
-def f154():
+def f148():
     # Raising Exceptions
 
     def boxPrint(symbol, width, height):
@@ -2692,7 +2563,7 @@ def f154():
     # that raised the exception, the program simply crashes and displays the
     # exception’s error message.
 
-def f155():
+def f149():
     # Getting the Traceback as a String
 
     import traceback, os
@@ -2711,7 +2582,7 @@ def f155():
     os.system('cat errorInfo.txt')
     os.unlink('errorInfo.txt')
 
-def f156():
+def f150():
     # Assertions - is a sanity check of the code
     # an assert statement says, 'I assert that this condition holds true,
     # and if not, there is a bug somewhere in the program.'
@@ -2740,7 +2611,7 @@ def f156():
     '''
     print()
 
-def f157():
+def f151():
     # Using an Assertion in a Traffic Light Simulation
 
     def switchLights(stoplight):
@@ -2771,7 +2642,7 @@ def f157():
 
     # Assertions can be disabled by passing the -O option when running Python.
 
-def f158():
+def f152():
     # Logging - Using the logging Module
 
     import logging
@@ -2798,7 +2669,7 @@ def f158():
     print(factorial(5)) call is part of the original program, so the result is dis-
     played even if logging messages are disabled.'''
 
-def f159():
+def f153():
     # Logging to a file
     # Instead of displaying the log messages to the screen, you can write them to
     # a text file.
@@ -2819,11 +2690,11 @@ def f159():
     os.system('cat myProgramLog.txt')
     os.unlink('myProgramLog.txt')
 
-def f160():
+def f154():
     # IDLE Debuger
     print('Should be installed and practised!')
 
-def f161():
+def f155():
     # Find the program bug!
 
     '''
@@ -2847,7 +2718,7 @@ def f161():
     '''
     print()
 
-def f162():
+def f156():
     # Chapter 11 - Web Scraping
     print('''Chapter 11 - Web Scraping:
     156 -  Launch a new browser
@@ -2869,13 +2740,13 @@ def f162():
     172 -  Sending Special Keys
     ''')
 
-def f163():
+def f157():
     # Launch a new browser by webbrowser module
 
     import webbrowser
     webbrowser.open('https://www.google.com')
 
-def f164():
+def f158():
     # Open google map address from terminal or clipboard
 
     import webbrowser, sys, pyperclip
@@ -2896,7 +2767,7 @@ def f164():
     # append your address. Websites often add extra data to URLs to
     # help to track visitors or customize sites.
 
-def f165():
+def f159():
     # Downloading a Web Page with the requests.get() Function
 
     # First install requests module:
@@ -2916,7 +2787,7 @@ def f165():
     print(len(res.text)) # shows nr of characters for downloaded text
     print(res.text[:250])  # displays only the first 250 characters
 
-def f166():
+def f160():
     # Checking Downloading A Web Page
 
     import requests
@@ -2934,7 +2805,7 @@ def f166():
     # Always call raise_for_status() after calling requests.get() . You want to be
     # sure that the download has actually worked before your program continues.
 
-def f167():
+def f161():
     # Saving Downloaded Files to the Hard Drive
 
 
@@ -2965,7 +2836,7 @@ def f167():
     os.system('ls -l RomeoAndJuliet.txt')
     os.unlink('RomeoAndJuliet.txt')
 
-def f168():
+def f162():
     # Parsing HTML with the BeautifulSoup Module
     import requests, bs4
 
@@ -2981,7 +2852,7 @@ def f168():
     Once you have a BeautifulSoup object, you can use its methods to
     locate specific parts of an HTML document.'''
 
-def f169():
+def f163():
     # Creating a BeautifulSoup Object from a local HTM
     import requests, bs4, os
 
@@ -3004,7 +2875,7 @@ def f169():
 
     os.system('rm -f example.html')
 
-def f170():
+def f164():
     # Finding an Element with the select() Method
 
     import bs4, os
@@ -3050,7 +2921,7 @@ def f170():
 
     os.system('rm -f example.html')
 
-def f171():
+def f165():
     # Getting Data from an Element’s Attributes
 
     # The get() method for Tag objects makes it simple to access attribute values
@@ -3082,7 +2953,7 @@ def f171():
 
     os.system('rm -f example.html')
 
-def f172():
+def f166():
     # I’m Feeling Lucky - Google Search
 
     import requests, sys, webbrowser, bs4
@@ -3112,7 +2983,7 @@ def f172():
     for i in range(numOpen):            # Open a browser tab for each result.
         webbrowser.open('http://google.com' + linkElems[i].get('href'))
 
-def f173():
+def f167():
 # Downloading All XKCD Comics
     import requests, os, bs4
 
@@ -3157,7 +3028,7 @@ def f173():
 
     print('Done.')
 
-def f174():
+def f168():
     # Starting a Selenium-Controlled Browser
 
     from selenium import webdriver
@@ -3167,7 +3038,7 @@ def f174():
     browser.get('http://inventwithpython.com')  # opens the url in the already opened
                                                 # firefox browser
 
-def f175():
+def f169():
     # Finding Elements on the Page
 
     from selenium import webdriver
@@ -3187,7 +3058,7 @@ def f175():
 
     # To see the list of methods refer to item 159 in main menu !
 
-def f176():
+def f170():
     # WebElement Attributes and Methods
 
     ''' Selenium’s WebDriver Methods for Finding Elements
@@ -3233,7 +3104,7 @@ def f176():
                ment in the page
     '''
 
-def f177():
+def f171():
     # Clicking the Page
 
     from selenium import webdriver
@@ -3246,7 +3117,7 @@ def f177():
                         # click() simulate mouse click on the first link element with
                         # text as 'Read Online for Free'
 
-def f178():
+def f172():
     # Filling Out and Submitting Forms
 
     from selenium import webdriver
@@ -3263,7 +3134,7 @@ def f178():
     submit() method on any element will have the same result as clicking the Submit
     button for the form that element is in.'''
 
-def f179():
+def f173():
     # Sending Special Keys
 
     from selenium import webdriver
@@ -3295,6 +3166,134 @@ def f179():
 
     Selenium reference: http://selenium-python.readthedocs.org/
     '''
+def f174():
+    #
+    import socket
+
+    mysock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    mysock.connect(('data.pr4e.org', 80))
+    cmd = 'GET http://data.pr4e.org/romeo.txt HTTP/1.0\r\n\r\n'.encode()
+    mysock.send(cmd)
+
+    while True:
+        data = mysock.recv(512)
+        if len(data) < 1:
+            break
+        print(data.decode(),end='')
+
+    mysock.close()
+
+def f175():
+    # Download an image from webserver while showing the file
+    # header response information and dowloaded chuncks of data,
+    # during the download
+
+    import socket, time
+
+    HOST = 'data.pr4e.org'
+    PORT = 80
+    mysock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    mysock.connect((HOST, PORT))
+    mysock.sendall(b'GET http://data.pr4e.org/cover3.jpg HTTP/1.0\r\n\r\n')
+    count = 0
+    picture = b""
+
+    while True:
+        data = mysock.recv(5120)
+        if len(data) < 1: break
+        time.sleep(0.25)
+        count = count + len(data)
+        print(len(data), count)
+        picture = picture + data
+
+    mysock.close()
+
+    # Look for the end of the header (2 CRLF)
+    pos = picture.find(b"\r\n\r\n")
+    print('Header length', pos)
+    print(picture[:pos].decode())
+
+    # Skip past the header and save the picture data
+    picture = picture[pos+4:]
+    fhand = open("stuff.jpg", "wb")
+    fhand.write(picture)
+    fhand.close()
+
+def f176():
+    # Retrieve a web page over a socket and display the headers
+    # from the web server.
+
+    import socket
+
+    HOST = input('Enter webserver URL: ')
+    DOC = input('Enter document to be retrived [Press Enter to default index.html]: ')
+    if DOC == '': DOC = 'index.html'
+    PORT = input('Enter port number [Press Enter to default 80]: ')
+    if PORT == '': PORT = 80
+
+    # Open a connection
+    mysock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    mysock.connect((HOST, PORT))
+
+
+    cmd = 'GET http://' +  HOST +  '/' + DOC + ' HTTP/1.0\r\n\r\n'
+    cmd = cmd.encode()
+    print(cmd)
+
+    mysock.send(cmd)
+
+
+    receivedData = b""
+
+    while True:
+        data = mysock.recv(512)
+        if len(data) < 1: break
+        receivedData = receivedData + data
+
+    mysock.close()
+
+    pos = receivedData.find(b"\r\n\r\n")
+    print('Header length', pos)
+    print(receivedData[:pos].decode())
+
+def f177():
+    # Load a web document, browser simulation
+    import socket
+
+    mysock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    mysock.connect(('data.pr4e.org', 80))
+    cmd = 'GET http://data.pr4e.org/intro-short.txt HTTP/1.0\r\n\r\n'.encode()
+    mysock.send(cmd)
+
+    while True:
+        data = mysock.recv(512)
+        if len(data) < 1:
+            break
+        print(data.decode(),end='')
+
+    mysock.close()
+
+def f178():
+    # Open a web page with urlib module
+    import urllib.request
+
+    fhand = urllib.request.urlopen('http://data.pr4e.org/romeo.txt')
+    for line in fhand:
+        print(line.decode().strip())
+
+def f179():
+    # Count the number of words in a web page
+    import urllib.request, urllib.parse, urllib.error, pprint
+
+    fhand = urllib.request.urlopen('http://data.pr4e.org/romeo.txt')
+
+    counts = dict()
+    for line in fhand:
+        words = line.decode().split()
+        for word in words:
+            counts[word] = counts.get(word, 0) + 1
+    pprint.pprint(counts)
+
 def f180():
     # Chapter 12 - Working with Excel Spreadsheets
     print('Chapter 12 - Working with Excel Spreadsheets')
@@ -4652,11 +4651,11 @@ def f246():
     subprocess.Popen('/usr/bin/gnome-calculator')
 
     # Popen object has two methods: poll() and wait()
-    # The poll() method will return None  if the process  is still 
+    # The poll() method will return None  if the process  is still
     # running at the  time poll() is called.  If the  program  has
     # terminated, it will return the process’s integer exit code.
 
-    # The wait() method will block until the launched process has 
+    # The wait() method will block until the launched process has
     # terminated. This is helpful if you want your program to pau-
     # se until the user finishes with the other program. The retu-
     # rn value of wait() is the process’s integer exit code.

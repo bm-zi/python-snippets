@@ -120,63 +120,63 @@
 120 -  Combining re.IGNORECASE, re.DOTALL, and re.VERBOSE
 121 -  Finds phone numbers and email addresses on the clipboard
 122 -  Extract and compute the sum of the numbers from a text file
-123 -  Get a document from a remote webserver by http GET() method
-124 -  Download an image from webserver, with header information
-125 -  Retrieve a web page over a socket and display the headers
-126 -  Load a web document, browser simulation
-127 -  Open a web page with urlib module
-128 -  Count the number of words in a web page
-129 -  Chapter 8 - Reading and Writing Files
-130 -  Create strings for file names
-131 -  The Current Working Directory
-132 -  Creating New Folders with os.makedirs()
-133 -  Handling Absolute and Relative Paths
-134 -  Finding File Sizes and Folder Contents
-135 -  Checking Path Validity
-136 -  The File Reading/Writing Process
-137 -  Writing to Files
-138 -  Saving Variables with the shelve Module
-139 -  Saving Variables with the pprint.pformat() Function
-140 -  Generating Random Quiz Files
-141 -  Multiclipboard
-142 -  Chapter 9 - Organizing Files
-143 -  Copying files and folders
-144 -  Moving and renaming files and folders
-145 -  Permanently Deleting Files and Folders
-146 -  Safe Deletes with the send2trash Module
-147 -  Walk through the directory tree - os.walk
-148 -  Compressing Files with the zipfile Module
-149 -  Extracting from ZIP Files
-150 -  Creating and Adding to ZIP Files
-151 -  Renaming Files with US-Style Dates to EU-style
-152 -  Backing Up a Folder into a ZIP File
-153 -  Chapter 10 - Debugging
-154 -  Raising Exceptions
-155 -  Getting the Traceback as a String
-156 -  Assertions
-157 -  Using an Assertion in a Traffic Light Simulation
-158 -  Logging - Using the logging Module
-159 -  Logging to a file
-160 -  IDLE Debuger
-161 -  Debugging Coin Toss
-162 -  Chapter 11 - Web Scraping
-163 -  Launch a new browser
-164 -  Open google map address from terminal or clipboard
-165 -  Download Web Page with requests.get() Function
-166 -  Checking Downloading A Web Page
-167 -  Saving Downloaded Files to the Hard Drive
-168 -  Parsing HTML with the BeautifulSoup Module
-169 -  Creating a BeautifulSoup Object from local HTML file
-170 -  Finding an Element with the select() Method
-171 -  Getting Data from an Element’s Attributes
-172 -  I’m Feeling Lucky - Google Search
-173 -  Downloading All XKCD Comics
-174 -  Starting a Selenium-Controlled Browser
-175 -  Finding Elements on the Page
-176 -  WebElement Attributes and Methods
-177 -  Clicking the Page
-178 -  Filling Out and Submitting Forms
-179 -  Sending Special Keys
+123 -  Chapter 8 - Reading and Writing Files
+124 -  Create strings for file names
+125 -  The Current Working Directory
+126 -  Creating New Folders with os.makedirs()
+127 -  Handling Absolute and Relative Paths
+128 -  Finding File Sizes and Folder Contents
+129 -  Checking Path Validity
+130 -  The File Reading/Writing Process
+131 -  Writing to Files
+132 -  Saving Variables with the shelve Module
+133 -  Saving Variables with the pprint.pformat() Function
+134 -  Generating Random Quiz Files
+135 -  Multiclipboard
+136 -  Chapter 9 - Organizing Files
+137 -  Copying files and folders
+138 -  Moving and renaming files and folders
+139 -  Permanently Deleting Files and Folders
+140 -  Safe Deletes with the send2trash Module
+141 -  Walk through the directory tree - os.walk
+142 -  Compressing Files with the zipfile Module
+143 -  Extracting from ZIP Files
+144 -  Creating and Adding to ZIP Files
+145 -  Renaming Files with US-Style Dates to EU-style
+146 -  Backing Up a Folder into a ZIP File
+147 -  Chapter 10 - Debugging
+148 -  Raising Exceptions
+149 -  Getting the Traceback as a String
+150 -  Assertions
+151 -  Using an Assertion in a Traffic Light Simulation
+152 -  Logging - Using the logging Module
+153 -  Logging to a file
+154 -  IDLE Debuger
+155 -  Debugging Coin Toss
+156 -  Chapter 11 - Web Scraping
+157 -  Launch a new browser
+158 -  Open google map address from terminal or clipboard
+159 -  Download Web Page with requests.get() Function
+160 -  Checking Downloading A Web Page
+161 -  Saving Downloaded Files to the Hard Drive
+162 -  Parsing HTML with the BeautifulSoup Module
+163 -  Creating a BeautifulSoup Object from local HTML file
+164 -  Finding an Element with the select() Method
+165 -  Getting Data from an Element’s Attributes
+166 -  I’m Feeling Lucky - Google Search
+167 -  Downloading All XKCD Comics
+168 -  Starting a Selenium-Controlled Browser
+169 -  Finding Elements on the Page
+170 -  WebElement Attributes and Methods
+171 -  Clicking the Page
+172 -  Filling Out and Submitting Forms
+173 -  Sending Special Keys
+174 -  Get a document from a remote webserver by http GET() method
+175 -  Download an image from webserver, with header information
+176 -  Retrieve a web page over a socket and display the headers
+177 -  Load a web document, browser simulation
+178 -  Open a web page with urlib module
+179 -  Count the number of words in a web page
 180 -  Chapter 12 - Working with Excel Spreadsheets
 181 -  Opening Excel Documents with OpenPyXL
 182 -  Getting Cells from the Sheets
@@ -245,5 +245,4 @@
 245 -  Downloads XKCD comics using multiple Thread’s
 246 -  Launching Other Programs from Python
 247 -  Passing Command Line Arguments to Popen()
-248 -  Opening Files with Default Applications  
-249 -
+248 -  Opening Files with Default Application
