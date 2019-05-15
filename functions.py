@@ -4,9 +4,19 @@
 # Author: bm-zi
 
 def f1():
+    # Chapter 1 - Python Basics
+    print('''Chapter 1 - Python Basics
+    . Entering Expressions into the Interactive Shell
+    . The Integer, Floating-Point, and String Data Types
+    . String Concatenation and Replication
+    . Storing Values in Variables
+    . Your First Program
+        ''')
+
+def f2():
     # Math Operators
     print(2+2)  # 4
-    print(2)    # 2     
+    print(2)    # 2
     print(2 + 3 * 6)    # 20
     print((2 + 3) * 6)  # 30
     print(48565878 * 578453)    # 28093077826734
@@ -18,12 +28,12 @@ def f1():
     print((5 - 1) * ((7 + 1) / (3 - 1)))  # 16.0
     print()  # blank line in python3
 
-def f2():
+def f3():
     # String concatenation and replication
     print('Alice' + 'Bob') # AliceBob
     print('Alice' * 5)  # AliceAliceAliceAliceAlice
 
-def f3():
+def f4():
     # First Python Program - print user input
 
     print('Hello world!')
@@ -38,18 +48,18 @@ def f3():
     myAge = input()
     print('You will be ' + str(int(myAge) + 1) + ' in a year.')
 
-def f4():
+def f5():
     # Function len() - string length
     print(len('hello'))
     print(len('My very energetic monster just scarfed nachos.'))
 
-def f5():
+def f6():
     # Function str()
-    print('I am ' + str(29) + ' years old.')  
+    print('I am ' + str(29) + ' years old.')
 
     # you get an error if you just use 29 without function str()
 
-def f6():
+def f7():
     # Function str(), int(), float
     # The str() , int() , and float() functions will evaluate to the string,
     # integer, and floating-point forms of the value you pass, respectively.
@@ -62,11 +72,11 @@ def f6():
     print(float('3.14'))  # 3.14
     print(float(10))  # 10.0
 
-def f7():
+def f8():
     # input() function
     # input() function always returns a string,
     # to change it to an integer use int() function
-    spam = input()  
+    spam = input()
     spam = int(spam)
     print(spam)   # If you type a string that cannot be converted to integer,
                     # you will get an error shows that the variable is not defined
@@ -77,11 +87,23 @@ def f7():
     print(42 == '42')    # False
     print(42 == 42.0)    # True
     print(42.0 == 0042.000)   # True
-    print() 
+    print()
     print()
     print()
 
-def f8():
+def f9():
+    print('''Chapter 2 - Flow Control:
+    . Boolean Values
+    . Comparison Operators
+    . Boolean Operators
+    . Mixing Boolean and Comparison Operators
+    . Elements of Flow Control (if, else, ilif, while, break, continue, for and rang)
+    . Flow Control Statements
+    . Importing Modules
+    . Ending a Program Early with sys.exit()
+    ''')
+
+def f10():
     # Boolean data types
     # --- CHAPTER 2 ---
     # Boolean data types are having values: False and True
@@ -89,7 +111,7 @@ def f8():
     print(42 == 42)   # True
     print(42 == 99)   # False
     print(2 != 3)     # True
-    print(2 != 2)     # False 
+    print(2 != 2)     # False
 
     # The == and != operators can actually work with values of any data type.
 
@@ -111,7 +133,7 @@ def f8():
     myAge = 29
     print(myAge >= 10)      # True
 
-def f9():
+def f11():
     # Boolean Operators
     # and operator
     print(True and True)    # True
@@ -130,14 +152,14 @@ def f9():
     print(not True)     # False
     print(not False)    # True
 
-def f10():
+def f12():
     # Mixing Boolean and Comparison Operators
     print((4 < 5) and (5 < 6))      # True
     print((4 < 5) and (9 < 6))      # False
     print((1 == 2) or (2 == 2))     # True
     print(2 + 2 == 4 and not 2 + 2 == 5 and 2 * 2 == 2 + 2)     # True
 
-def f11():
+def f13():
     # if,elif,else conditional
     name='alice'
     age=20
@@ -155,14 +177,14 @@ def f11():
         print('Hello, world.')
         spam = spam + 1
 
-def f12():
+def f14():
     # while loop
     spam = 0
     while spam < 5:
         print('Hello, world.')
         spam = spam + 1
 
-def f13():
+def f15():
     # An Annoying while Loop
     name = 'Al'
     while name != 'your name':
@@ -170,7 +192,7 @@ def f13():
         name = input()
     print('Thank you!')
 
-def f14():
+def f16():
     # break Statements, breaks the loop
     while True:
         print('Please type your name.')
@@ -179,13 +201,13 @@ def f14():
             break
     print('Thank you!')
 
-def f15():
+def f17():
     # continue statement, keeps running the loop start from begining
     while True:
         print('Who are you?')
         name = input()
         if name != 'Joe':
-            continue   # restarts the loop      
+            continue   # restarts the loop
         print('Hello, Joe. What is the password? (It is a fish.)')
         password = input()
         if password == 'swordfish':
@@ -195,12 +217,12 @@ def f15():
     # Note:
     # A combination of 'if not statement' with 'continue' helps if
     # the condition is not true then loops resets, otherwise it k-
-    # eeps going to the next statement in loop. 
+    # eeps going to the next statement in loop.
 
-def f16():
+def f18():
     # empty value is considered False
     name = ''
-    while not name:     
+    while not name:
         print('Entenning the loop start from beginingr your name:')
         name = input()
     print('How many guests will you have?')
@@ -209,13 +231,13 @@ def f16():
         print('Be sure to have enough room for all your guests.')
     print('Done')
 
-def f17():
+def f19():
     # for Loops and the range() Function
     print('My name is')
     for i in range(5):
         print('Jimmy Five Times (' + str(i) + ')')
 
-def f18():
+def f20():
     # while loop equivalent to for loop
     print('My name is')
     i = 0
@@ -223,14 +245,14 @@ def f18():
         print('Jimmy Five Times (' + str(i) + ')')
         i = i + 1
 
-def f19():
+def f21():
     # for loop example - sum of numbers from 1 to 100
     total = 0
     for num in range(101):
         total = total + num
     print(total)
 
-def f20():
+def f22():
     # range() function examples
     for i in range(12, 16):
         print(i)
@@ -241,26 +263,26 @@ def f20():
     for i in range(0, 10, 2):
         print(i)
 
-    print('.' * 10) 
+    print('.' * 10)
 
     for i in range(5, -1, -1):
         print(i)
 
-def f21():
+def f23():
     # import modules
-    # functions like print(), input() , and len() are builtin fuctions; 
+    # functions like print(), input() , and len() are builtin fuctions;
     # No need to import them.
-    # function like randint() are from standard library modules that 
+    # function like randint() are from standard library modules that
     # has to be imported
 
-    # if use "from random from random import *" , 
+    # if use "from random import *" ,
     # then no need to to call a function with the random. prefix.
 
     import random
     for i in range(5):
         print(random.randint(1, 10))
 
-def f22():
+def f24():
     # sys.exit()
     # Ending a Program Early with sys.exit()
 
@@ -272,7 +294,18 @@ def f22():
             sys.exit()
         print('You typed ' + response + '.')
 
-def f23():
+def f25():
+    #
+    print('''Chapter 3 - Functions:
+    . def Statements with Parameters
+    . Return Values and return Statements
+    . The None Value
+    . Keyword Arguments and print()
+    . Local and Global Scope
+    . The global Statement
+    . Exception Handling''')
+
+def f26():
     # FUNCTIONS
     def hello():
 
@@ -283,7 +316,7 @@ def f23():
     hello()
     hello()
 
-def f24():
+def f27():
     # Function with argument
     def hello(name):
 
@@ -291,7 +324,7 @@ def f24():
     hello('Alice')
     hello('Bob')
 
-def f25():
+def f28():
     # return statement
     import random
     def getAnswer(answerNumber):
@@ -320,69 +353,156 @@ def f25():
     print(fortune)
     # return exits the fuction block
 
-def f26():
+def f29():
     # None type
-    # 'None' is a value-without-value 
+    # 'None' is a value-without-value
     # (like null or undefined in other languages.)
-    spam = print('Hello!') # print function returns no value that 
+    spam = print('Hello!') # print function returns no value that
                             # is known as 'None'
     print(None == spam)
 
     # return without value returns value 'None'
     # continue in for or while loop also returns value 'None'
 
-def f27():
+def f30():
     # Optional keywords for functions
     # functions have optional keyword like end and sep in print() function
 
     print('Hello', end='')    # The 'end' keyword cause to ignore the new line.
-    print('World')            # By defualt print prints a newline after printing 
+    print('World')            # By defualt print prints a newline after printing
                                 # its argument
     print('cats', 'dogs', 'mice')
-    print('cats', 'dogs', 'mice', sep=',') # the function print will automatically 
+    print('cats', 'dogs', 'mice', sep=',') # the function print will automatically
                                             # separates multiple string values
                                             # with a single space.
 
-def f28():
+def f31():
+    # Local and Global Scopes
+
+    # 1.
+    # Local Variables Cannot Be Used in the Global Scope
+    # The following snippet generates error if uncommented:
+    # def spam():
+    #     eggs = 31337
+    # spam()
+    # print(eggs)
+
+    # 2.
+    # Local Scopes Cannot Use Variables in Other Local Scopes
+    # The following snippet prints '99' if is uncommented
+    def spam1():
+        eggs = 99
+        bacon1()
+        print(eggs)
+
+    def bacon1():
+        ham = 101
+        eggs = 0
+
+    spam1()
+    print('.' * 10)
+
+    # 3.
+    # Global Variables Can Be Read from a Local Scope
+    # '42' will be printed, for the following snippet
+    def spam2():
+        # eggs = 21
+        print(eggs)    # because no local eggs exists, python con-
+                       # siders it a reference to the global vari-
+                       # able eggs(42). If a local variale eggs -
+                       # exists, it uses that local variable inst-
+                       # ead of the variable eggs in global scope.
+
+    eggs = 42
+    spam2()
+    print(eggs)  # prints 21, if 'eggs = 21' is uncommented.
+    print('.' * 10)
+
+    # 4.
     # Local and Global Variables with the Same Name
-    # you should avoid using the same variable name in different scopes.
-    def spam():
+    # Avoid using the same variable name in different scopes.
+    def spam3():
         eggs = 'spam local'
         print(eggs)            # prints 'spam local'
 
-    def bacon():
+    def bacon3():
         eggs = 'bacon local'
         print(eggs)            # prints 'bacon local'
-        spam()                 # prints 'spam local'
+        spam3()                 # prints 'spam local'
         print(eggs)            # prints 'bacon local'
 
     eggs = 'global'
-    bacon()
+    bacon3()
     print(eggs)                # prints 'global'
 
-def f29():
-    # global variables
-    # use 'global', if need to specify a variable as global from within a function.
-    # in followintg we use a technique to use a global variable by  declaring  and 
-    # assining value to that global variable inside of a function, and call the function 
-    # when global variable is needed to be used.
-    # 
-    def spam():
+def f32():
+    # Local and Global Variables
+
+    # If you need to modify a global variable from within a funct-
+    # ion, use the global statement.
+    def spam4():
         global eggs
         eggs = 'spam'
+        print(eggs)
 
     eggs = 'global'
-    spam()
-    print(eggs)
+    spam4()        # prints spam
+    print(eggs)    # prints 'global'
+    print('.' * 10)
 
-def f30():
+    # Rules:
+    # 1.   If a variable is being used in the global scope (that -
+    #      is, outside of all functions), then it is always a glo-
+    #      bal variable.
+
+    # 2.   If there is a global statement for that variable in a -
+    #      function, it is a global variable.
+
+    # 3.   Otherwise, if the variable is used in an assignment st-
+    #      atement in the function, it is a local variable.
+
+    # 4.   But if the variable is not used in an assignment state-
+    #      ment, it is a global variable.
+
+    # To get a better feel for the above rule, here is another sn-
+    # ippet:
+    def spam5():
+        global eggs
+        eggs = 'spam'  # this is the global
+        print(eggs)
+
+    def bacon5():
+        eggs = 'bacon' # this is a local
+        print(eggs)
+
+    def ham5():
+        print(eggs)    # this is the global
+
+    eggs = 42          # this is the global
+    spam5()
+    print(eggs)
+    bacon5()
+    ham5()
+
+    print('.' * 10)
+    # If try to use a local variable in a function before you ass-
+    # ign a value to it, Python will give you an error.
+    def spam6():
+        # print(eggs) # if uncommented you get ERROR!
+        eggs = 'spam local'
+        print(eggs)
+
+    eggs = 'global'
+    spam6()
+
+def f33():
     # Exception Handling
 
     def spam(divideBy):
         try:                        # Potential error code is in try clause
             return 42 / divideBy
-        except ZeroDivisionError:   # When error is caught in try clause, then it moves to except block, 
-                                    # and then gets back to try block and continue the next statement 
+        except ZeroDivisionError:   # When error is caught in try clause, then it moves to except block,
+                                    # and then gets back to try block and continue the next statement
                                     # after the statement with error
             print('Error: Invalid argument.')
 
@@ -391,10 +511,10 @@ def f30():
     print(spam(0))
     print(spam(1))
 
-def f31():
+def f34():
     # Out Of Function Exception Handling
     # Difference between the folloing code and the previous one:
-    # In previous code any errors that occur in function calls in 
+    # In previous code any errors that occur in function calls in
     # a try block will also be caught.
 
     def spam(divideBy):
@@ -408,7 +528,7 @@ def f31():
     except ZeroDivisionError:
         print('Error: Invalid argument.')
 
-def f32():
+def f35():
     # Guessing Game
     import random
     secretNumber = random.randint(1, 20)
@@ -432,7 +552,22 @@ def f32():
     else:
         print('Nope. The number I was thinking of was ' + str(secretNumber))
 
-def f33():
+def f36():
+    #
+    print('''Chapter 4 - Lists:
+    . The List Data Type
+    . Working with Lists
+    . Augmented Assignment Operators
+    . Finding a Value in a List with the index() Method
+    . Adding Values to Lists with the append() and insert() Methods
+    . Removing Values from Lists with remove()
+    . Sorting the Values in a List with the sort() Method
+    . List-like Types: Strings and Tuples
+    . Mutable and Immutable Data Types
+    . The Tuple Data Type
+    . Converting Types with the list() and tuple() Functions''')
+
+def f37():
     # Lists - examples
     print([1, 2, 3])
     print(['cat', 'bat', 'rat', 'elephant'])
@@ -450,14 +585,14 @@ def f33():
     print('The ' + spam[1] + ' ate the ' + spam[0] + '.')
     print(spam[int(1.0)])
 
-def f34():
+def f38():
     # Lists : list of lists
     spam = [['cat', 'bat'], [10, 20, 30, 40, 50]]   # List of lists
     print(spam)
     print(spam[0][1])
     print(spam[1][4])
 
-def f35():
+def f39():
     # Lists : negative indexes
     spam = ['cat', 'bat', 'rat', 'elephant']
     print(spam[-1])     # elephant
@@ -465,7 +600,7 @@ def f35():
     print(spam[0:-1])   # ['cat', 'bat', 'rat']
     print('The ' + spam[-1] + ' is afraid of the ' + spam[-3] + '.')
 
-def f36():
+def f40():
     # Lists : getting sublists with slices
     spam = ['cat', 'bat', 'rat', 'elephant']
     print(spam[0:4])    # ['cat', 'bat', 'rat', 'elephant']
@@ -475,12 +610,12 @@ def f36():
     print(spam[1:])     # ['bat', 'rat', 'elephant']
     print(spam[:])      # ['cat', 'bat', 'rat', 'elephant']
 
-def f37():
+def f41():
     # Lists : getting a list’s length with len()
     spam = ['cat', 'dog', 'moose']
     print(len(spam))  # 3
 
-def f38():
+def f42():
     # Lists : changing values in a list with indexes
     spam = ['cat', 'bat', 'rat', 'elephant']
     spam[1] = 'aardvark'
@@ -490,7 +625,7 @@ def f38():
     spam[-1] = 12345
     print(spam)
 
-def f39():
+def f43():
     # Lists: list concatenation and list replication
 
     # It is like strings concatenation and replication
@@ -502,7 +637,7 @@ def f39():
     spam = spam + ['A', 'B', 'C']
     print(spam)
 
-def f40():
+def f44():
     # Lists : removing values from lists with del statements
     spam = ['cat', 'bat', 'rat', 'elephant']
     del spam[2]
@@ -510,7 +645,7 @@ def f40():
     del spam[2]
     print(spam)
 
-def f41():
+def f45():
     # Lists : working with lists
 
     # instead of using many varibales use lists for data entry
@@ -525,7 +660,7 @@ def f41():
     for name in catNames:
         print('    ' + name)
 
-def f42():
+def f46():
     # Lists : using for loops
 
     print('simple for loop : ')
@@ -541,7 +676,7 @@ def f42():
     for i in range(len(supplies)):
         print('Index ' + str(i) + ' in supplies is: ' + supplies[i])
 
-def f43():
+def f47():
     # Lists : in and not in operators
 
     # determine whether a value is or isn’t in a list
@@ -561,9 +696,9 @@ def f43():
     if name not in myPets:
         print('I do not have a pet named ' + name)
     else:
-        print(name + ' is my pet.') 
+        print(name + ' is my pet.')
 
-def f44():
+def f48():
     # Lists : multiple assignment trick
     cat = ['fat', 'black', 'loud']
     size = cat[0]
@@ -576,7 +711,7 @@ def f44():
     size, color, disposition = cat
     print(cat)
 
-def f45():
+def f49():
     # Augmented assignment operators
 
     '''
@@ -586,7 +721,7 @@ def f45():
     spam = spam * 1    spam *= 1
     spam = spam / 1    spam /= 1
     spam = spam % 1    spam %= 1
-    ''' 
+    '''
 
     spam = 42
     spam = spam + 1
@@ -604,25 +739,25 @@ def f45():
     bacon *= 3
     print(bacon)
 
-def f46():
+def f50():
     # Lists : finding a Value in a list with the index() method
 
     # Methods are the same as functoions, except that is called on value
     # Each data type has its own set of methods.
-    # list data type, for ­example, has several useful methods for finding, 
+    # list data type, for ­example, has several useful methods for finding,
     # adding, removing, and manipulating values in a list.
 
     spam = ['hello', 'hi', 'howdy', 'heyas']
     print(spam.index('hello'))
     print(spam.index('heyas'))
 
-    # When there are duplicates of the value in the list, 
+    # When there are duplicates of the value in the list,
     # the index of its first appearance is returned.
 
     spam = ['Zophie', 'Pooka', 'Fat-tail', 'Pooka']
     print(spam.index('Pooka'))
 
-def f47():
+def f51():
     # Methods - adding values to lists with append() and insert() methods
 
     spam = ['cat', 'dog', 'bat']
@@ -633,20 +768,20 @@ def f47():
     spam.insert(1, 'chicken')
     print(spam)
 
-def f48():
+def f52():
     # Lists : removing values from lists with remove()
     spam = ['cat', 'bat', 'rat', 'elephant']
     spam.remove('bat')
     print(spam)
 
-    # If the value appears multiple times in the list, 
+    # If the value appears multiple times in the list,
     # only the first instance of the value will be removed
 
     spam = ['cat', 'bat', 'rat', 'cat', 'hat', 'cat']
     spam.remove('cat')
     print(spam)
 
-def f49():
+def f53():
     # List : sorting the values in a list with the sort() method
     spam = [2, 5, 3.14, 1, -7]
     spam.sort()
@@ -678,7 +813,7 @@ def f49():
     spam.sort(key=str.lower)
     print(spam)
 
-def f50():
+def f54():
     # magic 8 ball with a list
 
     # much more elegant version of previous 8 ball
@@ -694,12 +829,12 @@ def f50():
     'Very doubtful']
     print(messages[random.randint(0, len(messages) - 1)])
 
-def f51():
+def f55():
     # list-like types: strings and tuples
 
     '''
     You can consider a string to be a "list" of single text characters.
-    Then you can use indexing; slicing; and using them with for loops, 
+    Then you can use indexing; slicing; and using them with for loops,
     with len() , and with the in and not in operators.
     '''
     name = 'Zophie'
@@ -714,7 +849,7 @@ def f51():
     for i in name:
         print('* * * ' + i + ' * * *')
 
-def f52():
+def f56():
     # mutable and immutable data types
 
     # Lists can have values added, removed, or changed. (mutable)
@@ -740,7 +875,7 @@ def f52():
     eggs.append(6)
     print(eggs)
 
-def f53():
+def f57():
     # tuple data type
 
     # tuples are like lists but use () instead aof []
@@ -749,21 +884,21 @@ def f53():
     eggs = ('hello', 42, 0.5)
     # eggs[1] = 99   # this generates error
 
-    # If you have only one value in your tuple, you can indicate this 
+    # If you have only one value in your tuple, you can indicate this
     # by placing a trailing comma
     print(type(('hello',)))
     print(type(('hello')))
 
     '''tuples advantages:
-    . When you don't want the values to be changed.(unlike the list) 
+    . When you don't want the values to be changed.(unlike the list)
     . They are faster than lists
-    ''' 
+    '''
     print('Converting Types with the list() and tuple() Functions')
     print(tuple(['cat', 'dog', 5]))
     print(list(('cat', 'dog', 5)))
     print(list('hello'))
 
-def f54():
+def f58():
     # references
 
     # assignment for strings and integers value
@@ -774,7 +909,7 @@ def f54():
     print(spam)
     print(cheese) # cheese didn't chage
 
-    # assignment foe lists is different, actually we are assiging a 
+    # assignment foe lists is different, actually we are assiging a
     # list reference to the variable
 
     spam = [0, 1, 2, 3, 4, 5]
@@ -785,19 +920,19 @@ def f54():
     print(cheese)
 
     '''
-    When you create the list, you assign a reference to it in the spam 
-    variable. But the next line copies only the list reference in spam 
+    When you create the list, you assign a reference to it in the spam
+    variable. But the next line copies only the list reference in spam
     to cheese , not the list value itself.
     list variables don’t actually contain lists—they contain references
     to lists.
     '''
 
-def f55():
+def f59():
     # Passing References
 
     '''
-    When a function is called, the values of the arguments are copied 
-    to the parameter variables. For lists and dictionaries, this means 
+    When a function is called, the values of the arguments are copied
+    to the parameter variables. For lists and dictionaries, this means
     a copy of the reference is used for the parameter.
     '''
 
@@ -809,7 +944,7 @@ def f55():
     print(spam)
 
     '''
-    Notice that when eggs() is called, a return value is not used to 
+    Notice that when eggs() is called, a return value is not used to
     assign a new value to spam. Instead, it modifies the list in place, directly.
 
     Even though spam and someParameter contain separate references, they
@@ -817,11 +952,11 @@ def f55():
     inside the function affects the list even after the function call has returned.
     '''
 
-def f56():
+def f60():
     # The copy Module’s copy() and deepcopy() Functions
 
     '''
-    copy.copy() , makes a duplicate copy of a mutable value like a list or dictionary, 
+    copy.copy() , makes a duplicate copy of a mutable value like a list or dictionary,
     not just a copy of a reference.
     '''
 
@@ -841,7 +976,7 @@ def f56():
     print(cheese)
     print(milk)
 
-def f57():
+def f61():
     grid = [['.','.','.','.','.','.'],
             ['.','0','0','.','.','.'],
             ['0','0','0','0','.','.'],
@@ -854,7 +989,22 @@ def f57():
 
     print(grid)
 
-def f58():
+def f62():
+    # Chapter 5 - Dictionaries and Structuring Data
+    print('''Chapter 5 - Dictionaries and Structuring Data:
+    . The Dictionary Data Type
+        . Using Data Structures to Model Real-World Things
+        . The keys(), values(), and items() Methods
+        . Checking Whether a Key or Value Exists in a Dictionary
+        . The get() Method
+        . The setdefault() Method
+    . Pretty Printing
+    . Using Data Structures to Model Real-World Things
+        .   A Tic-Tac-Toe Board
+        .   Nested Dictionaries and Lists
+    ''')
+
+def f63():
     # Dictionary Data Type
     myCat = {'size': 'fat', 'color': 'grey', 'disposition': "loud" }
     print(myCat['size'])
@@ -874,7 +1024,7 @@ def f58():
     ham = {'species': 'cat', 'age': '8', 'name': 'Zophie'}
     print(eggs == ham)
 
-def f59():
+def f64():
     # program to store data
     birthdays = {'Alice': 'Apr 1', 'Bob': 'Dec 12', 'Carol': 'Mar 4'}
     while True:
@@ -892,14 +1042,14 @@ def f59():
             print('Birthday database updated.')
             print(birthdays)
 
-def f60():
+def f65():
     # Dictionary's methods: keys, values, items
     spam = {'color': 'red', 'age': 42}
     print('Values:')
     for v in spam.values():
         print(v)
 
-    print('Keys::')    
+    print('Keys::')
     for k in spam.keys():
         print(k)
 
@@ -907,7 +1057,7 @@ def f60():
     for i in spam.items():
         print(i)
 
-def f61():
+def f66():
     # Build a list from dictionary's keys
     spam = {'color': 'red', 'age': 42}
 
@@ -916,11 +1066,11 @@ def f61():
     print(list(spam.keys()))
 
     #
-    # The list(spam.keys()) line takes the dict_keys value 
-    # returned from keys() and passes it to list() , which 
+    # The list(spam.keys()) line takes the dict_keys value
+    # returned from keys() and passes it to list() , which
     # then returns a list value of ['color', 'age']
 
-def f62():
+def f67():
     # Show dictionary's keys & values by for loop
     spam = {'color': 'red', 'age': 42}
     for k, v in spam.items():
@@ -929,7 +1079,7 @@ def f62():
     # spam.items() returns a dict_items data type
     print(spam.items())
 
-def f63():
+def f68():
     # Check if key or value exists in a dictionary,
     # by using in and not operators
 
@@ -943,7 +1093,7 @@ def f63():
     print('Zophie' in spam)             # False
     print('Zophie' in spam.values())
 
-def f64():
+def f69():
     # Dictionary get() method
 
     picnicItems = {'apples': 5, 'cups': 2}
@@ -952,12 +1102,13 @@ def f64():
     print('I am bringing ' + str(picnicItems.get('eggs', 'no value')) + ' eggs.')
 
     '''
-    Because there is no 'eggs' key in the picnicItems dictionary, 
-    the default value 0 is returned by the get() method. Without 
+    get() returns the value of the key, if the key exists.
+    Because there is no 'eggs' key in the picnicItems dictionary,
+    the default value 0 is returned by the get() method. Without
     using get() , the code would have caused an KeyError error.
     '''
 
-def f65():
+def f70():
     # Dictionary setdefault() Method
     # sets a default value for key if key does not already have a value
 
@@ -975,8 +1126,8 @@ def f65():
     print(spam.setdefault('color', 'white'))
     print(spam)
 
-def f66():
-    # Using setdefault() to count number of occurance of a 
+def f71():
+    # Using setdefault() to count number of occurance of a
     # character in string.
 
     message = 'It was a bright cold day in April, and the clocks were striking thirteen.'
@@ -989,18 +1140,18 @@ def f66():
     print(count)
 
     '''
-    The setdefault() method call ensures that the key is in the 
+    The setdefault() method call ensures that the key is in the
     count dictionary (with a default value of 0 )
 
     So the program doesn’t throw a KeyError error,
     when count[character] = count[character] + 1 is executed.
 
-    '''   
+    '''
 
-def f67():
+def f72():
     # Pretty Printing - using pprint module
 
-    # Following code counts number of the occurance of 
+    # Following code counts number of the occurance of
     # character in the string and then using pprint to
     # display cleaner the items in a dictionary
 
@@ -1017,9 +1168,9 @@ def f67():
     # pprint.pprint(someDictionaryValue)
     # print(pprint.pformat(someDictionaryValue))
 
-def f68():
+def f73():
     # TIC-TOC-TOE - using dictionary to model the board
-    theBoard = {'top-L': ' ', 'top-M': ' ', 'top-R': ' ', 'mid-L': ' ', 'mid-M': ' ', 
+    theBoard = {'top-L': ' ', 'top-M': ' ', 'top-R': ' ', 'mid-L': ' ', 'mid-M': ' ',
                 'mid-R': ' ', 'low-L': ' ', 'low-M': ' ', 'low-R': ' '}
 
     def printBoard(board):
@@ -1043,7 +1194,7 @@ def f68():
 
     printBoard(theBoard)
 
-def f69():
+def f74():
     # Nested Dictionaries and Lists
     # more complex data structure
 
@@ -1071,15 +1222,30 @@ def f69():
     quantity) is added to numBrought. If it does not exist as a key, the get()
     method returns 0 to be added to numBrought .'''
 
-def f70():
+def f75():
     # Fantasy Game Inventory
     print('project to do')
 
-def f71():
+def f76():
     # List to Dictionary Function for Fantasy Game Inventory
     print('project to do')
 
-def f72():
+def f77():
+    # Chapter 6 - Manipulating Strings
+    print('''Chapter 6 - Manipulating Strings:
+    . String Literals
+    . Indexing and Slicing Strings
+    . The in and not in Operators with Strings
+    . The upper(), lower(), isupper(), and islower() String Methods
+    . The isX String Methods
+    . The startswith() and endswith() String Methods
+    . The join() and split() String Methods
+    . Justifying Text with rjust(), ljust(), and center()
+    . Removing Whitespace with strip(), rstrip(), and lstrip()
+    . Copying and Pasting Strings with the pyperclip Module
+    ''')
+
+def f78():
     # Working with Strings - Double Quotes
 
     # By using double quotes, strings can have a single quote,
@@ -1092,7 +1258,7 @@ def f72():
     spam = 'That is Alice\'s cat.'
     print(spam)
 
-def f73():
+def f79():
     # Raw Strings and escape characters
 
     print('Printing string with special characters:')
@@ -1112,8 +1278,8 @@ def f73():
 
     print(es)
 
-def f74():
-    # Multiline Strings with Triple Quotes    
+def f80():
+    # Multiline Strings with Triple Quotes
 
     # Any quotes, tabs, or newlines in between the “triple quotes”,
     # are considered part of the string.
@@ -1132,7 +1298,7 @@ def f74():
     Bob""")
     print('Dear Alice,\n\nEve\'s cat has been arrested for catnapping, cat burglary, and extortion.\n\nSincerely,\nBob')
 
-def f75():
+def f81():
     # Multiline Comments
 
     """This is a test Python program.
@@ -1146,8 +1312,8 @@ def f75():
 
     spam()
 
-def f76():
-    # Indexing and Slicing Strings    
+def f82():
+    # Indexing and Slicing Strings
     spam = 'Hello world!'
     print(spam[0])
     print(spam[4])
@@ -1157,7 +1323,7 @@ def f76():
     print(spam[6:])
     print(spam[0:5])
 
-def f77():
+def f83():
     # The in and not in Operators with Strings
 
     spam = 'Hello world!'
@@ -1167,12 +1333,12 @@ def f77():
     print('' in 'spam')
     print('cats' not in 'cats and dogs')
 
-def f78():
+def f84():
     # String Methods: upper(), lower(), isupper(), and islower()
 
     spam = 'Hello world!'
     spam = spam.upper()
-    print(spam) 
+    print(spam)
 
     spam = spam.lower()
     print(spam)
@@ -1190,7 +1356,7 @@ def f78():
     I feel great too.
     '''
 
-def f79():
+def f85():
     # String Methods: isupper(), and islower()
 
     spam = 'Hello world!'
@@ -1208,29 +1374,29 @@ def f79():
     print('HELLO'.lower())
     print('HELLO'.lower().islower())
 
-def f80():
+def f86():
     # The isX String Methods
 
-    print( 
-        # returns True if the string consists only of letters 
+    print(
+        # returns True if the string consists only of letters
     # and is not blank.
     'hello'.isalpha(),
     'hello123'.isalpha(),
 
-    # isalnum() returns True if the string consists only of 
+    # isalnum() returns True if the string consists only of
     # letters and numbers
     'hello123'.isalnum(),
     'hello'.isalnum(),
 
-    # isdecimal() returns True if the string consists only of numeric 
+    # isdecimal() returns True if the string consists only of numeric
     # characters and is not blank.
     '123'.isdecimal(),
 
-    # isspace() returns True if the string consists only of spaces, 
+    # isspace() returns True if the string consists only of spaces,
     # tabs, and new-lines and is not blank.
     '    '.isspace(),
 
-    # istitle() returns True if the string consists only of words that 
+    # istitle() returns True if the string consists only of words that
     # begin with an uppercase letter followed by only lowercase letters.
     'This Is Title Case'.istitle(),
     'This Is Title Case 123'.istitle(),
@@ -1238,7 +1404,7 @@ def f80():
     'This Is NOT Title Case Either'.istitle(),
     )
 
-def f81():
+def f87():
     # isX methods helps to validate user input
     while True:
         print('Enter your age:')
@@ -1255,7 +1421,7 @@ def f81():
         print('Passwords can only have letters and numbers.')
 
 
-''' Sample output 
+''' Sample output
 Enter your age:
 forty two
 Please enter a number for your age.
@@ -1266,10 +1432,10 @@ secr3t!
 Passwords can only have letters and numbers.
 Select a new password (letters and numbers only):
 secr3t
-'''      
+'''
 
-def f82():
-    # startswith() and endswith() String Methods    
+def f88():
+    # startswith() and endswith() String Methods
     print(
         'Hello world!'.startswith('Hello'),
     # True
@@ -1285,18 +1451,18 @@ def f82():
     # True
     )
 
-def f83():
+def f89():
     # join() and split() String Methods
 
-    print(', '.join(['cats', 'rats', 'bats']))        
-    print(' '.join(['My', 'name', 'is', 'Simon']))    
-    print('ABC'.join(['My', 'name', 'is', 'Simon']))  
+    print(', '.join(['cats', 'rats', 'bats']))
+    print(' '.join(['My', 'name', 'is', 'Simon']))
+    print('ABC'.join(['My', 'name', 'is', 'Simon']))
 
-    print('My name is Simon'.split())                 
+    print('My name is Simon'.split())
     print('MyABCnameABCisABCSimon'.split('ABC'))
     print('My name is Simon'.split('m'))
 
-def f84():
+def f90():
     # split a multiline string
 
     spam = '''Dear Alice,
@@ -1309,7 +1475,7 @@ def f84():
 
     print(spam.split('\n'))
 
-def f85():
+def f91():
     # Justifying Text with rjust(), ljust(), and center()
 
     print('Hello'.rjust(10))
@@ -1321,7 +1487,7 @@ def f85():
     print('Hello'.center(20))
     print('Hello'.center(20, '='))
 
-def f86():
+def f92():
     # Using Justifying Text for Tabular Data
 
     def printPicnic(itemsDict, leftWidth, rightWidth):
@@ -1333,7 +1499,7 @@ def f86():
     printPicnic(picnicItems, 12, 5)
     printPicnic(picnicItems, 20, 6)
 
-def f87():
+def f93():
     # Removing Whitespace with strip(), rstrip(), and lstrip()
 
     spam = '    Hello World     '
@@ -1346,14 +1512,14 @@ def f87():
     print(spam.strip('Spma'))
     # Above two are  the same, order of argument character is ignored.
 
-def f88():
+def f94():
     # Copy and Paste Strings with the pyperclip Module
 
     import pyperclip
     pyperclip.copy('Hello world!')
     print(pyperclip.paste())
 
-def f89():
+def f95():
     # An insecure password locker program.
 
     import pyperclip
@@ -1380,7 +1546,7 @@ def f89():
     else:
         print('There is no account named ' + account)
 
-def f90():
+def f96():
     # Adding Bullets to Wiki Markup
 
     # Step 1: Copy and Paste from the Clipboard
@@ -1393,21 +1559,24 @@ def f90():
     for i in range(len(lines)):    # loop through all indexes in the "lines" list
         lines[i] = '* ' + lines[i] # add star to each string in "lines" list
 
-    # Step 3: Join the Modified Lines    
+    # Step 3: Join the Modified Lines
     text = '\n'.join(lines)
     pyperclip.copy(text)
 
     # When this program is run, it replaces the text on the clipboard with
     # text that has stars at the start of each line.
 
-def f91():
+def f97():
+    # Chapter 7 - Pattern Matching With Reular Expression
+    print('')
+def f98():
     # Finding Patterns of Text Without Regular Expressions
 
     def isPhoneNumber(text):
         if len(text) != 12:
             return False
         for i in range(0, 3):   # i = [0, 1, 2]
-            if not text[i].isdecimal():   # Convert string to list and 
+            if not text[i].isdecimal():   # Convert string to list and
                                             # parsing the list for decimals
                 return False
         if text[3] != '-':
@@ -1427,7 +1596,7 @@ def f91():
     print('Moshi moshi is a phone number:')
     print(isPhoneNumber('Moshi moshi'))
 
-def f92():
+def f99():
     # Finding pattern without RE from a string
 
     def isPhoneNumber(text):
@@ -1456,10 +1625,10 @@ def f92():
 
     print('Done')
 
-def f93():
+def f100():
     # Matching regex objects
 
-    # In a raw string a backslash is taken as meaning just as backslash not as 
+    # In a raw string a backslash is taken as meaning just as backslash not as
     # a escape sequence. if we donot use r'', then we have to escape all the
     # backslashes between the single quotes
 
@@ -1473,15 +1642,15 @@ def f93():
 Steps in using regex:
 ---------------------
 1.   Import the regex module with import re.
-2.   Create a Regex object with the re.compile() function. 
+2.   Create a Regex object with the re.compile() function.
      (Remember to use a raw string.)
-3.   Pass the string you want to search into the Regex object’s search() method. 
+3.   Pass the string you want to search into the Regex object’s search() method.
      This returns a Match object.
-4.   Call the Match object’s group() method to return a string of the actual 
+4.   Call the Match object’s group() method to return a string of the actual
      matched text.
 '''
 
-def f94():
+def f101():
     # Pattern matching with grouping
 
     import re
@@ -1490,15 +1659,15 @@ def f94():
     mo = phoneNumRegex.search('My number is 415-555-4242.')
     print(mo.group(1))
     print(mo.group(2))
-    print(mo.group(0))  # returns entire match            
+    print(mo.group(0))  # returns entire match
     print(mo.group())   # returns entire match, the same as group(0)
     print(mo.groups())  # Retrives all groups, attention at plural form of group
     areaCode, mainNumber = mo.groups()  # group 1 and 2 are elements in a list
-                                        # generated by method groups() 
+                                        # generated by method groups()
     print(areaCode)
     print(mainNumber)
 
-def f95():
+def f102():
     # Pattern matching with grouping and escaping parantheses
 
     import re
@@ -1508,7 +1677,7 @@ def f95():
     print(mo.group(1))
     print(mo.group(2))
 
-def f96():
+def f103():
     # Matching multiple groups with the pipe
 
     import re
@@ -1520,7 +1689,7 @@ def f96():
     mo2 = heroRegex.search('Tina Fey and Batman.')
     print(mo2.group())
 
-def f97():
+def f104():
     # Matching groups with the pipe as part of re
 
     import re
@@ -1531,7 +1700,7 @@ def f97():
     print(mo.group(1))     # returns the first match it founds,
                             # in first group
 
-def f98():
+def f105():
     # Optional matching with the question mark
 
     import re
@@ -1557,7 +1726,7 @@ def f98():
     # (pattern)?
     # Match zero or one of the group pre-ceding this question mark.
 
-def f99():
+def f106():
     # Matching zero or more with star
 
     import re
@@ -1572,13 +1741,13 @@ def f99():
     mo3 = batRegex.search('The Adventures of Batwowowowoman')
     print(mo3.group())
 
-    # (pattern)* means match zero or more of the group 
+    # (pattern)* means match zero or more of the group
     # that precedes the star
 
-def f100():
+def f107():
     # Matching one or more with the plus
     # the group preceding a plus must appear at least once.
-    
+
     import re
 
     batRegex = re.compile(r'Bat(wo)+man')
@@ -1592,7 +1761,7 @@ def f100():
     mo3 = batRegex.search('The Adventures of Batman')
     print(mo3 == None)
 
-def f101():
+def f108():
     # Matching specific repetitions with {}
     # (pattern){a_number}
     import re
@@ -1602,9 +1771,9 @@ def f101():
     print(mo1.group())
 
     mo2 = haRegex.search('Ha')
-    print(mo2 == None)    
+    print(mo2 == None)
 
-def f102():
+def f109():
     # Greedy and nongreedy matching
     # RE by default is greedy, matches the longest match.
     # To have non-greedy match use {}?
@@ -1622,10 +1791,10 @@ def f102():
     # question mark can have two different meanings in RE:
     # declaring a nongreedy match or flagging an optional group.
 
-def f103():
+def f110():
     # RE findall() Method
     # While search() will return a Match object of the first matched text
-    # in the searched string, the findall() method will return the strings 
+    # in the searched string, the findall() method will return the strings
     # of every match in the searched string.
 
     import re
@@ -1637,14 +1806,14 @@ def f103():
     phoneNumRegex = re.compile(r'\d\d\d-\d\d\d-\d\d\d\d') # has no groups
     print(phoneNumRegex.findall('Cell: 415-555-9999 Work: 212-555-0000'))
 
-    # findall() will not return a Match object but a list of strings 
+    # findall() will not return a Match object but a list of strings
     # as long as there are no groups in the regular expression.
 
     # When groups are in RE, then findall returns list of tuples
     phoneNumRegex = re.compile(r'(\d\d\d)-(\d\d\d)-(\d\d\d\d)') # has groups
     print(phoneNumRegex.findall('Cell: 415-555-9999 Work: 212-555-0000'))
 
-def f104():
+def f111():
     # RE Character Classes
     # Character classes are nice for shortening REs
     # \d  is equal to (0|1|2|3|4|5|6|7|8|9)
@@ -1660,7 +1829,7 @@ def f104():
     f = xmasRegex.findall('12 drummers, 11 pipers, 10 lords, 9 ladies, 8 maids, swans, 6 geese, 5 rings, 4 birds, 3 hens, 2 doves, 1 partridge')
     print(f)
 
-def f105():
+def f112():
     # Making your own character classes
     # match any vowel, both lowercase and uppercase
 
@@ -1676,9 +1845,9 @@ def f105():
     consonantRegex = re.compile(r'[^aeiouAEIOU]')
     print(consonantRegex.findall('RoboCop eats baby food. BABY FOOD.'))
 
-def f106():
+def f113():
     # Caret and dollar sign characters
-    
+
     import re
 
     beginsWithHello = re.compile(r'^Hello')
@@ -1689,16 +1858,16 @@ def f106():
     print(endsWithNumber.search('Your number is 42'))
     print(endsWithNumber.search('Your number is forty two.') == None)
 
-    # To match strings that both begin and end with one or 
+    # To match strings that both begin and end with one or
     # more numeric characters:
     wholeStringIsNum = re.compile(r'^\d+$')
     print(wholeStringIsNum.search('1234567890'))
     print(wholeStringIsNum.search('12345xyz67890') == None)
     print(wholeStringIsNum.search('12 34567890') == None)
 
-def f107():
+def f114():
     # Wild card character
-    # The . (or dot) character in a RE is called a wildcard 
+    # The . (or dot) character in a RE is called a wildcard
     # and will match just one character except for a newline.
 
     import re
@@ -1706,7 +1875,7 @@ def f107():
     atRegex = re.compile(r'.at')
     print(atRegex.findall('The cat in the hat sat on the flat mat.'))
 
-def f108():
+def f115():
     # Matching everything with dot-star
 
     import re
@@ -1716,7 +1885,7 @@ def f108():
     print(mo.group(1))
     print(mo.group(2))
 
-    # The dot-star uses greedy mode, 
+    # The dot-star uses greedy mode,
     # to match any and all text in a nongreedy fashion, use (.*?)
 
     nongreedyRegex = re.compile(r'<.*?>')
@@ -1727,7 +1896,7 @@ def f108():
     mo = greedyRegex.search('<To serve man> for dinner.>')
     print(mo.group())
 
-def f109():
+def f116():
     # Matching newlines with the dot character
 
     import re
@@ -1741,12 +1910,12 @@ def f109():
 
     # re.DOTALL matches everything,
     # To include newline character:
-    newlineRegex = re.compile('.*', re.DOTALL) 
+    newlineRegex = re.compile('.*', re.DOTALL)
     print(newlineRegex.search(
         'Serve the public trust.\nProtect the innocent.\nUphold the law.'
     ).group())
 
-def f110():
+def f117():
     # Case-insensitive matching
     # Use re.I or re.IGNORECASE
 
@@ -1762,7 +1931,7 @@ def f110():
         'Al, why does your programming book talk about robocop so much?'
     ).group())
 
-def f111():
+def f118():
     # Substituting strings with sub() method
 
     import re
@@ -1776,7 +1945,7 @@ def f111():
     print(agentNamesRegex.sub(r'\1****', 'Agent Alice told Agent Carol \
     that Agent Eve knew Agent Bob was a double agent.'))
 
-def f112():
+def f119():
     # Managing complex regexes
     # You can simplify the hard-to-read REs by using verbose mode
     # re.VERBOSE ignores whitespace and comments inside the RE string.
@@ -1800,7 +1969,7 @@ def f112():
     someRegexValue = re.compile('foo', re.IGNORECASE | re.DOTALL)
     someRegexValue = re.compile('foo', re.IGNORECASE | re.DOTALL | re.VERBOSE)
 
-def f113():
+def f120():
     # Combining re.IGNORECASE, re.DOTALL, and re.VERBOSE
 
     import re
@@ -1808,7 +1977,7 @@ def f113():
     someRegexValue = re.compile('foo', re.IGNORECASE | re.DOTALL)
     someRegexValue = re.compile('foo', re.IGNORECASE | re.DOTALL | re.VERBOSE)
 
-def f114():
+def f121():
     # Finds phone numbers and email addresses on the clipboard
 
     import re, pyperclip
@@ -1850,33 +2019,201 @@ def f114():
     else:
         print('No phone numbers or email addresses found.')
 
-def f115():
+def f122():
+    # In this assignment you will read through  and  parse  a file
+    # with text and numbers. You will extract all the numbers in -
+    # the file and compute the sum of the numbers.
+
+    import re
+
+    fileName = input('Enter file name: ')
+    fh = open(fileName)
+
+    # Initiate an empty list and extend it with list of
+    # numbers found in the file.
+    allNumbers = []
+
+    for line in fh:
+        line = line.rstrip()
+
+        # Restart the loop if line has no numbers:
+        if re.search('[0-9]+', line) == None : continue
+
+        # extract numbers from each line, ignoring zero/s for
+        # numbers starting with zero:
+        numbers = re.findall('0*([0-9]+)', line)
+
+        # extend the list allNumbers with list of numbers,
+        # extracted from each line
+        allNumbers.extend(numbers)
+
+    # Compute the sum of all elements of the list,
+    # that includes all numbers in the file:
+    total = 0
+    for n in allNumbers:
+        total = total + int(n)
+
+    print(total)
+
+def f123():
+    # Get a document from a remote webserver by http GET() method
+    import socket
+
+    mysock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    mysock.connect(('data.pr4e.org', 80))
+    cmd = 'GET http://data.pr4e.org/romeo.txt HTTP/1.0\r\n\r\n'.encode()
+    mysock.send(cmd)
+
+    while True:
+        data = mysock.recv(512)
+        if len(data) < 1:
+            break
+        print(data.decode(),end='')
+
+    mysock.close()
+
+def f124():
+    # Download an image from webserver while showing the file
+    # header response information and dowloaded chuncks of data,
+    # during the download
+
+    import socket, time
+
+    HOST = 'data.pr4e.org'
+    PORT = 80
+    mysock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    mysock.connect((HOST, PORT))
+    mysock.sendall(b'GET http://data.pr4e.org/cover3.jpg HTTP/1.0\r\n\r\n')
+    count = 0
+    picture = b""
+
+    while True:
+        data = mysock.recv(5120)
+        if len(data) < 1: break
+        time.sleep(0.25)
+        count = count + len(data)
+        print(len(data), count)
+        picture = picture + data
+
+    mysock.close()
+
+    # Look for the end of the header (2 CRLF)
+    pos = picture.find(b"\r\n\r\n")
+    print('Header length', pos)
+    print(picture[:pos].decode())
+
+    # Skip past the header and save the picture data
+    picture = picture[pos+4:]
+    fhand = open("stuff.jpg", "wb")
+    fhand.write(picture)
+    fhand.close()
+
+def f125():
+    # Retrieve a web page over a socket and display the headers
+    # from the web server.
+
+    import socket
+
+    HOST = input('Enter webserver URL: ')
+    DOC = input('Enter document to be retrived [Press Enter to default index.html]: ')
+    if DOC == '': DOC = 'index.html'
+    PORT = input('Enter port number [Press Enter to default 80]: ')
+    if PORT == '': PORT = 80
+
+    # Open a connection
+    mysock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    mysock.connect((HOST, PORT))
+
+
+    cmd = 'GET http://' +  HOST +  '/' + DOC + ' HTTP/1.0\r\n\r\n'
+    cmd = cmd.encode()
+    print(cmd)
+
+    mysock.send(cmd)
+
+
+    receivedData = b""
+
+    while True:
+        data = mysock.recv(512)
+        if len(data) < 1: break
+        receivedData = receivedData + data
+
+    mysock.close()
+
+    pos = receivedData.find(b"\r\n\r\n")
+    print('Header length', pos)
+    print(receivedData[:pos].decode())
+
+def f126():
+    # Load a web document, browser simulation
+    import socket
+
+    mysock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    mysock.connect(('data.pr4e.org', 80))
+    cmd = 'GET http://data.pr4e.org/intro-short.txt HTTP/1.0\r\n\r\n'.encode()
+    mysock.send(cmd)
+
+    while True:
+        data = mysock.recv(512)
+        if len(data) < 1:
+            break
+        print(data.decode(),end='')
+
+    mysock.close()
+
+def f127():
+    # Open a web page with urlib module
+    import urllib.request
+
+    fhand = urllib.request.urlopen('http://data.pr4e.org/romeo.txt')
+    for line in fhand:
+        print(line.decode().strip())
+
+def f128():
+    # Count the number of words in a web page
+    import urllib.request, urllib.parse, urllib.error, pprint
+
+    fhand = urllib.request.urlopen('http://data.pr4e.org/romeo.txt')
+
+    counts = dict()
+    for line in fhand:
+        words = line.decode().split()
+        for word in words:
+            counts[word] = counts.get(word, 0) + 1
+    pprint.pprint(counts)
+
+def f129():
+    # Chapter 8 - Reading and Writing Files
+    print('Chapter - Reading and Writing Files')
+
+def f130():
     # CHAPTER 8 - READING AND WRITING FILES
     # Create strings for file names
 
     import os
     # os.path is a module inside the os module
 
-    print(os.path.join('usr', 'bin', 'spam'))    
+    print(os.path.join('usr', 'bin', 'spam'))
     # On Windows the ouput will be with backslash
 
     myFiles = ['accounts.txt', 'details.csv', 'invite.docx']
     for filename in myFiles:
         print(os.path.join('/home/username/asweigart', filename))
 
-def f116():
+def f131():
     # The Current Working Directory
 
     import os
-    
+
     print(os.getcwd())
     os.chdir('/var/log')         # returns None
     print(os.getcwd())
 
     # After  running this function you get error in main program
-    # because the path to current running script has been changed.    
+    # because the path to current running script has been changed.
 
-def f117():
+def f132():
     # Creating New Folders with os.makedirs()
 
     import os
@@ -1886,7 +2223,7 @@ def f117():
     # You get error if you run this function forthe second time
     # because the directory already exists.
 
-def f118():
+def f133():
     # Handling Absolute and Relative Paths
 
     import os
@@ -1908,7 +2245,7 @@ def f118():
 
     print('/usr/bin'.split(os.path.sep))
 
-def f119():
+def f134():
     # Finding File Sizes and Folder Contents
 
     import os
@@ -1922,7 +2259,7 @@ def f119():
 
     print(totalSize)
 
-def f120():
+def f135():
     # Checking Path Validity
 
     import os
@@ -1936,14 +2273,14 @@ def f120():
     # Check if dvd drive exists
     print(os.path.exists('D:\\'))
 
-def f121():
+def f136():
     # The File Reading/Writing Process
 
     # open() function returns a File object, and opens file in plain text mode.
     # Assuming file hello.txt already created.
 
     helloFile = open('./hello.txt')
-    # You also can open a file in read mode with 'r' option, 
+    # You also can open a file in read mode with 'r' option,
     # the following is the same as above:
     # helloFile = open('./hello.txt', 'r')
 
@@ -1956,7 +2293,7 @@ def f121():
     relFile = open('/etc/os-release')
     print(relFile.readlines())
 
-def f122():
+def f137():
     # Writing to Files
 
     baconFile = open('bacon.txt', 'w')    # open in writr mode
@@ -1971,9 +2308,9 @@ def f122():
     content = baconFile.read()
     baconFile.close()
 
-    print(content)    
+    print(content)
 
-def f123():
+def f138():
     # Saving Variables with the shelve Module
 
     import shelve
@@ -1997,16 +2334,16 @@ def f123():
     print(list(shelfFile.values()))
     shelfFile.close()
 
-    # but if you want to save data from your Python programs, 
+    # but if you want to save data from your Python programs,
     # use the shelve module
 
-def f124():
+def f139():
     # Saving Variables with the pprint.pformat() Function
 
     '''
-    Say you have a dictionary stored in a variable and you want to save this 
-    variable and its contents for future use. Using pprint.pformat() will give 
-    you a string that you can write to .py file. This file will be your very 
+    Say you have a dictionary stored in a variable and you want to save this
+    variable and its contents for future use. Using pprint.pformat() will give
+    you a string that you can write to .py file. This file will be your very
     own module that you can import when-ever you want to use the variable stored in it.
     '''
 
@@ -2019,14 +2356,14 @@ def f124():
     fileObj.write('cats = ' + pprint.pformat(cats) + '\n')
     fileObj.close()
 
-    ''' In terminal: 
-    $ cat myCats.py 
+    ''' In terminal:
+    $ cat myCats.py
     cats = [{'desc': 'chubby', 'name': 'Zophie'}, {'desc': 'fluffy', 'name': 'Pooka'}]
     '''
 
     '''
     And since Python scripts are themselves just text files with the .py file
-    extension, your Python programs can even generate other Python programs. 
+    extension, your Python programs can even generate other Python programs.
     You can then import these files into scripts.'''
 
     import myCats
@@ -2034,7 +2371,7 @@ def f124():
     print(myCats.cats[0])
     print(myCats.cats[0]['name'])
 
-def f125():
+def f140():
     # Generating Random Quiz Files
 
     import random
@@ -2044,19 +2381,19 @@ def f125():
         'Alabama': 'Montgomery', 'Alaska': 'Juneau', 'Arizona': 'Phoenix',
     'Arkansas': 'Little Rock', 'California': 'Sacramento', 'Colorado': 'Denver',
     'Connecticut': 'Hartford', 'Delaware': 'Dover', 'Florida': 'Tallahassee',
-    'Georgia': 'Atlanta', 'Hawaii': 'Honolulu', 'Idaho': 'Boise', 'Illinois': 'Springfield', 
-    'Indiana': 'Indianapolis', 'Iowa': 'Des Moines', 'Kansas': 'Topeka', 
-    'Kentucky': 'Frankfort', 'Louisiana': 'Baton Rouge', 'Maine': 'Augusta', 
-    'Maryland': 'Annapolis', 'Massachusetts': 'Boston', 'Michigan': 'Lansing', 
-    'Minnesota': 'Saint Paul', 'Mississippi': 'Jackson', 'Missouri': 'Jefferson City', 
-    'Montana': 'Helena', 'Nebraska': 'Lincoln', 'Nevada': 'Carson City', 
-    'New Hampshire': 'Concord', 'New Jersey': 'Trenton', 'New Mexico': 'Santa Fe', 
-    'New York': 'Albany', 'North Carolina': 'Raleigh', 'North Dakota': 'Bismarck', 
-    'Ohio': 'Columbus', 'Oklahoma': 'Oklahoma City', 'Oregon': 'Salem', 
+    'Georgia': 'Atlanta', 'Hawaii': 'Honolulu', 'Idaho': 'Boise', 'Illinois': 'Springfield',
+    'Indiana': 'Indianapolis', 'Iowa': 'Des Moines', 'Kansas': 'Topeka',
+    'Kentucky': 'Frankfort', 'Louisiana': 'Baton Rouge', 'Maine': 'Augusta',
+    'Maryland': 'Annapolis', 'Massachusetts': 'Boston', 'Michigan': 'Lansing',
+    'Minnesota': 'Saint Paul', 'Mississippi': 'Jackson', 'Missouri': 'Jefferson City',
+    'Montana': 'Helena', 'Nebraska': 'Lincoln', 'Nevada': 'Carson City',
+    'New Hampshire': 'Concord', 'New Jersey': 'Trenton', 'New Mexico': 'Santa Fe',
+    'New York': 'Albany', 'North Carolina': 'Raleigh', 'North Dakota': 'Bismarck',
+    'Ohio': 'Columbus', 'Oklahoma': 'Oklahoma City', 'Oregon': 'Salem',
     'Pennsylvania': 'Harrisburg', 'Rhode Island': 'Providence',
-    'South Carolina': 'Columbia', 'South Dakota': 'Pierre', 'Tennessee': 'Nashville', 
-    'Texas': 'Austin', 'Utah': 'Salt Lake City', 'Vermont': 'Montpelier', 
-    'Virginia': 'Richmond', 'Washington': 'Olympia', 'West Virginia': 'Charleston', 
+    'South Carolina': 'Columbia', 'South Dakota': 'Pierre', 'Tennessee': 'Nashville',
+    'Texas': 'Austin', 'Utah': 'Salt Lake City', 'Vermont': 'Montpelier',
+    'Virginia': 'Richmond', 'Washington': 'Olympia', 'West Virginia': 'Charleston',
     'Wisconsin': 'Madison', 'Wyoming': 'Cheyenne'}
 
     # Step 2: Create the Quiz File and Shuffle the Question Order
@@ -2087,7 +2424,7 @@ def f125():
 
 
     # Step 4: Write Content to the Quiz and Answer Key Files
-        quizFile.write('%s. What is the capital of %s?\n' % (questionNum + 1, states[questionNum]))    
+        quizFile.write('%s. What is the capital of %s?\n' % (questionNum + 1, states[questionNum]))
         for i in range(4):
             quizFile.write('    %s. %s\n' % ('ABCD'[i], answerOptions[i]))
         quizFile.write('\n')
@@ -2098,12 +2435,16 @@ def f125():
     quizFile.close()
     answerKeyFile.close()
 
-def f126():
+def f141():
     # Multiclipboard
-    print()
+    print('')
     # Step 1: Comments and Shelf Setup
 
-def f127():
+def f142():
+    # Chapter 9 - Organizing Files
+    print('Chapter 9 - Organizing Files')
+
+def f143():
     # Copying Files and Folders - using shutil module
 
     # shutil.copy(source, destination)
@@ -2121,7 +2462,7 @@ def f127():
     # Above copies all files and subfolders in current directory into /tmp/test,
     # the test directroy will be created if it is not already exist.
 
-def f128():
+def f144():
     # Moving and Renaming Files and Folders
 
     ''' Examples:
@@ -2131,12 +2472,12 @@ def f128():
     'C:\\eggs'
     >>> shutil.move('spam.txt', 'c:\\does_not_exist\\eggs\\ham')
 
-    If move() cannot find the destination folder or file, 
+    If move() cannot find the destination folder or file,
     then will get FileNotFoundError error.
     '''
     print()
 
-def f129():
+def f145():
     # Permanently Deleting Files and Folders
 
     '''
@@ -2153,20 +2494,20 @@ def f129():
             #os.unlink(filename)
             print(filename)
 
-def f130():
+def f146():
     # Safe Deletes with the send2trash Module
 
     # install the 3rd party module send2trash, first:
     # sudo pip3 install send2trash
 
-    import send2trash                          
+    import send2trash
 
     baconFile = open('bacon.txt', 'a')        # creates the file
     print(baconFile.write('Bacon is not a vegetable.'))
     baconFile.close()
     send2trash.send2trash('bacon.txt')
 
-def f131():
+def f147():
     # Walk through the directory tree
 
     import os
@@ -2183,7 +2524,7 @@ def f131():
     # os.walk, doesn't return list of files/subfolders recursively, it returns
     # current folder name, subfolders and file names in current directory.
 
-def f132():
+def f148():
     # Compressing Files with the zipfile Module
 
     import zipfile, os
@@ -2205,7 +2546,7 @@ def f132():
     exampleZip.close()
     os.unlink('example.zip')
 
-def f133():
+def f149():
     # Extracting from ZIP Files
 
     import zipfile, shutil, os
@@ -2217,9 +2558,9 @@ def f133():
     exampleZip.extractall()
     exampleZip.close()
     print(os.listdir('/tmp/test'))
-    shutil.rmtree('/tmp/test') 
+    shutil.rmtree('/tmp/test')
 
-def f134():
+def f150():
     # Creating and Adding to ZIP Files
 
     import zipfile, os
@@ -2233,7 +2574,7 @@ def f134():
     os.system('ls')
     os.unlink('new.zip')
 
-def f135():
+def f151():
     # Renaming Files with American-Style Dates to
     # European-Style Dates
     # shutil.move() function can be used to rename files
@@ -2275,7 +2616,7 @@ def f135():
         print('Renaming "%s" to "%s"...' % (amerFilename, euroFilename))
         #shutil.move(amerFilename, euroFilename) # uncomment after testing
 
-def f136():
+def f152():
     # Backing Up a Folder into a ZIP File
 
     import zipfile, os
@@ -2296,10 +2637,10 @@ def f136():
 
         # Step 2: Create the ZIP file.
         print('Creating %s...' % (zipFilename))
-        backupZip = zipfile.ZipFile(zipFilename, 'w')    
+        backupZip = zipfile.ZipFile(zipFilename, 'w')
 
 
-        # step 3: Walk the entire folder tree and compress the files 
+        # step 3: Walk the entire folder tree and compress the files
         # in each folder.
         for foldername, subfolders, filenames in os.walk(folder):
             print('Adding files in %s...' % (foldername))
@@ -2316,9 +2657,13 @@ def f136():
             print('Done.')
 
 
-    backupToZip('/home/bmzi/bin')        
+    backupToZip('/home/bmzi/bin')
 
-def f137():
+def f153():
+    # Chapter 10 - Debugging
+    print('Chapter 10 - Debugging')
+
+def f154():
     # Raising Exceptions
 
     def boxPrint(symbol, width, height):
@@ -2347,7 +2692,7 @@ def f137():
     # that raised the exception, the program simply crashes and displays the
     # exception’s error message.
 
-def f138():
+def f155():
     # Getting the Traceback as a String
 
     import traceback, os
@@ -2366,9 +2711,9 @@ def f138():
     os.system('cat errorInfo.txt')
     os.unlink('errorInfo.txt')
 
-def f139():
+def f156():
     # Assertions - is a sanity check of the code
-    # an assert statement says, 'I assert that this condition holds true, 
+    # an assert statement says, 'I assert that this condition holds true,
     # and if not, there is a bug somewhere in the program.'
 
     ''' assert statement consists of the following:
@@ -2378,7 +2723,7 @@ def f139():
     .   A string to display when the condition is False'''
 
     # After running following code in a separate file like test.py:
-    '''    
+    '''
     podBayDoorStatus = 'open'
     assert podBayDoorStatus == 'open', 'The pod bay doors need to be "open".'
     podBayDoorStatus = 'I\'m sorry, Dave. I\'m afraid I cant do that.\''
@@ -2395,7 +2740,7 @@ def f139():
     '''
     print()
 
-def f140():
+def f157():
     # Using an Assertion in a Traffic Light Simulation
 
     def switchLights(stoplight):
@@ -2426,7 +2771,7 @@ def f140():
 
     # Assertions can be disabled by passing the -O option when running Python.
 
-def f141():
+def f158():
     # Logging - Using the logging Module
 
     import logging
@@ -2453,7 +2798,7 @@ def f141():
     print(factorial(5)) call is part of the original program, so the result is dis-
     played even if logging messages are disabled.'''
 
-def f142():
+def f159():
     # Logging to a file
     # Instead of displaying the log messages to the screen, you can write them to
     # a text file.
@@ -2474,11 +2819,11 @@ def f142():
     os.system('cat myProgramLog.txt')
     os.unlink('myProgramLog.txt')
 
-def f143():
+def f160():
     # IDLE Debuger
     print('Should be installed and practised!')
 
-def f144():
+def f161():
     # Find the program bug!
 
     '''
@@ -2502,21 +2847,43 @@ def f144():
     '''
     print()
 
-def f145():
+def f162():
+    # Chapter 11 - Web Scraping
+    print('''Chapter 11 - Web Scraping:
+    156 -  Launch a new browser
+    157 -  Open google map address from terminal or clipboard
+    158 -  Download Web Page with requests.get() Function
+    159 -  Checking Downloading A Web Page
+    160 -  Saving Downloaded Files to the Hard Drive
+    161 -  Parsing HTML with the BeautifulSoup Module
+    162 -  Creating a BeautifulSoup Object from local HTML file
+    163 -  Finding an Element with the select() Method
+    164 -  Getting Data from an Element’s Attributes
+    165 -  I’m Feeling Lucky - Google Search
+    166 -  Downloading All XKCD Comics
+    167 -  Starting a Selenium-Controlled Browser
+    168 -  Finding Elements on the Page
+    169 -  WebElement Attributes and Methods
+    170 -  Clicking the Page
+    171 -  Filling Out and Submitting Forms
+    172 -  Sending Special Keys
+    ''')
+
+def f163():
     # Launch a new browser by webbrowser module
 
     import webbrowser
     webbrowser.open('https://www.google.com')
 
-def f146():
+def f164():
     # Open google map address from terminal or clipboard
 
     import webbrowser, sys, pyperclip
 
     # We chop off the first element of the array(i.e. script name)
-    if len(sys.argv) > 1:   
+    if len(sys.argv) > 1:
         # Get address from command line.
-        address = ' '.join(sys.argv[1:]) 
+        address = ' '.join(sys.argv[1:])
         # address variable will be a string of commmand line arguments,
         # which are separated with space, using list join method
     else:
@@ -2524,13 +2891,13 @@ def f146():
         address = pyperclip.paste()
 
     webbrowser.open('https://www.google.com/maps/place/' + address)
-    # The address variable is the address in clipboard, or typed in 
+    # The address variable is the address in clipboard, or typed in
     # clipboard, in a browser, you can open the google map url and
-    # append your address. Websites often add extra data to URLs to 
+    # append your address. Websites often add extra data to URLs to
     # help to track visitors or customize sites.
 
-def f147():
-    # Downloading a Web Page with the requests.get() Function 
+def f165():
+    # Downloading a Web Page with the requests.get() Function
 
     # First install requests module:
     # sudo pip3 install requests
@@ -2549,14 +2916,14 @@ def f147():
     print(len(res.text)) # shows nr of characters for downloaded text
     print(res.text[:250])  # displays only the first 250 characters
 
-def f148():
+def f166():
     # Checking Downloading A Web Page
 
     import requests
 
     res = requests.get('http://inventwithpython.com/page_that_does_not_exist')
 
-    # Raise the error when the request fails and by 
+    # Raise the error when the request fails and by
     # using try/except, avoid crashing the program:
 
     try:
@@ -2565,21 +2932,21 @@ def f148():
         print('There was a problem: %s' % (exc))
 
     # Always call raise_for_status() after calling requests.get() . You want to be
-    # sure that the download has actually worked before your program continues.    
+    # sure that the download has actually worked before your program continues.
 
-def f149():
-    # Saving Downloaded Files to the Hard Drive 
+def f167():
+    # Saving Downloaded Files to the Hard Drive
 
 
     import requests, os
 
-    # 1.     
+    # 1.
     # Create a Response object from URL address
     res = requests.get('http://www.gutenberg.org/cache/epub/1112/pg1112.txt')
     res.raise_for_status()
 
-    # 2.    
-    # open the file in write binary mode (wb), even if the page is in 
+    # 2.
+    # open the file in write binary mode (wb), even if the page is in
     # plain-text, to maintain the Unicode encod-ing of the text.
     playFile = open('RomeoAndJuliet.txt', 'wb')
 
@@ -2592,13 +2959,13 @@ def f149():
         playFile.write(chunk)
 
     # 5.
-    # Call close() to close the file.    
+    # Call close() to close the file.
     playFile.close()
     print('----------')
     os.system('ls -l RomeoAndJuliet.txt')
     os.unlink('RomeoAndJuliet.txt')
 
-def f150():
+def f168():
     # Parsing HTML with the BeautifulSoup Module
     import requests, bs4
 
@@ -2608,13 +2975,13 @@ def f150():
     print(type(noStarchSoup))
 
     '''This code uses requests.get() to download the main page from the
-    the website and then passes the text attribute of the response to 
-    bs4.BeautifulSoup() . The BeautifulSoup object that it returns is 
-    stored in a variable named noStarchSoup . 
-    Once you have a BeautifulSoup object, you can use its methods to 
+    the website and then passes the text attribute of the response to
+    bs4.BeautifulSoup() . The BeautifulSoup object that it returns is
+    stored in a variable named noStarchSoup .
+    Once you have a BeautifulSoup object, you can use its methods to
     locate specific parts of an HTML document.'''
 
-def f151():
+def f169():
     # Creating a BeautifulSoup Object from a local HTM
     import requests, bs4, os
 
@@ -2637,7 +3004,7 @@ def f151():
 
     os.system('rm -f example.html')
 
-def f152():
+def f170():
     # Finding an Element with the select() Method
 
     import bs4, os
@@ -2658,11 +3025,11 @@ def f152():
     exampleFile = open('example.html')
     exampleSoup = bs4.BeautifulSoup(exampleFile.read(), features="html.parser")
 
-    # The following matches any element that has an id attribute of author, 
+    # The following matches any element that has an id attribute of author,
     # as long as it is also inside a <p> element.
-    elems = exampleSoup.select('#author')    # select stors a list of Tag 
-                                                # objects in the elems variable                           
-    print(type(elems))         
+    elems = exampleSoup.select('#author')    # select stors a list of Tag
+                                                # objects in the elems variable
+    print(type(elems))
     print(len(elems))          # tells us there is one Tag object in the list
     print(type(elems[0]))
     print(elems[0].getText())  # returns the element’s text, or inner HTML
@@ -2670,7 +3037,7 @@ def f152():
     print(elems[0].attrs)
 
     print('-----------')
-    pElems = exampleSoup.select('p')  # pull all the <p> elements from the 
+    pElems = exampleSoup.select('p')  # pull all the <p> elements from the
                                         # BeautifulSoup object, it gives 3 matches
     print(str(pElems[0]))
     print(pElems[0].getText())
@@ -2683,7 +3050,7 @@ def f152():
 
     os.system('rm -f example.html')
 
-def f153():
+def f171():
     # Getting Data from an Element’s Attributes
 
     # The get() method for Tag objects makes it simple to access attribute values
@@ -2715,14 +3082,14 @@ def f153():
 
     os.system('rm -f example.html')
 
-def f154():
+def f172():
     # I’m Feeling Lucky - Google Search
 
     import requests, sys, webbrowser, bs4
 
     ### Step 1: Get the Command Line Arguments and Request the Search Page
     # (Instead we get user input as search pattern)
-    # if you want to have the search terms as arguments of a separate running 
+    # if you want to have the search terms as arguments of a separate running
     # script, then use the following line of code:
     # res = requests.get('http://google.com/search?q=' + ' '.join(sys.argv[1:]))
 
@@ -2745,7 +3112,7 @@ def f154():
     for i in range(numOpen):            # Open a browser tab for each result.
         webbrowser.open('http://google.com' + linkElems[i].get('href'))
 
-def f155():
+def f173():
 # Downloading All XKCD Comics
     import requests, os, bs4
 
@@ -2773,34 +3140,34 @@ def f155():
             res.raise_for_status()
 
     ### Step 3: Save the Image and Find the Previous Comic
-    # 100000 bytes of image size will be written each time to the file 
+    # 100000 bytes of image size will be written each time to the file
     # join funcion puts an slash after folder name: xkcd/file_name.png
         imageFile = open(os.path.join('xkcd', os.path.basename(comicUrl)), 'wb')
         for chunk in res.iter_content(100000):
-            imageFile.write(chunk) 
+            imageFile.write(chunk)
         imageFile.close()
 
     ### Step 4: Get the Prev button's url, and repeating the loop
         prevLink = soup.select('a[rel="prev"]')[0]
         url = 'http://xkcd.com' + prevLink.get('href')
         # the selector 'a[rel="prev"]' identifies the <a> element with
-        # the rel attribute set to prev , and you can use this <a> element’s href 
+        # the rel attribute set to prev , and you can use this <a> element’s href
         # attribute to get the previous comic’s URL, which gets stored in url.
         # Now the same process continue for the new url, up to when url ends with #.
 
     print('Done.')
 
-def f156():
+def f174():
     # Starting a Selenium-Controlled Browser
 
     from selenium import webdriver
     browser = webdriver.Firefox()     # opens firefox browser, with no url loaded
     print(type(browser))              # prints the class type of browser:
     # <class 'selenium.webdriver.firefox.webdriver.WebDriver'>
-    browser.get('http://inventwithpython.com')  # opens the url in the already opened 
+    browser.get('http://inventwithpython.com')  # opens the url in the already opened
                                                 # firefox browser
 
-def f157():
+def f175():
     # Finding Elements on the Page
 
     from selenium import webdriver
@@ -2810,47 +3177,47 @@ def f157():
     try:
         elem = browser.find_element_by_class_name('card-img-top')
         # The find_element_* methods is looking just for a single element,
-        # while find_elements_* methods returns a list of WebElement_* objects. 
+        # while find_elements_* methods returns a list of WebElement_* objects.
         print('Found <%s> element with that class name!' % (elem.tag_name))
     except:
         print('Was not able to find an element with that name.')
 
     # The output will be:
-    # Found <img> element with that class name!   
+    # Found <img> element with that class name!
 
     # To see the list of methods refer to item 159 in main menu !
 
-def f158():
+def f176():
     # WebElement Attributes and Methods
 
     ''' Selenium’s WebDriver Methods for Finding Elements
     - Elements that use the CSS class name:
-    browser.find_element_by_class_name(name)     
+    browser.find_element_by_class_name(name)
     browser.find_elements_by_class_name(name)
 
     - Elements that match the CSS selector
-    browser.find_element_by_css_selector(selector)  
+    browser.find_element_by_css_selector(selector)
     browser.find_elements_by_css_selector(selector)
 
     - Elements with a matching id attribute value
     browser.find_element_by_id(id)
     browser.find_elements_by_id(id)
 
-    - <a> elements that completely match the text provided 
-    browser.find_element_by_link_text(text)   
+    - <a> elements that completely match the text provided
+    browser.find_element_by_link_text(text)
     browser.find_elements_by_link_text(text)
 
     - <a> elements that contain the text provided
     browser.find_element_by_partial_link_text(text)
-    browser.find_elements_by_partial_link_text(text) 
+    browser.find_elements_by_partial_link_text(text)
 
     - Elements with a matching name attribute value
-    browser.find_element_by_name(name)  
+    browser.find_element_by_name(name)
     browser.find_elements_by_name(name)
 
     - Elements with a matching tag name
       (case insensitive; an <a> element is matched by 'a' and 'A')
-    browser.find_element_by_tag_name(name)  
+    browser.find_element_by_tag_name(name)
     browser.find_elements_by_tag_name(name)
 
     tag_name - The tag name, such as 'a' for an <a> element
@@ -2866,20 +3233,20 @@ def f158():
                ment in the page
     '''
 
-def f159():
+def f177():
     # Clicking the Page
 
-    from selenium import webdriver  
+    from selenium import webdriver
     browser = webdriver.Firefox()   # opens firefox browser, with no url loaded
     browser.get('http://inventwithpython.com')   # loads the url argument in browser
     linkElem = browser.find_element_by_link_text('Read Online for Free')
-    print(type(linkElem))  
+    print(type(linkElem))
     # It prints: <class 'selenium.webdriver.remote.webelement.WebElement'>
     linkElem.click()    # follows the "Read It Online" link
                         # click() simulate mouse click on the first link element with
                         # text as 'Read Online for Free'
 
-def f160():
+def f178():
     # Filling Out and Submitting Forms
 
     from selenium import webdriver
@@ -2891,18 +3258,18 @@ def f160():
     passwordElem.send_keys('12345')
     passwordElem.submit()
 
-    '''The previous code will fill in those text fields with the provided text. 
-    (You can always use the browser’s inspector to verify the id .) Calling the 
-    submit() method on any element will have the same result as clicking the Submit 
+    '''The previous code will fill in those text fields with the provided text.
+    (You can always use the browser’s inspector to verify the id .) Calling the
+    submit() method on any element will have the same result as clicking the Submit
     button for the form that element is in.'''
 
-def f161():
+def f179():
     # Sending Special Keys
 
     from selenium import webdriver
     from selenium.webdriver.common.keys import Keys
 
-    browser = webdriver.Firefox() # opens just the firefox browser, 
+    browser = webdriver.Firefox() # opens just the firefox browser,
                                     # no url loaded is loaded
     browser.get('http://nostarch.com') # loads url in browser
     htmlElem = browser.find_element_by_tag_name('html')
@@ -2913,12 +3280,12 @@ def f161():
     '''Commonly Used Variables in the selenium.webdriver.common.keys Module
     Keys.DOWN , Keys.UP , Keys.LEFT , Keys.RIGHT     The keyboard arrow keys
     Keys.ENTER , Keys.RETURN                         The Enter or RETURNS keys
-    Keys.HOME , Keys.END , Keys.PAGE_DOWN, Keys.PAGE_UP   HOME,END, ... 
-    Keys.ESCAPE , Keys.BACK_SPACE , Keys.DELETE       esc , backspace , DELETE 
+    Keys.HOME , Keys.END , Keys.PAGE_DOWN, Keys.PAGE_UP   HOME,END, ...
+    Keys.ESCAPE , Keys.BACK_SPACE , Keys.DELETE       esc , backspace , DELETE
     Keys.F1 , Keys.F2 , . . . , Keys.F12              F1 to F12
     Keys.TAB                                          The tab key
 
-    - Selenium can simulate clicks on various browser buttons by 
+    - Selenium can simulate clicks on various browser buttons by
       following methods:
 
     browser.back()  Clicks the Back button.
@@ -2928,14 +3295,17 @@ def f161():
 
     Selenium reference: http://selenium-python.readthedocs.org/
     '''
+def f180():
+    # Chapter 12 - Working with Excel Spreadsheets
+    print('Chapter 12 - Working with Excel Spreadsheets')
 
-def f162():
+def f181():
     # Opening Excel Documents with OpenPyXL
     # To work with Excel documents first install the module:
     # sudo pip3 install OpenPyXL
 
     import openpyxl
-    wb = openpyxl.load_workbook('example.xlsx') 
+    wb = openpyxl.load_workbook('example.xlsx')
     # This does not open the file
 
     print(type(wb))  # Returns workbook data type
@@ -2947,7 +3317,7 @@ def f162():
     print(sheet)
 
     print(type(sheet)) # Returns Worksheet data type
-    print(sheet.title) # 
+    print(sheet.title) #
 
     # The active sheet is the sheet that’s on top when the
     # workbook is opened in Excel.
@@ -2956,7 +3326,7 @@ def f162():
     anotherSheet = wb.get_active_sheet()
     print(anotherSheet)
 
-def f163():
+def f182():
     # Getting Cells from the Sheets
 
     import openpyxl
@@ -2969,7 +3339,7 @@ def f163():
     c = sheet['B1'] # Note: cell B1 is quoted!
     print(c.value)
 
-    print('Row ' + str(c.row) + ', Column ' + str(c.column) + ' is ' 
+    print('Row ' + str(c.row) + ', Column ' + str(c.column) + ' is '
           + c.value)
     print('Cell ' + c.coordinate + ' is ' + c.value)
     print(sheet['C1'].value)
@@ -2978,7 +3348,7 @@ def f163():
     # Cell objects also have row , column , and coordinate attri-
     # butes that provide location information for the cell.
 
-def f164():
+def f183():
     # excel sheet cell() method
 
     import openpyxl
@@ -2990,7 +3360,7 @@ def f164():
     for i in range(1, 8, 2):
         print(i, sheet.cell(row=i, column=2).value)
 
-def f165():
+def f184():
     # Determine the size of the sheet
 
     import openpyxl
@@ -3004,9 +3374,9 @@ def f165():
     print(sheet.max_row)                 # 7
     print(sheet.max_column)              # 3
 
-def f166():
+def f185():
     # Converting Between Column Letters and Numbers
-    import openpyxl 
+    import openpyxl
     from openpyxl.utils import get_column_letter, column_index_from_string
 
     get_column_letter(1)         # 'A'
@@ -3023,8 +3393,8 @@ def f166():
     print(column_index_from_string('A'))              # 1
     print(column_index_from_string('AA'))             # 27
 
-def f167():
-    # Getting Rows and Columns from the Sheets 
+def f186():
+    # Getting Rows and Columns from the Sheets
 
     import openpyxl
 
@@ -3037,12 +3407,12 @@ def f167():
             print(cellObj.coordinate, cellObj.value)
         print('--- END OF ROW ---')
 
-    # To print the values of each cell in the area, we use two for 
-    # loops. The outer for loop goes over each row in the slice. 
-    # Then, for each row, the nested for loop goes through each 
+    # To print the values of each cell in the area, we use two for
+    # loops. The outer for loop goes over each row in the slice.
+    # Then, for each row, the nested for loop goes through each
     # cell in that row.
 
-def f168():
+def f187():
     # Access the values of cells in a particular row or column
 
     import openpyxl
@@ -3058,18 +3428,18 @@ def f168():
     # 1. Import the openpyxl module.
     # 2. Call the openpyxl.load_workbook() function.
     # 3. Get a Workbook object.
-    # 4. Call the get_active_sheet() or get_sheet_by_name() 
+    # 4. Call the get_active_sheet() or get_sheet_by_name()
     #    workbook method.
     # 5. Get a Worksheet object.
-    # 6. Use indexing or the cell() sheet method with row and 
+    # 6. Use indexing or the cell() sheet method with row and
     #    column keyword arguments.
     # 7. Get a Cell object.
-    # 8. Read the Cell object’s value attribute.    
+    # 8. Read the Cell object’s value attribute.
 
-def f169():
-    # Reading Data from a Spreadsheet 
-    # Tabulates population and number of census tracts for 
-    # each county.    
+def f188():
+    # Reading Data from a Spreadsheet
+    # Tabulates population and number of census tracts for
+    # each county.
 
     import openpyxl, pprint
     print('Opening workbook...')
@@ -3105,9 +3475,9 @@ def f169():
     resultFile = open('census2010.py', 'w')
     resultFile.write('allData = ' + pprint.pformat(countyData))
     resultFile.close()
-    print('Done.')    
+    print('Done.')
 
-def f170():
+def f189():
     # Writing Excel Documents
     import openpyxl
 
@@ -3120,8 +3490,8 @@ def f170():
     sheet.title = 'Spam Bacon Eggs Sheet'
     wb.get_sheet_names()
 
-def f171():
-    # Create and save a spreed sheet 
+def f190():
+    # Create and save a spreed sheet
     import openpyxl
 
     wb = openpyxl.load_workbook('example.xlsx')
@@ -3129,7 +3499,7 @@ def f171():
     sheet.title = 'Spam Spam Spam'
     wb.save('example_copy.xlsx')
 
-def f172():
+def f191():
     # Creating and Removing Sheets
 
     import openpyxl
@@ -3152,12 +3522,12 @@ def f172():
     # If you want the new created excel be saved, uncomment this:
     # wb.save('test.xlsx')
 
-def f173():
+def f192():
     # Writing Values to Cells
 
     import openpyxl
 
-    # Writing values to cells is much like writing values to keys 
+    # Writing values to cells is much like writing values to keys
     # in a dictionary.
     wb = openpyxl.Workbook()
     sheet = wb.get_sheet_by_name('Sheet')
@@ -3167,9 +3537,9 @@ def f173():
     # If you want the new created excel be saved, uncomment this:
     # wb.save('test.xlsx')
 
-def f174():
+def f193():
     # Project: Updating a Spreadsheet
-    # This program updates prices for specific produces in file 
+    # This program updates prices for specific produces in file
     # 'produceSales.xlsx'
 
     import openpyxl
@@ -3183,17 +3553,17 @@ def f174():
     # Loop through the rows and update the prices.
     # skip the first row:
     for rowNum in range(2, sheet.max_row):
-        # The cell in column 1 (that is, column A) will be stored 
+        # The cell in column 1 (that is, column A) will be stored
         # in the ­variable produceName
         produceName = sheet.cell(row=rowNum, column=1).value
-        # If produceName exists as a key in the PRICE_UPDATES 
+        # If produceName exists as a key in the PRICE_UPDATES
         # dictionary, then update the cell
         if produceName in PRICE_UPDATES:
             sheet.cell(row=rowNum, column=2).value = PRICE_UPDATES[produceName]
 
     wb.save('updatedProduceSales.xlsx')
 
-def f175():
+def f194():
     # Setting the Font Style of Cells
 
     import openpyxl
@@ -3203,16 +3573,16 @@ def f175():
     sheet = wb.get_sheet_by_name('Sheet')
     highlight = NamedStyle(name="highlight")
     highlight.font = Font(size=24, italic=True)
-    # Once a named style has been created, it can be registered 
+    # Once a named style has been created, it can be registered
     # with the workbook:
     wb.add_named_style(highlight)
-    # But named styles will also be registered automatically the 
+    # But named styles will also be registered automatically the
     # first time they are assigned to a cell:
     sheet['A1'].style = highlight
     sheet['A1'] = 'Hello world!'
     wb.save('styled.xlsx')
 
-def f176():
+def f195():
     # Font object
 
     import openpyxl
@@ -3233,7 +3603,7 @@ def f176():
 
     wb.save('styles.xlsx')
 
-def f177():
+def f196():
     # Formulas
     import openpyxl
 
@@ -3244,8 +3614,8 @@ def f177():
     sheet['A3'] = '=SUM(A1:A2)'
     wb.save('writeFormula.xlsx')
 
-def f178():
-    # loading a workbook with and without the data_only keyword 
+def f197():
+    # loading a workbook with and without the data_only keyword
     # argument
 
     import openpyxl
@@ -3254,13 +3624,13 @@ def f178():
     sheet = wbFormulas.get_active_sheet()
     print(sheet['A3'].value)
 
-    wbDataOnly = openpyxl.load_workbook('writeFormula.xlsx', 
+    wbDataOnly = openpyxl.load_workbook('writeFormula.xlsx',
                                         data_only=True)
     ws = wbDataOnly.get_active_sheet()
-    print(ws['A3'].value) 
+    print(ws['A3'].value)
     # in my case it shows None
 
-def f179():
+def f198():
     # Setting Row Height and Column Width
 
     import openpyxl
@@ -3273,7 +3643,7 @@ def f179():
     sheet.column_dimensions['B'].width = 20
     wb.save('dimensions.xlsx')
 
-def f180():
+def f199():
     # Merging and Unmerging Cells
     # A rectangular area of cells can be merged into a single cell
     # with the merge_cells() sheet method
@@ -3288,7 +3658,7 @@ def f180():
     sheet['C5'] = 'Two merged cells.'
     wb.save('merged.xlsx')
 
-def f181():
+def f200():
     # Unmerge cells
     # To unmerge cells, call the unmerge_cells() sheet method
 
@@ -3300,8 +3670,8 @@ def f181():
     sheet.unmerge_cells('C5:D5')
     wb.save('merged.xlsx')
 
-def f182():
-    # Freeze Panes - Pan is visible top rows or leftmost columns 
+def f201():
+    # Freeze Panes - Pan is visible top rows or leftmost columns
     # to a specific cell that is helpfull to be used for larg spr-
     # eadsheets to display all at once.
 
@@ -3320,7 +3690,7 @@ def f182():
     wb.save('freezeExample.xlsx')
     # To unfreez all pan set the the atribute to None
 
-def f183():
+def f202():
     # Charts
     from openpyxl import Workbook
     wb = Workbook()
@@ -3333,13 +3703,17 @@ def f183():
     chart = BarChart()
     chart.add_data(values)
     ws.add_chart(chart, "E15")
-    wb.save("sampleChart.xlsx")   
+    wb.save("sampleChart.xlsx")
 
     # For complete documentation refere to:
     # https://openpyxl.readthedocs.io/en/stable/charts/introduction.html
 
-def f184():
-    # Extracting Text from PDFs 
+def f203():
+    # Chapter 13 - Working with PDF and Word Documents
+    print('Chapter 13 - Working with PDF and Word Documents')
+
+def f204():
+    # Extracting Text from PDFs
     # sudo pip3 install PyPDF2
 
     import PyPDF2
@@ -3350,7 +3724,7 @@ def f184():
     pageObj = pdfReader.getPage(0)
     print(pageObj.extractText())
 
-def f185():
+def f205():
     # Decrypting PDFs
 
     import PyPDF2
@@ -3363,17 +3737,17 @@ def f185():
     pageObj = pdfReader.getPage(0) # No more error you get
     print(pageObj.extractText())
 
-def f186():
+def f206():
     # copy pages from one PDF document to another
     # files 'meetingminutes.pdf' and 'meetingminutes2.pdf' must
     # exist in current directory!
 
     import PyPDF2, os
-          
+
     if not os.path.isfile('meetingminutes.pdf'):
         print('meetingminutes.pdf is required in current working directory!')
         return
-    
+
     pdf1File = open('meetingminutes.pdf', 'rb')
     pdf2File = open('meetingminutes2.pdf', 'rb')
     pdf1Reader = PyPDF2.PdfFileReader(pdf1File)
@@ -3395,16 +3769,16 @@ def f186():
     pdf2File.close()
 
 
-def f187():
+def f207():
     # Rotating Pages
     # file 'meetingminutes.pdf' must be in current directory!
 
     import PyPDF2, os
-    
+
     if not os.path.isfile('meetingminutes.pdf'):
         print('meetingminutes.pdf is required in current working directory!')
         return
-    
+
     minutesFile = open('meetingminutes.pdf', 'rb')
     pdfReader = PyPDF2.PdfFileReader(minutesFile)
     page = pdfReader.getPage(0)
@@ -3417,7 +3791,7 @@ def f187():
     resultPdfFile.close()
     minutesFile.close()
 
-def f188():
+def f208():
     # Overlaying Pages
     # files 'meetingminutes.pdf' and 'watermark.pdf' must exist in
     # current directory!
@@ -3446,7 +3820,7 @@ def f188():
     minutesFile.close()
     resultPdfFile.close()
 
-def f189():
+def f209():
     # Encrypting PDFs
     import PyPDF2
     pdfFile = open('meetingminutes.pdf', 'rb')
@@ -3460,7 +3834,7 @@ def f189():
     pdfWriter.write(resultPdf)
     resultPdf.close()
 
-def f190():
+def f210():
     # Combining Select Pages from Many PDFs
 
     import PyPDF2, os
@@ -3478,7 +3852,7 @@ def f190():
     for filename in pdfFiles:
         pdfFileObj = open(filename, 'rb')
         pdfReader = PyPDF2.PdfFileReader(pdfFileObj)
-        # TODO: Loop through all the pages (except the first) and 
+        # TODO: Loop through all the pages (except the first) and
         # add them.
         for pageNum in range(1, pdfReader.numPages):
             pageObj = pdfReader.getPage(pageNum)
@@ -3489,7 +3863,7 @@ def f190():
     pdfWriter.write(pdfOutput)
     pdfOutput.close()
 
-def f191():
+def f211():
     # Word Documents
     # sudo pip3 install python-docx (install module 'python-docx')
     # file 'demo.docx' must be in working directory.
@@ -3497,7 +3871,7 @@ def f191():
     import docx
 
     doc = docx.Document('demo.docx') # return a Document object
-    print(len(doc.paragraphs)) # a list of paragraph objects 
+    print(len(doc.paragraphs)) # a list of paragraph objects
 
     # string of the text in paragraph[0]:
     print(doc.paragraphs[0].text)
@@ -3511,8 +3885,8 @@ def f191():
     print(doc.paragraphs[1].runs[2].text)
     print(doc.paragraphs[1].runs[3].text)
 
-def f192():
-    # Getting the Full Text from a .docx File 
+def f212():
+    # Getting the Full Text from a .docx File
 
     import docx
 
@@ -3527,7 +3901,7 @@ def f192():
 
     print(getText('demo.docx'))
 
-def f193():
+def f213():
     # Styling Paragraph and Run Attributes
     print('''
     The string values for the default Word styles are:
@@ -3540,13 +3914,13 @@ def f193():
     ''')
 
     print('''
-    Run attributes are:    
+    Run attributes are:
     bold italic underline strike double_strike all_caps small_caps
     shadow outline rtl imprint emboss
     ''')
 
 
-def f194():
+def f214():
     # Creating Word Documents with Nondefault Styles
     import docx
 
@@ -3568,7 +3942,7 @@ def f194():
     doc.paragraphs[1].runs[3].underline = True
     doc.save('restyled.docx')
 
-def f195():
+def f215():
     # Writing Word Documents
     import docx
 
@@ -3576,7 +3950,7 @@ def f195():
     print(doc.add_paragraph('Hello world!'))
     doc.save('helloworld.docx')
 
-def f196():
+def f216():
     # Add paragraphs
 
     import docx
@@ -3590,7 +3964,7 @@ def f196():
 
     doc.save('multipleParagraphs.docx')
 
-def f197():
+def f217():
     # Adding Headings
 
     import docx
@@ -3603,14 +3977,14 @@ def f197():
     doc.add_heading('Header 4', 4)
     doc.save('headings.docx')
 
-def f198():
+def f218():
     # Adding Line and Page Breaks and Adding Pictures
 
     import docx, os
 
     if not os.path.isfile('zophie.png'):
-        print('zophie.png is required in current working directory!')        
-        return   
+        print('zophie.png is required in current working directory!')
+        return
     doc = docx.Document()
     doc.add_paragraph('This is on the first page!')
     # Following didn't work, for page break
@@ -3622,15 +3996,11 @@ def f198():
                     height=docx.shared.Cm(4))
     doc.save('twoPage.docx')
 
-def f199():
-    # reserved
-    print()
+def f219():
+    # Chapter 14 - Working with CSV Files and JSON Data
+    print('Chapter 14 - Working with CSV Files and JSON Data')
 
-def f200():
-    # reserved
-    print()
-
-def f201():
+def f220():
     # Read data from a CSV file with csv module,
     # you need to create a Reader object
 
@@ -3639,7 +4009,7 @@ def f201():
     from pprint import pprint
 
     if not os.path.isfile('example.csv'):
-        print('example.csv is required in current working directory!')        
+        print('example.csv is required in current working directory!')
         return
     # open a file just any other text file, with open()
     exampleFile = open('example.csv')
@@ -3651,12 +4021,12 @@ def f201():
     exampleData = list(exampleReader)
     pprint(exampleData)
 
-def f202():
+def f221():
     # Reading Data from Reader Objects in a for Loop
 
     import csv, os
 
-    if not os.path.isfile('example.csv'): 
+    if not os.path.isfile('example.csv'):
         print('example.csv is required in current working directory!')
         return
 
@@ -3664,22 +4034,22 @@ def f202():
     exampleReader = csv.reader(exampleFile)
 
     for row in exampleReader:
-        # to get the row number in Reader object use 
+        # to get the row number in Reader object use
         # variable line_num
         print('Row #' + str(exampleReader.line_num) + \
               ' ' + str(row))
 
         # The Reader object can be looped over only once
 
-def f203():
+def f222():
     # Writer object
     # A Writer object lets you write data to csv file.
 
     import csv
 
     # Open a file in write mode:
-    outputFile = open('output.csv', 'w', newline='')    
-    # If you forget the newline='' keyword argument in open(), the 
+    outputFile = open('output.csv', 'w', newline='')
+    # If you forget the newline='' keyword argument in open(), the
     # CSV file will be double-spaced.
 
     # Create a Writer object:
@@ -3692,7 +4062,7 @@ def f203():
 
     with open('output.csv') as myFile: print(myFile.read())
 
-def f204():
+def f223():
     # The 'delimiter' and 'lineterminator' keyword arguments
     # We change the above arguments to change the default values.
     # Arguments default values are comma and '\n'.
@@ -3700,17 +4070,17 @@ def f204():
     import csv
 
     csvFile = open('example.tsv', 'w', newline='')
-    csvWriter = csv.writer(csvFile, delimiter='\t', 
+    csvWriter = csv.writer(csvFile, delimiter='\t',
                            lineterminator='\n\n')
 
     csvWriter.writerow(['apples', 'oranges', 'grapes'])
     csvWriter.writerow(['eggs', 'bacon', 'ham'])
-    csvWriter.writerow(['spam', 'spam', 'spam', 'spam', 'spam', 
+    csvWriter.writerow(['spam', 'spam', 'spam', 'spam', 'spam',
                         'spam'])
 
     csvFile.close()
 
-def f205():
+def f224():
     # Project: Removes the header from all CSV files in the current
     # working directory.
 
@@ -3741,36 +4111,36 @@ def f205():
 
         # Step 3: Write Out the CSV File Without the First Row
         # .....................................................
-        csvFileObj = open(os.path.join('headerRemoved', 
+        csvFileObj = open(os.path.join('headerRemoved',
                                        csvFilename), 'w', newline='')
 
         csvWriter = csv.writer(csvFileObj)
         for row in csvRows:
             csvWriter.writerow(row)
-        csvFileObj.close()    
+        csvFileObj.close()
 
-def f206():
+def f225():
     # What is JSON
     print('''
-    JavaScript Object Notation is a popular way to format data as 
+    JavaScript Object Notation is a popular way to format data as
     a single human-readable string. JSON is the native way that J-
     avaScript programs write their data structures and usually re-
-    sembles what Python’s pprint function would produce. Example: 
+    sembles what Python’s pprint function would produce. Example:
     {"name": "Zophie", "isCat": true,
     "miceCaught": 0, "napsTaken": 37.5,
     "felineIQ": null}
 
     Many websites offer JSON content as a way for programs to int-
     eract with the website. This is known as providing an API. Ac-
-    cessing an API is the same as accessing any other web page via 
+    cessing an API is the same as accessing any other web page via
     a URL. The difference is that the data returned by an API is -
-    formatted with JSON. Facebook, Twitter, Yahoo, Google, Tumblr, 
+    formatted with JSON. Facebook, Twitter, Yahoo, Google, Tumblr,
     Wikipedia, Flickr, Data.gov, Reddit, IMDb, Rotten Tomatoes, L-
     inkedIn, and many other offer APIs for programs to use. Some -
     of these sites require registration, which is almost always f-
     ree. You’ll have to find documentation for what URLs your pro-
     gram needs to request in order to get the data you want, as w-
-    ell as the general format of the JSON data structures that are 
+    ell as the general format of the JSON data structures that are
     returned. This documentation should be provided by whatever s-
     ite is offering the API; if they have a “Developers” page, lo-
     ok for the documentation there. What you can do with JSOn:
@@ -3782,10 +4152,10 @@ def f206():
       putting it into a single text file.
     ''')
 
-def f207():
+def f226():
     # Reading JSON with the loads() Function
-    # To translate a string containing JSON data into a Python 
-    # value, pass it to the json.loads() function. 
+    # To translate a string containing JSON data into a Python
+    # value, pass it to the json.loads() function.
 
     # JSON strings always use double quotes
     stringOfJsonData = '{"name": "Zophie", "isCat": true, \
@@ -3796,12 +4166,12 @@ def f207():
 
     print(jsonDataAsPythonValue)
 
-def f208():
+def f227():
     # Writing JSON with the dumps() Function
     # The json.dumps() function ("dump string") translate a Python
     # value into a string of JSON-formatted data.
 
-    pythonValue = {'isCat': True, 'miceCaught': 0, 
+    pythonValue = {'isCat': True, 'miceCaught': 0,
                    'name': 'Zophie', 'felineIQ': None}
 
     import json
@@ -3809,7 +4179,7 @@ def f208():
 
     print(stringOfJsonData)
 
-def f209():
+def f228():
     # Project: Fetching Current Weather Data
 
     import json, requests, sys
@@ -3842,7 +4212,11 @@ def f209():
     print('Day after tomorrow:')
     print(w[2]['weather'][0]['main'], '-', w[2]['weather'][0]['description'])
 
-def f210():
+def f229():
+    # Chapter 15 - Time, Scheduling Tasks, Launching Programs
+    print('Chapter 15 - Time, Scheduling Tasks, Launching Programs')
+
+def f230():
     # The time.time() Function
 
     from time import time
@@ -3850,11 +4224,11 @@ def f210():
     # number of seconds since 12 am on January 1, 1970 (UTC)
     # The return number is called epoch timestamp
 
-def f211():
+def f231():
     # calculate running time for a program
 
     import time
-    
+
     def calcProd():
         # Calculate the product of the first 100,000 numbers.
         product = 1
@@ -3870,10 +4244,10 @@ def f211():
     print('Took %s seconds to calculate.' % (endTime - startTime))
 
     # cProfile.run can() be used as an alternative for time.time()
-    # For help go to: https://docs.python.org/3/library/profile.html.  
-   
+    # For help go to: https://docs.python.org/3/library/profile.html.
 
-def f212():
+
+def f232():
     # sleep function to pause the program
 
     import time
@@ -3883,12 +4257,12 @@ def f212():
         print('Tock')
         time.sleep(1)
 
-     # Making 10 calls to time.sleep(1) is equivalent to 
+     # Making 10 calls to time.sleep(1) is equivalent to
      # time.slweep(10)
     for i in range(10):
         time.sleep(1)
 
-def f213():
+def f233():
     # Rounding the current time number
 
     import time
@@ -3896,13 +4270,13 @@ def f213():
     print(now)
     print(round(now, 2))
     print(round(now, 4))
-    print(round(now)) # No 2nd argument, rounds to nearest integer 
+    print(round(now)) # No 2nd argument, rounds to nearest integer
 
-def f214():
+def f234():
     # Project: Super Stopwatch - track spent time on a task
 
     # Step 1: Set Up the Program to Track Times
-    
+
     import time
 
     # Display the program's instructions.
@@ -3929,20 +4303,20 @@ def f214():
             print('Lap #%s: Total time: %s - Lap time: %s' % (lapNum, totalTime, lapTime), end='')
             lapNum += 1
             lastTime = time.time() # reset the last lap time
-    
+
     except KeyboardInterrupt:
         # Handle the Ctrl-C exception to keep its error message from displaying.
         print('\nDone.')
 
-def f215():
+def f235():
     # The datetime Module
     import datetime, time
 
     # The following returns a datetime object for the current date
     # and time:
-    print(type(datetime.datetime.now()))  
+    print(type(datetime.datetime.now()))
     print(datetime.datetime.now()) # Displays current date and time
-    
+
     # If you in IDLE:
     # >>> datetime.datetime.now()
     # datetime.datetime(2019, 5, 6, 17, 2, 33, 739924)
@@ -3963,17 +4337,355 @@ def f215():
     print('\nPrinting the current time in the form of a'
           + '\ndatetime object: ', dt)
 
-def f216():
-    print()
+def f236():
+    # Compare datetime objects with each other
 
-def f217():
-    print()
+    import datetime
 
-def f218():
-    print()
+    halloween2015 = datetime.datetime(2015, 10, 31, 0, 0, 0)
+    newyears2016 = datetime.datetime(2016, 1, 1, 0, 0, 0)
+    oct31_2015 = datetime.datetime(2015, 10, 31, 0, 0, 0)
+    print(halloween2015 == oct31_2015)   # True
+    print(halloween2015 > newyears2016)  # False
+    print(newyears2016 > halloween2015)  # True
+    print(newyears2016 != oct31_2015)    # True
 
-def f219():
-    print()
+def f237():
+    # Find time duration with timedelta module
 
-def f220():
-    print()
+    import datetime
+
+    # timedelta arguments are: (has no month or year argument)
+    # days, hours, minutes, seconds, milliseconds and microseconds
+    delta = datetime.timedelta(days=11, hours=10, minutes=9, seconds=8)
+    print(delta.days, delta.seconds, delta.microseconds)
+    print(delta.total_seconds())
+    print(str(delta))             # nice human readable format
+
+    print('.' * 10)
+
+def f238():
+    # Using arithmatic operators on datetime values
+
+    import datetime
+
+    # calculate the date 1,000 days from now, using arithmatic op-
+    # erators on datetime values
+
+    dt = datetime.datetime.now()
+    print(dt)
+    thousandDays = datetime.timedelta(days=1000)
+    print(dt + thousandDays)
+
+    # timedelta objects can be added or subtracted with datetime -
+    # objects or other timedelta objects using the + and - operat-
+    # ors. A timedelta object can be multiplied or divided by int-
+    # eger or float values with the * and / operators.
+
+    oct21st = datetime.datetime(2015, 10, 21, 16, 29, 0)
+    aboutThirtyYears = datetime.timedelta(days=365 * 30)
+    print(oct21st)
+    print(oct21st - aboutThirtyYears)
+    print(oct21st - (2 * aboutThirtyYears))
+
+def f239():
+    # Pausing Until a Specific Date
+
+    import datetime
+    import time
+    halloween2016 = datetime.datetime(2016, 10, 31, 0, 0, 0)
+    while datetime.datetime.now() < halloween2016:
+        time.sleep(1)
+
+   # The time.sleep(1) call will pause your Python program so that
+   # the computer doesn’t waste CPU processing cycles simply chec-
+   # king the time over and over. Rather, the while loop will just
+   # check the condition once per second and continue with the re-
+   # st of the program after Halloween 2016
+
+def f240():
+    # Converting datetime Objects into Strings
+
+    import datetime
+
+    # Use strftime() to get a custom string format
+    oct21st = datetime.datetime(2015, 10, 21, 16, 29, 0)
+
+    print(oct21st.strftime('%Y/%m/%d %H:%M:%S'))
+    print(oct21st.strftime('%I:%M %p'))
+    print(oct21st.strftime("%B of '%y"))
+
+
+    '''
+    Directives meaning:
+    %Y Year with century, as in '2014'
+    %y Year without century, '00' to '99' (1970 to 2069)
+    %m Month as a decimal number, '01' to '12'
+    %B Full month name, as in 'November'
+    %b Abbreviated month name, as in 'Nov'
+    %d Day of the month, '01' to '31'
+    %j Day of the year, '001' to '366'
+    %w Day of the week, '0' (Sunday) to '6' (Saturday)
+    %A Full weekday name, as in 'Monday'
+    %a Abbreviated weekday name, as in 'Mon'
+    %H Hour (24-hour clock), '00' to '23'
+    %I Hour (12-hour clock), '01' to '12'
+    %M Minute, '00' to '59'
+    %S Second, '00' to '59'
+    %p 'AM' or 'PM'
+    %% Literal '%' character
+    '''
+
+def f241():
+    # Converting Strings into datetime Objects
+
+    import datetime
+
+    # Parsing strings that are convertible to datetime object can
+    # be done using method strptime()
+
+    print('',
+    datetime.datetime.strptime('October 21, 2015', '%B %d, %Y'),'\n',
+    datetime.datetime.strptime('2015/10/21 16:29:00', '%Y/%m/%d %H:%M:%S'),'\n',
+    datetime.datetime.strptime("October of '15", "%B of '%y"),'\n',
+    datetime.datetime.strptime("November of '63", "%B of '%y")
+    )
+    '''
+    Directives meaning:
+    %Y Year with century, as in '2014'
+    %y Year without century, '00' to '99' (1970 to 2069)
+    %m Month as a decimal number, '01' to '12'
+    %B Full month name, as in 'November'
+    %b Abbreviated month name, as in 'Nov'
+    %d Day of the month, '01' to '31'
+    %j Day of the year, '001' to '366'
+    %w Day of the week, '0' (Sunday) to '6' (Saturday)
+    %A Full weekday name, as in 'Monday'
+    %a Abbreviated weekday name, as in 'Mon'
+    %H Hour (24-hour clock), '00' to '23'
+    %I Hour (12-hour clock), '01' to '12'
+    %M Minute, '00' to '59'
+    %S Second, '00' to '59'
+    %p 'AM' or 'PM'
+    %% Literal '%' character
+    '''
+
+def f242():
+    # Review of Python’s Time Functions
+
+    print('''
+    •    A Unix epoch timestamp (used by the time module) is a fl-
+    oat or integer value of the number of seconds  since  12 am on
+    January 1, 1970, UTC.
+
+    •    A datetime object ( of the datetime module ) has integers
+    stored in the attributes year , month , day , hour ,  minute ,
+    and second.
+
+    •    A timedelta object (of the datetime module)  represents a
+    time duration, rather than a specific moment.
+
+
+    Here’s a review of time functions and their parameters and re-
+    turn values:
+    ..............................................................
+
+    •    The time.time() function returns an epoch timestamp float
+    value of the current moment.
+
+    •    The time.sleep(seconds) function   stops  the program for
+    the amount of seconds specified by the seconds argument.
+
+    •    The datetime.datetime(year, month, day, hour, minute, se-
+    cond) function returns a datetime object of the moment specif-
+    ied by the arguments. If hour , minute ,  or  second arguments
+    are not provided, they default to 0.
+
+    •    The datetime.datetime.now() function returns a datetime -
+    object of the current moment.
+
+    •    The datetime.datetime.fromtimestamp(epoch)  function ret-
+    urns a datetime object of the moment represented by  the epoch
+    timestamp argument.
+
+    •    The datetime.timedelta(weeks, days, hours, minutes, seco-
+    nds, milliseconds, microseconds) function returns  a timedelta
+    object representing a duration of time. The function’s keyword
+    arguments are all optional and do not include month or year.
+
+    •    The total_seconds() method for  timedelta objects returns
+    the number of seconds the timedelta object represents.
+
+    •    The strftime(format) method returns a string  of the time
+    represented by the  datetime object in a custom  format that’s
+    based on the format string.
+
+    •    The datetime.datetime.strptime(time_string, format) func-
+    tion  returns  a datetime object of  the moment  specified  by
+    time_string , parsed using the format string argument.
+    '''
+    )
+
+def f243():
+    # Multithreading
+
+    # To make a separate thread, you first need  to make  a Thread
+    # object by ­calling the threading.Thread() function.
+
+    # This thread demo shows running different parts  of  a python
+    # program at the same time in parallel:
+
+    import threading, time
+
+    print('Start of program.')
+
+    # The function we want to call in the new thread is takeANap()
+
+    def takeANap():
+        time.sleep(5)
+        print('Wake up!')
+
+    threadObj = threading.Thread(target=takeANap)
+    threadObj.start()
+
+    # Notice that the keyword argument is target=takeANap ,
+    # not target=takeANap() .
+
+    print('End of program.')
+
+    # output:
+    # Start of program.
+    # End of program.
+    # Wake up!
+
+    # The first is the original thread that began at  the start of
+    # the program and ends after print('End of program.') .
+    # The 2nd thread is created  when threadObj.start() is called,
+    # begins  at  the  start  of the takeANap() function, and ends
+    # after takeANap() returns.
+
+def f244():
+    # Passing Arguments to the Thread’s Target Function
+
+    import threading
+
+
+    print('Cats', 'Dogs', 'Frogs', sep=' & ')
+
+    print('#' * 20)
+
+    threadObj = threading.Thread(target=print,
+        args=('Cats', 'Dogs', 'Frogs'), kwargs={'sep': ' & '})
+
+    threadObj.start()
+
+    # 'threading' module is higher-level threading interface.
+    # 'threading.Thread' is an object that represents a thread.
+
+    # The arguments for Thread object constructer:
+    # 'target' is the callable object to be invoked by the run() -
+    # method. Defaults to None, meaning nothing is called.
+    # 'args' is the argument tuple for the target invocation,
+    # defaults to ().
+    # 'kwargs' is a dictionary of keyword arguments for the target
+    # invocation. Defaults to {}.
+
+    # To avoid concurrency issues, never let multiple threads read
+    # or write the same variables.
+
+
+def f245():
+    # Downloads XKCD comics using multiple threads
+
+    import requests, os, bs4, threading
+
+    os.makedirs('xkcd', exist_ok=True)    # store comics in ./xkcd
+    def downloadXkcd(startComic, endComic):
+        for urlNumber in range(startComic, endComic):
+            # Download the page.
+            print('Downloading page http://xkcd.com/%s...' % (urlNumber))
+            res = requests.get('http://xkcd.com/%s' % (urlNumber))
+            res.raise_for_status()
+
+            soup = bs4.BeautifulSoup(res.text)
+
+            # Find the URL of the comic image.
+            comicElem = soup.select('#comic img')
+            if comicElem == []:
+                print('Could not find comic image.')
+
+            else:
+                comicUrl = comicElem[0].get('src')
+                # Download the image.
+                print('Downloading image %s...' % (comicUrl))
+                res = requests.get(comicUrl)
+                res.raise_for_status()
+
+                # Save the image to ./xkcd.
+                imageFile = open(os.path.join('xkcd', os.path.basename(comicUrl)), 'wb')
+                for chunk in res.iter_content(100000):
+                    imageFile.write(chunk)
+                imageFile.close()
+
+    # Create and start the Thread objects.
+
+    downloadThreads = [] # a list of all the Thread objects
+
+    for i in range(0, 1400, 100):     # loops 14 times,
+                                      # creates 14 threads
+
+        downloadThread = threading.Thread(target=downloadXkcd,
+                                          args=(i, i + 99))
+        downloadThreads.append(downloadThread)
+        downloadThread.start()
+
+
+    # Wait for all threads to end.
+    for downloadThread in downloadThreads:
+        downloadThread.join()
+    print('Done.')
+
+def f246():
+    # Launching Other Programs from Python
+    import subprocess
+
+    subprocess.Popen('/usr/bin/gnome-calculator')
+
+    # Popen object has two methods: poll() and wait()
+    # The poll() method will return None  if the process  is still 
+    # running at the  time poll() is called.  If the  program  has
+    # terminated, it will return the process’s integer exit code.
+
+    # The wait() method will block until the launched process has 
+    # terminated. This is helpful if you want your program to pau-
+    # se until the user finishes with the other program. The retu-
+    # rn value of wait() is the process’s integer exit code.
+
+    '''
+    >>> calcProc = subprocess.Popen('/usr/bin/gnome-calculator')
+    >>> calcProc.poll() == None
+    True
+    >>> calcProc.wait()
+    0
+    >>> calcProc.poll()  # After closing calculator program
+    0
+    '''
+
+def f247():
+    import subprocess
+
+    # Passing Command Line Arguments to Popen()
+    subprocess.Popen(['/usr/bin/gedit', 'list'])
+
+def f248():
+    # Opening Files with Default Applications
+
+    fileObj = open('hello.txt', 'w')
+    fileObj.write('Hello world!')
+    fileObj.close()
+
+    import subprocess
+    subprocess.Popen(['start', 'hello.txt'], shell=True)
+
+def f249():
+    print('')

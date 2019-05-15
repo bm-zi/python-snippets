@@ -50,8 +50,8 @@ def help():
     tent of the respective functions will be displayed, fetching -
     the content of the function from the file functions.py
 
-    [q!]
-    To exit the program type 'q!' in 'Search' prompt.
+    [q]
+    To exit the program type 'q' in 'Search' prompt.
     ..............................................................
     ||||||||||||| Keys defined for Number prompt |||||||||||||||||
     ..............................................................
@@ -70,8 +70,8 @@ def help():
     - Some code samples at the output are suppose to interact 
       with user and prompt for user input.
     
-    [q!]
-    To exit the program type 'q!' in 'Number' prompt.
+    [q]
+    To exit the program type 'q' in 'Number' prompt.
     '''
 
     tempFile = open('temp', 'w')
@@ -103,7 +103,6 @@ def lineCount(fileName):
 def lastItem():
     return lineCount('list')
 
-
 # ...................
 # Function exitProg()
 # ...................
@@ -122,7 +121,8 @@ def exitProg():
             if os.path.isfile(file_path) and \
                 not file_path == './runme.py' and  \
                 not file_path == './list' and  \
-                not file_path == './functions.py':
+                not file_path == './functions.py' and \
+                not file_path == './omitNo.py':
                 os.unlink(file_path)
             elif os.path.isdir(file_path): shutil.rmtree(file_path)
         except Exception as e:          # catch *all* exceptions
@@ -358,7 +358,7 @@ def rolling_list():
             print('BROWSING LIST: (' + str(j) + ' items)     ' 
                 + time.strftime("%B %d, ") + time.strftime("%H:%M"))
             print()
-            listdisplay(i, 10)
+            listdisplay(i, 20)
             print()
             highlight('PRESS ENTER TO BROWSE THE LIST, ? FOR HELP')
             response = input('Search > ')
@@ -373,8 +373,8 @@ def rolling_list():
                 item = mo.group(2)
                 displayFunction(item)
 
-            elif response == 'q!':
-                sys.exit()
+            elif response == 'q':
+                exitProg()
 
             elif response == '?':
                 help()
@@ -421,7 +421,7 @@ def mainBlock():
         i = input("Number > ")
 
         try:
-            if str(i) == 'q!':      
+            if str(i) == 'q':      
                 exitProg()
 
             if str(i) == '':
