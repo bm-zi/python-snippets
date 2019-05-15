@@ -3281,24 +3281,68 @@ def f178():
     for line in fhand:
         print(line.decode().strip())
 
+    # This program displays the html document as you see the sour-
+    # ce code in browser. The urlopen returns an object similar to
+    # file handle that can be  manipulated the same way as a file.
+    # For example, you can iterate each line of  html document, or
+    # any other oprations.
+
 def f179():
     # Count the number of words in a web page
     import urllib.request, urllib.parse, urllib.error, pprint
 
     fhand = urllib.request.urlopen('http://data.pr4e.org/romeo.txt')
 
-    counts = dict()
+    counts = dict()   # Creates an empty dictionary
     for line in fhand:
-        words = line.decode().split()
-        for word in words:
+        words = line.decode().split() # line coming from webserver
+                                      # will be decoded and split-
+                                      # ted as words.
+                                      # decode converts to string.
+
+        for word in words:   # Use a dictionary to count the words
             counts[word] = counts.get(word, 0) + 1
+            # get(dic_key, set_default) is used to get value  for a
+            # key in dictionay, if not exists, here is set to 0.
+
     pprint.pprint(counts)
 
+    # Here is another operation, counting number of the words in a
+    # html document. Here html document, has been  treated  like a
+    # regular file, with urlopen() function.
+
 def f180():
+    # Retrieve href links from html document with BeautifulSoup
+    # To run this, you can install BeautifulSoup
+    # https://pypi.python.org/pypi/beautifulsoup4
+
+    # Or download the file
+    # http://www.py4e.com/code3/bs4.zip
+    # and unzip it in the same directory as this file
+
+    import urllib.request, urllib.parse, urllib.error
+    from bs4 import BeautifulSoup
+    import ssl
+
+    # Ignore SSL certificate errors
+    ctx = ssl.create_default_context()
+    ctx.check_hostname = False
+    ctx.verify_mode = ssl.CERT_NONE
+
+    url = input('Enter - ')
+    html = urllib.request.urlopen(url, context=ctx).read()
+    soup = BeautifulSoup(html, 'html.parser')
+
+    # Retrieve all of the anchor tags
+    tags = soup('a')
+    for tag in tags:
+        print(tag.get('href', None))
+
+def f181():
     # Chapter 12 - Working with Excel Spreadsheets
     print('Chapter 12 - Working with Excel Spreadsheets')
 
-def f181():
+def f182():
     # Opening Excel Documents with OpenPyXL
     # To work with Excel documents first install the module:
     # sudo pip3 install OpenPyXL
@@ -3325,7 +3369,7 @@ def f181():
     anotherSheet = wb.get_active_sheet()
     print(anotherSheet)
 
-def f182():
+def f183():
     # Getting Cells from the Sheets
 
     import openpyxl
@@ -3347,7 +3391,7 @@ def f182():
     # Cell objects also have row , column , and coordinate attri-
     # butes that provide location information for the cell.
 
-def f183():
+def f184():
     # excel sheet cell() method
 
     import openpyxl
@@ -3359,7 +3403,7 @@ def f183():
     for i in range(1, 8, 2):
         print(i, sheet.cell(row=i, column=2).value)
 
-def f184():
+def f185():
     # Determine the size of the sheet
 
     import openpyxl
@@ -3373,7 +3417,7 @@ def f184():
     print(sheet.max_row)                 # 7
     print(sheet.max_column)              # 3
 
-def f185():
+def f186():
     # Converting Between Column Letters and Numbers
     import openpyxl
     from openpyxl.utils import get_column_letter, column_index_from_string
@@ -3392,7 +3436,7 @@ def f185():
     print(column_index_from_string('A'))              # 1
     print(column_index_from_string('AA'))             # 27
 
-def f186():
+def f187():
     # Getting Rows and Columns from the Sheets
 
     import openpyxl
@@ -3411,7 +3455,7 @@ def f186():
     # Then, for each row, the nested for loop goes through each
     # cell in that row.
 
-def f187():
+def f188():
     # Access the values of cells in a particular row or column
 
     import openpyxl
@@ -3435,7 +3479,7 @@ def f187():
     # 7. Get a Cell object.
     # 8. Read the Cell object’s value attribute.
 
-def f188():
+def f189():
     # Reading Data from a Spreadsheet
     # Tabulates population and number of census tracts for
     # each county.
@@ -3476,7 +3520,7 @@ def f188():
     resultFile.close()
     print('Done.')
 
-def f189():
+def f190():
     # Writing Excel Documents
     import openpyxl
 
@@ -3489,7 +3533,7 @@ def f189():
     sheet.title = 'Spam Bacon Eggs Sheet'
     wb.get_sheet_names()
 
-def f190():
+def f191():
     # Create and save a spreed sheet
     import openpyxl
 
@@ -3498,7 +3542,7 @@ def f190():
     sheet.title = 'Spam Spam Spam'
     wb.save('example_copy.xlsx')
 
-def f191():
+def f192():
     # Creating and Removing Sheets
 
     import openpyxl
@@ -3521,7 +3565,7 @@ def f191():
     # If you want the new created excel be saved, uncomment this:
     # wb.save('test.xlsx')
 
-def f192():
+def f193():
     # Writing Values to Cells
 
     import openpyxl
@@ -3536,7 +3580,7 @@ def f192():
     # If you want the new created excel be saved, uncomment this:
     # wb.save('test.xlsx')
 
-def f193():
+def f194():
     # Project: Updating a Spreadsheet
     # This program updates prices for specific produces in file
     # 'produceSales.xlsx'
@@ -3562,7 +3606,7 @@ def f193():
 
     wb.save('updatedProduceSales.xlsx')
 
-def f194():
+def f195():
     # Setting the Font Style of Cells
 
     import openpyxl
@@ -3581,7 +3625,7 @@ def f194():
     sheet['A1'] = 'Hello world!'
     wb.save('styled.xlsx')
 
-def f195():
+def f196():
     # Font object
 
     import openpyxl
@@ -3602,7 +3646,7 @@ def f195():
 
     wb.save('styles.xlsx')
 
-def f196():
+def f197():
     # Formulas
     import openpyxl
 
@@ -3613,7 +3657,7 @@ def f196():
     sheet['A3'] = '=SUM(A1:A2)'
     wb.save('writeFormula.xlsx')
 
-def f197():
+def f198():
     # loading a workbook with and without the data_only keyword
     # argument
 
@@ -3629,7 +3673,7 @@ def f197():
     print(ws['A3'].value)
     # in my case it shows None
 
-def f198():
+def f199():
     # Setting Row Height and Column Width
 
     import openpyxl
@@ -3642,7 +3686,7 @@ def f198():
     sheet.column_dimensions['B'].width = 20
     wb.save('dimensions.xlsx')
 
-def f199():
+def f200():
     # Merging and Unmerging Cells
     # A rectangular area of cells can be merged into a single cell
     # with the merge_cells() sheet method
@@ -3657,7 +3701,7 @@ def f199():
     sheet['C5'] = 'Two merged cells.'
     wb.save('merged.xlsx')
 
-def f200():
+def f201():
     # Unmerge cells
     # To unmerge cells, call the unmerge_cells() sheet method
 
@@ -3669,7 +3713,7 @@ def f200():
     sheet.unmerge_cells('C5:D5')
     wb.save('merged.xlsx')
 
-def f201():
+def f202():
     # Freeze Panes - Pan is visible top rows or leftmost columns
     # to a specific cell that is helpfull to be used for larg spr-
     # eadsheets to display all at once.
@@ -3689,7 +3733,7 @@ def f201():
     wb.save('freezeExample.xlsx')
     # To unfreez all pan set the the atribute to None
 
-def f202():
+def f203():
     # Charts
     from openpyxl import Workbook
     wb = Workbook()
@@ -3707,11 +3751,11 @@ def f202():
     # For complete documentation refere to:
     # https://openpyxl.readthedocs.io/en/stable/charts/introduction.html
 
-def f203():
+def f204():
     # Chapter 13 - Working with PDF and Word Documents
     print('Chapter 13 - Working with PDF and Word Documents')
 
-def f204():
+def f205():
     # Extracting Text from PDFs
     # sudo pip3 install PyPDF2
 
@@ -3723,7 +3767,7 @@ def f204():
     pageObj = pdfReader.getPage(0)
     print(pageObj.extractText())
 
-def f205():
+def f206():
     # Decrypting PDFs
 
     import PyPDF2
@@ -3736,7 +3780,7 @@ def f205():
     pageObj = pdfReader.getPage(0) # No more error you get
     print(pageObj.extractText())
 
-def f206():
+def f207():
     # copy pages from one PDF document to another
     # files 'meetingminutes.pdf' and 'meetingminutes2.pdf' must
     # exist in current directory!
@@ -3768,7 +3812,7 @@ def f206():
     pdf2File.close()
 
 
-def f207():
+def f208():
     # Rotating Pages
     # file 'meetingminutes.pdf' must be in current directory!
 
@@ -3790,7 +3834,7 @@ def f207():
     resultPdfFile.close()
     minutesFile.close()
 
-def f208():
+def f209():
     # Overlaying Pages
     # files 'meetingminutes.pdf' and 'watermark.pdf' must exist in
     # current directory!
@@ -3819,7 +3863,7 @@ def f208():
     minutesFile.close()
     resultPdfFile.close()
 
-def f209():
+def f210():
     # Encrypting PDFs
     import PyPDF2
     pdfFile = open('meetingminutes.pdf', 'rb')
@@ -3833,7 +3877,7 @@ def f209():
     pdfWriter.write(resultPdf)
     resultPdf.close()
 
-def f210():
+def f211():
     # Combining Select Pages from Many PDFs
 
     import PyPDF2, os
@@ -3862,7 +3906,7 @@ def f210():
     pdfWriter.write(pdfOutput)
     pdfOutput.close()
 
-def f211():
+def f212():
     # Word Documents
     # sudo pip3 install python-docx (install module 'python-docx')
     # file 'demo.docx' must be in working directory.
@@ -3884,7 +3928,7 @@ def f211():
     print(doc.paragraphs[1].runs[2].text)
     print(doc.paragraphs[1].runs[3].text)
 
-def f212():
+def f213():
     # Getting the Full Text from a .docx File
 
     import docx
@@ -3900,7 +3944,7 @@ def f212():
 
     print(getText('demo.docx'))
 
-def f213():
+def f214():
     # Styling Paragraph and Run Attributes
     print('''
     The string values for the default Word styles are:
@@ -3919,7 +3963,7 @@ def f213():
     ''')
 
 
-def f214():
+def f215():
     # Creating Word Documents with Nondefault Styles
     import docx
 
@@ -3941,7 +3985,7 @@ def f214():
     doc.paragraphs[1].runs[3].underline = True
     doc.save('restyled.docx')
 
-def f215():
+def f216():
     # Writing Word Documents
     import docx
 
@@ -3949,7 +3993,7 @@ def f215():
     print(doc.add_paragraph('Hello world!'))
     doc.save('helloworld.docx')
 
-def f216():
+def f217():
     # Add paragraphs
 
     import docx
@@ -3963,7 +4007,7 @@ def f216():
 
     doc.save('multipleParagraphs.docx')
 
-def f217():
+def f218():
     # Adding Headings
 
     import docx
@@ -3976,7 +4020,7 @@ def f217():
     doc.add_heading('Header 4', 4)
     doc.save('headings.docx')
 
-def f218():
+def f219():
     # Adding Line and Page Breaks and Adding Pictures
 
     import docx, os
@@ -3995,11 +4039,11 @@ def f218():
                     height=docx.shared.Cm(4))
     doc.save('twoPage.docx')
 
-def f219():
+def f220():
     # Chapter 14 - Working with CSV Files and JSON Data
     print('Chapter 14 - Working with CSV Files and JSON Data')
 
-def f220():
+def f221():
     # Read data from a CSV file with csv module,
     # you need to create a Reader object
 
@@ -4020,7 +4064,7 @@ def f220():
     exampleData = list(exampleReader)
     pprint(exampleData)
 
-def f221():
+def f222():
     # Reading Data from Reader Objects in a for Loop
 
     import csv, os
@@ -4040,7 +4084,7 @@ def f221():
 
         # The Reader object can be looped over only once
 
-def f222():
+def f223():
     # Writer object
     # A Writer object lets you write data to csv file.
 
@@ -4061,7 +4105,7 @@ def f222():
 
     with open('output.csv') as myFile: print(myFile.read())
 
-def f223():
+def f224():
     # The 'delimiter' and 'lineterminator' keyword arguments
     # We change the above arguments to change the default values.
     # Arguments default values are comma and '\n'.
@@ -4079,7 +4123,7 @@ def f223():
 
     csvFile.close()
 
-def f224():
+def f225():
     # Project: Removes the header from all CSV files in the current
     # working directory.
 
@@ -4118,7 +4162,7 @@ def f224():
             csvWriter.writerow(row)
         csvFileObj.close()
 
-def f225():
+def f226():
     # What is JSON
     print('''
     JavaScript Object Notation is a popular way to format data as
@@ -4151,7 +4195,7 @@ def f225():
       putting it into a single text file.
     ''')
 
-def f226():
+def f227():
     # Reading JSON with the loads() Function
     # To translate a string containing JSON data into a Python
     # value, pass it to the json.loads() function.
@@ -4165,7 +4209,7 @@ def f226():
 
     print(jsonDataAsPythonValue)
 
-def f227():
+def f228():
     # Writing JSON with the dumps() Function
     # The json.dumps() function ("dump string") translate a Python
     # value into a string of JSON-formatted data.
@@ -4178,7 +4222,7 @@ def f227():
 
     print(stringOfJsonData)
 
-def f228():
+def f229():
     # Project: Fetching Current Weather Data
 
     import json, requests, sys
@@ -4211,11 +4255,11 @@ def f228():
     print('Day after tomorrow:')
     print(w[2]['weather'][0]['main'], '-', w[2]['weather'][0]['description'])
 
-def f229():
+def f230():
     # Chapter 15 - Time, Scheduling Tasks, Launching Programs
     print('Chapter 15 - Time, Scheduling Tasks, Launching Programs')
 
-def f230():
+def f231():
     # The time.time() Function
 
     from time import time
@@ -4223,7 +4267,7 @@ def f230():
     # number of seconds since 12 am on January 1, 1970 (UTC)
     # The return number is called epoch timestamp
 
-def f231():
+def f232():
     # calculate running time for a program
 
     import time
@@ -4246,7 +4290,7 @@ def f231():
     # For help go to: https://docs.python.org/3/library/profile.html.
 
 
-def f232():
+def f233():
     # sleep function to pause the program
 
     import time
@@ -4261,7 +4305,7 @@ def f232():
     for i in range(10):
         time.sleep(1)
 
-def f233():
+def f234():
     # Rounding the current time number
 
     import time
@@ -4271,7 +4315,7 @@ def f233():
     print(round(now, 4))
     print(round(now)) # No 2nd argument, rounds to nearest integer
 
-def f234():
+def f235():
     # Project: Super Stopwatch - track spent time on a task
 
     # Step 1: Set Up the Program to Track Times
@@ -4307,7 +4351,7 @@ def f234():
         # Handle the Ctrl-C exception to keep its error message from displaying.
         print('\nDone.')
 
-def f235():
+def f236():
     # The datetime Module
     import datetime, time
 
@@ -4336,7 +4380,7 @@ def f235():
     print('\nPrinting the current time in the form of a'
           + '\ndatetime object: ', dt)
 
-def f236():
+def f237():
     # Compare datetime objects with each other
 
     import datetime
@@ -4349,7 +4393,7 @@ def f236():
     print(newyears2016 > halloween2015)  # True
     print(newyears2016 != oct31_2015)    # True
 
-def f237():
+def f238():
     # Find time duration with timedelta module
 
     import datetime
@@ -4363,7 +4407,7 @@ def f237():
 
     print('.' * 10)
 
-def f238():
+def f239():
     # Using arithmatic operators on datetime values
 
     import datetime
@@ -4387,7 +4431,7 @@ def f238():
     print(oct21st - aboutThirtyYears)
     print(oct21st - (2 * aboutThirtyYears))
 
-def f239():
+def f240():
     # Pausing Until a Specific Date
 
     import datetime
@@ -4402,7 +4446,7 @@ def f239():
    # check the condition once per second and continue with the re-
    # st of the program after Halloween 2016
 
-def f240():
+def f241():
     # Converting datetime Objects into Strings
 
     import datetime
@@ -4435,7 +4479,7 @@ def f240():
     %% Literal '%' character
     '''
 
-def f241():
+def f242():
     # Converting Strings into datetime Objects
 
     import datetime
@@ -4469,7 +4513,7 @@ def f241():
     %% Literal '%' character
     '''
 
-def f242():
+def f243():
     # Review of Python’s Time Functions
 
     print('''
@@ -4525,7 +4569,7 @@ def f242():
     '''
     )
 
-def f243():
+def f244():
     # Multithreading
 
     # To make a separate thread, you first need  to make  a Thread
@@ -4563,7 +4607,7 @@ def f243():
     # begins  at  the  start  of the takeANap() function, and ends
     # after takeANap() returns.
 
-def f244():
+def f245():
     # Passing Arguments to the Thread’s Target Function
 
     import threading
@@ -4593,7 +4637,7 @@ def f244():
     # or write the same variables.
 
 
-def f245():
+def f246():
     # Downloads XKCD comics using multiple threads
 
     import requests, os, bs4, threading
@@ -4644,7 +4688,7 @@ def f245():
         downloadThread.join()
     print('Done.')
 
-def f246():
+def f247():
     # Launching Other Programs from Python
     import subprocess
 
@@ -4670,13 +4714,13 @@ def f246():
     0
     '''
 
-def f247():
+def f248():
     import subprocess
 
     # Passing Command Line Arguments to Popen()
     subprocess.Popen(['/usr/bin/gedit', 'list'])
 
-def f248():
+def f249():
     # Opening Files with Default Applications
 
     fileObj = open('hello.txt', 'w')
@@ -4686,5 +4730,6 @@ def f248():
     import subprocess
     subprocess.Popen(['start', 'hello.txt'], shell=True)
 
-def f249():
-    print('')
+def f250():
+    print('something')
+

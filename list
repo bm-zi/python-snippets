@@ -177,72 +177,74 @@
 177 -  Load a web document, browser simulation
 178 -  Open a web page with urlib module
 179 -  Count the number of words in a web page
-180 -  Chapter 12 - Working with Excel Spreadsheets
-181 -  Opening Excel Documents with OpenPyXL
-182 -  Getting Cells from the Sheets
-183 -  excel sheet cell() method
-184 -  Determine the size of the sheet
-185 -  Converting Between Column Letters and Numbers
-186 -  Getting Rows and Columns from the Sheets
-187 -  Access the values of cells in a particular row or column
-188 -  Reading Data from a Spreadsheet
-189 -  Writing Excel Documents
-190 -  Create and save a new excel file
-191 -  Creating and Removing Sheets
-192 -  Writing Values to Cells
-193 -  Project: Updating a Spreadsheet
-194 -  Setting the Font Style of Cells
-195 -  Font object
-196 -  Formula
-197 -  loading workbook with data_only argument
-198 -  Setting Row Height and Column Width
-199 -  Merging and Unmerging Cells
-200 -  Unmerge cells
-201 -  Freeze Panes
-202 -  Charts
-203 -  Chapter 13 - Working with PDF and Word Documents
-204 -  Extracting Text from PDFs
-205 -  Decrypting PDFs
-206 -  copy pages from one PDF document to another
-207 -  Creating PDFs
-208 -  Overlaying Pages
-209 -  Encrypting PDFs
-210 -  Combining Select Pages from Many PDFs
-211 -  Word Documents
-212 -  Getting the Full Text from a .docx File
-213 -  Styling Paragraph and Run Objects
-214 -  Creating Word Documents with Nondefault Styles
-215 -  Writing Word Documents
-216 -  Add paragraphs
-217 -  Adding Headings
-218 -  Adding Line and Page Breaks and Adding Pictures
-219 -  Chapter 14 - Working with CSV Files and JSON Data
-220 -  Read data from a CSV file
-221 -  Reading Data from Reader Objects in a for Loop
-222 -  Writer object
-223 -  The delimeter and lineterminator keyword arguments
-224 -  Project: Removing the Header from CSV Files
-225 -  JSON and APIs
-226 -  Reading JSON with the loads() Function
-227 -  Writing JSON with the dumps() Function
-228 -  Project: Fetching Current Weather Data
-229 -  Chapter 15 - Time, Scheduling Tasks, Launching Programs
-230 -  The time.time() Function
-231 -  calculate running time for a program
-232 -  sleep function to pause the program
-233 -  Rounding the current time number
-234 -  Project: Super Stopwatch - track spent time on a task
-235 -  The datetime Module
-236 -  Compare datetime objects with each other
-237 -  Find time duration with timedelta module
-238 -  Using arithmatic operators on datetime values
-239 -  Pausing Until a Specific Date
-240 -  Converting datetime Objects into Strings
-241 -  Converting Strings into datetime Objects
-242 -  Review of Python’s Time Functions
-243 -  Multithreading
-244 -  Passing Arguments to the Thread’s Target Function
-245 -  Downloads XKCD comics using multiple Thread’s
-246 -  Launching Other Programs from Python
-247 -  Passing Command Line Arguments to Popen()
-248 -  Opening Files with Default Application
+180 -  Scrape href links from html document with BeautifulSoup
+181 -  Chapter 12 - Working with Excel Spreadsheets
+182 -  Opening Excel Documents with OpenPyXL
+183 -  Getting Cells from the Sheets
+184 -  excel sheet cell() method
+185 -  Determine the size of the sheet
+186 -  Converting Between Column Letters and Numbers
+187 -  Getting Rows and Columns from the Sheets
+188 -  Access the values of cells in a particular row or column
+189 -  Reading Data from a Spreadsheet
+190 -  Writing Excel Documents
+191 -  Create and save a new excel file
+192 -  Creating and Removing Sheets
+193 -  Writing Values to Cells
+194 -  Project: Updating a Spreadsheet
+195 -  Setting the Font Style of Cells
+196 -  Font object
+197 -  Formula
+198 -  loading workbook with data_only argument
+199 -  Setting Row Height and Column Width
+200 -  Merging and Unmerging Cells
+201 -  Unmerge cells
+202 -  Freeze Panes
+203 -  Charts
+204 -  Chapter 13 - Working with PDF and Word Documents
+205 -  Extracting Text from PDFs
+206 -  Decrypting PDFs
+207 -  copy pages from one PDF document to another
+208 -  Creating PDFs
+209 -  Overlaying Pages
+210 -  Encrypting PDFs
+211 -  Combining Select Pages from Many PDFs
+212 -  Word Documents
+213 -  Getting the Full Text from a .docx File
+214 -  Styling Paragraph and Run Objects
+215 -  Creating Word Documents with Nondefault Styles
+216 -  Writing Word Documents
+217 -  Add paragraphs
+218 -  Adding Headings
+219 -  Adding Line and Page Breaks and Adding Pictures
+220 -  Chapter 14 - Working with CSV Files and JSON Data
+221 -  Read data from a CSV file
+222 -  Reading Data from Reader Objects in a for Loop
+223 -  Writer object
+224 -  The delimeter and lineterminator keyword arguments
+225 -  Project: Removing the Header from CSV Files
+226 -  JSON and APIs
+227 -  Reading JSON with the loads() Function
+228 -  Writing JSON with the dumps() Function
+229 -  Project: Fetching Current Weather Data
+230 -  Chapter 15 - Time, Scheduling Tasks, Launching Programs
+231 -  The time.time() Function
+232 -  calculate running time for a program
+233 -  sleep function to pause the program
+234 -  Rounding the current time number
+235 -  Project: Super Stopwatch - track spent time on a task
+236 -  The datetime Module
+237 -  Compare datetime objects with each other
+238 -  Find time duration with timedelta module
+239 -  Using arithmatic operators on datetime values
+240 -  Pausing Until a Specific Date
+241 -  Converting datetime Objects into Strings
+242 -  Converting Strings into datetime Objects
+243 -  Review of Python’s Time Functions
+244 -  Multithreading
+245 -  Passing Arguments to the Thread’s Target Function
+246 -  Downloads XKCD comics using multiple Thread’s
+247 -  Launching Other Programs from Python
+248 -  Passing Command Line Arguments to Popen()
+249 -  Opening Files with Default Application
+250 -  empty

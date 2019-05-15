@@ -50,6 +50,17 @@ def help():
     tent of the respective functions will be displayed, fetching -
     the content of the function from the file functions.py
 
+    [r]
+    Forward parsing of  the items in menu will be switched over to
+    backward parsing, by pressing 'r'. While the reverse parsing -
+    reaches to the last first item(item number 1), then it changes
+    back to forward parsing automatically.
+
+    [f]
+    By default, parsing the main list of items is in ascending or-
+    der of item numbers. You can changed the parsing everywher in 
+    the list by typing in 'f'.
+
     [q]
     To exit the program type 'q' in 'Search' prompt.
     ..............................................................
@@ -91,11 +102,9 @@ def lineCount(fileName):
 
     with open(fileName) as f:
         line_count = 0
-        for line in f:
-            line_count += 1
+        for line in f: line_count += 1
 
     return line_count
-
 
 # ...................
 # Function lastItem()
@@ -128,26 +137,21 @@ def exitProg():
         except Exception as e:          # catch *all* exceptions
             print(e)
 
-    os.system('clear')
-    sys.exit()
+    resetScreen(); sys.exit()
 
 # ......................
 # Function resetScreen()
 # ......................
 def resetScreen():
-    # This function resizes the terminal and clears the screen
-    print('\x1b[8;30;90t')
-    os.system('clear')
+    # resizing terminal and clears the screen
+    print('\x1b[8;30;90t') ; os.system('clear')
 
 # ....................
 # Function highlight()
 # ....................
 def highlight(text):
-    # This function highlights the string argument 'text' and will
-    # print out the string in bold
-    os.system("tput smso")
-    print(text)
-    os.system("tput rmso")
+    # highlightinge string argument 'text' in bold characters
+    os.system("tput smso"); print(text); os.system("tput rmso")
 
 # ...............    
 # Function logo()
@@ -182,8 +186,7 @@ def displayFunction(fnum):
                     copy = False
                 elif copy:
                     outfile.write(line)
-        infile.close()
-        outfile.close()
+        infile.close() ; outfile.close()
 
         # prepend a line to temporary output file temp
         firstline = '    Content for function f' + str(fnum) + '\n' + \
@@ -279,12 +282,12 @@ def searchFiles(response):
                 print(l.strip())
     f1.close()
 
-
 # ..................
 # Function restart()
 # ..................
 def restart():
     # This function restarts the program, to initial state
+    # print('Restarting ...') ; time.sleep(0.25)
     os.execl(sys.executable, sys.executable, * sys.argv)
 
 # ......................
@@ -314,30 +317,110 @@ def rolling_list():
     # runner(), that handles all operation based on user input in
     # search prompt, having the form of 'Search > '
 
-    def listdisplay(start_line, iterate):
+    def listdisplay(start_line, chunk):
         # This function returns a list of items reading from file 
         # list. The passed arguments, specify how many items will 
         # be displayed, from starting item number(start_line)
         
         start_line = int(start_line) - 1
 
-        test_array = []
+        arr = []
         with open('list') as my_file:
             for line in my_file:
                 line = line.strip()
-                test_array.append(line)
+                arr.append(line)
 
-        lines = len(test_array)
+        lines = len(arr)
 
         try:
-            lines = len(test_array)
-            while iterate > 0 and start_line <= (start_line + 5) \
+            lines = len(arr)
+            while chunk > 0 and start_line <= (start_line + 5) \
                 and start_line <= lines:
-                print(test_array[start_line])
+                print(arr[start_line])
                 start_line = start_line + 1
-                iterate = iterate - 1
+                chunk = chunk - 1
         except IndexError:
             return
+
+    def listdisplayrev(start_line, chunk):
+        start_line = int(start_line) - 1
+
+        arr = []
+        with open('list') as my_file:
+            for line in my_file:
+                line = line.strip()
+                arr.append(line)
+
+        lines = len(arr)
+        try:
+            lines = len(arr)
+            while chunk > 0 and start_line <= (start_line + 5) \
+                and start_line <= lines:
+                print(arr[start_line])
+                start_line = start_line - 1
+                chunk = chunk - 1
+                if arr[start_line] == arr[-1]:
+                    input('\nClick Enter to Switch to Forward Parsing! ')
+                    restart()                    
+        except IndexError:
+            return
+
+    def runnerRev(stln):
+        # This function actions based on the user input and will -
+        # iterate the list of items ...
+        resetScreen()
+
+        lines = []
+        with open('list') as my_file:
+            for line in my_file:
+                line = line.strip()
+                lines.append(line)
+     
+        i = int(stln)
+        j = len(lines)
+        
+        while i <= j:
+            logo()
+            print('BROWSING LIST: (' + str(j) + ' items)     ' 
+                + time.strftime("%B %d, ") + time.strftime("%H:%M"))
+            print()
+            print(' <<<- BACKWARD PARSING <<<-\n')
+            listdisplayrev(i, 20)
+            print()
+            highlight('PRESS ENTER TO BROWSE THE LIST, ? FOR HELP')
+            response = input('Search > ')
+            print()
+
+            if re.search('^[\\\\*+-/. ]', response): return
+            elif response == 'f':  runner(i)
+            elif response == 'q':  exitProg()
+            elif response == '?':  help() ; continue
+            elif response == '' :  i = i - 1 ; resetScreen()
+            elif not response   :  i = i + 1 ; resetScreen()
+            elif re.match(r'^f[1-9]+', response):
+                reObj = re.compile(r'(f)(\d+)')
+                mo = reObj.search(response)
+                item = mo.group(2)
+                displayFunction(item)
+            elif response.isnumeric(): 
+                if int(response) <= lastItem(): 
+                    resetScreen()
+                    runner(response)
+                    break
+                else:
+                    input('Not in the range of the list!\n' + 
+                        '\nPress any key to  continue ..')
+                    resetScreen()
+                    continue                    
+            else:
+                try:
+                    searchFiles(response)
+                    print('')
+                    return
+                except Exception:
+                    resetScreen()
+                    continue                    
+        return
 
     def runner(stln):
         # This function actions based on the user input and will -
@@ -358,6 +441,7 @@ def rolling_list():
             print('BROWSING LIST: (' + str(j) + ' items)     ' 
                 + time.strftime("%B %d, ") + time.strftime("%H:%M"))
             print()
+            print(' ->>> FORWARD PARSING ->>>\n')
             listdisplay(i, 20)
             print()
             highlight('PRESS ENTER TO BROWSE THE LIST, ? FOR HELP')
@@ -372,6 +456,9 @@ def rolling_list():
                 mo = reObj.search(response)
                 item = mo.group(2)
                 displayFunction(item)
+
+            elif response == 'r':
+                runnerRev(i)
 
             elif response == 'q':
                 exitProg()
@@ -396,16 +483,21 @@ def rolling_list():
                 else:
                     input('Not in the range of the list!\n' + 
                         '\nPress any key to  continue ..')
-                    restart()
+                    resetScreen()
+                    continue                    
 
             else:
-                searchFiles(response)
-                print('')
-                return
+                try:
+                    searchFiles(response)
+                    print('')
+                    return
+                except Exception:
+                    resetScreen()
+                    continue                    
 
         return
-    runner(1)
-
+    runner(1)    
+    
 # ....................
 # Function mainBlock()
 # ....................
