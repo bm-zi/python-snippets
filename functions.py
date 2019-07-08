@@ -154,6 +154,7 @@ def f11():
 
 def f12():
     # Mixing Boolean and Comparison Operators
+    #
     print((4 < 5) and (5 < 6))      # True
     print((4 < 5) and (9 < 6))      # False
     print((1 == 2) or (2 == 2))     # True
@@ -251,8 +252,15 @@ def f21():
     for num in range(101):
         total = total + num
     print(total)
-
 def f22():
+    # for loop to show alphabet characters
+    alphabet = list()
+    for letter in range(97,123):
+        alphabet.append(chr(letter)) # chr() is inverse of ord()
+
+    print(alphabet)
+
+def f23():
     # range() function examples
     for i in range(12, 16):
         print(i)
@@ -268,7 +276,7 @@ def f22():
     for i in range(5, -1, -1):
         print(i)
 
-def f23():
+def f24():
     # import modules
     # functions like print(), input() , and len() are builtin fuctions;
     # No need to import them.
@@ -282,7 +290,7 @@ def f23():
     for i in range(5):
         print(random.randint(1, 10))
 
-def f24():
+def f25():
     # sys.exit()
     # Ending a Program Early with sys.exit()
 
@@ -294,7 +302,7 @@ def f24():
             sys.exit()
         print('You typed ' + response + '.')
 
-def f25():
+def f26():
     #
     print('''Chapter 3 - Functions:
     . def Statements with Parameters
@@ -305,7 +313,7 @@ def f25():
     . The global Statement
     . Exception Handling''')
 
-def f26():
+def f27():
     # FUNCTIONS
     def hello():
 
@@ -316,7 +324,7 @@ def f26():
     hello()
     hello()
 
-def f27():
+def f28():
     # Function with argument
     def hello(name):
 
@@ -324,7 +332,7 @@ def f27():
     hello('Alice')
     hello('Bob')
 
-def f28():
+def f29():
     # return statement
     import random
     def getAnswer(answerNumber):
@@ -353,7 +361,7 @@ def f28():
     print(fortune)
     # return exits the fuction block
 
-def f29():
+def f30():
     # None type
     # 'None' is a value-without-value
     # (like null or undefined in other languages.)
@@ -364,7 +372,7 @@ def f29():
     # return without value returns value 'None'
     # continue in for or while loop also returns value 'None'
 
-def f30():
+def f31():
     # Optional keywords for functions
     # functions have optional keyword like end and sep in print() function
 
@@ -376,7 +384,7 @@ def f30():
                                             # separates multiple string values
                                             # with a single space.
 
-def f31():
+def f32():
     # Local and Global Scopes
 
     # 1.
@@ -435,7 +443,7 @@ def f31():
     bacon3()
     print(eggs)                # prints 'global'
 
-def f32():
+def f33():
     # Local and Global Variables
 
     # If you need to modify a global variable from within a funct-
@@ -495,7 +503,7 @@ def f32():
     eggs = 'global'
     spam6()
 
-def f33():
+def f34():
     # Exception Handling
 
     def spam(divideBy):
@@ -511,7 +519,7 @@ def f33():
     print(spam(0))
     print(spam(1))
 
-def f34():
+def f35():
     # Out Of Function Exception Handling
     # Difference between the folloing code and the previous one:
     # In previous code any errors that occur in function calls in
@@ -528,7 +536,7 @@ def f34():
     except ZeroDivisionError:
         print('Error: Invalid argument.')
 
-def f35():
+def f36():
     # Guessing Game
     import random
     secretNumber = random.randint(1, 20)
@@ -552,7 +560,7 @@ def f35():
     else:
         print('Nope. The number I was thinking of was ' + str(secretNumber))
 
-def f36():
+def f37():
     #
     print('''Chapter 4 - Lists:
     . The List Data Type
@@ -567,7 +575,7 @@ def f36():
     . The Tuple Data Type
     . Converting Types with the list() and tuple() Functions''')
 
-def f37():
+def f38():
     # Lists - examples
     print([1, 2, 3])
     print(['cat', 'bat', 'rat', 'elephant'])
@@ -585,14 +593,14 @@ def f37():
     print('The ' + spam[1] + ' ate the ' + spam[0] + '.')
     print(spam[int(1.0)])
 
-def f38():
+def f39():
     # Lists : list of lists
     spam = [['cat', 'bat'], [10, 20, 30, 40, 50]]   # List of lists
     print(spam)
     print(spam[0][1])
     print(spam[1][4])
 
-def f39():
+def f40():
     # Lists : negative indexes
     spam = ['cat', 'bat', 'rat', 'elephant']
     print(spam[-1])     # elephant
@@ -600,7 +608,7 @@ def f39():
     print(spam[0:-1])   # ['cat', 'bat', 'rat']
     print('The ' + spam[-1] + ' is afraid of the ' + spam[-3] + '.')
 
-def f40():
+def f41():
     # Lists : getting sublists with slices
     spam = ['cat', 'bat', 'rat', 'elephant']
     print(spam[0:4])    # ['cat', 'bat', 'rat', 'elephant']
@@ -610,12 +618,12 @@ def f40():
     print(spam[1:])     # ['bat', 'rat', 'elephant']
     print(spam[:])      # ['cat', 'bat', 'rat', 'elephant']
 
-def f41():
+def f42():
     # Lists : getting a list’s length with len()
     spam = ['cat', 'dog', 'moose']
     print(len(spam))  # 3
 
-def f42():
+def f43():
     # Lists : changing values in a list with indexes
     spam = ['cat', 'bat', 'rat', 'elephant']
     spam[1] = 'aardvark'
@@ -625,7 +633,7 @@ def f42():
     spam[-1] = 12345
     print(spam)
 
-def f43():
+def f44():
     # Lists: list concatenation and list replication
 
     # It is like strings concatenation and replication
@@ -637,7 +645,7 @@ def f43():
     spam = spam + ['A', 'B', 'C']
     print(spam)
 
-def f44():
+def f45():
     # Lists : removing values from lists with del statements
     spam = ['cat', 'bat', 'rat', 'elephant']
     del spam[2]
@@ -645,7 +653,7 @@ def f44():
     del spam[2]
     print(spam)
 
-def f45():
+def f46():
     # Lists : working with lists
 
     # instead of using many varibales use lists for data entry
@@ -660,7 +668,7 @@ def f45():
     for name in catNames:
         print('    ' + name)
 
-def f46():
+def f47():
     # Lists : using for loops
 
     print('simple for loop : ')
@@ -676,7 +684,7 @@ def f46():
     for i in range(len(supplies)):
         print('Index ' + str(i) + ' in supplies is: ' + supplies[i])
 
-def f47():
+def f48():
     # Lists : in and not in operators
 
     # determine whether a value is or isn’t in a list
@@ -698,7 +706,7 @@ def f47():
     else:
         print(name + ' is my pet.')
 
-def f48():
+def f49():
     # Lists : multiple assignment trick
     cat = ['fat', 'black', 'loud']
     size = cat[0]
@@ -711,7 +719,7 @@ def f48():
     size, color, disposition = cat
     print(cat)
 
-def f49():
+def f50():
     # Augmented assignment operators
 
     '''
@@ -739,7 +747,7 @@ def f49():
     bacon *= 3
     print(bacon)
 
-def f50():
+def f51():
     # Lists : finding a Value in a list with the index() method
 
     # Methods are the same as functoions, except that is called on value
@@ -757,7 +765,7 @@ def f50():
     spam = ['Zophie', 'Pooka', 'Fat-tail', 'Pooka']
     print(spam.index('Pooka'))
 
-def f51():
+def f52():
     # Methods - adding values to lists with append() and insert() methods
 
     spam = ['cat', 'dog', 'bat']
@@ -768,7 +776,7 @@ def f51():
     spam.insert(1, 'chicken')
     print(spam)
 
-def f52():
+def f53():
     # Lists : removing values from lists with remove()
     spam = ['cat', 'bat', 'rat', 'elephant']
     spam.remove('bat')
@@ -781,7 +789,7 @@ def f52():
     spam.remove('cat')
     print(spam)
 
-def f53():
+def f54():
     # List : sorting the values in a list with the sort() method
     spam = [2, 5, 3.14, 1, -7]
     spam.sort()
@@ -813,8 +821,8 @@ def f53():
     spam.sort(key=str.lower)
     print(spam)
 
-def f54():
-    # magic 8 ball with a list
+def f55():
+    # Using function randint() with a list
 
     # much more elegant version of previous 8 ball
     import random
@@ -829,7 +837,7 @@ def f54():
     'Very doubtful']
     print(messages[random.randint(0, len(messages) - 1)])
 
-def f55():
+def f56():
     # list-like types: strings and tuples
 
     '''
@@ -849,7 +857,7 @@ def f55():
     for i in name:
         print('* * * ' + i + ' * * *')
 
-def f56():
+def f57():
     # mutable and immutable data types
 
     # Lists can have values added, removed, or changed. (mutable)
@@ -865,7 +873,7 @@ def f56():
     eggs = [4, 5, 6] # The list value in eggs isn’t being changed here; is overwriiten.
     print(eggs)
 
-    print('The actula modification is as following: ')
+    print('The actual modification is as following: ')
     eggs = [1, 2, 3]
     del eggs[2]
     del eggs[1]
@@ -875,11 +883,12 @@ def f56():
     eggs.append(6)
     print(eggs)
 
-def f57():
+def f58():
     # tuple data type
 
     # tuples are like lists but use () instead aof []
-    # tuples are like strings, cannot have their values modified, appended, or removed.
+    # tuples are like strings, cannot have their values modified,
+    # appended, or removed.
 
     eggs = ('hello', 42, 0.5)
     # eggs[1] = 99   # this generates error
@@ -898,7 +907,7 @@ def f57():
     print(list(('cat', 'dog', 5)))
     print(list('hello'))
 
-def f58():
+def f59():
     # references
 
     # assignment for strings and integers value
@@ -927,7 +936,7 @@ def f58():
     to lists.
     '''
 
-def f59():
+def f60():
     # Passing References
 
     '''
@@ -952,7 +961,7 @@ def f59():
     inside the function affects the list even after the function call has returned.
     '''
 
-def f60():
+def f61():
     # The copy Module’s copy() and deepcopy() Functions
 
     '''
@@ -976,7 +985,7 @@ def f60():
     print(cheese)
     print(milk)
 
-def f61():
+def f62():
     grid = [['.','.','.','.','.','.'],
             ['.','0','0','.','.','.'],
             ['0','0','0','0','.','.'],
@@ -989,7 +998,7 @@ def f61():
 
     print(grid)
 
-def f62():
+def f63():
     # Chapter 5 - Dictionaries and Structuring Data
     print('''Chapter 5 - Dictionaries and Structuring Data:
     . The Dictionary Data Type
@@ -1004,7 +1013,7 @@ def f62():
         .   Nested Dictionaries and Lists
     ''')
 
-def f63():
+def f64():
     # Dictionary Data Type
     myCat = {'size': 'fat', 'color': 'grey', 'disposition': "loud" }
     print(myCat['size'])
@@ -1024,7 +1033,7 @@ def f63():
     ham = {'species': 'cat', 'age': '8', 'name': 'Zophie'}
     print(eggs == ham)
 
-def f64():
+def f65():
     # program to store data
     birthdays = {'Alice': 'Apr 1', 'Bob': 'Dec 12', 'Carol': 'Mar 4'}
     while True:
@@ -1042,7 +1051,7 @@ def f64():
             print('Birthday database updated.')
             print(birthdays)
 
-def f65():
+def f66():
     # Dictionary's methods: keys, values, items
     spam = {'color': 'red', 'age': 42}
     print('Values:')
@@ -1057,7 +1066,7 @@ def f65():
     for i in spam.items():
         print(i)
 
-def f66():
+def f67():
     # Build a list from dictionary's keys
     spam = {'color': 'red', 'age': 42}
 
@@ -1070,7 +1079,7 @@ def f66():
     # returned from keys() and passes it to list() , which
     # then returns a list value of ['color', 'age']
 
-def f67():
+def f68():
     # Show dictionary's keys & values by for loop
     spam = {'color': 'red', 'age': 42}
     for k, v in spam.items():
@@ -1079,7 +1088,7 @@ def f67():
     # spam.items() returns a dict_items data type
     print(spam.items())
 
-def f68():
+def f69():
     # Check if key or value exists in a dictionary,
     # by using in and not operators
 
@@ -1093,7 +1102,7 @@ def f68():
     print('Zophie' in spam)             # False
     print('Zophie' in spam.values())
 
-def f69():
+def f70():
     # Dictionary get() method
 
     picnicItems = {'apples': 5, 'cups': 2}
@@ -1108,7 +1117,7 @@ def f69():
     using get() , the code would have caused an KeyError error.
     '''
 
-def f70():
+def f71():
     # Dictionary setdefault() Method
     # sets a default value for key if key does not already have a value
 
@@ -1126,7 +1135,7 @@ def f70():
     print(spam.setdefault('color', 'white'))
     print(spam)
 
-def f71():
+def f72():
     # Using setdefault() to count number of occurance of a
     # character in string.
 
@@ -1148,7 +1157,7 @@ def f71():
 
     '''
 
-def f72():
+def f73():
     # Pretty Printing - using pprint module
 
     # Following code counts number of the occurance of
@@ -1168,7 +1177,7 @@ def f72():
     # pprint.pprint(someDictionaryValue)
     # print(pprint.pformat(someDictionaryValue))
 
-def f73():
+def f74():
     # TIC-TOC-TOE - using dictionary to model the board
     theBoard = {'top-L': ' ', 'top-M': ' ', 'top-R': ' ', 'mid-L': ' ', 'mid-M': ' ',
                 'mid-R': ' ', 'low-L': ' ', 'low-M': ' ', 'low-R': ' '}
@@ -1189,12 +1198,13 @@ def f73():
         theBoard[move] = turn
         if turn == 'X':
             turn = 'O'
+        elif turn == 'q' : return
         else:
             turn = 'X'
 
     printBoard(theBoard)
 
-def f74():
+def f75():
     # Nested Dictionaries and Lists
     # more complex data structure
 
@@ -1215,22 +1225,23 @@ def f74():
     print(' - Ham Sandwiches ' + str(totalBrought(allGuests, 'ham sandwiches')))
     print(' - Apple Pies     ' + str(totalBrought(allGuests, 'apple pies')))
 
-    '''Inside the totalBrought() function, the for loop iterates over the key-
-    value pairs in guests. Inside the loop, the string of the guest’s name is
-    assigned to k , and the dictionary of picnic items they’re bringing is assigned
-    to v . If the item parameter exists as a key in this dictionary, it’s value (the
-    quantity) is added to numBrought. If it does not exist as a key, the get()
-    method returns 0 to be added to numBrought .'''
+    '''Inside the totalBrought() function, the for loop iterates
+    over the key-value pairs in guests. Inside the loop, the stri-
+    ng of the guest’s name is assigned to k , and the dictionary -
+    of picnic items they’re bringing is assigned to v. If the item
+    parameter exists as a key in this dictionary, it’s value ( the
+    quantity) is added to numBrought. If it doesn't exist as  key,
+    the get() method returns 0 to be added to numBrought .'''
 
-def f75():
+def f76():
     # Fantasy Game Inventory
     print('project to do')
 
-def f76():
+def f77():
     # List to Dictionary Function for Fantasy Game Inventory
     print('project to do')
 
-def f77():
+def f78():
     # Chapter 6 - Manipulating Strings
     print('''Chapter 6 - Manipulating Strings:
     . String Literals
@@ -1245,7 +1256,7 @@ def f77():
     . Copying and Pasting Strings with the pyperclip Module
     ''')
 
-def f78():
+def f79():
     # Working with Strings - Double Quotes
 
     # By using double quotes, strings can have a single quote,
@@ -1258,7 +1269,7 @@ def f78():
     spam = 'That is Alice\'s cat.'
     print(spam)
 
-def f79():
+def f80():
     # Raw Strings and escape characters
 
     print('Printing string with special characters:')
@@ -1278,7 +1289,7 @@ def f79():
 
     print(es)
 
-def f80():
+def f81():
     # Multiline Strings with Triple Quotes
 
     # Any quotes, tabs, or newlines in between the “triple quotes”,
@@ -1298,7 +1309,7 @@ def f80():
     Bob""")
     print('Dear Alice,\n\nEve\'s cat has been arrested for catnapping, cat burglary, and extortion.\n\nSincerely,\nBob')
 
-def f81():
+def f82():
     # Multiline Comments
 
     """This is a test Python program.
@@ -1312,7 +1323,7 @@ def f81():
 
     spam()
 
-def f82():
+def f83():
     # Indexing and Slicing Strings
     spam = 'Hello world!'
     print(spam[0])
@@ -1323,7 +1334,7 @@ def f82():
     print(spam[6:])
     print(spam[0:5])
 
-def f83():
+def f84():
     # The in and not in Operators with Strings
 
     spam = 'Hello world!'
@@ -1333,7 +1344,7 @@ def f83():
     print('' in 'spam')
     print('cats' not in 'cats and dogs')
 
-def f84():
+def f85():
     # String Methods: upper(), lower(), isupper(), and islower()
 
     spam = 'Hello world!'
@@ -1356,7 +1367,7 @@ def f84():
     I feel great too.
     '''
 
-def f85():
+def f86():
     # String Methods: isupper(), and islower()
 
     spam = 'Hello world!'
@@ -1374,7 +1385,7 @@ def f85():
     print('HELLO'.lower())
     print('HELLO'.lower().islower())
 
-def f86():
+def f87():
     # The isX String Methods
 
     print(
@@ -1404,7 +1415,7 @@ def f86():
     'This Is NOT Title Case Either'.istitle(),
     )
 
-def f87():
+def f88():
     # isX methods helps to validate user input
     while True:
         print('Enter your age:')
@@ -1434,7 +1445,7 @@ Select a new password (letters and numbers only):
 secr3t
 '''
 
-def f88():
+def f89():
     # startswith() and endswith() String Methods
     print(
         'Hello world!'.startswith('Hello'),
@@ -1451,7 +1462,7 @@ def f88():
     # True
     )
 
-def f89():
+def f90():
     # join() and split() String Methods
 
     print(', '.join(['cats', 'rats', 'bats']))
@@ -1462,7 +1473,7 @@ def f89():
     print('MyABCnameABCisABCSimon'.split('ABC'))
     print('My name is Simon'.split('m'))
 
-def f90():
+def f91():
     # split a multiline string
 
     spam = '''Dear Alice,
@@ -1475,7 +1486,7 @@ def f90():
 
     print(spam.split('\n'))
 
-def f91():
+def f92():
     # Justifying Text with rjust(), ljust(), and center()
 
     print('Hello'.rjust(10))
@@ -1487,7 +1498,7 @@ def f91():
     print('Hello'.center(20))
     print('Hello'.center(20, '='))
 
-def f92():
+def f93():
     # Using Justifying Text for Tabular Data
 
     def printPicnic(itemsDict, leftWidth, rightWidth):
@@ -1499,7 +1510,7 @@ def f92():
     printPicnic(picnicItems, 12, 5)
     printPicnic(picnicItems, 20, 6)
 
-def f93():
+def f94():
     # Removing Whitespace with strip(), rstrip(), and lstrip()
 
     spam = '    Hello World     '
@@ -1512,14 +1523,14 @@ def f93():
     print(spam.strip('Spma'))
     # Above two are  the same, order of argument character is ignored.
 
-def f94():
+def f95():
     # Copy and Paste Strings with the pyperclip Module
 
     import pyperclip
     pyperclip.copy('Hello world!')
     print(pyperclip.paste())
 
-def f95():
+def f96():
     # An insecure password locker program.
 
     import pyperclip
@@ -1546,7 +1557,7 @@ def f95():
     else:
         print('There is no account named ' + account)
 
-def f96():
+def f97():
     # Adding Bullets to Wiki Markup
 
     # Step 1: Copy and Paste from the Clipboard
@@ -1556,8 +1567,11 @@ def f96():
 
     # Step 2 - # TODO: Separate lines and add stars.
     lines = text.split('\n')
-    for i in range(len(lines)):    # loop through all indexes in the "lines" list
-        lines[i] = '* ' + lines[i] # add star to each string in "lines" list
+
+    # loop through all indexes in the "lines" list and add star to
+    # each string in "lines" list
+    for i in range(len(lines)):
+        lines[i] = '* ' + lines[i]
 
     # Step 3: Join the Modified Lines
     text = '\n'.join(lines)
@@ -1566,10 +1580,10 @@ def f96():
     # When this program is run, it replaces the text on the clipboard with
     # text that has stars at the start of each line.
 
-def f97():
+def f98():
     # Chapter 7 - Pattern Matching With Reular Expression
     print('')
-def f98():
+def f99():
     # Finding Patterns of Text Without Regular Expressions
 
     def isPhoneNumber(text):
@@ -1596,7 +1610,7 @@ def f98():
     print('Moshi moshi is a phone number:')
     print(isPhoneNumber('Moshi moshi'))
 
-def f99():
+def f100():
     # Finding pattern without RE from a string
 
     def isPhoneNumber(text):
@@ -1625,7 +1639,7 @@ def f99():
 
     print('Done')
 
-def f100():
+def f101():
     # Matching regex objects
 
     # In a raw string a backslash is taken as meaning just as backslash not as
@@ -1650,7 +1664,7 @@ Steps in using regex:
      matched text.
 '''
 
-def f101():
+def f102():
     # Pattern matching with grouping
 
     import re
@@ -1667,7 +1681,7 @@ def f101():
     print(areaCode)
     print(mainNumber)
 
-def f102():
+def f103():
     # Pattern matching with grouping and escaping parantheses
 
     import re
@@ -1677,7 +1691,7 @@ def f102():
     print(mo.group(1))
     print(mo.group(2))
 
-def f103():
+def f104():
     # Matching multiple groups with the pipe
 
     import re
@@ -1689,7 +1703,7 @@ def f103():
     mo2 = heroRegex.search('Tina Fey and Batman.')
     print(mo2.group())
 
-def f104():
+def f105():
     # Matching groups with the pipe as part of re
 
     import re
@@ -1700,7 +1714,7 @@ def f104():
     print(mo.group(1))     # returns the first match it founds,
                             # in first group
 
-def f105():
+def f106():
     # Optional matching with the question mark
 
     import re
@@ -1726,7 +1740,7 @@ def f105():
     # (pattern)?
     # Match zero or one of the group pre-ceding this question mark.
 
-def f106():
+def f107():
     # Matching zero or more with star
 
     import re
@@ -1744,7 +1758,7 @@ def f106():
     # (pattern)* means match zero or more of the group
     # that precedes the star
 
-def f107():
+def f108():
     # Matching one or more with the plus
     # the group preceding a plus must appear at least once.
 
@@ -1761,7 +1775,7 @@ def f107():
     mo3 = batRegex.search('The Adventures of Batman')
     print(mo3 == None)
 
-def f108():
+def f109():
     # Matching specific repetitions with {}
     # (pattern){a_number}
     import re
@@ -1773,7 +1787,7 @@ def f108():
     mo2 = haRegex.search('Ha')
     print(mo2 == None)
 
-def f109():
+def f110():
     # Greedy and nongreedy matching
     # RE by default is greedy, matches the longest match.
     # To have non-greedy match use {}?
@@ -1791,7 +1805,7 @@ def f109():
     # question mark can have two different meanings in RE:
     # declaring a nongreedy match or flagging an optional group.
 
-def f110():
+def f111():
     # RE findall() Method
     # While search() will return a Match object of the first matched text
     # in the searched string, the findall() method will return the strings
@@ -1813,7 +1827,7 @@ def f110():
     phoneNumRegex = re.compile(r'(\d\d\d)-(\d\d\d)-(\d\d\d\d)') # has groups
     print(phoneNumRegex.findall('Cell: 415-555-9999 Work: 212-555-0000'))
 
-def f111():
+def f112():
     # RE Character Classes
     # Character classes are nice for shortening REs
     # \d  is equal to (0|1|2|3|4|5|6|7|8|9)
@@ -1829,7 +1843,7 @@ def f111():
     f = xmasRegex.findall('12 drummers, 11 pipers, 10 lords, 9 ladies, 8 maids, swans, 6 geese, 5 rings, 4 birds, 3 hens, 2 doves, 1 partridge')
     print(f)
 
-def f112():
+def f113():
     # Making your own character classes
     # match any vowel, both lowercase and uppercase
 
@@ -1845,7 +1859,7 @@ def f112():
     consonantRegex = re.compile(r'[^aeiouAEIOU]')
     print(consonantRegex.findall('RoboCop eats baby food. BABY FOOD.'))
 
-def f113():
+def f114():
     # Caret and dollar sign characters
 
     import re
@@ -1865,7 +1879,7 @@ def f113():
     print(wholeStringIsNum.search('12345xyz67890') == None)
     print(wholeStringIsNum.search('12 34567890') == None)
 
-def f114():
+def f115():
     # Wild card character
     # The . (or dot) character in a RE is called a wildcard
     # and will match just one character except for a newline.
@@ -1875,7 +1889,7 @@ def f114():
     atRegex = re.compile(r'.at')
     print(atRegex.findall('The cat in the hat sat on the flat mat.'))
 
-def f115():
+def f116():
     # Matching everything with dot-star
 
     import re
@@ -1896,7 +1910,7 @@ def f115():
     mo = greedyRegex.search('<To serve man> for dinner.>')
     print(mo.group())
 
-def f116():
+def f117():
     # Matching newlines with the dot character
 
     import re
@@ -1915,7 +1929,7 @@ def f116():
         'Serve the public trust.\nProtect the innocent.\nUphold the law.'
     ).group())
 
-def f117():
+def f118():
     # Case-insensitive matching
     # Use re.I or re.IGNORECASE
 
@@ -1931,7 +1945,7 @@ def f117():
         'Al, why does your programming book talk about robocop so much?'
     ).group())
 
-def f118():
+def f119():
     # Substituting strings with sub() method
 
     import re
@@ -1945,7 +1959,7 @@ def f118():
     print(agentNamesRegex.sub(r'\1****', 'Agent Alice told Agent Carol \
     that Agent Eve knew Agent Bob was a double agent.'))
 
-def f119():
+def f120():
     # Managing complex regexes
     # You can simplify the hard-to-read REs by using verbose mode
     # re.VERBOSE ignores whitespace and comments inside the RE string.
@@ -1969,7 +1983,7 @@ def f119():
     someRegexValue = re.compile('foo', re.IGNORECASE | re.DOTALL)
     someRegexValue = re.compile('foo', re.IGNORECASE | re.DOTALL | re.VERBOSE)
 
-def f120():
+def f121():
     # Combining re.IGNORECASE, re.DOTALL, and re.VERBOSE
 
     import re
@@ -1977,7 +1991,7 @@ def f120():
     someRegexValue = re.compile('foo', re.IGNORECASE | re.DOTALL)
     someRegexValue = re.compile('foo', re.IGNORECASE | re.DOTALL | re.VERBOSE)
 
-def f121():
+def f122():
     # Finds phone numbers and email addresses on the clipboard
 
     import re, pyperclip
@@ -2019,7 +2033,7 @@ def f121():
     else:
         print('No phone numbers or email addresses found.')
 
-def f122():
+def f123():
     # In this assignment you will read through  and  parse  a file
     # with text and numbers. You will extract all the numbers in -
     # the file and compute the sum of the numbers.
@@ -2055,11 +2069,35 @@ def f122():
 
     print(total)
 
-def f123():
+def f124():
+    # Python Regular Expression Quick Guide:
+
+    '''
+    ^        Matches the beginning of a line
+    $        Matches the end of the line
+    .        Matches any character
+    \s       Matches whitespace
+    \S       Matches any non-whitespace character
+    *        Repeats a character zero or more times
+    *?       Repeats a character zero or more times
+             (non-greedy)
+    +        Repeats a character one or more times
+    +?       Repeats a character one or more times
+             (non-greedy)
+    [aeiou]  Matches a single character in the listed set
+    [^XYZ]   Matches a single character not in the listed set
+    [a-z0-9] The set of characters can include a range
+    (        Indicates where string extraction is to start
+    )        Indicates where string extraction is to end
+
+    '''
+
+
+def f125():
     # Chapter 8 - Reading and Writing Files
     print('Chapter - Reading and Writing Files')
 
-def f124():
+def f126():
     # Create strings for file names
 
     import os
@@ -2072,7 +2110,7 @@ def f124():
     for filename in myFiles:
         print(os.path.join('/home/username/asweigart', filename))
 
-def f125():
+def f127():
     # The Current Working Directory
 
     import os
@@ -2084,7 +2122,7 @@ def f125():
     # After  running this function you get error in main program
     # because the path to current running script has been changed.
 
-def f126():
+def f128():
     # Creating New Folders with os.makedirs()
 
     import os
@@ -2094,7 +2132,7 @@ def f126():
     # You get error if you run this function forthe second time
     # because the directory already exists.
 
-def f127():
+def f129():
     # Handling Absolute and Relative Paths
 
     import os
@@ -2116,7 +2154,7 @@ def f127():
 
     print('/usr/bin'.split(os.path.sep))
 
-def f128():
+def f130():
     # Finding File Sizes and Folder Contents
 
     import os
@@ -2130,7 +2168,7 @@ def f128():
 
     print(totalSize)
 
-def f129():
+def f131():
     # Checking Path Validity
 
     import os
@@ -2144,7 +2182,7 @@ def f129():
     # Check if dvd drive exists
     print(os.path.exists('D:\\'))
 
-def f130():
+def f132():
     # The File Reading/Writing Process
 
     # open() function returns a File object, and opens file in plain text mode.
@@ -2164,7 +2202,7 @@ def f130():
     relFile = open('/etc/os-release')
     print(relFile.readlines())
 
-def f131():
+def f133():
     # Writing to Files
 
     baconFile = open('bacon.txt', 'w')    # open in writr mode
@@ -2181,7 +2219,7 @@ def f131():
 
     print(content)
 
-def f132():
+def f134():
     # Saving Variables with the shelve Module
 
     import shelve
@@ -2208,7 +2246,7 @@ def f132():
     # but if you want to save data from your Python programs,
     # use the shelve module
 
-def f133():
+def f135():
     # Saving Variables with the pprint.pformat() Function
 
     '''
@@ -2242,7 +2280,7 @@ def f133():
     print(myCats.cats[0])
     print(myCats.cats[0]['name'])
 
-def f134():
+def f136():
     # Generating Random Quiz Files
 
     import random
@@ -2306,16 +2344,16 @@ def f134():
     quizFile.close()
     answerKeyFile.close()
 
-def f135():
+def f137():
     # Multiclipboard
     print('')
     # Step 1: Comments and Shelf Setup
 
-def f136():
+def f138():
     # Chapter 9 - Organizing Files
     print('Chapter 9 - Organizing Files')
 
-def f137():
+def f139():
     # Copying Files and Folders - using shutil module
 
     # shutil.copy(source, destination)
@@ -2333,7 +2371,7 @@ def f137():
     # Above copies all files and subfolders in current directory into /tmp/test,
     # the test directroy will be created if it is not already exist.
 
-def f138():
+def f140():
     # Moving and Renaming Files and Folders
 
     ''' Examples:
@@ -2348,7 +2386,7 @@ def f138():
     '''
     print()
 
-def f139():
+def f141():
     # Permanently Deleting Files and Folders
 
     '''
@@ -2365,7 +2403,7 @@ def f139():
             #os.unlink(filename)
             print(filename)
 
-def f140():
+def f142():
     # Safe Deletes with the send2trash Module
 
     # install the 3rd party module send2trash, first:
@@ -2378,7 +2416,7 @@ def f140():
     baconFile.close()
     send2trash.send2trash('bacon.txt')
 
-def f141():
+def f143():
     # Walk through the directory tree
 
     import os
@@ -2395,7 +2433,7 @@ def f141():
     # os.walk, doesn't return list of files/subfolders recursively, it returns
     # current folder name, subfolders and file names in current directory.
 
-def f142():
+def f144():
     # Compressing Files with the zipfile Module
 
     import zipfile, os
@@ -2417,7 +2455,7 @@ def f142():
     exampleZip.close()
     os.unlink('example.zip')
 
-def f143():
+def f145():
     # Extracting from ZIP Files
 
     import zipfile, shutil, os
@@ -2431,7 +2469,7 @@ def f143():
     print(os.listdir('/tmp/test'))
     shutil.rmtree('/tmp/test')
 
-def f144():
+def f146():
     # Creating and Adding to ZIP Files
 
     import zipfile, os
@@ -2445,7 +2483,7 @@ def f144():
     os.system('ls')
     os.unlink('new.zip')
 
-def f145():
+def f147():
     # Renaming Files with American-Style Dates to
     # European-Style Dates
     # shutil.move() function can be used to rename files
@@ -2487,7 +2525,7 @@ def f145():
         print('Renaming "%s" to "%s"...' % (amerFilename, euroFilename))
         #shutil.move(amerFilename, euroFilename) # uncomment after testing
 
-def f146():
+def f148():
     # Backing Up a Folder into a ZIP File
 
     import zipfile, os
@@ -2530,11 +2568,11 @@ def f146():
 
     backupToZip('/home/bmzi/bin')
 
-def f147():
+def f149():
     # Chapter 10 - Debugging
     print('Chapter 10 - Debugging')
 
-def f148():
+def f150():
     # Raising Exceptions
 
     def boxPrint(symbol, width, height):
@@ -2563,7 +2601,7 @@ def f148():
     # that raised the exception, the program simply crashes and displays the
     # exception’s error message.
 
-def f149():
+def f151():
     # Getting the Traceback as a String
 
     import traceback, os
@@ -2582,7 +2620,7 @@ def f149():
     os.system('cat errorInfo.txt')
     os.unlink('errorInfo.txt')
 
-def f150():
+def f152():
     # Assertions - is a sanity check of the code
     # an assert statement says, 'I assert that this condition holds true,
     # and if not, there is a bug somewhere in the program.'
@@ -2611,7 +2649,7 @@ def f150():
     '''
     print()
 
-def f151():
+def f153():
     # Using an Assertion in a Traffic Light Simulation
 
     def switchLights(stoplight):
@@ -2642,11 +2680,12 @@ def f151():
 
     # Assertions can be disabled by passing the -O option when running Python.
 
-def f152():
+def f154():
     # Logging - Using the logging Module
 
     import logging
-    logging.basicConfig(level=logging.DEBUG, format=' %(asctime)s - %(levelname)s - %(message)s')
+    logging.basicConfig(level=logging.DEBUG,
+            format=' %(asctime)s - %(levelname)s - %(message)s')
     logging.debug('Start of program')
 
     def factorial(n):
@@ -2662,20 +2701,23 @@ def f152():
     logging.debug('End of program')
 
     ''' About this code:
-    Here, we use the logging.debug() function when we want to print log
-    information. This debug() function will call basicConfig() , and a line of infor-
-    mation will be printed. This information will be in the format we specified
-    in basicConfig() and will include the messages we passed to debug() . The
-    print(factorial(5)) call is part of the original program, so the result is dis-
-    played even if logging messages are disabled.'''
+    Here, we use the logging.debug() function when we want to print
+    log information. This debug() function will call basicConfig(),
+    and a line of information will be printed. This information will
+    be in the format we specified in basicConfig() and will include
+    the messages we passed to debug() . The print(factorial(5)) call
+    is part of the original program, so the result is displayed even
+    if logging messages are disabled.'''
 
-def f153():
+def f155():
     # Logging to a file
-    # Instead of displaying the log messages to the screen, you can write them to
-    # a text file.
+    # Instead of displaying the log messages to the screen, you can
+    # write them to a text file.
 
     import logging, os
-    logging.basicConfig(filename='myProgramLog.txt', level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
+    logging.basicConfig(filename='myProgramLog.txt',
+                level=logging.DEBUG,
+                format='%(asctime)s - %(levelname)s - %(message)s')
 
     def factorial(n):
         logging.debug('Start of factorial(%s%%)' % (n))
@@ -2690,11 +2732,11 @@ def f153():
     os.system('cat myProgramLog.txt')
     os.unlink('myProgramLog.txt')
 
-def f154():
+def f156():
     # IDLE Debuger
     print('Should be installed and practised!')
 
-def f155():
+def f157():
     # Find the program bug!
 
     '''
@@ -2718,10 +2760,9 @@ def f155():
     '''
     print()
 
-def f156():
+def f158():
     # Chapter 11 - Web Scraping
     print('''Chapter 11 - Web Scraping:
-    156 -  Launch a new browser
     157 -  Open google map address from terminal or clipboard
     158 -  Download Web Page with requests.get() Function
     159 -  Checking Downloading A Web Page
@@ -2740,13 +2781,13 @@ def f156():
     172 -  Sending Special Keys
     ''')
 
-def f157():
+def f159():
     # Launch a new browser by webbrowser module
 
     import webbrowser
     webbrowser.open('https://www.google.com')
 
-def f158():
+def f160():
     # Open google map address from terminal or clipboard
 
     import webbrowser, sys, pyperclip
@@ -2767,7 +2808,7 @@ def f158():
     # append your address. Websites often add extra data to URLs to
     # help to track visitors or customize sites.
 
-def f159():
+def f161():
     # Downloading a Web Page with the requests.get() Function
 
     # First install requests module:
@@ -2787,7 +2828,7 @@ def f159():
     print(len(res.text)) # shows nr of characters for downloaded text
     print(res.text[:250])  # displays only the first 250 characters
 
-def f160():
+def f162():
     # Checking Downloading A Web Page
 
     import requests
@@ -2805,7 +2846,7 @@ def f160():
     # Always call raise_for_status() after calling requests.get() . You want to be
     # sure that the download has actually worked before your program continues.
 
-def f161():
+def f163():
     # Saving Downloaded Files to the Hard Drive
 
 
@@ -2836,7 +2877,7 @@ def f161():
     os.system('ls -l RomeoAndJuliet.txt')
     os.unlink('RomeoAndJuliet.txt')
 
-def f162():
+def f164():
     # Parsing HTML with the BeautifulSoup Module
     import requests, bs4
 
@@ -2852,7 +2893,7 @@ def f162():
     Once you have a BeautifulSoup object, you can use its methods to
     locate specific parts of an HTML document.'''
 
-def f163():
+def f165():
     # Creating a BeautifulSoup Object from a local HTM
     import requests, bs4, os
 
@@ -2875,7 +2916,7 @@ def f163():
 
     os.system('rm -f example.html')
 
-def f164():
+def f166():
     # Finding an Element with the select() Method
 
     import bs4, os
@@ -2921,7 +2962,7 @@ def f164():
 
     os.system('rm -f example.html')
 
-def f165():
+def f167():
     # Getting Data from an Element’s Attributes
 
     # The get() method for Tag objects makes it simple to access attribute values
@@ -2953,7 +2994,7 @@ def f165():
 
     os.system('rm -f example.html')
 
-def f166():
+def f168():
     # I’m Feeling Lucky - Google Search
 
     import requests, sys, webbrowser, bs4
@@ -2983,7 +3024,7 @@ def f166():
     for i in range(numOpen):            # Open a browser tab for each result.
         webbrowser.open('http://google.com' + linkElems[i].get('href'))
 
-def f167():
+def f169():
 # Downloading All XKCD Comics
     import requests, os, bs4
 
@@ -3028,7 +3069,7 @@ def f167():
 
     print('Done.')
 
-def f168():
+def f170():
     # Starting a Selenium-Controlled Browser
 
     from selenium import webdriver
@@ -3038,7 +3079,7 @@ def f168():
     browser.get('http://inventwithpython.com')  # opens the url in the already opened
                                                 # firefox browser
 
-def f169():
+def f171():
     # Finding Elements on the Page
 
     from selenium import webdriver
@@ -3058,10 +3099,14 @@ def f169():
 
     # To see the list of methods refer to item 159 in main menu !
 
-def f170():
+def f172():
     # WebElement Attributes and Methods
 
-    ''' Selenium’s WebDriver Methods for Finding Elements
+
+    '''
+    .................................................
+    Selenium’s WebDriver Methods for Finding Elements
+    .................................................
     - Elements that use the CSS class name:
     browser.find_element_by_class_name(name)
     browser.find_elements_by_class_name(name)
@@ -3091,6 +3136,9 @@ def f170():
     browser.find_element_by_tag_name(name)
     browser.find_elements_by_tag_name(name)
 
+    .................................
+    WebElement Attributes and Methods
+    .................................
     tag_name - The tag name, such as 'a' for an <a> element
     get_attribute(name) - The value for the element’s name attribute
     text - The text within the element, such as 'hello' in <span>hello</span>
@@ -3104,37 +3152,52 @@ def f170():
                ment in the page
     '''
 
-def f171():
+def f173():
     # Clicking the Page
 
     from selenium import webdriver
-    browser = webdriver.Firefox()   # opens firefox browser, with no url loaded
-    browser.get('http://inventwithpython.com')   # loads the url argument in browser
+
+    # opens firefox browser, with no url loaded
+    browser = webdriver.Firefox()
+
+    # load the url argument in browser
+    browser.get('http://inventwithpython.com')
     linkElem = browser.find_element_by_link_text('Read Online for Free')
     print(type(linkElem))
-    # It prints: <class 'selenium.webdriver.remote.webelement.WebElement'>
-    linkElem.click()    # follows the "Read It Online" link
-                        # click() simulate mouse click on the first link element with
-                        # text as 'Read Online for Free'
+    # It prints:
+    # <class 'selenium.webdriver.remote.webelement.WebElement'>
 
-def f172():
-    # Filling Out and Submitting Forms
+    linkElem.click()    # follows the "Read It Online" link
+                    # click() simulate mouse click on the first
+                    # link element with text as:
+                    # 'Read Online for Free'
+
+def f174():
+    # Filling Out and Submitting Forms, automate browser login
 
     from selenium import webdriver
-    browser = webdriver.Firefox()   # opens firefox browser, with no url loaded
-    browser.get('http://gmail.com') # loads the url argument in browser
+
+    # open firefox browser, with no url loaded
+    browser = webdriver.Firefox()
+
+    # load the url argument in browser
+    browser.get('http://gmail.com')
     emailElem = browser.find_element_by_id('identifierId')
     emailElem.send_keys('not_my_real_email@gmail.com')
     passwordElem = browser.find_element_by_id('Passwd')
     passwordElem.send_keys('12345')
     passwordElem.submit()
 
-    '''The previous code will fill in those text fields with the provided text.
-    (You can always use the browser’s inspector to verify the id .) Calling the
-    submit() method on any element will have the same result as clicking the Submit
-    button for the form that element is in.'''
+    '''
+    The previous code will fill in those text fields with the pro-
+    vided text.
+    You can always use the browser’s inspector to verify the id.
+    Calling the submit() method on any element  will have the same
+    result as clicking the Submit button for the form that element
+    is in.
+    '''
 
-def f173():
+def f175():
     # Sending Special Keys
 
     from selenium import webdriver
@@ -3166,7 +3229,7 @@ def f173():
 
     Selenium reference: http://selenium-python.readthedocs.org/
     '''
-def f174():
+def f176():
     #
     import socket
 
@@ -3183,7 +3246,7 @@ def f174():
 
     mysock.close()
 
-def f175():
+def f177():
     # Download an image from webserver while showing the file
     # header response information and dowloaded chuncks of data,
     # during the download
@@ -3219,7 +3282,7 @@ def f175():
     fhand.write(picture)
     fhand.close()
 
-def f176():
+def f178():
     # Retrieve a web page over a socket and display the headers
     # from the web server.
 
@@ -3256,7 +3319,7 @@ def f176():
     print('Header length', pos)
     print(receivedData[:pos].decode())
 
-def f177():
+def f179():
     # Load a web document, browser simulation
     import socket
 
@@ -3273,7 +3336,7 @@ def f177():
 
     mysock.close()
 
-def f178():
+def f180():
     # Open a web page with urlib module
     import urllib.request
 
@@ -3287,7 +3350,7 @@ def f178():
     # For example, you can iterate each line of  html document, or
     # any other oprations.
 
-def f179():
+def f181():
     # Count the number of words in a web page
     import urllib.request, urllib.parse, urllib.error, pprint
 
@@ -3311,7 +3374,24 @@ def f179():
     # html document. Here html document, has been  treated  like a
     # regular file, with urlopen() function.
 
-def f180():
+def f182():
+    # Search for link values within URL input - using RE
+    import urllib.request, urllib.parse, urllib.error
+    import re
+    import ssl
+
+    # Ignore SSL certificate errors
+    ctx = ssl.create_default_context()
+    ctx.check_hostname = False
+    ctx.verify_mode = ssl.CERT_NONE
+
+    url = input('Enter - ')
+    html = urllib.request.urlopen(url).read()
+    links = re.findall(b'href="(http[s]?://.*?)"', html)
+    for link in links:
+        print(link.decode())
+
+def f183():
     # Retrieve href links from html document with BeautifulSoup
     # To run this, you can install BeautifulSoup
     # https://pypi.python.org/pypi/beautifulsoup4
@@ -3324,25 +3404,203 @@ def f180():
     from bs4 import BeautifulSoup
     import ssl
 
+    # BeautifulSoup link:
+    # http://www.crummy.com/software/BeautifulSoup/
+
     # Ignore SSL certificate errors
     ctx = ssl.create_default_context()
     ctx.check_hostname = False
     ctx.verify_mode = ssl.CERT_NONE
 
     url = input('Enter - ')
-    html = urllib.request.urlopen(url, context=ctx).read()
+    fhand = urllib.request.urlopen(url, context=ctx)
+    # fhand type is: <class 'http.client.HTTPResponse'>
+    html = fhand.read()  # html has the type: <class 'bytes'>
+
     soup = BeautifulSoup(html, 'html.parser')
+    # Here we get a clean and well structured object of type:
+    # <class 'bs4.BeautifulSoup'>
 
     # Retrieve all of the anchor tags
-    tags = soup('a')
+    tags = soup('a')   # <class 'bs4.element.ResultSet'>
     for tag in tags:
         print(tag.get('href', None))
 
-def f181():
+def f184():
+    # Hoping from an html link to another, with specified rule
+
+    # Assignment: Following Links in HTML Using BeautifulSoup
+    # In this assignment you will write a Python program that exp-
+    # ands on https://www.py4e.com/code3/urllinks.py . The program
+    # will use urllib to read the HTML from  the data files below,
+    # extract the href=values from the anchor tags, scan for a tag
+    # that is in a  particular position from  the top  and  follow
+    # that link, repeat the process a number  of times, and report
+    # the last name you find.
+
+    # url = 'http://py4e-data.dr-chuck.net/known_by_Fikret.html'
+    # url = 'http://py4e-data.dr-chuck.net/known_by_Beraka.html'
+
+    url = input('Enter URL: ')
+    count = int(input('Enter count: '))
+    position = int(input('Enter position: '))
+
+    import urllib.request, urllib.parse, urllib.error
+    from bs4 import BeautifulSoup
+    import ssl
+
+
+    def openurl(link):
+        ctx = ssl.create_default_context()
+        ctx.check_hostname = False
+        ctx.verify_mode = ssl.CERT_NONE
+
+        html = urllib.request.urlopen(link, context=ctx).read()
+        soup = BeautifulSoup(html, 'html.parser')
+
+        # Retrieve all of the anchor tags
+        tags = soup('a')
+        for pos, tag in enumerate(tags, 1):
+            if pos == position:
+                return tag.get('href', None)
+
+
+    for i in range(count):
+        print('Retrieving: ', openurl(url))
+        url = openurl(url)
+
+    # for pos, tag in enumerate(tags, 1): print(pos, tag.get('href', None))
+
+def f185():
+    # Scraping HTML Data with without BeautifulSoup
+
+    # Write a Python program to use urllib to read the HTML from the -
+    # data files below, and parse the data, extracting numbers and co-
+    # mpute the sum of the numbers in the file
+
+    dataFile = 'http://py4e-data.dr-chuck.net/comments_229270.html'
+    # dataFile = 'http://www.dr-chuck.com'
+
+    # dataFile = input('Enter: ')
+
+    import urllib.request, re
+
+    fhand = urllib.request.urlopen(dataFile)
+
+
+    allNumbers = []
+
+    for line in fhand:
+        line = line.decode().rstrip()
+        if re.search('[0-9]+', line) == None : continue
+        numbers = re.findall('>0*([0-9]+)<', line)
+        allNumbers.extend(numbers)
+
+    total = 0
+    for n in allNumbers:
+        total = total + int(n)
+
+    print('Count: ', len(allNumbers))
+    print('Sum of all numbers: ', total)
+
+def f186():
+    # Scraping HTML Data with BeautifulSoup
+
+    # Write a Python program to use urllib to read the HTML from the -
+    # data files below, and parse the data, extracting numbers and co-
+    # mpute the sum of the numbers in the file
+
+
+    url = input('Enter : ')
+
+    from urllib.request import urlopen
+    from bs4 import BeautifulSoup
+    import ssl
+
+    ctx = ssl.create_default_context()
+    ctx.check_hostname = False
+    ctx.verify_mode = ssl.CERT_NONE
+
+
+    html = urlopen(url, context=ctx).read()
+    soup = BeautifulSoup(html, "html.parser")
+
+    spanContent = []
+    tags = soup('span')
+    for tag in tags:
+        # print('Contents:', tag.contents[0].split())
+        spanContent.extend(tag.contents[0].split())
+
+    # print(spanContent)
+    print('Count: ', len(spanContent))
+
+    total = 0
+    for n in spanContent:
+        total = total + int(n)
+
+    print('Sum: ', total)
+
+def f187():
+    # Retrieve links from html with specific conditions
+
+    import urllib.request, urllib.parse, urllib.error
+    from bs4 import BeautifulSoup
+    import ssl
+
+    # Ignore SSL certificate errors for https
+    ctx = ssl.create_default_context()
+    ctx.check_hostname = False
+    ctx.verify_mode = ssl.CERT_NONE
+
+    todo = list()
+    visited = list()
+    url = input('Enter - ')
+    todo.append(url)
+    count = int(input('How many to retrieve - '))
+
+    while len(todo) > 0 and count > 0 :
+        print("====== To Retrieve:",count, "Queue Length:", len(todo))
+        url = todo.pop()
+        count = count - 1
+
+        if (not url.startswith('http')):
+            print("Skipping", url)
+            continue
+
+        if (url.find('facebook') > 0):
+            continue
+
+        if (url.find('linkedin') > 0):
+            continue
+
+        if (url in visited):
+            print("Visited", url)
+            continue
+
+        print("===== Retrieving ", url)
+
+        try:
+            html = urllib.request.urlopen(url, context=ctx).read()
+        except:
+            print("*** Error in retrieval")
+            continue
+
+        soup = BeautifulSoup(html, 'html.parser')
+        visited.append(url)
+
+        # Retrieve all of the anchor tags
+        tags = soup('a')
+        for tag in tags:
+            newurl = tag.get('href', None)
+            if (newurl is not None):
+                todo.append(newurl)
+
+
+def f188():
     # Chapter 12 - Working with Excel Spreadsheets
     print('Chapter 12 - Working with Excel Spreadsheets')
 
-def f182():
+def f189():
     # Opening Excel Documents with OpenPyXL
     # To work with Excel documents first install the module:
     # sudo pip3 install OpenPyXL
@@ -3369,7 +3627,7 @@ def f182():
     anotherSheet = wb.get_active_sheet()
     print(anotherSheet)
 
-def f183():
+def f190():
     # Getting Cells from the Sheets
 
     import openpyxl
@@ -3391,7 +3649,7 @@ def f183():
     # Cell objects also have row , column , and coordinate attri-
     # butes that provide location information for the cell.
 
-def f184():
+def f191():
     # excel sheet cell() method
 
     import openpyxl
@@ -3403,7 +3661,7 @@ def f184():
     for i in range(1, 8, 2):
         print(i, sheet.cell(row=i, column=2).value)
 
-def f185():
+def f192():
     # Determine the size of the sheet
 
     import openpyxl
@@ -3417,7 +3675,7 @@ def f185():
     print(sheet.max_row)                 # 7
     print(sheet.max_column)              # 3
 
-def f186():
+def f193():
     # Converting Between Column Letters and Numbers
     import openpyxl
     from openpyxl.utils import get_column_letter, column_index_from_string
@@ -3436,7 +3694,7 @@ def f186():
     print(column_index_from_string('A'))              # 1
     print(column_index_from_string('AA'))             # 27
 
-def f187():
+def f194():
     # Getting Rows and Columns from the Sheets
 
     import openpyxl
@@ -3455,7 +3713,7 @@ def f187():
     # Then, for each row, the nested for loop goes through each
     # cell in that row.
 
-def f188():
+def f195():
     # Access the values of cells in a particular row or column
 
     import openpyxl
@@ -3479,7 +3737,7 @@ def f188():
     # 7. Get a Cell object.
     # 8. Read the Cell object’s value attribute.
 
-def f189():
+def f196():
     # Reading Data from a Spreadsheet
     # Tabulates population and number of census tracts for
     # each county.
@@ -3520,7 +3778,7 @@ def f189():
     resultFile.close()
     print('Done.')
 
-def f190():
+def f197():
     # Writing Excel Documents
     import openpyxl
 
@@ -3533,7 +3791,7 @@ def f190():
     sheet.title = 'Spam Bacon Eggs Sheet'
     wb.get_sheet_names()
 
-def f191():
+def f198():
     # Create and save a spreed sheet
     import openpyxl
 
@@ -3542,7 +3800,7 @@ def f191():
     sheet.title = 'Spam Spam Spam'
     wb.save('example_copy.xlsx')
 
-def f192():
+def f199():
     # Creating and Removing Sheets
 
     import openpyxl
@@ -3565,7 +3823,7 @@ def f192():
     # If you want the new created excel be saved, uncomment this:
     # wb.save('test.xlsx')
 
-def f193():
+def f200():
     # Writing Values to Cells
 
     import openpyxl
@@ -3580,7 +3838,7 @@ def f193():
     # If you want the new created excel be saved, uncomment this:
     # wb.save('test.xlsx')
 
-def f194():
+def f201():
     # Project: Updating a Spreadsheet
     # This program updates prices for specific produces in file
     # 'produceSales.xlsx'
@@ -3606,7 +3864,7 @@ def f194():
 
     wb.save('updatedProduceSales.xlsx')
 
-def f195():
+def f202():
     # Setting the Font Style of Cells
 
     import openpyxl
@@ -3625,7 +3883,7 @@ def f195():
     sheet['A1'] = 'Hello world!'
     wb.save('styled.xlsx')
 
-def f196():
+def f203():
     # Font object
 
     import openpyxl
@@ -3646,7 +3904,7 @@ def f196():
 
     wb.save('styles.xlsx')
 
-def f197():
+def f204():
     # Formulas
     import openpyxl
 
@@ -3657,7 +3915,7 @@ def f197():
     sheet['A3'] = '=SUM(A1:A2)'
     wb.save('writeFormula.xlsx')
 
-def f198():
+def f205():
     # loading a workbook with and without the data_only keyword
     # argument
 
@@ -3673,7 +3931,7 @@ def f198():
     print(ws['A3'].value)
     # in my case it shows None
 
-def f199():
+def f206():
     # Setting Row Height and Column Width
 
     import openpyxl
@@ -3686,7 +3944,7 @@ def f199():
     sheet.column_dimensions['B'].width = 20
     wb.save('dimensions.xlsx')
 
-def f200():
+def f207():
     # Merging and Unmerging Cells
     # A rectangular area of cells can be merged into a single cell
     # with the merge_cells() sheet method
@@ -3701,7 +3959,7 @@ def f200():
     sheet['C5'] = 'Two merged cells.'
     wb.save('merged.xlsx')
 
-def f201():
+def f208():
     # Unmerge cells
     # To unmerge cells, call the unmerge_cells() sheet method
 
@@ -3713,7 +3971,7 @@ def f201():
     sheet.unmerge_cells('C5:D5')
     wb.save('merged.xlsx')
 
-def f202():
+def f209():
     # Freeze Panes - Pan is visible top rows or leftmost columns
     # to a specific cell that is helpfull to be used for larg spr-
     # eadsheets to display all at once.
@@ -3733,7 +3991,7 @@ def f202():
     wb.save('freezeExample.xlsx')
     # To unfreez all pan set the the atribute to None
 
-def f203():
+def f210():
     # Charts
     from openpyxl import Workbook
     wb = Workbook()
@@ -3751,11 +4009,11 @@ def f203():
     # For complete documentation refere to:
     # https://openpyxl.readthedocs.io/en/stable/charts/introduction.html
 
-def f204():
+def f211():
     # Chapter 13 - Working with PDF and Word Documents
     print('Chapter 13 - Working with PDF and Word Documents')
 
-def f205():
+def f212():
     # Extracting Text from PDFs
     # sudo pip3 install PyPDF2
 
@@ -3767,7 +4025,7 @@ def f205():
     pageObj = pdfReader.getPage(0)
     print(pageObj.extractText())
 
-def f206():
+def f213():
     # Decrypting PDFs
 
     import PyPDF2
@@ -3780,7 +4038,7 @@ def f206():
     pageObj = pdfReader.getPage(0) # No more error you get
     print(pageObj.extractText())
 
-def f207():
+def f214():
     # copy pages from one PDF document to another
     # files 'meetingminutes.pdf' and 'meetingminutes2.pdf' must
     # exist in current directory!
@@ -3812,7 +4070,7 @@ def f207():
     pdf2File.close()
 
 
-def f208():
+def f215():
     # Rotating Pages
     # file 'meetingminutes.pdf' must be in current directory!
 
@@ -3834,7 +4092,7 @@ def f208():
     resultPdfFile.close()
     minutesFile.close()
 
-def f209():
+def f216():
     # Overlaying Pages
     # files 'meetingminutes.pdf' and 'watermark.pdf' must exist in
     # current directory!
@@ -3863,7 +4121,7 @@ def f209():
     minutesFile.close()
     resultPdfFile.close()
 
-def f210():
+def f217():
     # Encrypting PDFs
     import PyPDF2
     pdfFile = open('meetingminutes.pdf', 'rb')
@@ -3877,7 +4135,7 @@ def f210():
     pdfWriter.write(resultPdf)
     resultPdf.close()
 
-def f211():
+def f218():
     # Combining Select Pages from Many PDFs
 
     import PyPDF2, os
@@ -3906,7 +4164,7 @@ def f211():
     pdfWriter.write(pdfOutput)
     pdfOutput.close()
 
-def f212():
+def f219():
     # Word Documents
     # sudo pip3 install python-docx (install module 'python-docx')
     # file 'demo.docx' must be in working directory.
@@ -3928,7 +4186,7 @@ def f212():
     print(doc.paragraphs[1].runs[2].text)
     print(doc.paragraphs[1].runs[3].text)
 
-def f213():
+def f220():
     # Getting the Full Text from a .docx File
 
     import docx
@@ -3944,7 +4202,7 @@ def f213():
 
     print(getText('demo.docx'))
 
-def f214():
+def f221():
     # Styling Paragraph and Run Attributes
     print('''
     The string values for the default Word styles are:
@@ -3963,7 +4221,7 @@ def f214():
     ''')
 
 
-def f215():
+def f222():
     # Creating Word Documents with Nondefault Styles
     import docx
 
@@ -3985,7 +4243,7 @@ def f215():
     doc.paragraphs[1].runs[3].underline = True
     doc.save('restyled.docx')
 
-def f216():
+def f223():
     # Writing Word Documents
     import docx
 
@@ -3993,7 +4251,7 @@ def f216():
     print(doc.add_paragraph('Hello world!'))
     doc.save('helloworld.docx')
 
-def f217():
+def f224():
     # Add paragraphs
 
     import docx
@@ -4007,7 +4265,7 @@ def f217():
 
     doc.save('multipleParagraphs.docx')
 
-def f218():
+def f225():
     # Adding Headings
 
     import docx
@@ -4020,7 +4278,7 @@ def f218():
     doc.add_heading('Header 4', 4)
     doc.save('headings.docx')
 
-def f219():
+def f226():
     # Adding Line and Page Breaks and Adding Pictures
 
     import docx, os
@@ -4039,11 +4297,40 @@ def f219():
                     height=docx.shared.Cm(4))
     doc.save('twoPage.docx')
 
-def f220():
+def f227():
     # Chapter 14 - Working with CSV Files and JSON Data
-    print('Chapter 14 - Working with CSV Files and JSON Data')
 
-def f221():
+    data = '''
+    Working with CSV Files and JSON Data
+
+    Function
+    no           Topic
+    ........     ......
+    227 -        Read data from a CSV file
+    228 -        Reading Data from Reader Objects in a for Loop
+    229 -        Writer object
+    230 -        The delimeter and lineterminator keyword arguments
+    231 -        Project: Removing the Header from CSV Files
+    232 -        JSON and API description
+    233 -        Reading JSON with the loads() Function
+    234 -        Writing JSON with the dumps() Function
+    235 -        Project: Fetching Current Weather Data
+    236 -        json1.py
+    237 -        json2.py
+    238 -        geojson.py
+    239 -        twtest.py
+    240 -        twitter1.py
+    241 -        twitter2.py
+    242 -        Parsing and extracting elements from xml
+    243 -        Parsing an extracting elements from a multiple node xml
+    244 -        Iterate and change xml tree elements to strings
+    245 -        Extract all tags with non empty inner text from xml document
+    246 -        Read from remote xml tags with numbers and compute the sum
+    '''
+
+    print(data)
+
+def f228():
     # Read data from a CSV file with csv module,
     # you need to create a Reader object
 
@@ -4064,7 +4351,7 @@ def f221():
     exampleData = list(exampleReader)
     pprint(exampleData)
 
-def f222():
+def f229():
     # Reading Data from Reader Objects in a for Loop
 
     import csv, os
@@ -4084,7 +4371,7 @@ def f222():
 
         # The Reader object can be looped over only once
 
-def f223():
+def f230():
     # Writer object
     # A Writer object lets you write data to csv file.
 
@@ -4105,7 +4392,7 @@ def f223():
 
     with open('output.csv') as myFile: print(myFile.read())
 
-def f224():
+def f231():
     # The 'delimiter' and 'lineterminator' keyword arguments
     # We change the above arguments to change the default values.
     # Arguments default values are comma and '\n'.
@@ -4123,7 +4410,7 @@ def f224():
 
     csvFile.close()
 
-def f225():
+def f232():
     # Project: Removes the header from all CSV files in the current
     # working directory.
 
@@ -4162,13 +4449,13 @@ def f225():
             csvWriter.writerow(row)
         csvFileObj.close()
 
-def f226():
+def f233():
     # What is JSON
     print('''
     JavaScript Object Notation is a popular way to format data as
-    a single human-readable string. JSON is the native way that J-
-    avaScript programs write their data structures and usually re-
-    sembles what Python’s pprint function would produce. Example:
+    a single human-readable string. JSON is the native way that -
+    JavaScript programs write their data structures and usually -
+    resembles what Python’s pprint function would produce. Ex:
     {"name": "Zophie", "isCat": true,
     "miceCaught": 0, "napsTaken": 37.5,
     "felineIQ": null}
@@ -4178,15 +4465,16 @@ def f226():
     cessing an API is the same as accessing any other web page via
     a URL. The difference is that the data returned by an API is -
     formatted with JSON. Facebook, Twitter, Yahoo, Google, Tumblr,
-    Wikipedia, Flickr, Data.gov, Reddit, IMDb, Rotten Tomatoes, L-
-    inkedIn, and many other offer APIs for programs to use. Some -
-    of these sites require registration, which is almost always f-
-    ree. You’ll have to find documentation for what URLs your pro-
-    gram needs to request in order to get the data you want, as w-
-    ell as the general format of the JSON data structures that are
-    returned. This documentation should be provided by whatever s-
-    ite is offering the API; if they have a “Developers” page, lo-
-    ok for the documentation there. What you can do with JSOn:
+    Wikipedia, Flickr, Data.gov, Reddit, IMDb, Rotten Tomatoes,  -
+    LinkedIn, and many other offer APIs for programs to use.  Some
+    of these sites require registration, which is almost always  -
+    free. You’ll have to find documentation for what URLs your pr-
+    ogram needs to request in order to get the data you want, as -
+    well as the general format of the JSON data structures,  which
+    are returned.
+    This documentation should be provided by whatever site is off-
+    ering the API; if they have a “Developers” page, look for the
+    documentation there. What you can do with JSON:
     - Scrape raw data from websites.
       Accessing APIs and parsing HTML with Beautiful Soup.
     - Automatically download new posts from one of your social ne-
@@ -4195,7 +4483,7 @@ def f226():
       putting it into a single text file.
     ''')
 
-def f227():
+def f234():
     # Reading JSON with the loads() Function
     # To translate a string containing JSON data into a Python
     # value, pass it to the json.loads() function.
@@ -4209,7 +4497,7 @@ def f227():
 
     print(jsonDataAsPythonValue)
 
-def f228():
+def f235():
     # Writing JSON with the dumps() Function
     # The json.dumps() function ("dump string") translate a Python
     # value into a string of JSON-formatted data.
@@ -4222,7 +4510,7 @@ def f228():
 
     print(stringOfJsonData)
 
-def f229():
+def f236():
     # Project: Fetching Current Weather Data
 
     import json, requests, sys
@@ -4255,11 +4543,406 @@ def f229():
     print('Day after tomorrow:')
     print(w[2]['weather'][0]['main'], '-', w[2]['weather'][0]['description'])
 
-def f230():
+def f237():
+    # json1.py
+    # JSON represents data as nested "lists" and "dictionaries"
+
+    import json
+
+    data = '''
+    {
+      "name" : "Chuck",
+      "phone" : {
+        "type" : "intl",
+        "number" : "+1 734 303 4456"
+       },
+      "email" : {
+        "hide" : "yes"
+       }
+    }'''
+
+    info = json.loads(data)  # Returns a dictionary
+    print(type(info))
+    print('Name:', info["name"])
+    print('Hide:', info["email"]["hide"])
+    print('email:', info["email"])
+    print('info dictionary: ')
+    print(info)
+
+def f238():
+    # json2.py
+    # JSON represents data as nested "lists" and "dictionaries"
+
+    import json
+
+    data = '''
+    [
+      { "id" : "001",
+        "x" : "2",
+        "name" : "Chuck"
+      } ,
+      { "id" : "009",
+        "x" : "7",
+        "name" : "Brent"
+      }
+    ]'''
+
+    info = json.loads(data) # Returns a list
+    print(type(info))
+    print('User count:', len(info))
+
+    for item in info:
+        print('Name', item['name'])
+        print('Id', item['id'])
+        print('Attribute', item['x'])
+
+def f239():
+    # geojson.py
+
+    '''
+    Note:
+    Using the google geocoding service  is  free and  can be  done
+    only through gooogle map page.
+    if we need to use the service from API (your program), we need
+    an API key. For example we can use the following  link  to get
+    the geometry of an address using dr-chuck api key:
+    http://py4e-data.dr-chuck.net/json?address=Ann+Arbor+MI&key=42
+    '''
+
+    import urllib.request, urllib.parse, urllib.error
+    import json
+    import ssl
+
+    api_key = False
+    # If you have a Google Places API key, enter it here
+    # api_key = 'AIzaSy___IDByT70'
+    # https://developers.google.com/maps/documentation/ \
+                                                 # geocoding/intro
+
+    if api_key is False:
+        api_key = 42
+        serviceurl = 'http://py4e-data.dr-chuck.net/json?'
+    else :
+        serviceurl = '\
+               https://maps.googleapis.com/maps/api/geocode/json?'
+
+    # Ignore SSL certificate errors
+    ctx = ssl.create_default_context()
+    ctx.check_hostname = False
+    ctx.verify_mode = ssl.CERT_NONE
+
+    while True:
+        address = input('Enter location: ')
+        if len(address) < 1: break
+
+        parms = dict()
+        parms['address'] = address
+        if api_key is not False: parms['key'] = api_key
+        url = serviceurl + urllib.parse.urlencode(parms)
+
+        print('Retrieving', url)
+        uh = urllib.request.urlopen(url, context=ctx)
+        data = uh.read().decode()
+        print('Retrieved', len(data), 'characters')
+
+        try:
+            js = json.loads(data)
+        except:
+            js = None
+
+        if not js or 'status' not in js or js['status'] != 'OK':
+            print('==== Failure To Retrieve ====')
+            print(data)
+            continue
+
+        print(json.dumps(js, indent=4))
+
+        lat = js['results'][0]['geometry']['location']['lat']
+        lng = js['results'][0]['geometry']['location']['lng']
+        print('lat', lat, 'lng', lng)
+        location = js['results'][0]['formatted_address']
+        print(location)
+
+def f240():
+    # twtest.py
+
+    import urllib.request, urllib.parse, urllib.error
+    import ssl
+    import oauth  # I copied oauth.py to /usr/lib64/python3.6
+
+    # https://apps.twitter.com/
+    # Create App and get the four strings, put them in hidden.py
+    # instead of hidden.py keys are copied in function mykey()
+
+    print('* Calling Twitter...')
+
+    def mykey():
+        return {"consumer_key": "DF8GKXgtxyl845Dy4Zz7H9RNu",
+                "consumer_secret": "PZQScM0bTfTThSB0qXVPnhb6yFg7rnXTuY7U5TqlujeixRmMJm",
+                "token_key": "1133459504719433728-YbSmNJFam1FRpDTS7vh7R4RzPogEwh",
+                "token_secret": "IUyXxAWNr7kQVggRYAiQAUvaoIsMqp9D81iIkZun0dEfB"}
+
+    def augment(url, parameters):
+        secrets = mykey()
+        consumer = oauth.OAuthConsumer(secrets['consumer_key'],
+                                       secrets['consumer_secret'])
+        token = oauth.OAuthToken(secrets['token_key'], secrets['token_secret'])
+
+        oauth_request = oauth.OAuthRequest.from_consumer_and_token(consumer,
+                        token=token, http_method='GET', http_url=url,
+                        parameters=parameters)
+        oauth_request.sign_request(oauth.OAuthSignatureMethod_HMAC_SHA1(),
+                                   consumer, token)
+        return oauth_request.to_url()
+
+
+    url = augment('https://api.twitter.com/1.1/statuses/user_timeline.json',
+                  {'screen_name': 'drchuck', 'count': '2'})
+    print(url)
+
+
+    # Ignore SSL certificate errors
+    ctx = ssl.create_default_context()
+    ctx.check_hostname = False
+    ctx.verify_mode = ssl.CERT_NONE
+
+
+    connection = urllib.request.urlopen(url, context=ctx)
+    data = connection.read()
+    print(data)
+
+    print ('======================================')
+    headers = dict(connection.getheaders())
+    print(headers)
+
+
+
+
+def f241():
+    # twitter1.py
+
+    import urllib.request, urllib.parse, urllib.error
+    import ssl
+    import oauth
+    from data import twurl
+
+    # https://apps.twitter.com/
+    # Create App and get the four strings, put them in hidden.py
+
+    print('* Calling Twitter...')
+
+    TWITTER_URL = 'https://api.twitter.com/1.1/statuses/user_timeline.json'
+
+    # Ignore SSL certificate errors
+    ctx = ssl.create_default_context()
+    ctx.check_hostname = False
+    ctx.verify_mode = ssl.CERT_NONE
+
+    while True:
+        print('')
+        acct = input('Enter Twitter Account:')
+        if acct == 'quit': return
+        if (len(acct) < 1): break
+        url = twurl.augment(TWITTER_URL,
+                            {'screen_name': acct, 'count': '2'})
+        print('Retrieving', url)
+        connection = urllib.request.urlopen(url, context=ctx)
+        data = connection.read().decode()
+        print(data[:250])
+        headers = dict(connection.getheaders())
+        # print headers
+        print('Remaining', headers['x-rate-limit-remaining'])
+
+
+def f242():
+    # twitter2.py
+    import urllib.request, urllib.parse, urllib.error
+    import json
+    import ssl
+    import oauth
+    from data import twurl
+
+    # https://apps.twitter.com/
+    # Create App and get the four strings, put them in hidden.py
+
+    print('* Calling Twitter...')
+
+    TWITTER_URL = 'https://api.twitter.com/1.1/friends/list.json'
+
+    # Ignore SSL certificate errors
+    ctx = ssl.create_default_context()
+    ctx.check_hostname = False
+    ctx.verify_mode = ssl.CERT_NONE
+
+    while True:
+        print('')
+        acct = input('Enter Twitter Account:')
+        if (len(acct) < 1): break
+        url = twurl.augment(TWITTER_URL,
+                            {'screen_name': acct, 'count': '5'})
+        print('Retrieving', url)
+        connection = urllib.request.urlopen(url, context=ctx)
+        data = connection.read().decode()
+
+        js = json.loads(data)
+        print(json.dumps(js, indent=2))
+
+        headers = dict(connection.getheaders())
+        print('Remaining', headers['x-rate-limit-remaining'])
+
+        for u in js['users']:
+            print(u['screen_name'])
+            if 'status' not in u:
+                print('   * No status found')
+                continue
+            s = u['status']['text']
+            print('  ', s[:50])
+
+def f243():
+    # Parsing and extracting elements from xml
+    import xml.etree.ElementTree as ET
+
+    data = '''
+    <person>
+      <name>Chuck</name>
+      <phone type="intl">
+        +1 734 303 4456
+      </phone>
+      <email hide="yes" />
+    </person>'''
+
+    tree = ET.fromstring(data)
+    # fromstring() converts the string representation of the XML
+    # into a “tree” of XML elements.
+
+    print('Name:', tree.find('name').text)
+    print('Attr:', tree.find('email').get('hide'))
+
+def f244():
+    # Parsing an extracting elements through looping nodes
+    # from a multiple node xml
+
+    import xml.etree.ElementTree as ET
+
+    input = '''
+    <stuff>
+      <users>
+        <user x="2">
+          <id>001</id>
+          <name>Chuck</name>
+        </user>
+        <user x="7">
+          <id>009</id>
+          <name>Brent</name>
+        </user>
+      </users>
+    </stuff>'''
+
+    stuff = ET.fromstring(input)        # tree
+    # builds a “tree” of XML elements
+
+    lst = stuff.findall('users/user')   # subtree
+    # The findall method retrieves a Python list of subtrees that
+    # represent the user structures in the XML tree
+
+    print('User count:', len(lst))
+
+    for item in lst:
+        print('Name', item.find('name').text)
+        print('Id', item.find('id').text)
+        print('Attribute', item.get('x'))
+
+def f245():
+    # Iterate and change xml tree elements to strings
+    f = input('Enter your documnet name: ')
+
+    import xml.etree.ElementTree as ET
+
+    fhand = open(f)
+    data = fhand.read()
+    tree = ET.fromstring(data)
+    # itertext() Creates a text iterator.  The iterator loops over
+    # this element and all subelements, in document order, and re-
+    # turns all inner text.
+
+    # print(''.join(tree.itertext()))
+    # If you uncomment above you get an output with empty lines.
+    # To get rid of blank lines:
+
+    import re
+
+    x = tree.itertext()
+    for line in x:
+        if not re.match(r'^\s*$', line):
+           print(line)
+
+def f246():
+    # Extract all tags with non empty inner text from xml document
+    import re
+    import xml.etree.ElementTree as ET
+
+    xmlfile = input('Enter xml file name: ')
+    fh = open(xmlfile)
+    data = fh.read()
+
+    tree = ET.fromstring(data)
+
+    sp = '-> '
+    for line in tree:
+         if not line.text.strip(): continue
+         print(line.tag, sp, line.text)
+
+def f247():
+    # Read an xml from reomte server and get the sum of the tags
+    # with numbers.
+
+    # Program to prompt for a URL, read the xml data from that URL,
+    # using urllib and then parse and extract the comment counts
+    # from the xml data, compute the sum of the numbers in the file.
+
+
+    import urllib.request, urllib.parse, urllib.error
+    import xml.etree.ElementTree as ET
+    import ssl
+
+    # url = input('Enter location: ')
+    url = 'http://py4e-data.dr-chuck.net/comments_42.xml'
+    # url = 'http://py4e-data.dr-chuck.net/comments_229272.xml'
+
+    # Ignore SSL certificate errors
+    ctx = ssl.create_default_context()
+    ctx.check_hostname = False
+    ctx.verify_mode = ssl.CERT_NONE
+
+    print('Retrieving', url)
+    uh = urllib.request.urlopen(url, context=ctx)
+
+    data = uh.read()
+    print('Retrieved', len(data), 'characters')
+    # print(data.decode())
+    tree = ET.fromstring(data)
+
+    # lst = tree.findall('./comments/comment/count')
+    lst = tree.findall('.//count')
+    print('count : ', len(lst))
+
+    count_list = list()
+    for elem in lst:
+        count_list.extend(elem.text.split())
+
+    # print(count_list)
+
+    total = 0
+    for n in count_list:
+        total = total + int(n)
+
+    print('Sum: ', total)
+
+def f248():
     # Chapter 15 - Time, Scheduling Tasks, Launching Programs
     print('Chapter 15 - Time, Scheduling Tasks, Launching Programs')
 
-def f231():
+def f249():
     # The time.time() Function
 
     from time import time
@@ -4267,7 +4950,7 @@ def f231():
     # number of seconds since 12 am on January 1, 1970 (UTC)
     # The return number is called epoch timestamp
 
-def f232():
+def f250():
     # calculate running time for a program
 
     import time
@@ -4290,7 +4973,7 @@ def f232():
     # For help go to: https://docs.python.org/3/library/profile.html.
 
 
-def f233():
+def f251():
     # sleep function to pause the program
 
     import time
@@ -4305,7 +4988,7 @@ def f233():
     for i in range(10):
         time.sleep(1)
 
-def f234():
+def f252():
     # Rounding the current time number
 
     import time
@@ -4315,7 +4998,7 @@ def f234():
     print(round(now, 4))
     print(round(now)) # No 2nd argument, rounds to nearest integer
 
-def f235():
+def f253():
     # Project: Super Stopwatch - track spent time on a task
 
     # Step 1: Set Up the Program to Track Times
@@ -4351,7 +5034,7 @@ def f235():
         # Handle the Ctrl-C exception to keep its error message from displaying.
         print('\nDone.')
 
-def f236():
+def f254():
     # The datetime Module
     import datetime, time
 
@@ -4380,7 +5063,7 @@ def f236():
     print('\nPrinting the current time in the form of a'
           + '\ndatetime object: ', dt)
 
-def f237():
+def f255():
     # Compare datetime objects with each other
 
     import datetime
@@ -4393,7 +5076,7 @@ def f237():
     print(newyears2016 > halloween2015)  # True
     print(newyears2016 != oct31_2015)    # True
 
-def f238():
+def f256():
     # Find time duration with timedelta module
 
     import datetime
@@ -4407,7 +5090,7 @@ def f238():
 
     print('.' * 10)
 
-def f239():
+def f257():
     # Using arithmatic operators on datetime values
 
     import datetime
@@ -4431,7 +5114,7 @@ def f239():
     print(oct21st - aboutThirtyYears)
     print(oct21st - (2 * aboutThirtyYears))
 
-def f240():
+def f258():
     # Pausing Until a Specific Date
 
     import datetime
@@ -4446,7 +5129,7 @@ def f240():
    # check the condition once per second and continue with the re-
    # st of the program after Halloween 2016
 
-def f241():
+def f259():
     # Converting datetime Objects into Strings
 
     import datetime
@@ -4479,7 +5162,7 @@ def f241():
     %% Literal '%' character
     '''
 
-def f242():
+def f260():
     # Converting Strings into datetime Objects
 
     import datetime
@@ -4513,7 +5196,7 @@ def f242():
     %% Literal '%' character
     '''
 
-def f243():
+def f261():
     # Review of Python’s Time Functions
 
     print('''
@@ -4569,7 +5252,7 @@ def f243():
     '''
     )
 
-def f244():
+def f262():
     # Multithreading
 
     # To make a separate thread, you first need  to make  a Thread
@@ -4607,7 +5290,7 @@ def f244():
     # begins  at  the  start  of the takeANap() function, and ends
     # after takeANap() returns.
 
-def f245():
+def f263():
     # Passing Arguments to the Thread’s Target Function
 
     import threading
@@ -4637,7 +5320,7 @@ def f245():
     # or write the same variables.
 
 
-def f246():
+def f264():
     # Downloads XKCD comics using multiple threads
 
     import requests, os, bs4, threading
@@ -4688,7 +5371,7 @@ def f246():
         downloadThread.join()
     print('Done.')
 
-def f247():
+def f265():
     # Launching Other Programs from Python
     import subprocess
 
@@ -4714,13 +5397,13 @@ def f247():
     0
     '''
 
-def f248():
+def f266():
     import subprocess
 
     # Passing Command Line Arguments to Popen()
     subprocess.Popen(['/usr/bin/gedit', 'list'])
 
-def f249():
+def f267():
     # Opening Files with Default Applications
 
     fileObj = open('hello.txt', 'w')
@@ -4730,6 +5413,855 @@ def f249():
     import subprocess
     subprocess.Popen(['start', 'hello.txt'], shell=True)
 
-def f250():
-    print('something')
+def f268():
+    #
+    print('Chapter 16 OO programming')
 
+def f269():
+    #
+    print('Chapter 17 DataBase programming and SQLite')
+    '''
+    CHPTER 17 includes following:
+    270 -  Simple DB connection and input data
+    271 -  Create an SQLite DB and Update the table with data
+    272 -  Counting emails from Organization and store in SQLite DB
+    273 -  Spidering Twitter Using a DataBase
+    274 -  Create a DataBase of friends from twitter account
+    275 -  One to one relationship database example - tracks.py
+    276 -  One to one relationship database example - tracks_assignment.py
+    277 -  multi-relational database table example - roster.py
+    278 -  Multiple relational database - roster_assignment.py
+    '''
+
+def f270():
+    # Simple db connection and input data (db1.py)
+    import sqlite3
+    conn = sqlite3.connect('music.sqlite')
+    cur = conn.cursor()
+    cur.execute('DROP TABLE IF EXISTS Tracks')
+    cur.execute('CREATE TABLE Tracks (title TEXT, plays INTEGER)')
+    conn = sqlite3.connect('music.sqlite')
+    cur = conn.cursor()
+    cur.execute('INSERT INTO Tracks (title, plays) VALUES (?, ?)',
+                ('Thunderstruck', 20))
+    cur.execute('INSERT INTO Tracks (title, plays) VALUES (?, ?)',
+                ('My Way', 15))
+    conn.commit()
+    print('Tracks:')
+    cur.execute('SELECT title, plays FROM Tracks')
+    for row in cur: print(row)
+    # cur.execute('DELETE FROM Tracks WHERE plays < 100')
+    conn.commit()
+    cur.close()
+
+def f271():
+    # Create and Update an SQLite DB from a file or a string
+    # emaildb.py
+    import sqlite3
+    # Instead of following string we can have a file as input!
+    lst = '''From stephen.marquard@uct.ac.za Sat Jan  5 09:14:16 2008
+From: stephen.marquard@uct.ac.za
+From: louis@media.berkeley.edu
+From: gsilver@umich.edu
+From: gsilver@umich.edu
+From: gsilver@umich.edu
+From: wagnermr@iupui.edu
+From: david.horwitz@uct.ac.za
+From: david.horwitz@uct.ac.za
+From: david.horwitz@uct.ac.za
+From: david.horwitz@uct.ac.za
+From: stephen.marquard@uct.ac.za
+From: louis@media.berkeley.edu'''
+
+    lines = lst.splitlines()   # 1
+    conn = sqlite3.connect('emaildb.sqlite')  # 2
+    cur = conn.cursor()
+    cur.execute('DROP TABLE IF EXISTS Counts')
+    cur.execute('CREATE TABLE Counts (email TEXT, count INTEGER)')
+    for line in lines:
+        if not line.startswith('From: '): continue
+        pieces = line.split()
+        email = pieces[1]
+        cur.execute('SELECT count FROM Counts WHERE email = ? ',
+                   (email,))
+        row = cur.fetchone() # 3
+        if row is None:
+            cur.execute('''INSERT INTO Counts (email, count)
+                    VALUES (?, 1)''', (email,))
+        else:
+            cur.execute('UPDATE Counts SET count = count + 1 \
+                WHERE email = ?', (email,))
+    conn.commit()
+
+    # https://www.sqlite.org/lang_select.html
+    sqlstr = 'SELECT email, count FROM Counts ORDER BY count \
+              DESC LIMIT 10'
+    for row in cur.execute(sqlstr): print(str(row[0]), row[1])
+    cur.close()
+
+    ''' Comments:
+    -1 function splitlines() returns a list of the lines in the
+       string, breaking at line boundaries.
+    -2 object conn can also be used for sending sql commands to db,
+       instead of object cur. cursor() creates an object,  that is
+       used for making application portable between databases.
+    -3 function  fetchone() fetches the next row of a query result
+       set, returning a single sequence, or None when no more data
+       is available.'''
+
+def f272():
+    # Counting emails from Organization and store in SQLite DB
+
+    import sqlite3
+
+    conn = sqlite3.connect('orgs.sqlite')
+    cur = conn.cursor()
+    cur.execute('DROP TABLE IF EXISTS Counts;')
+    cur.execute('CREATE TABLE Counts (org TEXT, count INTEGER)')
+
+    fname = input('Enter file name: ')
+    if len(fname) < 1: fname = './data/mbox.txt'
+    fhand = open(fname)
+
+    for line in fhand:
+        if line.startswith('From: '):
+            orgName = line.split()[1].split('@')[1].split('.')[0]
+            cur.execute('SELECT * FROM Counts WHERE org = ?',
+                                    (orgName,))
+            row = cur.fetchone()
+            if row is None:
+                cur.execute('''INSERT INTO Counts (org, count)
+                               VALUES (?, 1)''',
+                               (orgName,))
+            else:
+                cur.execute('''UPDATE Counts SET count = count + 1
+                               WHERE org = ?''',
+                               (orgName,))
+    conn.commit()
+    result = cur.execute('SELECT * FROM Counts').fetchall()
+    for row in result: print(str(row[0]), row[1])
+    cur.close()
+
+def f273():
+    # Spidering twitter using a database (twspider.py)
+    import urllib.request, urllib.parse, urllib.error
+    from data import twurl
+    import json
+    import sqlite3
+    import ssl
+
+    TWITTER_URL = 'https://api.twitter.com/1.1/friends/list.json'
+    conn = sqlite3.connect('friends.sqlite')
+    cur = conn.cursor()
+
+    cur.execute('''CREATE TABLE IF NOT EXISTS People(
+                   id INTEGER PRIMARY KEY,
+                   name TEXT UNIQUE,
+                   retrieved INTEGER
+                   )''')
+    cur.execute('''CREATE TABLE IF NOT EXISTS Follows(
+                   from_id INTEGER,
+                   to_id INTEGER,
+                   UNIQUE(from_id, to_id))
+                   ''')
+    # Ignore SSL certificate errors
+    ctx = ssl.create_default_context()
+    ctx.check_hostname = False
+    ctx.verify_mode = ssl.CERT_NONE
+
+    while True:
+        acct = input('Enter a Twitter account, or quit: ')
+        if (acct == 'quit'): break
+        if (len(acct) < 1):
+            cur.execute('''SELECT id, name FROM People
+                           WHERE retrieved = 0 LIMIT 1''')
+            try:
+                (id, acct) = cur.fetchone()
+            except:
+                print('No unretrieved Twitter accounts found')
+                continue
+        else:
+            cur.execute('''SELECT id FROM People
+                           WHERE name = ?
+                           LIMIT 1
+                           ''',(acct, ))
+            try:
+                id = cur.fetchone()[0]
+            except:
+                cur.execute('''INSERT OR IGNORE INTO People
+                               (name, retrieved)
+                               VALUES (?, 0)''', (acct, ))
+                conn.commit()
+                if cur.rowcount != 1:
+                    print('Error inserting account:', acct)
+                    continue
+                id = cur.lastrowid
+
+        url = twurl.augment(TWITTER_URL,
+                            {'screen_name': acct, 'count': '100'})
+        print('Retrieving account', acct)
+        try:
+            connection = urllib.request.urlopen(url, context=ctx)
+        except Exception as err:
+            print('Failed to Retrieve', err)
+            break
+
+        data = connection.read().decode()
+        headers = dict(connection.getheaders())
+
+        print('Remaining', headers['x-rate-limit-remaining'])
+
+        try:
+            js = json.loads(data)
+        except:
+            print('Unable to parse json')
+            print(data)
+            break
+
+        # Debugging
+        # print(json.dumps(js, indent=4))
+
+        if 'users' not in js:
+            print('Incorrect JSON received')
+            print(json.dumps(js, indent=4))
+            continue
+
+        cur.execute('''UPDATE People SET retrieved=1
+                       WHERE name = ?''', (acct, ))
+        countnew = 0
+        countold = 0
+        for u in js['users']:
+            friend = u['screen_name']
+            print(friend)
+            cur.execute('''SELECT id FROM People
+                           WHERE name = ?
+                           LIMIT 1''', (friend, ))
+            try:
+                friend_id = cur.fetchone()[0]
+                countold = countold + 1
+            except:
+                cur.execute('''INSERT OR IGNORE INTO People
+                               (name, retrieved)
+                               VALUES (?, 0)''', (friend, ))
+                conn.commit()
+                if cur.rowcount != 1:
+                    print('Error inserting account:', friend)
+                    continue
+                friend_id = cur.lastrowid
+                countnew = countnew + 1
+            cur.execute('''INSERT OR IGNORE INTO Follows
+                           (from_id, to_id)
+                           VALUES (?, ?)''', (id, friend_id))
+        print('New accounts=', countnew, ' revisited=', countold)
+        print('Remaining', headers['x-rate-limit-remaining'])
+        conn.commit()
+    cur.close()
+
+def f274():
+    # Retriving twitter friernds and store them in SQLite database
+    # twfriends.py
+
+    import sqlite3
+    from data import twurl
+    import urllib.request, urllib.parse, urllib.error
+    import ssl
+    import json
+
+    TWITTER_URL = 'https://api.twitter.com/1.1/friends/list.json'
+
+
+    # DB Connection
+    conn = sqlite3.connect('friends.sqlite')
+    cur = conn.cursor()
+
+    # -- Creating Tables --
+
+    # Table: People
+    cur.execute('''
+        CREATE TABLE IF NOT EXISTS People(
+            id INTEGER PRIMARY KEY,
+            name TEXT UNIQUE,
+            retrieved INTEGER
+        )''')
+
+    # Table: Follows
+    cur.execute('''
+        CREATE TABLE IF NOT EXISTS Follows(
+            from_id INTEGER,
+            to_id INTEGER,
+            UNIQUE(from_id, to_id)
+        )''')
+
+
+    # Ignore SSL certificate errors
+    ctx = ssl.create_default_context()
+    ctx.check_hostname = False
+    ctx.verify_mode = ssl.CERT_NONE
+
+
+    # Ask twitter account name:
+
+
+    while True:
+        acct = input('Enter twitter account, or quit: ')
+        if acct == 'quit': break
+
+        if len(acct) < 1:
+            cur.execute('''
+            SELECT id, name FROM TABLE PEOPLE
+                WHERE retrieved = 0
+                LIMIT 1
+            ''')
+            try:
+                (id, name) = cur.fetchone()
+                print(id, name)
+            except:
+                print('No unretrieved twitter account found!')
+                continue
+
+        else:
+            cur.execute('''
+            SELECT id FROM People
+                WHERE name = ?
+                LIMIT 1
+            ''', (acct, ))
+            try:
+                id = cur.fetchone()[0]
+                print('fetchone()[0]',id)
+            except:
+                cur.execute('''
+                INSERT OR IGNORE INTO People
+                (name, retrieved) VALUES(?, 0)''',
+                (acct,))
+                conn.commit()
+
+                # rowcount is sum pf the number of insert operation
+                # performed.
+                if cur.rowcount != 1:
+                    print('Error inserting account: ', acct)
+                    continue
+                # lastrowid is the id of the last modified row
+                id = cur.lastrowid
+                print('lastrowid: ', id)
+
+
+        url = twurl.augment(TWITTER_URL, {'screen_name': acct, 'count': '5'})
+
+        print('Retrieving account', acct)
+
+        try:
+            connection = urllib.request.urlopen(url, context=ctx)
+
+        except Exception as err:
+            print('Failed to retrive: ', err)
+            break
+
+        data = connection.read().decode() # <class 'str'>
+
+        headers = dict(connection.getheaders())
+
+        try:
+            js = json.loads(data)  # <class 'dict'>
+        except:
+            print('Unable to parse json')
+            print(data)
+            break
+
+        if 'users' not in js:
+            print('Incorrect JSON received')
+            print(json.dumps(js, indent=4))
+            continue
+
+        cur.execute('UPDATE People SET retrieved=1 WHERE name = ?', (acct, ))
+
+        countnew = 0
+        countold = 0
+        for u in js['users']:
+            friend = u['screen_name']
+            print(friend)
+
+            cur.execute('''
+                SELECT id FROM People
+                WHERE name = ?
+                LIMIT 1
+            ''', (friend,))
+
+            try:
+                friend_id = cur.fetchone()[0]
+                countold = countold + 1
+            except:
+                cur.execute('''
+                            INSERT OR IGNORE INTO People
+                                (name, retrieved)
+                                VALUES (?, 0)
+                            ''', (friend, ))
+                conn.commit()
+
+                if cur.rowcount != 1:
+                    print('Error inserting account:', friend)
+                    continue
+
+                friend_id = cur.lastrowid
+                countnew = countnew + 1
+
+            cur.execute('''INSERT OR IGNORE INTO Follows (from_id, to_id)
+                            VALUES (?, ?)''', (id, friend_id))
+
+        print('New accounts=', countnew, ' revisited=', countold)
+        print('Remaining', headers['x-rate-limit-remaining'])
+        conn.commit()
+    cur.close()
+
+
+    '''
+    Reminding:
+    To check syntaxes without running script:
+    $ python3 -m py_compile twfriends.py
+
+    What does this program do?
+    ..........................
+    1.  Create an SQLite DB
+
+    2.  Create tables: People and Follows
+
+    3.  Ask twitter account name and action on user input
+        as following:
+
+        - if quit as input, exit program
+
+        - if nothing as input:
+        get a row and check if row is unretrived, get
+        the id and name from row, otherwise reset the
+        loop
+
+        - if having an account name as input:
+        -- if name in People, get id of that name,
+        -- if not in People add name with retrived '0'
+
+        At the end of this step, we get values for id and
+        the account name.
+
+    4. generate url string to twitter API after successful
+       authentication and then make a connection to that URL.
+
+    5. print out 'Retrieving account: '
+       - if retrieving successful, open a connection to twitter
+       - if fails, exit program
+
+    6. read and decode data from twitter connection
+
+    7. from headers part of data, find twitter account
+       retriving limit
+
+    8. if a bad json data came from twitter, then dump it, and
+       print it. Break the loop.
+
+    9. if string 'users' not found in json data, continue the loop.
+       Update People with the last retrieved account, setting  the
+       'retrieved' value to '1'
+
+    10. Updating table Follows:
+        From jason object, we search values for 'users' dictionary.
+        'users' dictionary is a nested dictionary, that will be parsed
+        in a for loop; looking for values of keyword 'screen_name'.
+
+        Each value obtained from 'screen_name' is a friend of the
+        entered acccount.
+
+        Check searching the name of the friend in People:
+
+        - if successful:
+          assign the friend_id with id of that account name,
+          and increment index for countold
+
+        - if failed: update People with friend and commit.
+           check inserting:
+           -- insertion failed, print out error and continue the loop
+           -- insertion successful: set friend_id as the id of the
+              last modified row in People table and increment the
+              variable countnew.
+
+        In continuation of for loop for friends, we insert the values
+        for (from_id, to_id) in table Follows
+
+    11. At the end of program, we print these messages:
+        One showing the number of new accounts and the other the
+        number of revisited accounts. Also a print out of the
+        number of possible twitter accounts that can be retrieved.
+
+
+    # Debugging
+
+    # To view the content of received data, it can be saved on disk
+    FH = open('data.txt', 'w')
+    FH.write(str(data))
+    FH.close()
+
+    # You can always use json.dumps(a_dictionary) to convert that
+    # dictionay to a string and then printing or saving on disk
+    FH = open('headers.txt', 'w')
+    FH.write(json.dumps(headers, indent=4))
+    FH.close()
+
+    # To view the content of JSON, dump it and save it on disk
+    FH = open('js.txt', 'w')
+    FH.write(json.dumps(js, indent=4))
+    FH.close()
+    '''
+def f275():
+    # One to one relationship database example - tracks.py
+    import xml.etree.ElementTree as ET
+    import sqlite3
+
+    conn = sqlite3.connect('trackdb.sqlite')
+    cur = conn.cursor()
+
+    # Make some fresh tables using executescript()
+    cur.executescript('''
+    DROP TABLE IF EXISTS Artist;
+    DROP TABLE IF EXISTS Album;
+    DROP TABLE IF EXISTS Track;
+    DROP TABLE IF EXISTS Genre;
+
+    CREATE TABLE Artist (
+        id  INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+        name    TEXT UNIQUE
+    );
+
+    CREATE TABLE Genre (
+        id  INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+        name    TEXT UNIQUE
+    );
+
+    CREATE TABLE Album (
+        id  INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+        artist_id  INTEGER,
+        title   TEXT UNIQUE
+    );
+
+    CREATE TABLE Track (
+        id  INTEGER NOT NULL PRIMARY KEY
+            AUTOINCREMENT UNIQUE,
+        title TEXT  UNIQUE,
+        album_id  INTEGER,
+        genre_id  INTEGER,
+        len INTEGER, rating INTEGER, count INTEGER
+    );
+
+    ''')
+
+
+    fname = input('Enter file name: ')
+    if ( len(fname) < 1 ) : fname = './data/Library.xml'
+
+    # <key>Track ID</key><integer>369</integer>
+    # <key>Name</key><string>Another One Bites The Dust</string>
+    # <key>Artist</key><string>Queen</string>
+    def lookup(d, key):
+        found = False
+        for child in d:
+            if found : return child.text
+            if child.tag == 'key' and child.text == key :
+                found = True
+        return None
+
+    stuff = ET.parse(fname)
+    all = stuff.findall('dict/dict/dict')
+    print('Dict count:', len(all))
+    for entry in all:
+        if ( lookup(entry, 'Track ID') is None ) : continue
+
+        name = lookup(entry, 'Name')
+        artist = lookup(entry, 'Artist')
+        album = lookup(entry, 'Album')
+        count = lookup(entry, 'Play Count')
+        rating = lookup(entry, 'Rating')
+        length = lookup(entry, 'Total Time')
+
+        if name is None or artist is None or album is None :
+            continue
+
+        print(name, artist, album, count, rating, length)
+
+        cur.execute('''INSERT OR IGNORE INTO Artist (name)
+            VALUES ( ? )''', ( artist, ) )
+        cur.execute('SELECT id FROM Artist WHERE name = ? ', (artist, ))
+        artist_id = cur.fetchone()[0]
+
+        cur.execute('''INSERT OR IGNORE INTO Album (title, artist_id)
+            VALUES ( ?, ? )''', ( album, artist_id ) )
+        cur.execute('SELECT id FROM Album WHERE title = ? ', (album, ))
+        album_id = cur.fetchone()[0]
+
+        cur.execute('''INSERT OR REPLACE INTO Track
+            (title, album_id, len, rating, count)
+            VALUES ( ?, ?, ?, ?, ? )''',
+            ( name, album_id, length, rating, count ) )
+
+        conn.commit()
+
+def f276():
+    # One to one relationship database example - tracks_assignment.py
+    import xml.etree.ElementTree as ET
+    import sqlite3
+    
+    conn = sqlite3.connect('trackdb.sqlite')
+    cur = conn.cursor()
+    
+    # Make some fresh tables using executescript()
+    cur.executescript('''
+    DROP TABLE IF EXISTS Artist;
+    DROP TABLE IF EXISTS Album;
+    DROP TABLE IF EXISTS Track;
+    DROP TABLE IF EXISTS Genre;
+    
+    CREATE TABLE Artist (
+        id  INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+        name    TEXT UNIQUE
+    );
+    
+    CREATE TABLE Genre (
+        id  INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+        name    TEXT UNIQUE
+    );
+    
+    CREATE TABLE Album (
+        id  INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+        artist_id  INTEGER,
+        title   TEXT UNIQUE
+    );
+    
+    CREATE TABLE Track (
+        id  INTEGER NOT NULL PRIMARY KEY 
+            AUTOINCREMENT UNIQUE,
+        title TEXT  UNIQUE,
+        album_id  INTEGER,
+        genre_id  INTEGER,
+        len INTEGER, rating INTEGER, count INTEGER
+    );
+    
+    ''')
+    
+    
+    fname = input('Enter file name: ')
+    if ( len(fname) < 1 ) : fname = './data/Library.xml'
+    
+    # <key>Track ID</key><integer>369</integer>
+    # <key>Name</key><string>Another One Bites The Dust</string>
+    # <key>Artist</key><string>Queen</string>
+    def lookup(d, key):
+        found = False
+        for child in d:
+            if found : return child.text
+            if child.tag == 'key' and child.text == key :
+                found = True
+        return None
+    
+    
+    stuff = ET.parse(fname)
+    all = stuff.findall('dict/dict/dict')
+    print('Dict count:', len(all))
+    for entry in all:
+        if ( lookup(entry, 'Track ID') is None ) : continue
+    
+        name = lookup(entry, 'Name')
+        artist = lookup(entry, 'Artist')
+        album = lookup(entry, 'Album')
+        count = lookup(entry, 'Play Count')
+        rating = lookup(entry, 'Rating')
+        length = lookup(entry, 'Total Time')
+        genre = lookup(entry, 'Genre')
+        
+        
+        lst = [name, count, rating, length, artist, album, genre]
+        if None not in (name, count, rating, length, artist, album, genre):    
+            print(lst)
+        
+            cur.execute('''INSERT OR IGNORE INTO Artist (name)
+                VALUES ( ? )''', ( artist, ) )
+            cur.execute('SELECT id FROM Artist WHERE name = ? ', (artist, ))
+            artist_id = cur.fetchone()[0]            
+        
+            cur.execute('''INSERT OR IGNORE INTO Album (title, artist_id) 
+                VALUES ( ?, ? )''', ( album, artist_id ) )
+            cur.execute('SELECT id FROM Album WHERE title = ? ', (album, ))
+            album_id = cur.fetchone()[0]        
+            
+            cur.execute('''INSERT OR IGNORE INTO Genre (name) 
+            VALUES ( ? )''', ( genre, ) )
+            cur.execute('SELECT id FROM Genre WHERE name = ? ', (genre, ))
+            genre_id = cur.fetchone()[0]
+        
+            cur.execute('''INSERT OR REPLACE INTO Track
+                (title, album_id, len, rating, count, genre_id)
+                VALUES ( ?, ?, ?, ?, ?, ?)''', 
+                ( name, album_id, length, rating, count, genre_id ) )
+         
+        conn.commit()
+        
+       
+    sqlstr = '''SELECT Track.title, Artist.name, Album.title, Genre.name 
+        FROM Track JOIN Genre JOIN Album JOIN Artist 
+        ON Track.genre_id = Genre.id AND Track.album_id = Album.id 
+            AND Album.artist_id = Artist.id
+        ORDER BY Artist.name LIMIT 3'''
+    
+    print('..............................................')
+    for row in cur.execute(sqlstr):
+        
+        lsti = [row[0], row[1], row[2], row[3]]
+        print(lsti)
+        
+        
+    cur.close() 
+        
+    
+def f277():
+    # multi-relational database table example - roster.py
+    import json
+    import sqlite3
+
+    conn = sqlite3.connect('rosterdb.sqlite')
+    cur = conn.cursor()
+
+    # Do some setup
+    cur.executescript('''
+    DROP TABLE IF EXISTS User;
+    DROP TABLE IF EXISTS Member;
+    DROP TABLE IF EXISTS Course;
+
+    CREATE TABLE User (
+        id     INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+        name   TEXT UNIQUE
+    );
+
+    CREATE TABLE Course (
+        id     INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+        title  TEXT UNIQUE
+    );
+
+    CREATE TABLE Member (
+        user_id     INTEGER,
+        course_id   INTEGER,
+        role        INTEGER,
+        PRIMARY KEY (user_id, course_id)
+    )
+    ''')
+
+    fname = input('Enter file name: ')
+    if len(fname) < 1:
+        fname = './data/roster_data_sample.json'
+
+    # [
+    #   [ "Charley", "si110", 1 ],
+    #   [ "Mea", "si110", 0 ],
+
+    str_data = open(fname).read()
+    json_data = json.loads(str_data)
+
+    for entry in json_data:
+
+        name = entry[0];
+        title = entry[1];
+
+        print((name, title))
+
+        cur.execute('''INSERT OR IGNORE INTO User (name)
+            VALUES ( ? )''', ( name, ) )
+        cur.execute('SELECT id FROM User WHERE name = ? ', (name, ))
+        user_id = cur.fetchone()[0]
+
+        cur.execute('''INSERT OR IGNORE INTO Course (title)
+            VALUES ( ? )''', ( title, ) )
+        cur.execute('SELECT id FROM Course WHERE title = ? ', (title, ))
+        course_id = cur.fetchone()[0]
+
+        cur.execute('''INSERT OR REPLACE INTO Member
+            (user_id, course_id) VALUES ( ?, ? )''',
+            ( user_id, course_id ) )
+
+        conn.commit()
+
+def f278():
+    # Multiple relational database - assignment
+    import json
+    import sqlite3
+
+    conn = sqlite3.connect('rosterdb.sqlite')
+    cur = conn.cursor()
+
+    # Do some setup
+    cur.executescript('''
+    DROP TABLE IF EXISTS User;
+    DROP TABLE IF EXISTS Member;
+    DROP TABLE IF EXISTS Course;
+
+    CREATE TABLE User (
+        id     INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+        name   TEXT UNIQUE
+    );
+
+    CREATE TABLE Course (
+        id     INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+        title  TEXT UNIQUE
+    );
+
+    CREATE TABLE Member (
+        user_id     INTEGER,
+        course_id   INTEGER,
+        role        INTEGER,
+        PRIMARY KEY (user_id, course_id)
+    )
+    ''')
+
+    fname = input('Enter file name: ')
+    if len(fname) < 1:
+        fname = './data/roster_data.json'
+
+    # [
+    #   [ "Charley", "si110", 1 ],
+    #   [ "Mea", "si110", 0 ],
+
+    str_data = open(fname).read()
+    json_data = json.loads(str_data)
+
+    for entry in json_data:
+
+        name = entry[0];
+        title = entry[1];
+        role = entry[2];
+
+        #print((name, title, role))
+
+        cur.execute('''INSERT OR IGNORE INTO User (name)
+            VALUES ( ? )''', ( name, ) )
+        cur.execute('SELECT id FROM User WHERE name = ? ', (name, ))
+        user_id = cur.fetchone()[0]
+
+        cur.execute('''INSERT OR IGNORE INTO Course (title)
+            VALUES ( ? )''', ( title, ) )
+        cur.execute('SELECT id FROM Course WHERE title = ? ', (title, ))
+        course_id = cur.fetchone()[0]
+
+        cur.execute('''INSERT OR REPLACE INTO Member
+            (user_id, course_id, role) VALUES ( ?, ?, ?)''',
+            ( user_id, course_id, role) )
+
+        conn.commit()
+
+    cur.execute('''
+    SELECT hex(User.name || Course.title || Member.role ) AS X FROM
+        User JOIN Member JOIN Course
+        ON User.id = Member.user_id AND Member.course_id = Course.id
+        ORDER BY X
+        LIMIT 1''')
+
+    try:
+        (user) = cur.fetchone()
+        print(user)
+    except:
+        print('No user found!')
+
+def f279():
+    #
+    print('')

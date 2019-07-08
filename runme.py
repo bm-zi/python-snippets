@@ -1,124 +1,195 @@
 #!/usr/bin/python3
 # Author: bm-zi
 
-import os
-import functions
-import time
-import sys
-import re
-import pprint
+import functions, os, time, sys, re
+
+'''
+Functions bookmarks:
+--------------------
+def help():
+def restart():
+def lineCount(fileName):
+def lastItem():
+def exitProg():
+def resetScreen():
+def highlight(text):
+def current_time():
+def logo():
+def edit_function(item):
+def view_function(function_number):
+def search_in_files(response):
+def view_code(i):
+def run_code(i):
+def rolling_list():
+    def listdisplay(start_line, chunk):
+    def listdisplayrev(start_line, chunk):
+    def runnerRev(stln):
+    def runner(stln):
+'''
+
+file_list = os.path.abspath('list')
+file_functions = os.path.abspath('functions.py')
 
 def help():
     resetScreen()
     help = '''
-    |||||||||||||||||||||||| Help Manual |||||||||||||||||||||||||
-
-    This program uses two differnt prompts as below to take the  -
-    user's input:
-
-    Search >
-    Number >
-
     ..............................................................
-    |||||||||||||||| switching between prompts |||||||||||||||||||
+    |||||||||||||||||||||||| HELP MANUAL |||||||||||||||||||||||||
     ..............................................................
+    The prompts for browsing in main menu looks like as following:
+    Search > 
+    
+    While using the prompt for entering a command or  a character, 
+    you need to click on 'Enter key.
+    This program is not using one-touch character method for runn-
+    ing pre-defined commands.
 
-    From 'Search' prompt you can type any of the following charac-
-    ters to get into Number prompt:
-    \\ , + , - , / , * , . , Space
-
-    From 'Number' prompt you can type 'Enter' or any non-digit cha-
-    racters to get into search prompt.
-
+    Note: Except of defined keys or combination  of keys explained 
+    in following help guid, you can enter any other pattern at the 
+    search prompt to get a result after searching in browsing list
+    or in the body of the respective function f[number], from file 
+    functions.py
+   
     ..............................................................
     ||||||||||||| Keys defined for Search prompt |||||||||||||||||
     ..............................................................
+    Resetting Program:
+    From 'Search' prompt you can type any of the following charac-
+    ters to reset the program:
+    \\ , + , - , / , * , . , Space
 
-    The prompts for browsing in main menu looks like as following:
-    Search >
-    
+    [Enter]
     press 'Enter' continiousely to to navigate through the rolling
     list of items, it will will roll the browsing list in ascendi-
     ng order.
 
-    [Numbers]
+    [number]
     if you type any numbers in search prompt, it  will opens the -
     list from that item number. 
 
-    f[numbers]
+    'f' + [number]
     If try this format(for example f45, f67 or 204), then the con-
     tent of the respective functions will be displayed, fetching -
     the content of the function from the file functions.py
 
-    [r]
-    Forward parsing of  the items in menu will be switched over to
-    backward parsing, by pressing 'r'. While the reverse parsing -
-    reaches to the last first item(item number 1), then it changes
-    back to forward parsing automatically.
+    'e' + [number]
+    If try this format(for example e45, e67 or e204), then  the vi 
+    editor will be opened at the line containing function name.
+    For example vi opens function f45, f67 or f204 from the file - 
+    functions.py
 
-    [f]
+    'x' + [number]
+    This combination will run the function number [number], like:
+    x14 ,x235 or x112
+
+    'r'
+    FORWARD PARSING of items in the main list can be switched over
+    to BACKWARD PARSING, by typing 'r'. While  the reverse parsing
+    reaches to the last item (item number 1), then it changes back 
+    to forward parsing automatically.
+    In forward parsing, while pasrsing the list elements reaches -
+    to the end, then program will return to initial screen.
+
+    'f'
     By default, parsing the main list of items is in ascending or-
-    der of item numbers. You can changed the parsing everywher in 
-    the list by typing in 'f'.
+    der of item numbers. You can changed the parsing anytime while 
+    you are in REVERSE PARSING mode, by typing 'f'.
 
-    [q]
-    To exit the program type 'q' in 'Search' prompt.
-    ..............................................................
-    ||||||||||||| Keys defined for Number prompt |||||||||||||||||
-    ..............................................................
-    [Numbers]
-    Type any number related to browsing list to view the content.
-    Valid numbers are from 1 to the last index number showed  in -
-    the main menu items.
+    'openlist'
+    Using this command at search prompt opens the file list in the
+    current directory.
 
-    f[numbers]
-    If try this format(for example f45, f67 or 204), then the con-
-    tent of the respective functions will be displayed, fetching -
-    the content of the function from the file functions.py
+    'runme'
+    Entring this command at search prompt opens the file 'runme.py'  
+    in the current directory.
 
-    - Each item in browsing list, contains two parts, body of the 
-      code and the respective output.
-    - Some code samples at the output are suppose to interact 
-      with user and prompt for user input.
+    'bookmarks'
+    Opens file bookmarks with editer vi
     
-    [q]
-    To exit the program type 'q' in 'Number' prompt.
+    'b'
+    Showing content of file bookmarks
+
+    'q'
+    To exit the program type 'q' in 'Search' prompt.
+    
+
+    ..............................................................
+    ||||||||||||||| Other notes in using program |||||||||||||||||
+    ..............................................................
+
+    - For many outputs generated by program if the  size of output
+      is bigger than terminal size, then for paginating output the 
+      unix command "less" has been used, so ouput can  be scrolled 
+      up and down or you can search for a pattern, within the out-
+      put.
+
+
+    - You can use the omitNo.py script in current directory to add
+      or insert new sample code.
+      That means omitNo.py increments the functions number and the 
+      numbers in list file, that makes easier for you adding  your 
+      sample code to file functions.py and also items in file list 
+
     '''
 
-    tempFile = open('temp', 'w')
-    tempFile.write(help)
-    tempFile.close()
+    fhand = open('help', 'w')
+    fhand.write(help)
+    fhand.close()
 
-    os.system('less temp')
-    os.unlink('temp')
+    os.system('less -i help')
+    os.unlink('help')
     resetScreen()
 
-# ....................
-# Function lineCount()
-# ....................
+#############
+def chgdir():
+    # print("script: sys.argv[0] is", repr(sys.argv[0]))
+    # print("script: __file__ is", repr(__file__))
+    # print("script: cwd is", repr(os.getcwd()))
+
+    abspath = os.path.abspath(__file__)
+    file_list = abspath + '/list'
+    file_functions = abspath + '/functions.py'
+    dname = os.path.dirname(abspath)
+    os.chdir(dname)
+
+#############
+def restart():
+    # Restarts the current running script, to initial state
+    os.execl(sys.executable, sys.executable, * sys.argv)
+
+#############
+def readline(fname, nr):
+    nr = nr - 1
+    with open(fname) as f:
+        for i, line in enumerate(f):
+            if i == nr:
+                return(line)
+        else:
+            print('line is not in file')
+            line = None
+
+#######################
 def lineCount(fileName):
-    # This function returns the number of the lines for the file,
-    # passed as the argument to this function
+    # Returns number of the lines of a file that is passed as the 
+    # argument to this function
 
-    with open(fileName) as f:
-        line_count = 0
-        for line in f: line_count += 1
+    fh = open(fileName)
+    
+    line_count = 0
+    for line in fh: 
+        line_count += 1
 
+    fh.close()    
     return line_count
 
-# ...................
-# Function lastItem()
-# ...................
+##############
 def lastItem():
-    return lineCount('list')
+    return lineCount(file_list)
 
-# ...................
-# Function exitProg()
-# ...................
+##############
 def exitProg():
-    # This function Removes all files and folders in current work-
-    # ing direcctory, except of files runme.py, functions.py and -
-    # file list
+    # Removes all files and folders in current working direcctory,
+    # except of files runme.py, functions.py and list
 
     import os, shutil
 
@@ -131,170 +202,197 @@ def exitProg():
                 not file_path == './runme.py' and  \
                 not file_path == './list' and  \
                 not file_path == './functions.py' and \
+                not file_path == './bookmarks' and \
                 not file_path == './omitNo.py':
                 os.unlink(file_path)
-            elif os.path.isdir(file_path): shutil.rmtree(file_path)
+            elif os.path.isdir(file_path) and not file_path == './data': 
+                shutil.rmtree(file_path)
         except Exception as e:          # catch *all* exceptions
             print(e)
 
     resetScreen(); sys.exit()
 
-# ......................
-# Function resetScreen()
-# ......................
+#################
 def resetScreen():
-    # resizing terminal and clears the screen
-    print('\x1b[8;30;90t') ; os.system('clear')
+    # Resizes terminal and clears the screen
+    print('\x1b[8;42;80t') ; os.system('clear')
 
-# ....................
-# Function highlight()
-# ....................
+###################
 def highlight(text):
-    # highlightinge string argument 'text' in bold characters
+    # highlighting string argument 'text' in bold characters
     os.system("tput smso"); print(text); os.system("tput rmso")
 
-# ...............    
-# Function logo()
-# ...............
+##################
+def current_time():
+    return(time.strftime("%B %d, ") + time.strftime("%H:%M"))
+
+##########
 def logo():
     # This function prints the program title and introduction
 
-    logo = '''┌───────────────────────────────────────────┐
-│ Welcome to Interactive Python Programming │
-└───────────────────────────────────────────┘''' 
-    print(logo)
+    logo = '''
+┌──────────────────────────────────────────────────────────────────────────────┐
+│                Welcome to Interactive Python Programming                     │
+│   A menu-based tool to preview, edit and launch sample Python 3 programs     │
+└──────────────────────────────────────────────────────────────────────────────┘''' 
+    highlight(logo)
+    print()
     #print(time.strftime("%B %d, ") + time.strftime("%H:%M"))
 
-# ..........................
-# Function displayFunction()
-# ..........................
-def displayFunction(fnum):
-    # This function gets the content of the function f[fnum] from 
-    # within file functions.py and prints that content
+####################
+def edit_function(item):
+    os.system('\\vi +/def\ f' + item + ' ' + file_functions)
+    restart()
+
+#########################
+def view_function(function_number):
+    # This function gets the content of the function 
+    # f[function_number] from  within file functions.py and prints 
+    # out that respective fuction content.
 
     # In following loop, extract the content between definition of
     # function f(n) and the next following function f(n+1)
 
-    if int(fnum) < lastItem():
-        print(lastItem())
-        with open('functions.py') as infile, open('temp', 'w') as outfile:
-            copy = False
-            for line in infile:
-                if line.strip().startswith('def f'+ str(fnum) +'():'):
-                    copy = True
-                elif line.strip().startswith('def f'+ str(int(fnum)+1) +'():'):
-                    copy = False
-                elif copy:
-                    outfile.write(line)
+    firstline = '     Sample code from function f' + \
+        str(function_number) + '\n' + \
+                '    ' + '=' * 32 + '\n\n'
+
+    if int(function_number) < lastItem():
+            
+        infile = open(file_functions)
+        outfile = open('temp','w')
+            
+        copy = False
+        for line in infile:
+            if line.strip().startswith('def f' 
+                + str(function_number) +'():'):
+                copy = True
+            elif line.strip().startswith('def f' 
+                + str(int(function_number)+1) +'():'):
+                copy = False
+            elif copy:
+                outfile.write(line)
+
         infile.close() ; outfile.close()
 
-        # prepend a line to temporary output file temp
-        firstline = '    Content for function f' + str(fnum) + '\n' + \
-                    '    ==========================' + '\n\n'
-
-        open('tempfile', 'w').write( firstline + open('temp', 'r').read())
-        os.rename('tempfile', 'temp')
+        # prepend firstline to temporary output file temp
+        open('sample_code', 'w').write( firstline + \
+            open('temp', 'r').read())
         resetScreen()
-                   
-        os.system('less temp')
+        
+        rows = os.popen("tput lines").read().rstrip()
+        if lineCount('sample_code') <= int(rows):
+            os.system('less +G -i sample_code')
+        else:
+            os.system('less -i sample_code')
+
+        os.unlink('sample_code')
         os.unlink('temp')
+
     else:
         input('Out of the range of available functions!' + 
         '\nPress any key to continue .. ')
         restart()
-         
 
-# ......................
-# Function searchFiles()
-# ......................
-def searchFiles(response):
-    # This function does two searches in files functions.py and -
-    # file list looking for the pattern as argument passwd to this
-    # functioin, 'response'
+#########################
+def search_in_functions(response):
 
-    #
-    # Search in file functions.py
-    #
-    resetScreen() 
-    print('FUNCTIONS BODY SEARCH RESULT FOR PATTERN : \'' +response+'\' \n')
-    print('No.    FUNCTION DESCRIPTION')
-    print('===========================')
-    with open('functions.py') as f2:
-        defLines = []
-        matches = []
-        matchline = []
-        for lineno, line in enumerate(f2, 1):
-            if line.startswith('def'):
-                defLines.append(lineno) # + ' - ' + line)
-            if re.search(response, line, re.I):
-                matches.append(lineno)
-                matchline.append(str(lineno) + ' - ' + str(line))
-    f2.close()
+    # Search in file 'functions.py'
+    # The goal is to get the all functions that are notified with 
+    # f[number] in file functions.py. Then based on the pattern 
+    # we search which function has that pattern within its own 
+    # body.
+
+
+    # get the terminal size by bash command and store it in a 
+    # Python variable, to repeat printing '|' as terminal width
+    width = os.popen("tput cols").read().rstrip()
+    print('|' * int(width))
+
+    print('Function   Lines from functions.py, containing:')
+    print('Name      \'' + response + '\'')
+    print('|' * int(width))
+
+    FH1 = open(file_functions)
+    # Create a list of lines starting with pattern 'def'
+    lines_start_with_def = list()
+    line_numbers_start_with_def = list()
+    for nr, line in enumerate(FH1):
+        # if re.search('^def', line):
+        if line.startswith('def '):
+            lines_start_with_def.append(line.rstrip())
+            line_numbers_start_with_def.append(nr+1)
+    FH1.close()
+
+    FH2 = open(file_functions)
+    # Create a list of lines containing pattern 'response'
+    lines_contain_match = list()
+    line_numbers_contain_match = list()
+    for nr, line in enumerate(FH2):
+        if re.search(response, line, re.I):
+            lines_contain_match.append(line.rstrip())
+            line_numbers_contain_match.append(nr+1)
+    FH2.close()
+
+
+    # parsing list line_numbers_contain_match 
     
-    resultList = []
-    for i in range(len(matches)):
-        for j in range(len(defLines)):
-            if matches[i] > defLines[j] and matches[i] < defLines[j+1]:
-                resultList.append(defLines[j])
-
-    newlist = []
-    for i in resultList:
-        if i not in newlist:
-            newlist.append(i)
+    result_list_functions = list()
+    for nr in line_numbers_contain_match:
         
-    items = []
-    fp = open("functions.py")
-    for i, line in enumerate(fp):
-        for j in range(len(newlist)):
-            if newlist[j] == i+1:
-                items.append(line)  
-            
-    fp.close()
+        for el in reversed(range(nr)):
+            if not readline(file_functions, el).startswith('def'): continue
+            #print(readline(file_functions, el).split()[1])
+            result_list_functions.append(readline(file_functions, el).split()[1])
+
+            break
+    if len(result_list_functions) == 0:
+        print('No match found!')    
+    for i in range(len(result_list_functions)):
+        print(result_list_functions[i] + \
+            str(lines_contain_match[i]))
+
+#################    
+def search_in_list(response):
+    # Search in file 'list'
+    width = os.popen("tput cols").read().rstrip()
+    FH4 = open(file_list)
+    print('|' * int(width))
+    print('RESULT OF SEARCH IN MAIN LIST FOR \'' + \
+        response  + '\' ')
     
-    itemlist = []
-    for i in range(len(items)):
-        pat = re.compile(r'\d+')
-        mat = pat.search(items[i])
-        itemlist.append(mat.group())
+    print('|' * int(width))
+    match_list = list()
+    for line in FH4:
+        if re.search(response, line, re.I):
+            match_list.append(line.strip())
+   
+    if len(match_list) == 0:
+        print('No match found!')
+    else:
+        for line in match_list:
+            print(line)
 
-        
-    for i in range(len(itemlist)):
-        with open('list') as f:
-            for l in f:
-                if l.startswith(itemlist[i]):
-                    print(l.strip())
-        f.close()
+    FH4.close()
 
-    # print('\nSearch pattern in source file:')
-    # print('................................')    
-    # for i in range(len(matchline)):
-    #     print(matchline[i], end='')
+#################
+def search_view(response):
+
+    orig_stdout = sys.stdout
+    FH = open('Search', 'w')
+    sys.stdout = FH
+     
+    search_in_functions(response)
+    print('\n')
+    search_in_list(response)
+    print('\n')
     
-    #        
-    # Search in file list
-    # 
-    with open('list') as f1:
-        print('\nMAIN MENU SERACH RESULT FOR PATTERN: \'' + \
-            response  + '\' ')
-        print('====================================')
-        for l in f1:
-            if re.search(response, l, re.I):
-                print(l.strip())
-    f1.close()
-
-# ..................
-# Function restart()
-# ..................
-def restart():
-    # This function restarts the program, to initial state
-    # print('Restarting ...') ; time.sleep(0.25)
-    os.execl(sys.executable, sys.executable, * sys.argv)
-
-# ......................
-# Function displayCode()
-# ......................
-def displayCode(i):
-    flist = open("functions.py").readlines()
+    sys.stdout = orig_stdout
+    FH.close()
+    os.system('less +G -i Search') 
+#################
+def view_code(i):
+    flist = open(file_functions).readlines()
 
     lines = []
     parsing = False
@@ -302,20 +400,65 @@ def displayCode(i):
         if line.startswith('def f' + str(i + 1) + '()'):
             parsing = False
         if parsing:
-            # print(line, end='')
             lines.append(line)
         if line.startswith('def f' + str(i) + '()'):
             parsing = True
 
     return lines
 
-# .....................    
-# Function rolling_list
-# .....................
+
+################
+def run_code(i):
+    num=int(i)
+    varstring1 = 'f' + str(num)
+    varstring2 = 'f' + str(num + 1)
+
+    resetScreen()
+    
+    header = '|' * 20 + ' FUNCTION f' + str(num) + \
+            ' WILL BE EXECUTED! ' + '|' * 20 + '\n'
+
+    tempFile = open('function_body', 'a')
+    tempFile.write(header)
+    lines = view_code(num)
+    for ln in lines:
+        tempFile.write(ln)
+    tempFile.close()
+    
+    resetScreen()
+    os.system('less -i function_body')
+    tempFile = open('function_body')
+    content = tempFile.read()
+    tempFile.close()
+    print(content)
+
+    confirm = input('Execute? [Enter], Quit? [q] ')
+    if confirm == 'q':
+        resetScreen()
+        os.unlink('function_body')
+        return
+
+    os.unlink('function_body')
+    footer = '|' * 18 + ' OUTPUT FOR FUNCTION ' + \
+        str(num) + ' ' + '|' * 18
+
+    highlight(footer)
+
+    fct=getattr(functions, varstring1)
+    fct()
+    sep = '|' * 61
+    highlight(sep)
+    print('Press any key to continue!', end='')
+    input()
+    resetScreen()
+    return
+
+##################
 def rolling_list():
-    # This function has two nested functions: listDisplay() and -
-    # runner(), that handles all operation based on user input in
-    # search prompt, having the form of 'Search > '
+    # This function has these nested functions: 
+    # listDisplay() and listDisplayrev()
+    # runnerRev() and runner() that handle all operation based on 
+    # user input in search prompt, having the form of 'Search > '
 
     def listdisplay(start_line, chunk):
         # This function returns a list of items reading from file 
@@ -325,7 +468,7 @@ def rolling_list():
         start_line = int(start_line) - 1
 
         arr = []
-        with open('list') as my_file:
+        with open(file_list) as my_file:
             for line in my_file:
                 line = line.strip()
                 arr.append(line)
@@ -346,7 +489,7 @@ def rolling_list():
         start_line = int(start_line) - 1
 
         arr = []
-        with open('list') as my_file:
+        with open(file_list) as my_file:
             for line in my_file:
                 line = line.strip()
                 arr.append(line)
@@ -368,10 +511,10 @@ def rolling_list():
     def runnerRev(stln):
         # This function actions based on the user input and will -
         # iterate the list of items ...
-        resetScreen()
+        #resetScreen()
 
         lines = []
-        with open('list') as my_file:
+        with open(file_list) as my_file:
             for line in my_file:
                 line = line.strip()
                 lines.append(line)
@@ -380,33 +523,49 @@ def rolling_list():
         j = len(lines)
         
         while i <= j:
-            logo()
-            print('BROWSING LIST: (' + str(j) + ' items)     ' 
-                + time.strftime("%B %d, ") + time.strftime("%H:%M"))
+            #logo()
+            os.system('tput smso')
+            print(' ' * 28 + '<-  BACKWARD PARSING  <-' + ' ' * 29)
+            os.system('tput rmso')
+            listdisplayrev(i, 30)
             print()
-            print(' <<<- BACKWARD PARSING <<<-\n')
-            listdisplayrev(i, 20)
-            print()
-            highlight('PRESS ENTER TO BROWSE THE LIST, ? FOR HELP')
+            print('TOTAL ITEMS: ' + str(j) + ' '* 13 
+                + current_time())
+            highlight(' ' * 18 + 'PRESS ENTER TO PARSE ABOVE MENU, ? FOR HELP ' + ' ' * 18)
             response = input('Search > ')
             print()
 
-            if re.search('^[\\\\*+-/. ]', response): return
-            elif response == 'f':  runner(i)
+            if re.search('^[\\\\*+-/. ]', response): restart()
+            elif response == 'f':  resetScreen() ; runner(i)
             elif response == 'q':  exitProg()
             elif response == '?':  help() ; continue
             elif response == '' :  i = i - 1 ; resetScreen()
             elif not response   :  i = i + 1 ; resetScreen()
+
+            elif re.search(r'^x[1-9]+', response):
+                re_obj = re.compile(r'(x)(\d+)')
+                mo = re_obj.search(response)
+                item = mo.group(2)
+                run_code(item)
+
+            elif re.search(r'^e[1-9]+', response): 
+                re_obj = re.compile(r'(e)(\d+)')
+                mo = re_obj.search(response)
+                item = mo.group(2)
+                edit_function(item)
+            
             elif re.match(r'^f[1-9]+', response):
                 reObj = re.compile(r'(f)(\d+)')
                 mo = reObj.search(response)
                 item = mo.group(2)
-                displayFunction(item)
+                view_function(item)
+
             elif response.isnumeric(): 
                 if int(response) <= lastItem(): 
                     resetScreen()
-                    runner(response)
-                    break
+                    runnerRev(response)
+                    restart()
+                    # break
                 else:
                     input('Not in the range of the list!\n' + 
                         '\nPress any key to  continue ..')
@@ -414,170 +573,106 @@ def rolling_list():
                     continue                    
             else:
                 try:
-                    searchFiles(response)
+                    search_view(response)
                     print('')
                     return
                 except Exception:
                     resetScreen()
-                    continue                    
+                    continue
         return
 
     def runner(stln):
         # This function actions based on the user input and will -
         # iterate the list of items ...
-        resetScreen()
 
         lines = []
-        with open('list') as my_file:
+        with open(file_list) as my_file:
             for line in my_file:
                 line = line.strip()
                 lines.append(line)
-     
+
         i = int(stln)
         j = len(lines)
-        
+     
         while i <= j:
-            logo()
-            print('BROWSING LIST: (' + str(j) + ' items)     ' 
-                + time.strftime("%B %d, ") + time.strftime("%H:%M"))
+            #logo()
+            os.system("tput smso");
+            print(' ' * 28 + '->  FORWARD PARSING  ->' + ' ' * 29)
+            os.system("tput rmso");
+            listdisplay(i, 30)
             print()
-            print(' ->>> FORWARD PARSING ->>>\n')
-            listdisplay(i, 20)
-            print()
-            highlight('PRESS ENTER TO BROWSE THE LIST, ? FOR HELP')
+            print('TOTAL ITEMS: ' + str(j) + ' ' * 50 
+                + current_time())
+            highlight(' ' * 18 + 'PRESS ENTER TO PARSE ABOVE MENU, ? FOR HELP ' + ' ' * 18)
             response = input('Search > ')
             print()
+            
+            if re.search('^[\\\\*+-/. ]', response): restart()
 
-            if re.search('^[\\\\*+-/. ]', response):
-                return
+            elif response == 'r': resetScreen(); runnerRev(i)
+            elif response == 'q': exitProg()
+            elif response == '?': help(); continue
+            elif response == '': i = i + 1  ; resetScreen() 
+            elif not response: i = i + 1  ; resetScreen()
 
-            elif re.match(r'^f[1-9]+', response):
+            elif response == 'bookmarks':
+                os.system('\\vi + bookmarks')
+                restart()
+            
+            elif response == 'b':
+                resetScreen()
+                os.system('cat bookmarks')
+                input('Press any key to continue ..')
+                restart()
+                
+            elif response == 'runme':
+                os.system('\\vi runme.py')
+                restart()
+
+            elif response == 'openlist':
+                os.system('\\vi ' + file_list )
+                restart()
+
+            elif re.search('^x[1-9]+', response):
+                re_obj = re.compile(r'(x)(\d+)')
+                mo = re_obj.search(response)
+                item = mo.group(2)
+                run_code(item)
+
+            elif re.search('^e[1-9]+', response): 
+                re_obj = re.compile(r'(e)(\d+)')
+                mo = re_obj.search(response)
+                item = mo.group(2)
+                edit_function(item)
+                    
+            elif re.match('^f[1-9]+', response):
                 reObj = re.compile(r'(f)(\d+)')
                 mo = reObj.search(response)
                 item = mo.group(2)
-                displayFunction(item)
-
-            elif response == 'r':
-                runnerRev(i)
-
-            elif response == 'q':
-                exitProg()
-
-            elif response == '?':
-                help()
-                continue
-
-            elif response == '':
-                i = i + 1
-                resetScreen()
-
-            elif not response:
-                i = i + 1
-                resetScreen()
+                view_function(item)
 
             elif response.isnumeric():
                 if int(response) <= lastItem():
                     resetScreen()
                     runner(response)
-                    break
+                    restart()
                 else:
                     input('Not in the range of the list!\n' + 
                         '\nPress any key to  continue ..')
                     resetScreen()
                     continue                    
-
             else:
                 try:
-                    searchFiles(response)
-                    print('')
-                    return
+                    search_view(response)
+                    resetScreen()
                 except Exception:
                     resetScreen()
-                    continue                    
+                    continue
 
         return
-    runner(1)    
-    
-# ....................
-# Function mainBlock()
-# ....................
-def mainBlock():
-    # This function is building up the main loop of the program and
-    # handles all operations, based on user input received in main
-    # prompt with the form of 'Number > '
+    runner(1)
 
-    while True:
-        resetScreen()
-        rolling_list()
-        print('')
-        i = input("Number > ")
-
-        try:
-            if str(i) == 'q':      
-                exitProg()
-
-            if str(i) == '':
-                restart()
-
-            if re.findall('^f([1-9]+)', str(i)):
-                item = re.findall(r'f(\d+)', str(i))
-                displayFunction(str(item[0]))
-                
-            num=int(i)
-            varstring1 = 'f' + str(num)
-            varstring2 = 'f' + str(num + 1)
-
-            resetScreen()
-
-            print('|' * 20 + ' CODE EXAMPLE No: ' + str(num) + \
-                 ' ' + '|' * 20 )
-            
-            head1 = '|' * 20 + ' CODE EXAMPLE No: ' + str(num) + \
-                    ' ' + '|' * 20 + '\n'
-
-            tempFile = open('temp', 'a')
-            tempFile.write(head1)
-            lines = displayCode(num)
-            for ln in lines:
-                tempFile.write(ln)
-            tempFile.close()
-    
-            lc = lineCount('temp')
-             
-            if lc > 10:
-                resetScreen()
-                os.system('less temp')
-                tempFile = open('temp')
-                content = tempFile.read()
-                tempFile.close()
-                print(content)
-            else:
-                resetScreen()
-                tempFile = open('temp')
-                content = tempFile.read()
-                tempFile.close()
-                print(content)
-
-            os.unlink('temp')
-            print('|' * 18 + ' OUTPUT FOR CODE NO: ' + \
-                str(num) + ' ' + '|' * 18 )
-            fct=getattr(functions, varstring1)
-            fct()
-            print('|' * 61)
-            print('Press any key to continue!', end='')
-            input()
-        
-        # Catching error when input is a string:
-        except ValueError:
-            restart()
-
-        # Catching error when input integer is bigger than list 
-        # items numbers:
-        except AttributeError:
-            print('Either entered number is out of range,\nor function ' 
-                + varstring1 + ' might have some errors!\n')
-            
-            input('Press any key to continue!')
-            continue
-
-mainBlock()
+while True:
+    resetScreen()
+    logo()
+    rolling_list()

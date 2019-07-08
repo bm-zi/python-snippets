@@ -19,232 +19,261 @@
 19  -  for Loops and the range() Function
 20  -  while loop equivalent to for loop
 21  -  for loop - sum of numbers from 1 to 100
-22  -  range() function examples
-23  -  import modules
-24  -  sys.exit() - Ending a Program Early
-25  -  Chapter 3 - Functions
-26  -  Function example
-27  -  Function with argument
-28  -  return statement
-29  -  None data type
-30  -  Optional keywords for functions
-31  -  Local and Global Scopes
-32  -  Local and Global Variables
-33  -  Exception Handling
-34  -  Out Of Function Exception Handling
-35  -  Guessing Game
-36  -  Chapter 4 - Lists
-37  -  List example
-38  -  List of lists
-39  -  Lists negative indexes
-40  -  Getting sublists with slices
-41  -  Getting a list’s length with len()
-42  -  Changing values in a list with indexes
-43  -  List concatenation and list replication
-44  -  Removing values from lists with del
-45  -  Lists as alternative of using many variables
-46  -  Using for loop with lists
-47  -  in and not in operators
-48  -  List - using multiple assignment trick
-49  -  Augmented assignment operators
-50  -  Finding a Value in a list with index() method
-51  -  Adding values to lists with append() and insert()
-52  -  Removing values from lists with remove() method
-53  -  Sorting the values in a list with sort()
-54  -  Magic 8 ball game with a list
-55  -  List-like types - strings and tuples
-56  -  List and strings - Mutable and immutable data types
-57  -  tuple data type
-58  -  References to list
-59  -  Passing list references
-60  -  Copy module’s copy() and deepcopy() functions for lists
-61  -  Character picture grid
-62  -  Chapter 5 - Dictionaries and Structuring Data
-63  -  Dictionary Data Type
-64  -  program to store data
-65  -  Dictionary's methods: keys, values, items
-66  -  Build a list from dictionary's keys
-67  -  Show dictionary's keys & values by for loop
-68  -  Check if key or value exists in a dictionary
-69  -  Dictionary get() method
-70  -  Dictionary setdefault() Method
-71  -  Using setdefault to count no of chars in string
-72  -  Pretty print dictionaries - using pprint module
-73  -  TIC-TOC-TOE - using dictionary to model the board
-74  -  Nested Dictionaries and Lists
-75  -  Fantasy Game Inventory, using dictionary
-76  -  List to Dictionary Function for Fantasy Game Inventory
-77  -  Chapter 6 - Manipulating Strings
-78  -  Working with Strings - Double Quotes
-79  -  Raw Strings and escape characters
-80  -  Multiline Strings with Triple Quotes
-81  -  Multiline Comments
-82  -  Indexing and Slicing Strings
-83  -  The in and not in Operators with Strings
-84  -  String Methods: upper(), lower()
-85  -  String Methods: isupper(), and islower()
-86  -  The isX String Methods
-87  -  isX methods helps to validate user input
-88  -  startswith() and endswith() String Methods
-89  -  join() and split() String Methods
-90  -  split a multiline string
-91  -  Justifying Text: rjust(), ljust(), and center()
-92  -  Using Justifying Text for Tabular Data
-93  -  Removing Whitespace with strip(), rstrip(), and lstrip()
-94  -  Copy and Paste Strings with the pyperclip Module
-95  -  An insecure password locker program
-96  -  Adding Bullets to Wiki Markup
-97  -  Chapter 7 - Pattern Matching With Reular Expression
-98  -  Finding a pattern without using RE
-99  -  Finding pattern without RE from a string
-100 -  Matching regex objects
-101 -  Pattern matching with grouping
-102 -  Pattern matching with grouping and escaping parantheses
-103 -  Matching multiple groups with the pipe
-104 -  Matching groups with the pipe as part of re
-105 -  Optional matching with ?
-106 -  Matching zero or more with *
-107 -  Matching one or more with +
-108 -  Matching specific repetitions with {}
-109 -  Greedy and nongreedy matching
-110 -  findall() Method
-111 -  Character Classes
-112 -  Making your own character classes
-113 -  Caret and dollar sign characters
-114 -  Wild card character
-115 -  Matching everything with dot-star
-116 -  Matching newlines with the dot character
-117 -  Case-insensitive matching
-118 -  Substituting strings with sub() method
-119 -  Managing complex regexes
-120 -  Combining re.IGNORECASE, re.DOTALL, and re.VERBOSE
-121 -  Finds phone numbers and email addresses on the clipboard
-122 -  Extract and compute the sum of the numbers from a text file
-123 -  Chapter 8 - Reading and Writing Files
-124 -  Create strings for file names
-125 -  The Current Working Directory
-126 -  Creating New Folders with os.makedirs()
-127 -  Handling Absolute and Relative Paths
-128 -  Finding File Sizes and Folder Contents
-129 -  Checking Path Validity
-130 -  The File Reading/Writing Process
-131 -  Writing to Files
-132 -  Saving Variables with the shelve Module
-133 -  Saving Variables with the pprint.pformat() Function
-134 -  Generating Random Quiz Files
-135 -  Multiclipboard
-136 -  Chapter 9 - Organizing Files
-137 -  Copying files and folders
-138 -  Moving and renaming files and folders
-139 -  Permanently Deleting Files and Folders
-140 -  Safe Deletes with the send2trash Module
-141 -  Walk through the directory tree - os.walk
-142 -  Compressing Files with the zipfile Module
-143 -  Extracting from ZIP Files
-144 -  Creating and Adding to ZIP Files
-145 -  Renaming Files with US-Style Dates to EU-style
-146 -  Backing Up a Folder into a ZIP File
-147 -  Chapter 10 - Debugging
-148 -  Raising Exceptions
-149 -  Getting the Traceback as a String
-150 -  Assertions
-151 -  Using an Assertion in a Traffic Light Simulation
-152 -  Logging - Using the logging Module
-153 -  Logging to a file
-154 -  IDLE Debuger
-155 -  Debugging Coin Toss
-156 -  Chapter 11 - Web Scraping
-157 -  Launch a new browser
-158 -  Open google map address from terminal or clipboard
-159 -  Download Web Page with requests.get() Function
-160 -  Checking Downloading A Web Page
-161 -  Saving Downloaded Files to the Hard Drive
-162 -  Parsing HTML with the BeautifulSoup Module
-163 -  Creating a BeautifulSoup Object from local HTML file
-164 -  Finding an Element with the select() Method
-165 -  Getting Data from an Element’s Attributes
-166 -  I’m Feeling Lucky - Google Search
-167 -  Downloading All XKCD Comics
-168 -  Starting a Selenium-Controlled Browser
-169 -  Finding Elements on the Page
-170 -  WebElement Attributes and Methods
-171 -  Clicking the Page
-172 -  Filling Out and Submitting Forms
-173 -  Sending Special Keys
-174 -  Get a document from a remote webserver by http GET() method
-175 -  Download an image from webserver, with header information
-176 -  Retrieve a web page over a socket and display the headers
-177 -  Load a web document, browser simulation
-178 -  Open a web page with urlib module
-179 -  Count the number of words in a web page
-180 -  Scrape href links from html document with BeautifulSoup
-181 -  Chapter 12 - Working with Excel Spreadsheets
-182 -  Opening Excel Documents with OpenPyXL
-183 -  Getting Cells from the Sheets
-184 -  excel sheet cell() method
-185 -  Determine the size of the sheet
-186 -  Converting Between Column Letters and Numbers
-187 -  Getting Rows and Columns from the Sheets
-188 -  Access the values of cells in a particular row or column
-189 -  Reading Data from a Spreadsheet
-190 -  Writing Excel Documents
-191 -  Create and save a new excel file
-192 -  Creating and Removing Sheets
-193 -  Writing Values to Cells
-194 -  Project: Updating a Spreadsheet
-195 -  Setting the Font Style of Cells
-196 -  Font object
-197 -  Formula
-198 -  loading workbook with data_only argument
-199 -  Setting Row Height and Column Width
-200 -  Merging and Unmerging Cells
-201 -  Unmerge cells
-202 -  Freeze Panes
-203 -  Charts
-204 -  Chapter 13 - Working with PDF and Word Documents
-205 -  Extracting Text from PDFs
-206 -  Decrypting PDFs
-207 -  copy pages from one PDF document to another
-208 -  Creating PDFs
-209 -  Overlaying Pages
-210 -  Encrypting PDFs
-211 -  Combining Select Pages from Many PDFs
-212 -  Word Documents
-213 -  Getting the Full Text from a .docx File
-214 -  Styling Paragraph and Run Objects
-215 -  Creating Word Documents with Nondefault Styles
-216 -  Writing Word Documents
-217 -  Add paragraphs
-218 -  Adding Headings
-219 -  Adding Line and Page Breaks and Adding Pictures
-220 -  Chapter 14 - Working with CSV Files and JSON Data
-221 -  Read data from a CSV file
-222 -  Reading Data from Reader Objects in a for Loop
-223 -  Writer object
-224 -  The delimeter and lineterminator keyword arguments
-225 -  Project: Removing the Header from CSV Files
-226 -  JSON and APIs
-227 -  Reading JSON with the loads() Function
-228 -  Writing JSON with the dumps() Function
-229 -  Project: Fetching Current Weather Data
-230 -  Chapter 15 - Time, Scheduling Tasks, Launching Programs
-231 -  The time.time() Function
-232 -  calculate running time for a program
-233 -  sleep function to pause the program
-234 -  Rounding the current time number
-235 -  Project: Super Stopwatch - track spent time on a task
-236 -  The datetime Module
-237 -  Compare datetime objects with each other
-238 -  Find time duration with timedelta module
-239 -  Using arithmatic operators on datetime values
-240 -  Pausing Until a Specific Date
-241 -  Converting datetime Objects into Strings
-242 -  Converting Strings into datetime Objects
-243 -  Review of Python’s Time Functions
-244 -  Multithreading
-245 -  Passing Arguments to the Thread’s Target Function
-246 -  Downloads XKCD comics using multiple Thread’s
-247 -  Launching Other Programs from Python
-248 -  Passing Command Line Arguments to Popen()
-249 -  Opening Files with Default Application
-250 -  empty
+22  -  for loop to show alphabet characters
+23  -  range() function examples
+24  -  import modules
+25  -  sys.exit() - Ending a Program Early
+26  -  Chapter 3 - Functions
+27  -  Function example
+28  -  Function with argument
+29  -  return statement
+30  -  None data type
+31  -  Optional keywords for functions
+32  -  Local and Global Scopes
+33  -  Local and Global Variables
+34  -  Exception Handling
+35  -  Out Of Function Exception Handling
+36  -  Guessing Game
+37  -  Chapter 4 - Lists
+38  -  List example
+39  -  List of lists
+40  -  Lists negative indexes
+41  -  Getting sublists with slices
+42  -  Getting a list’s length with len()
+43  -  Changing values in a list with indexes
+44  -  List concatenation and list replication
+45  -  Removing values from lists with del
+46  -  Lists as alternative of using many variables
+47  -  Using for loop with lists
+48  -  in and not in operators
+49  -  List - using multiple assignment trick
+50  -  Augmented assignment operators
+51  -  Finding a Value in a list with index() method
+52  -  Adding values to lists with append() and insert()
+53  -  Removing values from lists with remove() method
+54  -  Sorting the values in a list with sort()
+55  -  Using function randint() with a list
+56  -  List-like types - strings and tuples
+57  -  List and strings - Mutable and immutable data types
+58  -  tuple data type
+59  -  References to list
+60  -  Passing list references
+61  -  Copy module’s copy() and deepcopy() functions for lists
+62  -  Character picture grid
+63  -  Chapter 5 - Dictionaries and Structuring Data
+64  -  Dictionary Data Type
+65  -  program to store data
+66  -  Dictionary's methods: keys, values, items
+67  -  Build a list from dictionary's keys
+68  -  Show dictionary's keys & values by for loop
+69  -  Check if key or value exists in a dictionary
+70  -  Dictionary get() method
+71  -  Dictionary setdefault() Method
+72  -  Using setdefault to count no of chars in string
+73  -  Pretty print dictionaries - using pprint module
+74  -  TIC-TOC-TOE - using dictionary to model the board
+75  -  Nested Dictionaries and Lists
+76  -  Fantasy Game Inventory, using dictionary
+77  -  List to Dictionary Function for Fantasy Game Inventory
+78  -  Chapter 6 - Manipulating Strings
+79  -  Working with Strings - Double Quotes
+80  -  Raw Strings and escape characters
+81  -  Multiline Strings with Triple Quotes
+82  -  Multiline Comments
+83  -  Indexing and Slicing Strings
+84  -  The in and not in Operators with Strings
+85  -  String Methods: upper(), lower()
+86  -  String Methods: isupper(), and islower()
+87  -  The isX String Methods
+88  -  isX methods helps to validate user input
+89  -  startswith() and endswith() String Methods
+90  -  join() and split() String Methods
+91  -  split a multiline string
+92  -  Justifying Text: rjust(), ljust(), and center()
+93  -  Using Justifying Text for Tabular Data
+94  -  Removing Whitespace with strip(), rstrip(), and lstrip()
+95  -  Copy and Paste Strings with the pyperclip Module
+96  -  An insecure password locker program
+97  -  Adding Bullets to Wiki Markup
+98  -  Chapter 7 - Pattern Matching With Reular Expression
+99  -  Finding a pattern without using RE
+100 -  Finding pattern without RE from a string
+101 -  Matching regex objects
+102 -  Pattern matching with grouping
+103 -  Pattern matching with grouping and escaping parantheses
+104 -  Matching multiple groups with the pipe
+105 -  Matching groups with the pipe as part of re
+106 -  Optional matching with ?
+107 -  Matching zero or more with *
+108 -  Matching one or more with +
+109 -  Matching specific repetitions with {}
+110 -  Greedy and nongreedy matching
+111 -  findall() Method
+112 -  Character Classes
+113 -  Making your own character classes
+114 -  Caret and dollar sign characters
+115 -  Wild card character
+116 -  Matching everything with dot-star
+117 -  Matching newlines with the dot character
+118 -  Case-insensitive matching
+119 -  Substituting strings with sub() method
+120 -  Managing complex regexes
+121 -  Combining re.IGNORECASE, re.DOTALL, and re.VERBOSE
+122 -  Finds phone numbers and email addresses on the clipboard
+123 -  Extract and compute the sum of the numbers from a text file
+124 -  Regular expressions quick reference
+125 -  Chapter 8 - Reading and Writing Files
+126 -  Create strings for file names
+127 -  The Current Working Directory
+128 -  Creating New Folders with os.makedirs()
+129 -  Handling Absolute and Relative Paths
+130 -  Finding File Sizes and Folder Contents
+131 -  Checking Path Validity
+132 -  The File Reading/Writing Process
+133 -  Writing to Files
+134 -  Saving Variables with the shelve Module
+135 -  Saving Variables with the pprint.pformat() Function
+136 -  Generating Random Quiz Files
+137 -  Multiclipboard
+138 -  Chapter 9 - Organizing Files
+139 -  Copying files and folders
+140 -  Moving and renaming files and folders
+141 -  Permanently Deleting Files and Folders
+142 -  Safe Deletes with the send2trash Module
+143 -  Walk through the directory tree - os.walk
+144 -  Compressing Files with the zipfile Module
+145 -  Extracting from ZIP Files
+146 -  Creating and Adding to ZIP Files
+147 -  Renaming Files with US-Style Dates to EU-style
+148 -  Backing Up a Folder into a ZIP File
+149 -  Chapter 10 - Debugging
+150 -  Raising Exceptions
+151 -  Getting the Traceback as a String
+152 -  Assertions
+153 -  Using an Assertion in a Traffic Light Simulation
+154 -  Logging - Using the logging Module
+155 -  Logging to a file
+156 -  IDLE Debuger
+157 -  Debugging Coin Toss
+158 -  Chapter 11 - Web Scraping
+159 -  Launch a new browser
+160 -  Open google map address from terminal or clipboard
+161 -  Download Web Page with requests.get() Function
+162 -  Checking Downloading A Web Page
+163 -  Saving Downloaded Files to the Hard Drive
+164 -  Parsing HTML with the BeautifulSoup Module
+165 -  Creating a BeautifulSoup Object from local HTML file
+166 -  Finding an Element with the select() Method
+167 -  Getting Data from an Element’s Attributes
+168 -  I’m Feeling Lucky - Google Search
+169 -  Downloading All XKCD Comics
+170 -  Starting a Selenium-Controlled Browser
+171 -  Finding Elements on the Page
+172 -  WebElement Attributes and Methods
+173 -  Clicking the Page
+174 -  Filling Out and Submitting Forms
+175 -  Sending Special Keys
+176 -  Get a document from a remote webserver by http GET() method
+177 -  Download an image from webserver, with header information
+178 -  Retrieve a web page over a socket and display the headers
+179 -  Load a web document, browser simulation
+180 -  Open a web page with urlib module
+181 -  Count the number of words in a web page
+182 -  Search for link values within URL input - using RE
+183 -  Scrape href links from html document with BeautifulSoup
+184 -  Hoping from an html link to another, with specified rule
+185 -  Scraping HTML Data without BeautifulSoup - word counting
+186 -  Scraping HTML Data with BeautifulSoup - word counting
+187 -  Retrieve links from html with specific conditions
+188 -  Chapter 12 - Working with Excel Spreadsheets
+189 -  Opening Excel Documents with OpenPyXL
+190 -  Getting Cells from the Sheets
+191 -  excel sheet cell() method
+192 -  Determine the size of the sheet
+193 -  Converting Between Column Letters and Numbers
+194 -  Getting Rows and Columns from the Sheets
+195 -  Access the values of cells in a particular row or column
+196 -  Reading Data from a Spreadsheet
+197 -  Writing Excel Documents
+198 -  Create and save a new excel file
+199 -  Creating and Removing Sheets
+200 -  Writing Values to Cells
+201 -  Project: Updating a Spreadsheet
+202 -  Setting the Font Style of Cells
+203 -  Font object
+204 -  Formula
+205 -  loading workbook with data_only argument
+206 -  Setting Row Height and Column Width
+207 -  Merging and Unmerging Cells
+208 -  Unmerge cells
+209 -  Freeze Panes
+210 -  Charts
+211 -  Chapter 13 - Working with PDF and Word Documents
+212 -  Extracting Text from PDFs
+213 -  Decrypting PDFs
+214 -  copy pages from one PDF document to another
+215 -  Creating PDFs
+216 -  Overlaying Pages
+217 -  Encrypting PDFs
+218 -  Combining Select Pages from Many PDFs
+219 -  Word Documents
+220 -  Getting the Full Text from a .docx File
+221 -  Styling Paragraph and Run Objects
+222 -  Creating Word Documents with Nondefault Styles
+223 -  Writing Word Documents
+224 -  Add paragraphs
+225 -  Adding Headings
+226 -  Adding Line and Page Breaks and Adding Pictures
+227 -  Chapter 14 - Working with CSV Files and JSON Data and XMLs
+228 -  Read data from a CSV file
+229 -  Reading Data from Reader Objects in a for Loop
+230 -  Writer object
+231 -  The delimeter and lineterminator keyword arguments
+232 -  Project: Removing the Header from CSV Files
+233 -  JSON and API description
+234 -  Reading JSON with the loads() Function
+235 -  Writing JSON with the dumps() Function
+236 -  Project: Fetching Current Weather Data
+237 -  json1.py
+238 -  json2.py
+239 -  geojson.py
+240 -  twtest.py
+241 -  twitter1.py
+242 -  twitter2.py
+243 -  Parsing and extracting elements from xml
+244 -  Parsing an extracting elements from a multiple node xml
+245 -  Iterate and change xml tree elements to strings
+246 -  Extract all tags with non empty inner text from xml document
+247 -  Read from remote xml tags with numbers and compute the sum
+248 -  Chapter 15 - Time, Scheduling Tasks, Launching Programs
+249 -  The time.time() Function
+250 -  calculate running time for a program
+251 -  sleep function to pause the program
+252 -  Rounding the current time number
+253 -  Project: Super Stopwatch - track spent time on a task
+254 -  The datetime Module
+255 -  Compare datetime objects with each other
+256 -  Find time duration with timedelta module
+257 -  Using arithmatic operators on datetime values
+258 -  Pausing Until a Specific Date
+259 -  Converting datetime Objects into Strings
+260 -  Converting Strings into datetime Objects
+261 -  Review of Python’s Time Functions
+262 -  Multithreading
+263 -  Passing Arguments to the Thread’s Target Function
+264 -  Downloads XKCD comics using multiple Thread’s
+265 -  Launching Other Programs from Python
+266 -  Passing Command Line Arguments to Popen()
+267 -  Opening Files with Default Application
+268 -  Chapter 16 - Object Oriented Programming
+269 -  Chapter 17 - DataBase Programming Using SQLite
+270 -  Simple DB connection and input data
+271 -  Create an SQLite DB and Update the table with data
+272 -  Counting emails from Organization and store in SQLite DB
+273 -  Spidering Twitter Using a DataBase
+274 -  Create a DataBase of friends from twitter account
+275 -  One to one relationship database example - tracks.py
+276 -  One to one relationship database example - tracks_assignment.py
+277 -  multi-relational database table example - roster.py
+278 -  Multiple relational database - roster_assignment.py
+279 -
