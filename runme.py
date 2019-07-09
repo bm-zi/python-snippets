@@ -109,10 +109,12 @@ def help():
     'b'
     Showing content of file bookmarks
 
+    'h'
+    Showing the search/commands history. History will be flushed -
+    when exiting program.
+    
     'q'
     To exit the program type 'q' in 'Search' prompt.
-    
-
     ..............................................................
     ||||||||||||||| Other notes in using program |||||||||||||||||
     ..............................................................
@@ -140,6 +142,19 @@ def help():
     os.unlink('help')
     resetScreen()
 
+###################
+def saveHistory(entry):
+    fh = open("history", "a")
+    if len(entry) > 1:
+        fh.write(entry + '\n')
+    fh.close()
+    
+def history():
+    import os.path
+    resetScreen()
+    if os.path.exists('history'):
+        os.system('less +G -i history')
+    
 #############
 def chgdir():
     # print("script: sys.argv[0] is", repr(sys.argv[0]))
@@ -605,20 +620,25 @@ def rolling_list():
                 + current_time())
             highlight(' ' * 18 + 'PRESS ENTER TO PARSE ABOVE MENU, ? FOR HELP ' + ' ' * 18)
             response = input('Search > ')
+            saveHistory(response)
             print()
             
             if re.search('^[\\\\*+-/. ]', response): restart()
-
+            
             elif response == 'r': resetScreen(); runnerRev(i)
             elif response == 'q': exitProg()
             elif response == '?': help(); continue
             elif response == '': i = i + 1  ; resetScreen() 
             elif not response: i = i + 1  ; resetScreen()
 
+            
             elif response == 'bookmarks':
                 os.system('\\vi + bookmarks')
                 restart()
             
+            elif response == 'h':
+                history()
+                
             elif response == 'b':
                 resetScreen()
                 os.system('cat bookmarks')

@@ -4665,8 +4665,9 @@ def f239():
 
 def f240():
     # twtest.py
-
+    
     import urllib.request, urllib.parse, urllib.error
+    from data import twurl
     import ssl
     import oauth  # I copied oauth.py to /usr/lib64/python3.6
 
@@ -4676,27 +4677,8 @@ def f240():
 
     print('* Calling Twitter...')
 
-    def mykey():
-        return {"consumer_key": "DF8GKXgtxyl845Dy4Zz7H9RNu",
-                "consumer_secret": "PZQScM0bTfTThSB0qXVPnhb6yFg7rnXTuY7U5TqlujeixRmMJm",
-                "token_key": "1133459504719433728-YbSmNJFam1FRpDTS7vh7R4RzPogEwh",
-                "token_secret": "IUyXxAWNr7kQVggRYAiQAUvaoIsMqp9D81iIkZun0dEfB"}
-
-    def augment(url, parameters):
-        secrets = mykey()
-        consumer = oauth.OAuthConsumer(secrets['consumer_key'],
-                                       secrets['consumer_secret'])
-        token = oauth.OAuthToken(secrets['token_key'], secrets['token_secret'])
-
-        oauth_request = oauth.OAuthRequest.from_consumer_and_token(consumer,
-                        token=token, http_method='GET', http_url=url,
-                        parameters=parameters)
-        oauth_request.sign_request(oauth.OAuthSignatureMethod_HMAC_SHA1(),
-                                   consumer, token)
-        return oauth_request.to_url()
-
-
-    url = augment('https://api.twitter.com/1.1/statuses/user_timeline.json',
+    
+    url = twurl.augment('https://api.twitter.com/1.1/statuses/user_timeline.json',
                   {'screen_name': 'drchuck', 'count': '2'})
     print(url)
 
